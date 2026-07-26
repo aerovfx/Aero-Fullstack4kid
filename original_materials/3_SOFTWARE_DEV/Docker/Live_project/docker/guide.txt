@@ -1,0 +1,9 @@
+1. Mở sẵn Docker Desktop và chắc chắn rằng đã chạy docker
+Kiểm tra bằng cách gõ: docker -v
+
+2. Tại thư mục chứa file cài đặt, chạy câu lệnh sau:
+
+docker compose -p hoidanit-react-ultimate up -d
+
+
+

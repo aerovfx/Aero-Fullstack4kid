@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Eduport - LMS, Education and Course Theme</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+		    var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+				const activeThemeIcon = document.querySelector('.theme-icon-active use')
+				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+					element.classList.remove('active')
+				})
+
+				btnToActive.classList.add('active')
+				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+			}
+
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+				if (storedTheme !== 'light' || storedTheme !== 'dark') {
+					setTheme(getPreferredTheme())
+				}
+			})
+
+			showActiveTheme(getPreferredTheme())
+
+			document.querySelectorAll('[data-bs-theme-value]')
+				.forEach(toggle => {
+					toggle.addEventListener('click', () => {
+						const theme = toggle.getAttribute('data-bs-theme-value')
+						localStorage.setItem('theme', theme)
+						setTheme(theme)
+						showActiveTheme(theme)
+					})
+				})
+
+			}
+		})
+		
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/doc.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/prism.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<header class="navbar-light navbar-sticky">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand me-0" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-animation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+
+				<!-- Nav Search END -->
+				<ul class="navbar-nav navbar-nav-scroll ms-auto">
+
+					<!-- Nav item 1 Demos -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle active" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Demos</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="demoMenu">
+							<li> <a class="dropdown-item" href="#">Menu Item</a></li>
+							<li> <a class="dropdown-item" href="#">Menu Item</a></li>
+						</ul>
+					</li>
+
+					<!-- Nav item 2 Course -->
+					<li class="nav-item dropdown"><a class="nav-link" href="#">Course</a></li>
+
+					<!-- Nav item 3 link-->
+					<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Signin button -->
+			<div class="navbar-nav ms-2 d-none d-sm-block">
+				<button class="btn btn-sm btn-dark mb-0">Buy now</button>
+			</div>
+
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="position-relative">
+	<div class="container position-relative">
+		<div class="row g-4 align-items-center">
+			<div class="col-md-6 position-relative">
+				<!-- Pre title -->
+				<div class="d-flex align-items-center mb-4">
+					<div class="icon-md bg-body rounded-circle shadow fs-5 text-warning">
+						<i class="bi bi-lightbulb"></i>
+					</div>
+					<span class="h6 ms-3 mb-0">Grow Your Future With Us</span>
+				</div>
+
+				<!-- Title -->
+				<h1 class="mb-4 display-6 ">Let's Learn New Courses & Gain
+					<span class="position-relative z-index-9">More Skills
+						<!-- SVG START -->
+						<span class="position-absolute top-50 start-50 translate-middle z-index-1 mt-n2 d-none d-sm-block">
+							<svg class="fill-warning" width="357px" height="84.1px" viewBox="0 0 357 84.1" style="enable-background:new 0 0 357 84.1;" xml:space="preserve">
+								<path d="M27,74.9c0.9,0,0.9,0.2,1,0.5c0.3,1,0.1,1.9-0.2,2.8c-0.3,1.3-0.3,2.6-0.3,3.8c0,0.6,0.9,0.8,1.7,1 c0.8,0.2,1.1-0.2,1.7-0.4c0.1,0.4,0.2,0.7,0.4,1c0.2,0.3,0.6,0.4,1.1,0.1c0.5-0.3,1.2-0.6,1.2-0.9c0.2-0.7,1-1.4,1.6-2 c0.4-0.5,0.6-1.1,1.6-1.4c0.5-0.2,0.3-0.5,0.2-0.7c-0.2-1.1-0.1-2.3,0-3.4c0.1-0.5,0.6-0.6,1.7-0.7c9.4-0.2,18.9,0,28.3-0.1 c11.5,0,23-0.2,34.5-0.2c8.4,0,16.7,0.5,25,0.8c16.6,0.6,33.2,1.3,50,1.3c11.4,0,22.8-0.2,34.2,0c8.9,0.2,17.7,0.5,26.6,0.5 c12.6,0,25.2-0.2,37.8-0.8c13.2-0.6,26.5-0.5,39.8-0.5c2.6,0,5.2,0,7.8,0c0.9,0,1.3,0.2,1.9,0.4c1.9,0.7,1.7,1.6,1.9,2.4 c0.4,1.5,0.9,3,0.2,4.6c-0.3,0.7,1.2,0.6,1.7,0.9c0.4,0.2,1-0.1,1.4-0.2c0.6-0.2,1-0.5,1.3-0.8c2.4-2.2,3.8-4.4,3.4-6.8 c-0.1-0.6,0.2-0.8,1.6-0.7c1.2,0.1,2.4,0,3.5,0c2.4,0,2.8-0.2,3.5-1.2c0.2-0.3,0.5-0.6,0.8-0.9c-1.1-0.4,0.1-0.6,0.2-0.9 c0.1-0.4,0.3-0.7,1.2-0.9c-2-0.8-3.8-1.8-6.9-1.5c-1,0.1-2,0.1-2.9,0.1c-1.2,0-1.6-0.2-1.6-0.7c0-2.6-0.1-5.2,0.4-7.8 c0.2-1.1,0.2-2.1,0.2-3.2c0.1-2.5,0.7-4.9,1.1-7.4c0.5-3,2.1-6,3.4-9c0.4-1-0.3-1.9-0.2-2.8c0-0.3-0.2-0.6-0.1-0.9 c0.1-2.8-0.7-5.5-1-8.3c-0.1-0.9-0.5-1.9-0.1-2.8c0.8-1.9,0.8-3.4,0.5-3.5c-0.3-0.1-1.4,1.8-1.7,1.7c-0.2-0.1-0.2-1,0.5-1.4 c0.5-0.3,1.1-0.1,1.2-0.3c0.2-0.3-1.8-0.9-2.8-2.2c-0.9-1.2-1-3.2,0-3.8c0.8-0.5,1.8,0.3,5.2,0.4c0.7,0,1.4,0.1,2.3,0 c3.2-0.2,5.2-1.2,6.7-2.4c0.2-0.2,0.4-0.4,0.6-0.6c0-0.1,0-0.3,0-0.4c-0.8-0.1-1.3-0.5-2.2-0.5c-0.3,0-0.4-0.2-0.3-0.3 c0.5-0.6-0.6-0.7-1.3-0.9c-0.7-0.2-1.4-0.1-2.1,0.2c-1.3,0.6-3.1,0.4-4.7,0.4c-0.6,0-0.5-0.3-0.5-0.5c-0.4-1-0.4-2-0.2-3 c0.1-0.7-0.6-1-1.7-1.1c-0.9-0.1-1.1-0.3-1.4-0.6c-0.7-0.5-2.4-0.9-3.6-0.8c-0.6,0.1-1,0.3-1,0.6c0.2,1.1-0.5,2.1-1.7,2.9 c-1.1,0.7-1.5,1.5-1.6,2.3c-0.1,0.4-1,0.3-1.1,0.3c-1.5-0.1-5.1,1.5-14.9,2c-25.2,1.3-40,0.7-40,0.7c-42.2-1.7-52.1,2.8-77.3,0.5 c-3.4-0.3-14.2-1.4-28.9-0.9c-4.5,0.1-7.5,0.4-10,0.5c-15.1,1-27.6,0.8-50.9,0.4c-20.7-0.4-15.4-0.7-37.1-1.3 c-11.5-0.3-22.8-4.2-34.3-3.5c-0.2,0-1.1,0.1-1.4-0.3c-0.1-0.1-0.1-0.2-0.1-0.3c0-1.1-0.8-2.1,0-3.2C32,8,30.9,8,30.4,7.9 c-0.5-0.1-0.9-0.2-1.1-0.5c-0.5-0.6-1.8-0.5-2.8-0.5c-0.6,0-0.9,0.3-1,0.6c-0.1,0.6-0.3,1.3-1,1.9c-1,0.8-1.6,1.6-1.9,2.4 c-0.1,0.3-0.5,0.3-1,0.2c-1.3-0.1-2.6-0.1-4-0.1c-1.8-0.1-1.8,0-1.9,0.8c0,0.7-1,1.3-1.6,1.9c0,0.5-0.8,0.9-1.2,1.3 c-0.3,0.5,0.2,0.9,1.1,1.1c2.2,0.5,3.9,1.4,6.5,1.5c0.6,0,0.9,0.2,0.9,0.4c0,0.2,0,0.4-0.7,0.5c-0.3,0-0.7,0.1-1,0.1 c-0.7,0.1-1.3,0.3-1.3,0.7c0,0.4,0.9,0.4,1.4,0.5c1.2,0.1,1.4,0.3,1.4,0.8c-0.3,7.2,1.2,14.4,2.4,21.5c0.7,4.1,0.9,8.3,1.6,12.5 c0.8,4.4,0.5,8.8,1.4,13.2c0.2,0.9,0.4,1.8,0.7,2.6c0.1,0.4,0,0.5-1,0.6c-5.5,0.5-11,0.8-16.7,0.9c-0.7,0-1.1,0.1-1.2,0.4 c-0.1,0.2-0.3,0.4-0.6,0.6c0,0.1,0,0.2,0,0.3c2.2,0.5,4.7,0.4,7,0.5C19,74.7,23,74.9,27,74.9z M31,28.4c0.5-2.5,0.6-5.1,0.5-7.6 c0-0.5,0.4-0.6,1.4-0.6c4.8,0.1,9.7,0.2,14.5,0.4c0.2,0,0.5,0,0.7,0c5.4,0.1,10.8,0,16.2,0.2c4.4,0.1,8.7,0,13.1,0.1 c7.6,0.2,15.3,0.3,22.9,0.4c5.3,0.1,10.6,0.2,15.9,0.3c5.3,0.1,10.6,0.2,15.9,0.3c15,0.3,30.1,0,45.1,0.1 c5.6,0.1,11.3,0.2,16.9,0.3c8,0.2,16,0.2,24.1,0.2c7.9,0,15.8,0,23.7,0c3,0,6-0.2,8.9-0.3c0.3,0,0.6,0,0.8,0.1 c5.1,0,10.2-0.3,15.3-0.6c9.8-0.5,19.6-0.7,29.4-1.2c9.3-0.4,18.6-0.9,27.9-1.3c3.7-0.2,3.7-0.2,3.8,1.5c0.3,3.6-0.3,7.1-1.3,10.6 c-1.2,4-1.4,8-1.6,12.1c-0.3,7.2-0.2,14.4-0.8,21.6c-0.1,1.7-0.6,3.4-0.5,5c0,0.6-0.7,0.5-1.5,0.5c-8,0-15.9,0-23.9,0 c-9.9-0.1-19.9,0.1-29.7,0.7c-11.7,0.7-23.2,0.3-34.8-0.2c-19.1-0.8-38.3-1.6-57.5-1.7c-27-0.1-54-0.1-81,0.3 c-13.7,0.2-27.4,0.2-41.1,0c-0.3,0-0.6,0-0.9,0l0,0l0,0c-2.4,0-4.8,0-7.2,0c-0.7,0-1.4,0-2,0.1c-0.3,0.1-0.9,0-0.8,0.3 C43.2,70,43.6,70,44,70c2.8,0.3,5.7,0.4,8.5,0.5c3.1,0.1,6.3,0.3,9.6,0.3c-0.4,0.4-0.9,0.4-1.5,0.4c-6.4,0.1-12.7,0.3-19.1,0.3 c-0.7,0-1.4,0.1-2,0.1c-0.7,0-1.4,0.2-2-0.1l-0.1,0c0,0,0,0,0,0c-0.7,0.1-1.2,0-1.3-0.4c-0.1-0.5-0.7-1,0.4-1.5 c0.2-0.1,0.3-0.2,0.1-0.3c-1.3-0.5-0.4-1.2-0.7-1.7c-0.4-0.6-0.3-1.3-0.4-1.9c-0.1-1.9-0.1-3.7-0.4-5.6c-0.3-2.6-0.8-5.1-1.1-7.7 c-0.3-2.5-0.6-5-1.2-7.4c-0.6-2.3-0.7-4.6-1.3-6.9c-0.6-2.3-0.8-4.7-1.1-7C30.6,30.2,30.8,29.3,31,28.4z"/>
+							</svg>
+						</span>
+						<!-- SVG END -->
+					</span>
+				</h1>
+
+				<p class="mb-4 lead">A Learning platform based on practical knowledge with beast & world class mentors.</p>
+
+				<!-- Button -->
+				<div class="d-lg-flex mb-4">
+					<a href="#" class="btn btn-primary me-4">View Courses<i class="bi bi-arrow-right ms-2"></i></a>
+					<a href="#" class="btn btn-light"><i class="fas fa-photo-video me-2"></i>See it in action<i class="bi bi-arrow-right ms-2"></i></a>
+				</div>
+
+				<!-- Review -->
+				<div class="d-sm-flex align-items-center">
+					<ul class="avatar-group mb-2 mb-sm-0">
+						<li class="avatar avatar-sm"><img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar"></li>
+						<li class="avatar avatar-sm"><img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar"></li>
+						<li class="avatar avatar-sm"><img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar"></li>
+						<li class="avatar avatar-sm"><img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar"></li>
+					</ul>
+					<!-- Content -->
+					<p class="mb-0 h6 ms-0 ms-sm-3">Trusted by over 15K Users Worldwide Since 2022</p>
+				</div>
+			</div>
+			
+			<!-- Image -->
+			<div class="col-md-6">
+				<img src="assets/images/element/08.png" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+Snippet code START -->
+<section>
+	<div class="container">
+		<div class="col-10 mx-auto">
+			<!-- Card START -->
+			<div class="card shadow p-0">
+				<!-- Card header -->
+				<div class="card-header border-bottom d-flex justify-content-between p-3 pb-0">
+					<h4 class="card-title mb-0">HTML</h4>
+				</div>
+
+				<!-- Card body START -->
+				<div class="card-body p-3 py-0">
+					<div class="tab-content">
+						<!-- Html tab -->
+						<div class="tab-pane show active" id="tab-1">
+							<div class="position-relative">
+								<pre id="copy-1" class="my-3 h-700px language-markup"><code class="language-markup" data-lang="html">&lt;section class="position-relative"&gt;
+	&lt;div class="container position-relative"&gt;
+		&lt;div class="row g-4 align-items-center"&gt;
+			&lt;div class="col-md-6 position-relative"&gt;
+				&lt;!-- Pre title --&gt;
+				&lt;div class="d-flex align-items-center mb-4"&gt;
+					&lt;div class="icon-md bg-body rounded-circle shadow fs-5 text-warning"&gt;
+						&lt;i class="bi bi-lightbulb"&gt;&lt;/i&gt;
+					&lt;/div&gt;
+					&lt;span class="h6 ms-3 mb-0"&gt;Grow Your Future With Us&lt;/span&gt;
+				&lt;/div&gt;
+
+				&lt;!-- Title --&gt;
+				&lt;h1 class="mb-4 display-6 "&gt;Let's Learn New Courses &amp; Gain
+					&lt;span class="position-relative z-index-9"&gt;More Skills
+						&lt;!-- SVG START --&gt;
+						&lt;span class="position-absolute top-50 start-50 translate-middle z-index-1 mt-n2 d-none d-sm-block"&gt;
+							&lt;svg class="fill-warning" width="357px" height="84.1px" viewBox="0 0 357 84.1" style="enable-background:new 0 0 357 84.1;" xml:space="preserve"&gt;
+								&lt;path d="M27,74.9c0.9,0,0.9,0.2,1,0.5c0.3,1,0.1,1.9-0.2,2.8c-0.3,1.3-0.3,2.6-0.3,3.8c0,0.6,0.9,0.8,1.7,1 c0.8,0.2,1.1-0.2,1.7-0.4c0.1,0.4,0.2,0.7,0.4,1c0.2,0.3,0.6,0.4,1.1,0.1c0.5-0.3,1.2-0.6,1.2-0.9c0.2-0.7,1-1.4,1.6-2 c0.4-0.5,0.6-1.1,1.6-1.4c0.5-0.2,0.3-0.5,0.2-0.7c-0.2-1.1-0.1-2.3,0-3.4c0.1-0.5,0.6-0.6,1.7-0.7c9.4-0.2,18.9,0,28.3-0.1 c11.5,0,23-0.2,34.5-0.2c8.4,0,16.7,0.5,25,0.8c16.6,0.6,33.2,1.3,50,1.3c11.4,0,22.8-0.2,34.2,0c8.9,0.2,17.7,0.5,26.6,0.5 c12.6,0,25.2-0.2,37.8-0.8c13.2-0.6,26.5-0.5,39.8-0.5c2.6,0,5.2,0,7.8,0c0.9,0,1.3,0.2,1.9,0.4c1.9,0.7,1.7,1.6,1.9,2.4 c0.4,1.5,0.9,3,0.2,4.6c-0.3,0.7,1.2,0.6,1.7,0.9c0.4,0.2,1-0.1,1.4-0.2c0.6-0.2,1-0.5,1.3-0.8c2.4-2.2,3.8-4.4,3.4-6.8 c-0.1-0.6,0.2-0.8,1.6-0.7c1.2,0.1,2.4,0,3.5,0c2.4,0,2.8-0.2,3.5-1.2c0.2-0.3,0.5-0.6,0.8-0.9c-1.1-0.4,0.1-0.6,0.2-0.9 c0.1-0.4,0.3-0.7,1.2-0.9c-2-0.8-3.8-1.8-6.9-1.5c-1,0.1-2,0.1-2.9,0.1c-1.2,0-1.6-0.2-1.6-0.7c0-2.6-0.1-5.2,0.4-7.8 c0.2-1.1,0.2-2.1,0.2-3.2c0.1-2.5,0.7-4.9,1.1-7.4c0.5-3,2.1-6,3.4-9c0.4-1-0.3-1.9-0.2-2.8c0-0.3-0.2-0.6-0.1-0.9 c0.1-2.8-0.7-5.5-1-8.3c-0.1-0.9-0.5-1.9-0.1-2.8c0.8-1.9,0.8-3.4,0.5-3.5c-0.3-0.1-1.4,1.8-1.7,1.7c-0.2-0.1-0.2-1,0.5-1.4 c0.5-0.3,1.1-0.1,1.2-0.3c0.2-0.3-1.8-0.9-2.8-2.2c-0.9-1.2-1-3.2,0-3.8c0.8-0.5,1.8,0.3,5.2,0.4c0.7,0,1.4,0.1,2.3,0 c3.2-0.2,5.2-1.2,6.7-2.4c0.2-0.2,0.4-0.4,0.6-0.6c0-0.1,0-0.3,0-0.4c-0.8-0.1-1.3-0.5-2.2-0.5c-0.3,0-0.4-0.2-0.3-0.3 c0.5-0.6-0.6-0.7-1.3-0.9c-0.7-0.2-1.4-0.1-2.1,0.2c-1.3,0.6-3.1,0.4-4.7,0.4c-0.6,0-0.5-0.3-0.5-0.5c-0.4-1-0.4-2-0.2-3 c0.1-0.7-0.6-1-1.7-1.1c-0.9-0.1-1.1-0.3-1.4-0.6c-0.7-0.5-2.4-0.9-3.6-0.8c-0.6,0.1-1,0.3-1,0.6c0.2,1.1-0.5,2.1-1.7,2.9 c-1.1,0.7-1.5,1.5-1.6,2.3c-0.1,0.4-1,0.3-1.1,0.3c-1.5-0.1-5.1,1.5-14.9,2c-25.2,1.3-40,0.7-40,0.7c-42.2-1.7-52.1,2.8-77.3,0.5 c-3.4-0.3-14.2-1.4-28.9-0.9c-4.5,0.1-7.5,0.4-10,0.5c-15.1,1-27.6,0.8-50.9,0.4c-20.7-0.4-15.4-0.7-37.1-1.3 c-11.5-0.3-22.8-4.2-34.3-3.5c-0.2,0-1.1,0.1-1.4-0.3c-0.1-0.1-0.1-0.2-0.1-0.3c0-1.1-0.8-2.1,0-3.2C32,8,30.9,8,30.4,7.9 c-0.5-0.1-0.9-0.2-1.1-0.5c-0.5-0.6-1.8-0.5-2.8-0.5c-0.6,0-0.9,0.3-1,0.6c-0.1,0.6-0.3,1.3-1,1.9c-1,0.8-1.6,1.6-1.9,2.4 c-0.1,0.3-0.5,0.3-1,0.2c-1.3-0.1-2.6-0.1-4-0.1c-1.8-0.1-1.8,0-1.9,0.8c0,0.7-1,1.3-1.6,1.9c0,0.5-0.8,0.9-1.2,1.3 c-0.3,0.5,0.2,0.9,1.1,1.1c2.2,0.5,3.9,1.4,6.5,1.5c0.6,0,0.9,0.2,0.9,0.4c0,0.2,0,0.4-0.7,0.5c-0.3,0-0.7,0.1-1,0.1 c-0.7,0.1-1.3,0.3-1.3,0.7c0,0.4,0.9,0.4,1.4,0.5c1.2,0.1,1.4,0.3,1.4,0.8c-0.3,7.2,1.2,14.4,2.4,21.5c0.7,4.1,0.9,8.3,1.6,12.5 c0.8,4.4,0.5,8.8,1.4,13.2c0.2,0.9,0.4,1.8,0.7,2.6c0.1,0.4,0,0.5-1,0.6c-5.5,0.5-11,0.8-16.7,0.9c-0.7,0-1.1,0.1-1.2,0.4 c-0.1,0.2-0.3,0.4-0.6,0.6c0,0.1,0,0.2,0,0.3c2.2,0.5,4.7,0.4,7,0.5C19,74.7,23,74.9,27,74.9z M31,28.4c0.5-2.5,0.6-5.1,0.5-7.6 c0-0.5,0.4-0.6,1.4-0.6c4.8,0.1,9.7,0.2,14.5,0.4c0.2,0,0.5,0,0.7,0c5.4,0.1,10.8,0,16.2,0.2c4.4,0.1,8.7,0,13.1,0.1 c7.6,0.2,15.3,0.3,22.9,0.4c5.3,0.1,10.6,0.2,15.9,0.3c5.3,0.1,10.6,0.2,15.9,0.3c15,0.3,30.1,0,45.1,0.1 c5.6,0.1,11.3,0.2,16.9,0.3c8,0.2,16,0.2,24.1,0.2c7.9,0,15.8,0,23.7,0c3,0,6-0.2,8.9-0.3c0.3,0,0.6,0,0.8,0.1 c5.1,0,10.2-0.3,15.3-0.6c9.8-0.5,19.6-0.7,29.4-1.2c9.3-0.4,18.6-0.9,27.9-1.3c3.7-0.2,3.7-0.2,3.8,1.5c0.3,3.6-0.3,7.1-1.3,10.6 c-1.2,4-1.4,8-1.6,12.1c-0.3,7.2-0.2,14.4-0.8,21.6c-0.1,1.7-0.6,3.4-0.5,5c0,0.6-0.7,0.5-1.5,0.5c-8,0-15.9,0-23.9,0 c-9.9-0.1-19.9,0.1-29.7,0.7c-11.7,0.7-23.2,0.3-34.8-0.2c-19.1-0.8-38.3-1.6-57.5-1.7c-27-0.1-54-0.1-81,0.3 c-13.7,0.2-27.4,0.2-41.1,0c-0.3,0-0.6,0-0.9,0l0,0l0,0c-2.4,0-4.8,0-7.2,0c-0.7,0-1.4,0-2,0.1c-0.3,0.1-0.9,0-0.8,0.3 C43.2,70,43.6,70,44,70c2.8,0.3,5.7,0.4,8.5,0.5c3.1,0.1,6.3,0.3,9.6,0.3c-0.4,0.4-0.9,0.4-1.5,0.4c-6.4,0.1-12.7,0.3-19.1,0.3 c-0.7,0-1.4,0.1-2,0.1c-0.7,0-1.4,0.2-2-0.1l-0.1,0c0,0,0,0,0,0c-0.7,0.1-1.2,0-1.3-0.4c-0.1-0.5-0.7-1,0.4-1.5 c0.2-0.1,0.3-0.2,0.1-0.3c-1.3-0.5-0.4-1.2-0.7-1.7c-0.4-0.6-0.3-1.3-0.4-1.9c-0.1-1.9-0.1-3.7-0.4-5.6c-0.3-2.6-0.8-5.1-1.1-7.7 c-0.3-2.5-0.6-5-1.2-7.4c-0.6-2.3-0.7-4.6-1.3-6.9c-0.6-2.3-0.8-4.7-1.1-7C30.6,30.2,30.8,29.3,31,28.4z"/&gt;
+							&lt;/svg&gt;
+						&lt;/span&gt;
+						&lt;!-- SVG END --&gt;
+					&lt;/span&gt;
+				&lt;/h1&gt;
+
+				&lt;p class="mb-4 lead"&gt;A Learning platform based on practical knowledge with beast &amp; world class mentors.&lt;/p&gt;
+
+				&lt;!-- Button --&gt;
+				&lt;div class="d-lg-flex mb-4"&gt;
+					&lt;a href="#" class="btn btn-primary me-4"&gt;View Courses&lt;i class="bi bi-arrow-right ms-2"&gt;&lt;/i&gt;&lt;/a&gt;
+					&lt;a href="#" class="btn btn-light"&gt;&lt;i class="fas fa-photo-video me-2"&gt;&lt;/i&gt;See it in action&lt;i class="bi bi-arrow-right ms-2"&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;/div&gt;
+
+				&lt;!-- Review --&gt;
+				&lt;div class="d-sm-flex align-items-center"&gt;
+					&lt;ul class="avatar-group mb-2 mb-sm-0"&gt;
+						&lt;li class="avatar avatar-sm"&gt;&lt;img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar"&gt;&lt;/li&gt;
+						&lt;li class="avatar avatar-sm"&gt;&lt;img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar"&gt;&lt;/li&gt;
+						&lt;li class="avatar avatar-sm"&gt;&lt;img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar"&gt;&lt;/li&gt;
+						&lt;li class="avatar avatar-sm"&gt;&lt;img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar"&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+					&lt;!-- Content --&gt;
+					&lt;p class="mb-0 h6 ms-0 ms-sm-3"&gt;Trusted by over 15K Users Worldwide Since 2022&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			
+			&lt;!-- Image --&gt;
+			&lt;div class="col-md-6"&gt;
+				&lt;img src="assets/images/element/08.png" alt=""&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+										</code></pre>
+									<button id="copy_id-1" data-clipboard-action="copy" data-clipboard-target="#copy-1" class="copy-link btn btn-primary btn-sm mb-0">Copy</button>
+								</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- Card body END -->
+
+			</div>
+			<!-- Card END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Snippet code END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/simple-scrollbar.min.js"></script>
+<script src="assets/js/prism.js"></script>
+<script src="assets/js/clipboard.min.js"></script>
+ 
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>

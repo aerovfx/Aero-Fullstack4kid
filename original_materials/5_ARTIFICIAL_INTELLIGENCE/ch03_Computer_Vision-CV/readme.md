@@ -1,0 +1,3 @@
+# Thị giác máy tính (CV)
+
+Thị giác máy tính (CV) là một lĩnh vực của trí tuệ nhân tạo cho phép máy tính diễn giải và đưa ra quyết định dựa trên dữ liệu hình ảnh từ thế giới. Nó bao gồm các kỹ thuật để thu nhận, xử lý, phân tích và hiểu hình ảnh và video nhằm tự động hóa các nhiệm vụ mà thường yêu cầu tầm nhìn của con người. Các ứng dụng của CV bao gồm nhận dạng hình ảnh, phát hiện đối tượng, nhận dạng khuôn mặt và lái xe tự động.

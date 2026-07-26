@@ -1,0 +1,1 @@
+Tìm ký tự không xuất hiện trong xâu: Tìm ký tự đầu tiên trong một xâu mà không xuất hiện trong xâu con còn lại.

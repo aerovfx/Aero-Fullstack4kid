@@ -1,0 +1,7 @@
+Trong ReactJS, Router được sử dụng để quản lý và điều hướng các thành phần dựa trên URL của ứng dụng. Router cho phép tạo ra các đường dẫn URL và kết nối chúng với các thành phần tương ứng. Dưới đây là ứng dụng chính của Router trong ReactJS và ví dụ về cách sử dụng nó:<br/>
+
+Điều hướng giữa các trang: Router cho phép điều hướng giữa các trang trong ứng dụng React, giúp tạo ra trải nghiệm đa trang mượt mà và tương tác.<br/>
+Hiển thị các thành phần con theo địa chỉ URL: Router cho phép hiển thị các thành phần con tương ứng với địa chỉ URL. Khi người dùng truy cập vào một đường dẫn cụ thể, các thành phần con tương ứng sẽ được hiển thị.
+Truyền dữ liệu và props qua các trang: Router cho phép truyền dữ liệu và props giữa các trang trong ứng dụng React, giúp chia sẻ dữ liệu và tạo tính liên kết giữa các thành phần.<br/>
+Xử lý các tham số và truy vấn URL: Router cho phép xử lý các tham số và truy vấn URL, cho phép truy cập và sử dụng các thông tin được truyền qua URL.<br/>
+Tạo giao diện đa cấp và giao diện người dùng phức tạp: Router cho phép tạo giao diện đa cấp với các thành phần con được nhúng và điều hướng một cách dễ dàng. Nó cho phép tạo các giao diện người dùng phức tạp với nhiều thành phần hiển thị tương ứng với các trạng thái và URL khác nhau.<br/>

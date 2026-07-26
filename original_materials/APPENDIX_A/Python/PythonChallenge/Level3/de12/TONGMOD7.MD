@@ -1,0 +1,1 @@
+Tính tổng của tất cả các số nguyên từ 1 đến 1000 chia hết cho 7.

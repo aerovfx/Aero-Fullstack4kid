@@ -1,1 +1,0 @@
-Mã hoá và sắp xếp xâu: Mã hoá xâu bằng một thuật toán mã hoá như Huffman hoặc LZW, sau đó sắp xếp các mã được tạo ra theo thứ tự từ điển.

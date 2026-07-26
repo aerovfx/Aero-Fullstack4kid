@@ -1,0 +1,1 @@
+Cho dãy gồm n số. Tìm dãy con lớn nhất đơn điệu (liên tục tăng, giảm hoặc giảm, tăng).

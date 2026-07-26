@@ -1,0 +1,1 @@
+Kiểm tra xem một xâu có chứa toàn bộ các ký tự số hay không: Kiểm tra xem một xâu cho trước có chứa toàn bộ các ký tự số hay không.

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Doc - Eduport Theme</title>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/doc.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/prism.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<header class="navbar-light navbar-sticky navbar-transparent">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+	
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+				aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+				<span class="me-2"><i class="fas fa-search fs-5"></i></span>
+			</button>
+	
+			<!-- Category menu START -->
+			<ul class="navbar-nav navbar-nav-scroll dropdown-clickable">
+				<li class="nav-item dropdown dropdown-menu-shadow-stacked">
+					<a class="nav-link" href="#" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="bi bi-grid-3x3-gap-fill me-3 fs-5 me-xl-1 d-xl-none"></i>
+						<i class="bi bi-grid-3x3-gap-fill me-1 d-none d-xl-inline-block"></i>
+						<span class="d-none d-xl-inline-block">Category</span>
+					</a>
+	
+					<ul class="dropdown-menu" aria-labelledby="categoryMenu">
+
+						<!-- Dropdown submenu -->
+						<li class="dropdown-submenu dropend">
+							<a class="dropdown-item dropdown-toggle" href="#">Category Link 1</a>
+							<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+								<!-- dropdown submenu open right -->
+								<li class="dropdown-submenu dropend">
+									<a class="dropdown-item dropdown-toggle" href="#">Sub link</a>
+									<ul class="dropdown-menu" data-bs-popper="none">
+										<li> <a class="dropdown-item" href="#">Sub link 1</a> </li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li> <a class="dropdown-item" href="#">Category Link 2</a></li>
+						<li> <a class="dropdown-item" href="#">Category Link 3</a></li>
+						<li> <hr class="dropdown-divider"></li>
+						<li> <a class="dropdown-item bg-primary text-primary bg-opacity-10 rounded-2 mb-0" href="#">View all categories</a></li>
+					</ul>
+				</li>
+			</ul>
+			<!-- Category menu END -->
+	
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+				<!-- Nav Search START -->
+				<div class="col-xl-8">
+					<div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
+						<div class="nav-item w-100">
+							<form class="rounded position-relative">
+								<input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search" placeholder="Search" aria-label="Search">
+								<button class="btn btn-link bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y"
+									type="submit"><i class="fas fa-search fs-6 text-primary"></i></button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- Nav Search END -->
+			</div>
+			<!-- Main navbar END -->
+	
+			<!-- Right header content START -->
+			<!-- Add to cart -->
+			<div class="navbar-nav position-relative overflow-visible me-3">
+				<a href="#" class="nav-link">	<i class="fas fa-shopping-cart fs-5"></i></a>
+				<span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-success mt-xl-2 ms-n1">5 
+					<span class="visually-hidden">unread messages</span>
+				</span>
+			</div>
+	
+			<!-- Language -->
+			<ul class="navbar-nav navbar-nav-scroll me-3 d-none d-xl-block">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fas fa-globe me-2"></i>
+						<span class="d-none d-lg-inline-block">Language</span>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-end min-w-auto" aria-labelledby="language">
+						<li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/uk.svg" alt="">English</a></li>
+						<li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/gr.svg" alt="">German</a></li>
+						<li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/sp.svg" alt="">French</a></li>
+					</ul>
+				</li>
+			</ul>
+	
+			<!-- Signout button  -->
+			<div class="navbar-nav d-none d-lg-inline-block">
+				<button class="btn btn-danger-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Sign Up</button>
+			</div>
+			<!-- Right header content END -->
+		
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="bg-light">
+	<div class="container pt-5 mt-0 mt-lg-5">
+
+		<!-- Title and SVG START -->
+		<div class="row position-relative mb-0 mb-sm-5 pb-0 pb-lg-5">
+			<div class="col-lg-8 text-center mx-auto position-relative">
+
+				<!-- SVG decoration -->
+				<figure class="position-absolute top-100 start-50 translate-middle mt-4 ms-n9 pe-5 d-none d-lg-block">
+					<svg>
+						<path class="fill-success" d="m181.6 6.7c-0.1 0-0.2-0.1-0.3 0-2.5-0.3-4.9-1-7.3-1.4-2.7-0.4-5.5-0.7-8.2-0.8-1.4-0.1-2.8-0.1-4.1-0.1-0.5 0-0.9-0.1-1.4-0.2-0.9-0.3-1.9-0.1-2.8-0.1-5.4 0.2-10.8 0.6-16.1 1.4-2.7 0.3-5.3 0.8-7.9 1.3-0.6 0.1-1.1 0.3-1.8 0.3-0.4 0-0.7-0.1-1.1-0.1-1.5 0-3 0.7-4.3 1.2-3 1-6 2.4-8.8 3.9-2.1 1.1-4 2.4-5.9 3.9-1 0.7-1.8 1.5-2.7 2.2-0.5 0.4-1.1 0.5-1.5 0.9s-0.7 0.8-1.1 1.2c-1 1-1.9 2-2.9 2.9-0.4 0.3-0.8 0.5-1.2 0.5-1.3-0.1-2.7-0.4-3.9-0.6-0.7-0.1-1.2 0-1.8 0-3.1 0-6.4-0.1-9.5 0.4-1.7 0.3-3.4 0.5-5.1 0.7-5.3 0.7-10.7 1.4-15.8 3.1-4.6 1.6-8.9 3.8-13.1 6.3-2.1 1.2-4.2 2.5-6.2 3.9-0.9 0.6-1.7 0.9-2.6 1.2s-1.7 1-2.5 1.6c-1.5 1.1-3 2.1-4.6 3.2-1.2 0.9-2.7 1.7-3.9 2.7-1 0.8-2.2 1.5-3.2 2.2-1.1 0.7-2.2 1.5-3.3 2.3-0.8 0.5-1.7 0.9-2.5 1.5-0.9 0.8-1.9 1.5-2.9 2.2 0.1-0.6 0.3-1.2 0.4-1.9 0.3-1.7 0.2-3.6 0-5.3-0.1-0.9-0.3-1.7-0.8-2.4s-1.5-1.1-2.3-0.8c-0.2 0-0.3 0.1-0.4 0.3s-0.1 0.4-0.1 0.6c0.3 3.6 0.2 7.2-0.7 10.7-0.5 2.2-1.5 4.5-2.7 6.4-0.6 0.9-1.4 1.7-2 2.6s-1.5 1.6-2.3 2.3c-0.2 0.2-0.5 0.4-0.6 0.7s0 0.7 0.1 1.1c0.2 0.8 0.6 1.6 1.3 1.8 0.5 0.1 0.9-0.1 1.3-0.3 0.9-0.4 1.8-0.8 2.7-1.2 0.4-0.2 0.7-0.3 1.1-0.6 1.8-1 3.8-1.7 5.8-2.3 4.3-1.1 9-1.1 13.3 0.1 0.2 0.1 0.4 0.1 0.6 0.1 0.7-0.1 0.9-1 0.6-1.6-0.4-0.6-1-0.9-1.7-1.2-2.5-1.1-4.9-2.1-7.5-2.7-0.6-0.2-1.3-0.3-2-0.4-0.3-0.1-0.5 0-0.8-0.1s-0.9 0-1.1-0.1-0.3 0-0.3-0.2c0-0.4 0.7-0.7 1-0.8 0.5-0.3 1-0.7 1.5-1l5.4-3.6c0.4-0.2 0.6-0.6 1-0.9 1.2-0.9 2.8-1.3 4-2.2 0.4-0.3 0.9-0.6 1.3-0.9l2.7-1.8c1-0.6 2.2-1.2 3.2-1.8 0.9-0.5 1.9-0.8 2.7-1.6 0.9-0.8 2.2-1.4 3.2-2 1.2-0.7 2.3-1.4 3.5-2.1 4.1-2.5 8.2-4.9 12.7-6.6 5.2-1.9 10.6-3.4 16.2-4 5.4-0.6 10.8-0.3 16.2-0.5h0.5c1.4-0.1 2.3-0.1 1.7 1.7-1.4 4.5 1.3 7.5 4.3 10 3.4 2.9 7 5.7 11.3 7.1 4.8 1.6 9.6 3.8 14.9 2.7 3-0.6 6.5-4 6.8-6.4 0.2-1.7 0.1-3.3-0.3-4.9-0.4-1.4-1-3-2.2-3.9-0.9-0.6-1.6-1.6-2.4-2.4-0.9-0.8-1.9-1.7-2.9-2.3-2.1-1.4-4.2-2.6-6.5-3.5-3.2-1.3-6.6-2.2-10-3-0.8-0.2-1.6-0.4-2.5-0.5-0.2 0-1.3-0.1-1.3-0.3-0.1-0.2 0.3-0.4 0.5-0.6 0.9-0.8 1.8-1.5 2.7-2.2 1.9-1.4 3.8-2.8 5.8-3.9 2.1-1.2 4.3-2.3 6.6-3.2 1.2-0.4 2.3-0.8 3.6-1 0.6-0.2 1.2-0.2 1.8-0.4 0.4-0.1 0.7-0.3 1.1-0.5 1.2-0.5 2.7-0.5 3.9-0.8 1.3-0.2 2.7-0.4 4.1-0.7 2.7-0.4 5.5-0.8 8.2-1.1 3.3-0.4 6.7-0.7 10-1 7.7-0.6 15.3-0.3 23 1.3 4.2 0.9 8.3 1.9 12.3 3.6 1.2 0.5 2.3 1.1 3.5 1.5 0.7 0.2 1.3 0.7 1.8 1.1 0.7 0.6 1.5 1.1 2.3 1.7 0.2 0.2 0.6 0.3 0.8 0.2 0.1-0.1 0.1-0.2 0.2-0.4 0.1-0.9-0.2-1.7-0.7-2.4-0.4-0.6-1-1.4-1.6-1.9-0.8-0.7-2-1.1-2.9-1.6-1-0.5-2-0.9-3.1-1.3-2.5-1.1-5.2-2-7.8-2.8-1-0.8-2.4-1.2-3.7-1.4zm-64.4 25.8c4.7 1.3 10.3 3.3 14.6 7.9 0.9 1 2.4 1.8 1.8 3.5-0.6 1.6-2.2 1.5-3.6 1.7-4.9 0.8-9.4-1.2-13.6-2.9-4.5-1.7-8.8-4.3-11.9-8.3-0.5-0.6-1-1.4-1.1-2.2 0-0.3 0-0.6-0.1-0.9s-0.2-0.6 0.1-0.9c0.2-0.2 0.5-0.2 0.8-0.2 2.3-0.1 4.7 0 7.1 0.4 0.9 0.1 1.6 0.6 2.5 0.8 1.1 0.4 2.3 0.8 3.4 1.1z"></path>
+					</svg>
+				</figure>
+				<!-- SVG decoration -->
+				<figure class="position-absolute top-0 start-0 ms-n9">	
+					<svg width="22px" height="22px" viewBox="0 0 22 22">
+						<polygon class="fill-orange" points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 "></polygon>
+					</svg>
+				</figure>
+				<!-- SVG decoration -->
+				<figure class="position-absolute top-100 start-100 translate-middle ms-5 d-none d-lg-block">
+					<svg width="21.5px" height="21.5px" viewBox="0 0 21.5 21.5">
+						<polygon class="fill-danger" points="21.5,14.3 14.4,9.9 18.9,2.8 14.3,0 9.9,7.1 2.8,2.6 0,7.2 7.1,11.6 2.6,18.7 7.2,21.5 11.6,14.4 18.7,18.9 "></polygon>
+					</svg>
+				</figure>
+				<!-- SVG decoration -->
+				<figure class="position-absolute top-0 start-100 translate-middle d-none d-md-block">
+					<svg width="27px" height="27px">
+						<path class="fill-purple" d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z"></path>
+					</svg>
+				</figure>
+				
+				<!-- Title -->
+				<h1>Education, talents, and career opportunities. All in one place.</h1>
+				<p>Get inspired and discover something new today. Grow your skill with the most reliable online courses and certifications in marketing, information technology, programming, and data science. </p>
+				
+				<!-- Search course -->
+				<div class="col-md-8 text-center mx-auto pb-5">
+					<form class="bg-body shadow rounded p-2">
+						<div class="input-group">
+							<input class="form-control border-0 me-1" type="search" placeholder="Find your course">
+							<button type="button" class="btn btn-primary mb-0 rounded z-index-1"><i class="fas fa-search"></i></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- Title and SVG END -->
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+Video START -->
+<section class="pb-0 py-sm-0 mt-n8">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 text-center mx-auto">
+				<div class="card card-body shadow p-2">
+					<div class="position-relative">
+						<!-- Image -->
+						<img src="assets/images/about/12.jpg" class="card-img rounded-2" alt="...">
+						<div class="card-img-overlay">
+							<!-- Video link -->
+							<div class="position-absolute top-50 start-50 translate-middle">
+								<a href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox="" data-gallery="video-tour">
+									<i class="fas fa-play"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Video END -->
+
+<!-- =======================
+Snippet code START -->
+<section>
+	<div class="container">
+		<div class="col-10 mx-auto">
+			<!-- Card START -->
+			<div class="card shadow p-0">
+				<!-- Card header -->
+				<div class="card-header border-bottom d-flex justify-content-between p-3 pb-0">
+					<ul class="nav nav-tabs nav-tabs-line">
+						<li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab" href="#tab-1">HTML</a> </li>
+						<li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Plugins</a> </li>
+					</ul>
+				</div>
+
+				<!-- Card body START -->
+				<div class="card-body p-3 pt-0">
+					<div class="tab-content">
+						<!-- Html tab -->
+						<div class="tab-pane show active" id="tab-1">
+							<div class="position-relative">
+								<pre id="copy-1" class="my-3 h-700px language-markup"><code class="language-markup" data-lang="html">&lt;!-- =======================
+Main Banner START --&gt;
+&lt;section class="bg-light"&gt;
+	&lt;div class="container pt-5 mt-0 mt-lg-5"&gt;
+
+		&lt;!-- Title and SVG START --&gt;
+		&lt;div class="row position-relative mb-0 mb-sm-5 pb-0 pb-lg-5"&gt;
+			&lt;div class="col-lg-8 text-center mx-auto position-relative"&gt;
+
+				&lt;!-- SVG decoration --&gt;
+				&lt;figure class="position-absolute top-100 start-50 translate-middle mt-4 ms-n9 pe-5 d-none d-lg-block"&gt;
+					&lt;svg&gt;
+						&lt;path class="fill-success" d="m181.6 6.7c-0.1 0-0.2-0.1-0.3 0-2.5-0.3-4.9-1-7.3-1.4-2.7-0.4-5.5-0.7-8.2-0.8-1.4-0.1-2.8-0.1-4.1-0.1-0.5 0-0.9-0.1-1.4-0.2-0.9-0.3-1.9-0.1-2.8-0.1-5.4 0.2-10.8 0.6-16.1 1.4-2.7 0.3-5.3 0.8-7.9 1.3-0.6 0.1-1.1 0.3-1.8 0.3-0.4 0-0.7-0.1-1.1-0.1-1.5 0-3 0.7-4.3 1.2-3 1-6 2.4-8.8 3.9-2.1 1.1-4 2.4-5.9 3.9-1 0.7-1.8 1.5-2.7 2.2-0.5 0.4-1.1 0.5-1.5 0.9s-0.7 0.8-1.1 1.2c-1 1-1.9 2-2.9 2.9-0.4 0.3-0.8 0.5-1.2 0.5-1.3-0.1-2.7-0.4-3.9-0.6-0.7-0.1-1.2 0-1.8 0-3.1 0-6.4-0.1-9.5 0.4-1.7 0.3-3.4 0.5-5.1 0.7-5.3 0.7-10.7 1.4-15.8 3.1-4.6 1.6-8.9 3.8-13.1 6.3-2.1 1.2-4.2 2.5-6.2 3.9-0.9 0.6-1.7 0.9-2.6 1.2s-1.7 1-2.5 1.6c-1.5 1.1-3 2.1-4.6 3.2-1.2 0.9-2.7 1.7-3.9 2.7-1 0.8-2.2 1.5-3.2 2.2-1.1 0.7-2.2 1.5-3.3 2.3-0.8 0.5-1.7 0.9-2.5 1.5-0.9 0.8-1.9 1.5-2.9 2.2 0.1-0.6 0.3-1.2 0.4-1.9 0.3-1.7 0.2-3.6 0-5.3-0.1-0.9-0.3-1.7-0.8-2.4s-1.5-1.1-2.3-0.8c-0.2 0-0.3 0.1-0.4 0.3s-0.1 0.4-0.1 0.6c0.3 3.6 0.2 7.2-0.7 10.7-0.5 2.2-1.5 4.5-2.7 6.4-0.6 0.9-1.4 1.7-2 2.6s-1.5 1.6-2.3 2.3c-0.2 0.2-0.5 0.4-0.6 0.7s0 0.7 0.1 1.1c0.2 0.8 0.6 1.6 1.3 1.8 0.5 0.1 0.9-0.1 1.3-0.3 0.9-0.4 1.8-0.8 2.7-1.2 0.4-0.2 0.7-0.3 1.1-0.6 1.8-1 3.8-1.7 5.8-2.3 4.3-1.1 9-1.1 13.3 0.1 0.2 0.1 0.4 0.1 0.6 0.1 0.7-0.1 0.9-1 0.6-1.6-0.4-0.6-1-0.9-1.7-1.2-2.5-1.1-4.9-2.1-7.5-2.7-0.6-0.2-1.3-0.3-2-0.4-0.3-0.1-0.5 0-0.8-0.1s-0.9 0-1.1-0.1-0.3 0-0.3-0.2c0-0.4 0.7-0.7 1-0.8 0.5-0.3 1-0.7 1.5-1l5.4-3.6c0.4-0.2 0.6-0.6 1-0.9 1.2-0.9 2.8-1.3 4-2.2 0.4-0.3 0.9-0.6 1.3-0.9l2.7-1.8c1-0.6 2.2-1.2 3.2-1.8 0.9-0.5 1.9-0.8 2.7-1.6 0.9-0.8 2.2-1.4 3.2-2 1.2-0.7 2.3-1.4 3.5-2.1 4.1-2.5 8.2-4.9 12.7-6.6 5.2-1.9 10.6-3.4 16.2-4 5.4-0.6 10.8-0.3 16.2-0.5h0.5c1.4-0.1 2.3-0.1 1.7 1.7-1.4 4.5 1.3 7.5 4.3 10 3.4 2.9 7 5.7 11.3 7.1 4.8 1.6 9.6 3.8 14.9 2.7 3-0.6 6.5-4 6.8-6.4 0.2-1.7 0.1-3.3-0.3-4.9-0.4-1.4-1-3-2.2-3.9-0.9-0.6-1.6-1.6-2.4-2.4-0.9-0.8-1.9-1.7-2.9-2.3-2.1-1.4-4.2-2.6-6.5-3.5-3.2-1.3-6.6-2.2-10-3-0.8-0.2-1.6-0.4-2.5-0.5-0.2 0-1.3-0.1-1.3-0.3-0.1-0.2 0.3-0.4 0.5-0.6 0.9-0.8 1.8-1.5 2.7-2.2 1.9-1.4 3.8-2.8 5.8-3.9 2.1-1.2 4.3-2.3 6.6-3.2 1.2-0.4 2.3-0.8 3.6-1 0.6-0.2 1.2-0.2 1.8-0.4 0.4-0.1 0.7-0.3 1.1-0.5 1.2-0.5 2.7-0.5 3.9-0.8 1.3-0.2 2.7-0.4 4.1-0.7 2.7-0.4 5.5-0.8 8.2-1.1 3.3-0.4 6.7-0.7 10-1 7.7-0.6 15.3-0.3 23 1.3 4.2 0.9 8.3 1.9 12.3 3.6 1.2 0.5 2.3 1.1 3.5 1.5 0.7 0.2 1.3 0.7 1.8 1.1 0.7 0.6 1.5 1.1 2.3 1.7 0.2 0.2 0.6 0.3 0.8 0.2 0.1-0.1 0.1-0.2 0.2-0.4 0.1-0.9-0.2-1.7-0.7-2.4-0.4-0.6-1-1.4-1.6-1.9-0.8-0.7-2-1.1-2.9-1.6-1-0.5-2-0.9-3.1-1.3-2.5-1.1-5.2-2-7.8-2.8-1-0.8-2.4-1.2-3.7-1.4zm-64.4 25.8c4.7 1.3 10.3 3.3 14.6 7.9 0.9 1 2.4 1.8 1.8 3.5-0.6 1.6-2.2 1.5-3.6 1.7-4.9 0.8-9.4-1.2-13.6-2.9-4.5-1.7-8.8-4.3-11.9-8.3-0.5-0.6-1-1.4-1.1-2.2 0-0.3 0-0.6-0.1-0.9s-0.2-0.6 0.1-0.9c0.2-0.2 0.5-0.2 0.8-0.2 2.3-0.1 4.7 0 7.1 0.4 0.9 0.1 1.6 0.6 2.5 0.8 1.1 0.4 2.3 0.8 3.4 1.1z"&gt;&lt;/path&gt;
+					&lt;/svg&gt;
+				&lt;/figure&gt;
+				&lt;!-- SVG decoration --&gt;
+				&lt;figure class="position-absolute top-0 start-0 ms-n9"&gt;	
+					&lt;svg width="22px" height="22px" viewBox="0 0 22 22"&gt;
+						&lt;polygon class="fill-orange" points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 "&gt;&lt;/polygon&gt;
+					&lt;/svg&gt;
+				&lt;/figure&gt;
+				&lt;!-- SVG decoration --&gt;
+				&lt;figure class="position-absolute top-100 start-100 translate-middle ms-5 d-none d-lg-block"&gt;
+					&lt;svg width="21.5px" height="21.5px" viewBox="0 0 21.5 21.5"&gt;
+						&lt;polygon class="fill-danger" points="21.5,14.3 14.4,9.9 18.9,2.8 14.3,0 9.9,7.1 2.8,2.6 0,7.2 7.1,11.6 2.6,18.7 7.2,21.5 11.6,14.4 18.7,18.9 "&gt;&lt;/polygon&gt;
+					&lt;/svg&gt;
+				&lt;/figure&gt;
+				&lt;!-- SVG decoration --&gt;
+				&lt;figure class="position-absolute top-0 start-100 translate-middle d-none d-md-block"&gt;
+					&lt;svg width="27px" height="27px"&gt;
+						&lt;path class="fill-purple" d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z"&gt;&lt;/path&gt;
+					&lt;/svg&gt;
+				&lt;/figure&gt;
+				
+				&lt;!-- Title --&gt;
+				&lt;h1&gt;Education, talents, and career opportunities. All in one place.&lt;/h1&gt;
+				&lt;p&gt;Get inspired and discover something new today. Grow your skill with the most reliable online courses and certifications in marketing, information technology, programming, and data science. &lt;/p&gt;
+				
+				&lt;!-- Search course --&gt;
+				&lt;div class="col-md-8 text-center mx-auto pb-5"&gt;
+					&lt;form class="bg-body shadow rounded p-2"&gt;
+						&lt;div class="input-group"&gt;
+							&lt;input class="form-control border-0 me-1" type="search" placeholder="Find your course"&gt;
+							&lt;button type="button" class="btn btn-primary mb-0 rounded z-index-1"&gt;&lt;i class="fas fa-search"&gt;&lt;/i&gt;&lt;/button&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Title and SVG END --&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- =======================
+Main Banner END --&gt;
+
+&lt;!-- =======================
+Video START --&gt;
+&lt;section class="pb-0 py-sm-0 mt-n8"&gt;
+	&lt;div class="container"&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-md-8 text-center mx-auto"&gt;
+				&lt;div class="card card-body shadow p-2"&gt;
+					&lt;div class="position-relative"&gt;
+						&lt;!-- Image --&gt;
+						&lt;img src="assets/images/about/12.jpg" class="card-img rounded-2" alt="..."&gt;
+						&lt;div class="card-img-overlay"&gt;
+							&lt;!-- Video link --&gt;
+							&lt;div class="position-absolute top-50 start-50 translate-middle"&gt;
+								&lt;a href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox="" data-gallery="video-tour"&gt;
+									&lt;i class="fas fa-play"&gt;&lt;/i&gt;
+								&lt;/a&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- =======================
+Video END --&gt;
+									
+								</code></pre>
+								<button id="copy_id-1" data-clipboard-action="copy" data-clipboard-target="#copy-1" class="copy-link btn btn-primary btn-sm">Copy</button>
+							</div>
+						</div>
+
+						<!-- Plugin tab -->
+						<div class="tab-pane" id="tab-3">
+							<!-- Css link -->
+							<div class="mt-4">
+								<p>Copy-paste the stylesheet <code>&lt;link&gt;</code> into your <code>&lt;head&gt;</code> to load the CSS.</p>
+								<div class="position-relative">
+									<pre id="copy-3" class="">
+										<code class="language-markup" data-lang="html">
+&lt;link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css"&gt;
+											</code></pre>
+									<button id="copy_id-3" data-clipboard-action="copy" data-clipboard-target="#copy-3" class="copy-link btn btn-primary btn-sm mb-0">Copy</button>
+								</div>
+							</div>
+
+							<!-- Script link  -->
+							<div class="mt-4">
+								<p>Copy-paste the following <code>&lt;script&gt;</code> near the end of your pages under <b>Vendors</b> to enable it.</p>
+								<div class="position-relative">
+									<pre id="copy-4" class="">
+										<code class="language-markup" data-lang="html">
+&lt;script src="assets/vendor/glightbox/js/glightbox.js"&gt;&lt;/script&gt;
+										</code></pre>
+									<button id="copy_id-4" data-clipboard-action="copy" data-clipboard-target="#copy-4" class="copy-link btn btn-primary btn-sm mb-0">Copy</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- Card body END -->
+
+			</div>
+			<!-- Card END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Snippet code END -->
+
+
+</main>
+
+<!-- =======================
+JavaScripts -->
+
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/simple-scrollbar.min.js"></script>
+<script src="assets/js/prism.js"></script>
+<script src="assets/js/clipboard.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+ 
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>

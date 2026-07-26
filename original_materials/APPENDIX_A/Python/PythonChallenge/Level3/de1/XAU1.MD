@@ -1,0 +1,1 @@
+Tách xâu thành các từ: Cho trước một xâu, hãy tách xâu thành các từ riêng biệt.

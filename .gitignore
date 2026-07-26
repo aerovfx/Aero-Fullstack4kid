@@ -16,8 +16,8 @@ venv/
 *.pyc
 __pycache__/
 
-# Node.js dependencies and build output
-node_modules/
-dist/
-dist-ssr/
-*.local
+# Node.js dependencies and build output (inside platform/)
+platform/node_modules/
+platform/dist/
+platform/dist-ssr/
+platform/*.local

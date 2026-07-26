@@ -1,0 +1,1 @@
+Nén xâu bằng thuật toán Lempel-Ziv-Welch (LZW): Xây dựng một từ điển và sử dụng nó để nén xâu bằng cách thay thế các chuỗi xuất hiện lặp lại trong xâu bằng các mã ngắn hơn.

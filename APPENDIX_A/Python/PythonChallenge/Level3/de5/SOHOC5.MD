@@ -1,1 +1,0 @@
-Tính tổng của tất cả các số chẵn từ 1 đến 100.

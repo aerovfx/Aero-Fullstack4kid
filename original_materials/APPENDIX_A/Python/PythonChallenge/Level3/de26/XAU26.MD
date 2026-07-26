@@ -1,0 +1,1 @@
+Tìm tất cả các xâu con đặc biệt: Tìm tất cả các xâu con đặc biệt trong một xâu, ví dụ: tất cả các số nguyên, số thực hoặc địa chỉ email.

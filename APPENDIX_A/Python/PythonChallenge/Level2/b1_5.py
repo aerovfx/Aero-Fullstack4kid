@@ -1,5 +1,0 @@
-a = input('so thu nhat:')
-b = input('sp thu hai:')
-c = input('so thu ba:')
-d = input('so thu tu:')
-print('trung binh cong:', (int(a)+int(b)+int(c)+int(d))/4)

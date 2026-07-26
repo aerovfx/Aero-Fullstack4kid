@@ -1,1 +1,0 @@
-Tìm xâu con chứa tất cả các từ: Cho trước một xâu và một danh sách các từ, tìm xâu con ngắn nhất trong xâu mà chứa tất cả các từ trong danh sách.

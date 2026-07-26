@@ -1,2 +1,0 @@
-Tối ưu đặt chỗ trên máy bay
-Một hãng hàng không muốn tối ưu việc đặt chỗ trên máy bay để tận dụng tối đa không gian. Viết một chương trình Python nhận vào thông tin về số lượng tầng, số lượng hàng ghế trên mỗi tầng và thông tin về sự đặt chỗ của hành khách. Chương trình sắp xếp các chỗ ngồi trên máy bay sao cho các hàng ghế cạnh nhau có chỗ trống ít nhất và tận dụng tối đa không gian trên máy bay. In ra danh sách chỗ ngồi đã được sắp xếp.

@@ -1,0 +1,1 @@
+Kiểm tra xâu con đối xứng: Kiểm tra xem xâu có chứa một xâu con đối xứng hay không.

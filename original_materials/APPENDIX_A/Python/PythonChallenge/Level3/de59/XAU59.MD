@@ -1,0 +1,1 @@
+Mã hoá xâu bằng thuật toán XOR: Thực hiện phép XOR giữa mỗi ký tự trong xâu với một khóa mã hóa để mã hoá xâu.

@@ -1,1 +1,0 @@
-Tìm chuỗi con có tổng các chữ số lớn nhất: Tìm chuỗi con liên tiếp trong một xâu số có tổng các chữ số lớn nhất.

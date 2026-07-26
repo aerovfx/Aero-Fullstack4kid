@@ -1,0 +1,1 @@
+Nén và mã hoá xâu sử dụng các biến đổi toán học: Áp dụng các phép biến đổi toán học như biến đổi Fourier hoặc biến đổi cosin rời rạc để nén và mã hoá xâu.
