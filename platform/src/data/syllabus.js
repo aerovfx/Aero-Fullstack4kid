@@ -192,8 +192,8 @@ export const coursesData = {
       }
     ]
   },
-  "4_MOBILE_DEV": {
-    id: "4_MOBILE_DEV",
+  "4_DATA_SCIENCE": {
+    id: "4_DATA_SCIENCE",
     title: "Data Science: NumPy & Pandas",
     shortDesc: "Học phân tích dữ liệu, xử lý ma trận số học với NumPy và làm sạch bảng dữ liệu với thư viện Pandas.",
     syllabus: [
