@@ -1,1 +1,0 @@
-Sắp xếp xâu con theo thứ tự từ điển: Cho trước một xâu, sắp xếp tất cả các xâu con có độ dài k từ xâu ban đầu theo thứ tự từ điển.

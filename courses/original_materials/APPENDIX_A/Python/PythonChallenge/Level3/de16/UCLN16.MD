@@ -1,1 +1,0 @@
-Tìm ước chung lớn nhất của hai số nguyên

@@ -1,0 +1,1 @@
+Kiểm tra xâu con tăng dần: Kiểm tra xem xâu có chứa một xâu con các ký tự tăng dần theo thứ tự từ điển hay không.

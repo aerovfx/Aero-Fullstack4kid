@@ -1,0 +1,1 @@
+Tìm xâu con không chứa các ký tự cho trước: Cho trước một xâu và một tập hợp các ký tự, tìm xâu con dài nhất trong xâu mà không chứa bất kỳ ký tự nào trong tập hợp đã cho.

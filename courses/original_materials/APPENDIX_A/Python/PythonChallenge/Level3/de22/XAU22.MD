@@ -1,1 +1,0 @@
-Tìm xâu con đặc biệt dài nhất: Tìm xâu con dài nhất trong một xâu mà thỏa mãn một tiêu chí đặc biệt, ví dụ: chỉ chứa các ký tự chữ cái hoa, chữ số, hoặc ký tự đặc biệt.

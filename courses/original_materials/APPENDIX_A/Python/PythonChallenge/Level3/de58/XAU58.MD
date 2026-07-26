@@ -1,1 +1,0 @@
-Giải mã xâu từ thuật toán Lempel-Ziv-Welch (LZW): Sử dụng từ điển đã được tạo trong quá trình nén để giải mã xâu.

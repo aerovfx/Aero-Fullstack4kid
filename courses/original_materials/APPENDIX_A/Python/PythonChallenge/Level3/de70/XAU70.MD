@@ -1,1 +1,0 @@
-Kết hợp nén, mã hoá và mã hóa kết quả: Nén xâu, sau đó mã hoá kết quả nén bằng một thuật toán mã hoá như Base64 hoặc Uuencode để tạo ra một xâu kết quả mã hoá.

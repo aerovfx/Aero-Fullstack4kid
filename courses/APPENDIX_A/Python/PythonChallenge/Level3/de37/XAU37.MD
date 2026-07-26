@@ -1,0 +1,1 @@
+Thay thế các ký tự trong một xâu: Thay thế tất cả các ký tự cho trước trong một xâu thành một ký tự khác.

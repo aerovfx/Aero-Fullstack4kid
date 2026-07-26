@@ -1,1 +1,0 @@
-Mã hoá xâu sử dụng mã màu: Sử dụng bảng mã màu để mã hoá các khối xâu thành các mã màu tương ứng.

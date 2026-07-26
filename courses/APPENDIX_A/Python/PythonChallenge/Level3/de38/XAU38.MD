@@ -1,0 +1,1 @@
+Xóa khoảng trắng thừa trong một xâu: Xóa các khoảng trắng thừa trong một xâu và chỉ giữ lại một khoảng trắng duy nhất giữa các từ.

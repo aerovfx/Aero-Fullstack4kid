@@ -1,0 +1,1 @@
+Xóa xâu con để tạo thành xâu đối xứng dài nhất: Tìm xâu con dài nhất trong một xâu mà khi xóa nó đi, xâu còn lại trở thành xâu đối xứng.

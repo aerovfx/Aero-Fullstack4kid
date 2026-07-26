@@ -1,0 +1,1 @@
+Hãy viết chương trình đổi tờ giấy bạc có mệnh giá n (Việt Nam đồng) ra ba loại giấy bạc có mệnh giá 500, 200, 100 (Việt Nam đồng) sao cho số tờ gấy bạc phải sử dụng là ít nhất (n được nhập từ bàn phím).

@@ -1,0 +1,1 @@
+Toán tử ?., còn được gọi là Optional Chaining Operator, là một tính năng có trong một số ngôn ngữ lập trình như JavaScript và TypeScript. Toán tử này cho phép truy cập an toàn vào các thuộc tính của một đối tượng mà có thể không tồn tại, từ đó giúp tránh lỗi TypeError khi truy cập vào thuộc tính không xác định hoặc không tồn tại. <br/>

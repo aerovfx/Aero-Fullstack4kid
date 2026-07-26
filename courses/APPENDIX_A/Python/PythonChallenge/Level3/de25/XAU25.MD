@@ -1,0 +1,1 @@
+Kiểm tra xâu con đối xứng dài nhất: Tìm xâu con đối xứng dài nhất trong một xâu.

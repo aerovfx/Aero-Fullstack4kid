@@ -1,0 +1,1 @@
+Tách các từ hoa và thường trong một xâu: Tách các từ hoa và thường trong một xâu thành một danh sách hoặc một mảng.

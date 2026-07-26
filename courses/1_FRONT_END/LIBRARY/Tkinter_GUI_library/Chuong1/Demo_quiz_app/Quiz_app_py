@@ -1,0 +1,74 @@
+from tkinter import *
+import random
+
+class Quiz:
+    def __init__(self, master):
+        self.master = master
+        self.master.geometry("500x300")
+        self.master.title("Quiz App")
+        self.question_label = Label(self.master, text="")
+        self.question_label.pack(pady=10)
+        self.var1 = StringVar()
+        self.var2 = StringVar()
+        self.var3 = StringVar()
+        self.var4 = StringVar()
+        self.var1.set("")
+        self.var2.set("")
+        self.var3.set("")
+        self.var4.set("")
+        self.radio_button1 = Radiobutton(self.master, textvariable=self.var1, value=1)
+        self.radio_button2 = Radiobutton(self.master, textvariable=self.var2, value=2)
+        self.radio_button3 = Radiobutton(self.master, textvariable=self.var3, value=3)
+        self.radio_button4 = Radiobutton(self.master, textvariable=self.var4, value=4)
+        self.radio_button1.pack()
+        self.radio_button2.pack()
+        self.radio_button3.pack()
+        self.radio_button4.pack()
+        self.submit_button = Button(self.master, text="Submit", command=self.check_answer)
+        self.submit_button.pack(pady=10)
+        self.next_button = Button(self.master, text="Next", command=self.next_question)
+        self.next_button.pack(pady=10)
+        self.questions = []
+        self.answers = []
+        self.correct_answers = []
+        self.current_question = -1
+        self.add_question()
+        self.next_question()
+
+    def add_question(self):
+        # add the question, answers and correct answer to the lists
+        question = input("Enter the question: ")
+        answer1 = input("Enter answer 1: ")
+        answer2 = input("Enter answer 2: ")
+        answer3 = input("Enter answer 3: ")
+        answer4 = input("Enter answer 4: ")
+        correct_answer = input("Enter the correct answer (1-4): ")
+        self.questions.append(question)
+        self.answers.append([answer1, answer2, answer3, answer4])
+        self.correct_answers.append(int(correct_answer))
+
+    def next_question(self):
+        # go to the next question and display it
+        self.current_question += 1
+        if self.current_question >= len(self.questions):
+            self.current_question = 0
+        self.question_label.config(text=self.questions[self.current_question])
+        random.shuffle(self.answers[self.current_question])
+        self.var1.set(self.answers[self.current_question][0])
+        self.var2.set(self.answers[self.current_question][1])
+        self.var3.set(self.answers[self.current_question][2])
+        self.var4.set(self.answers[self.current_question][3])
+
+    def check_answer(self):
+        # check if the selected answer is correct
+        answer = int(self.radio_button1.get() + self.radio_button2.get() + self.radio_button3.get() + self.radio_button4.get())
+        if answer == self.correct_answers[self.current_question]:
+            messagebox.showinfo("Correct", "Your answer is correct!")
+        else:
+            messagebox.showerror("Incorrect", "Your answer is incorrect.")
+
+
+if __name__ == '__main__':
+    root = Tk()
+    app = Quiz(root)
+    root.mainloop()

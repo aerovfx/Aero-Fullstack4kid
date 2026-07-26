@@ -1,1 +1,0 @@
-Nén xâu bằng thuật toán Run-Length Encoding: Thay thế các chuỗi lặp lại trong xâu bằng một ký tự và số lần lặp lại. Ví dụ: "AAAABBBCCDAA" được nén thành "4A3B2C1D2A".

@@ -1,1 +1,0 @@
-Tính tổng của tất cả các số nguyên chia hết cho 3 từ 1 đến 100.

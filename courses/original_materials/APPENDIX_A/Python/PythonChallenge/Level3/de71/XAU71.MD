@@ -1,1 +1,0 @@
-Tìm xâu con tăng dần dài nhất: Tìm xâu con trong một xâu sao cho các ký tự trong xâu con tăng dần.

@@ -1,1 +1,0 @@
-Kiểm tra xâu con phụ thuộc nhau: Kiểm tra xem hai xâu có phụ thuộc nhau hay không, tức là xâu thứ hai chỉ chứa các ký tự của xâu thứ nhất và giữ nguyên thứ tự.

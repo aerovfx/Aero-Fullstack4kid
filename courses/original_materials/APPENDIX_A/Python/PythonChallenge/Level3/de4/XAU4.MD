@@ -1,1 +1,0 @@
-Kiểm tra xâu con: Cho trước hai xâu, hãy kiểm tra xem xâu thứ nhất có chứa xâu thứ hai làm xâu con hay không.

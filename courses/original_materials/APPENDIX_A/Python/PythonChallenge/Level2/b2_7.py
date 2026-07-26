@@ -1,6 +1,0 @@
-print(' CHUONG TRINH GIAI PT ax+b=0')
-a=input('Nhap he so a=')
-b=input('Nhap he so b=')
-if ( int(a) < 0 ) or  ( int(a) > 0 ) : print('phuong trinh',a,'x+',b,'=0',' co nghiem x = ',-int(b)/int(a)) 
-if ( int(a) == 0 ) and ( int(b) == 0 ) : print('phuong trinh co vo so nghiem')
-if ( int(a) == 0 ) and ( int(b) > 0 ) or (int(b)<0) : print('phuong trinh vo nghiem')

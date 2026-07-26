@@ -1,0 +1,1 @@
+Xóa khoảng trắng dư thừa trong xâu: Cho trước một xâu có chứa các khoảng trắng dư thừa, hãy loại bỏ các khoảng trắng thừa và chỉ giữ lại một khoảng trắng duy nhất giữa các từ.
