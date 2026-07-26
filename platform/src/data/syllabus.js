@@ -242,94 +242,35 @@ export const coursesData = {
   },
   "5_ARTIFICIAL_INTELLIGENCE": {
     id: "5_ARTIFICIAL_INTELLIGENCE",
-    title: "AI & Cybersecurity: Tools & Sniffers",
-    shortDesc: "Lập trình Python/C++ hệ thống, phân tích gói tin mạng và ứng dụng mô hình AI (Ollama/Gemini) tự động hóa an ninh thông tin.",
+    title: "AI: Machine Learning & NLP",
+    shortDesc: "Tìm hiểu các nguyên lý trí tuệ nhân tạo, học máy, học sâu và xử lý ngôn ngữ tự nhiên (NLP).",
     syllabus: [
       {
-        id: "sec-m1",
-        title: "Module 1: Lập trình Python & C++ cho An ninh mạng",
-        shortDesc: "Lập trình socket mạng bằng Python và kiểm soát bộ nhớ Stack/Heap bằng C++.",
+        id: "ai-m1",
+        title: "Module 1: Machine Learning & Deep Learning Basics",
+        shortDesc: "Các khái niệm cơ bản về AI, học máy và mạng nơ-ron nhân tạo.",
         lessons: [
           {
-            id: "sec-w1",
-            title: "Bài 1: Giới thiệu Python cho Security & Sockets",
+            id: "ai-w1",
+            title: "Bài 1: Tổng quan Học máy & Scikit-Learn",
             duration: "2.5 giờ",
             objectives: [
-              "Hiểu vai trò của Python trong scripting an ninh mạng.",
-              "Viết chương trình Client-Server socket đơn giản.",
-              "Thiết lập cơ chế timeout cho socket."
+              "Hiểu sự khác biệt giữa AI, Machine Learning và Deep Learning.",
+              "Sử dụng thư viện Scikit-Learn huấn luyện mô hình dự đoán cơ bản.",
+              "Hiểu các bước xử lý dữ liệu (data preprocessing)."
             ],
-            content: "### 1. Socket Programming in Python\nThư viện socket tích hợp giúp thiết lập kết nối mạng nhanh chóng:\n```python\nimport socket\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ns.connect(('127.0.0.1', 80))\n```"
-          },
-          {
-            id: "sec-w2",
-            title: "Bài 2: Phân tích & Gửi gói tin nâng cao với Scapy",
-            duration: "2.5 giờ",
-            objectives: [
-              "Chặn bắt gói tin mạng bằng Scapy sniff.",
-              "Tự thiết kế gói tin IP/TCP tùy chỉnh.",
-              "Thực hiện quét mạng ARP Scan cơ bản."
-            ],
-            content: "### 1. Packet sniffing with Scapy\n```python\nfrom scapy.all import sniff\npackets = sniff(count=5)\npackets.show()\n```"
+            content: "### 1. Phân biệt AI, ML, và DL\n- **Trí tuệ nhân tạo (AI)**: Lĩnh vực rộng lớn mô phỏng trí thông minh con người.\n- **Học máy (ML)**: Tập hợp các thuật toán học từ dữ liệu mà không cần lập trình tường minh.\n- **Học sâu (DL)**: Phân ngành của ML sử dụng mạng nơ-ron sâu (Deep Neural Networks).\n### 2. Ví dụ huấn luyện mô hình Scikit-Learn\n```python\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n```"
           }
         ],
         labs: [
           {
-            id: "sec-lab1",
-            title: "Lab 1: Phát triển TCP Port Scanner đa luồng",
-            description: "Lập trình một công cụ quét cổng TCP song song sử dụng thread trong Python và C++, so sánh tốc độ thực thi giữa hai phiên bản trên cổng localhost.",
+            id: "ai-lab1",
+            title: "Lab 1: Xây dựng bộ dự đoán phân loại Bệnh tim mạch",
+            description: "Thực hành quy trình chuẩn bị dữ liệu, chia tập Train/Test, huấn luyện và đánh giá mô hình phân loại sử dụng thư viện Scikit-Learn.",
             steps: [
-              "Bước 1: Viết bản Python sử dụng queue và module threading để quét 1024 cổng đầu tiên.",
-              "Bước 2: Viết bản C++ tương ứng sử dụng std::thread và kiểm soát kết nối Socket.",
-              "Bước 3: Đo đạc và lập biểu đồ so sánh tốc độ quét của hai công cụ."
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "5_CYBERSECURITY": {
-    id: "5_CYBERSECURITY",
-    title: "Cybersecurity & Practical Pentesting",
-    shortDesc: "Đào tạo kỹ năng thực chiến an ninh mạng, kiểm thử xâm nhập thực tế và sử dụng các công cụ Kali Linux (Nmap, Wireshark, Hashcat, Metasploit).",
-    syllabus: [
-      {
-        id: "cy-m1",
-        title: "Module 1: Dò quét mạng & Phân tích an ninh hệ thống",
-        shortDesc: "Học cách thiết lập môi trường Lab ảo và thực hiện dò quét cổng, phân tích lưu lượng mạng.",
-        lessons: [
-          {
-            id: "cy-w1",
-            title: "Bài 1: Thiết lập Lab ảo & Linux cơ bản",
-            duration: "2.5 giờ",
-            objectives: [
-              "Cài đặt phần mềm ảo hóa VirtualBox và hệ điều hành Kali Linux.",
-              "Thành thạo các lệnh quản trị Linux CLI căn bản.",
-              "Viết và chạy thành công script Bash đơn giản đầu tiên."
-            ],
-            content: "### 1. Mô hình phòng Lab bảo mật\nPhòng lab bao gồm máy tấn công (Kali Linux) và máy mục tiêu (Windows/Linux Server lỗi) kết nối thông qua mạng Host-only cô lập.\n### 2. Các lệnh Linux cơ bản\n- \`ip a\`: Kiểm tra card mạng.\n- \`chmod +x script.sh\`: Cấp quyền chạy file script."
-          },
-          {
-            id: "cy-w2",
-            title: "Bài 2: Dò quét mạng Nmap & Phân tích Wireshark",
-            duration: "2.5 giờ",
-            objectives: [
-              "Sử dụng các kỹ thuật quét SYN Scan, UDP Scan của Nmap để phát hiện cổng mở.",
-              "Cấu hình Wireshark chặn bắt và giải mã dữ liệu mạng.",
-              "Sử dụng bộ lọc (filters) Wireshark để trích xuất thông tin đăng nhập thô."
-            ],
-            content: "### 1. Quét SYN Scan với Nmap\nSYN Scan (Half-open scan) không hoàn thành bắt tay 3 bước, giúp tăng tốc độ quét và hạn chế ghi log:\n```bash\nnmap -sS -sV 192.168.56.101\n```\n### 2. Bắt gói tin Wireshark\nChặn bắt lưu lượng mạng và phân tích chuỗi TCP Stream để tìm mật khẩu truyền không mã hóa."
-          }
-        ],
-        labs: [
-          {
-            id: "cy-lab1",
-            title: "Lab 1: Thực hiện Audit An ninh mạng nội bộ sử dụng Nmap và Wireshark",
-            description: "Thực hiện quét phát hiện các lỗi bảo mật dịch vụ chạy trên máy ảo local và phân tích gói tin để bắt thông tin đăng nhập HTTP.",
-            steps: [
-              "Bước 1: Khởi động máy ảo Kali Linux và mục tiêu, kiểm tra kết nối ping.",
-              "Bước 2: Chạy Nmap quét toàn bộ cổng mở và phát hiện hệ điều hành.",
-              "Bước 3: Mở Wireshark bắt gói tin, đăng nhập thử vào trang web DVWA cục bộ và tìm mật khẩu."
+              "Bước 1: Load tập dữ liệu thông số sức khỏe tim mạch bằng Pandas.",
+              "Bước 2: Sử dụng train_test_split phân chia tập huấn luyện và tập kiểm thử.",
+              "Bước 3: Huấn luyện bộ phân loại Logistic Regression và đánh giá độ chính xác (Accuracy)."
             ]
           }
         ]
@@ -426,6 +367,102 @@ export const coursesData = {
               "Bước 1: Khai báo phụ thuộc spl-token trong tệp Cargo.toml.",
               "Bước 2: Viết struct Context nhận các tài khoản Mint, Token Account và Authority.",
               "Bước 3: Viết logic gọi chéo (CPI - Cross Program Invocation) sang Token Program để mint token."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "7_SECURITY_AI": {
+    id: "7_SECURITY_AI",
+    title: "Security: Cybersecurity & Next-Gen AI",
+    shortDesc: "Lập trình Python/C++ hệ thống, phân tích gói tin mạng và ứng dụng mô hình AI (Ollama/Gemini) tự động hóa an ninh thông tin.",
+    syllabus: [
+      {
+        id: "sec-m1",
+        title: "Module 1: Lập trình Python & C++ cho An ninh mạng",
+        shortDesc: "Lập trình socket mạng bằng Python và kiểm soát bộ nhớ Stack/Heap bằng C++.",
+        lessons: [
+          {
+            id: "sec-w1",
+            title: "Bài 1: Giới thiệu Python cho Security & Sockets",
+            duration: "2.5 giờ",
+            objectives: [
+              "Hiểu vai trò của Python trong scripting an ninh mạng.",
+              "Viết chương trình Client-Server socket đơn giản.",
+              "Thiết lập cơ chế timeout cho socket."
+            ],
+            content: "### 1. Socket Programming in Python\nThư viện socket tích hợp giúp thiết lập kết nối mạng nhanh chóng:\n```python\nimport socket\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ns.connect(('127.0.0.1', 80))\n```"
+          },
+          {
+            id: "sec-w2",
+            title: "Bài 2: Phân tích & Gửi gói tin mạng với Scapy",
+            duration: "2.5 giờ",
+            objectives: [
+              "Chặn bắt gói tin mạng bằng Scapy sniff.",
+              "Tự thiết kế gói tin IP/TCP tùy chỉnh.",
+              "Thực hiện quét mạng ARP Scan cơ bản."
+            ],
+            content: "### 1. Packet sniffing with Scapy\n```python\nfrom scapy.all import sniff\npackets = sniff(count=5)\npackets.show()\n```"
+          }
+        ],
+        labs: [
+          {
+            id: "sec-lab1",
+            title: "Lab 1: Phát triển TCP Port Scanner đa luồng",
+            description: "Lập trình một công cụ quét cổng TCP song song sử dụng thread trong Python và C++, so sánh tốc độ thực thi giữa hai phiên bản trên cổng localhost.",
+            steps: [
+              "Bước 1: Viết bản Python sử dụng queue và module threading để quét 1024 cổng đầu tiên.",
+              "Bước 2: Viết bản C++ tương ứng sử dụng std::thread và kiểm soát kết nối Socket.",
+              "Bước 3: Đo đạc và lập biểu đồ so sánh tốc độ quét của hai công cụ."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "7_SECURITY_PRACTICAL": {
+    id: "7_SECURITY_PRACTICAL",
+    title: "Security: Practical Pentesting & Auditing",
+    shortDesc: "Đào tạo kỹ năng thực chiến an ninh mạng, kiểm thử xâm nhập thực tế và sử dụng các công cụ Kali Linux (Nmap, Wireshark, Hashcat, Metasploit).",
+    syllabus: [
+      {
+        id: "cy-m1",
+        title: "Module 1: Dò quét mạng & Phân tích an ninh hệ thống",
+        shortDesc: "Học cách thiết lập môi trường Lab ảo và thực hiện dò quét cổng, phân tích lưu lượng mạng.",
+        lessons: [
+          {
+            id: "cy-w1",
+            title: "Bài 1: Thiết lập Lab ảo & Linux cơ bản",
+            duration: "2.5 giờ",
+            objectives: [
+              "Cài đặt phần mềm ảo hóa VirtualBox và hệ điều hành Kali Linux.",
+              "Thành thạo các lệnh quản trị Linux CLI căn bản.",
+              "Viết và chạy thành công script Bash đơn giản đầu tiên."
+            ],
+            content: "### 1. Mô hình phòng Lab bảo mật\nPhòng lab bao gồm máy tấn công (Kali Linux) và máy mục tiêu (Windows/Linux Server lỗi) kết nối thông qua mạng Host-only cô lập.\n### 2. Các lệnh Linux cơ bản\n- \`ip a\`: Kiểm tra card mạng.\n- \`chmod +x script.sh\`: Cấp quyền chạy file script."
+          },
+          {
+            id: "cy-w2",
+            title: "Bài 2: Dò quét mạng Nmap & Phân tích Wireshark",
+            duration: "2.5 giờ",
+            objectives: [
+              "Sử dụng các kỹ thuật quét SYN Scan, UDP Scan của Nmap để phát hiện cổng mở.",
+              "Cấu hình Wireshark chặn bắt và giải mã dữ liệu mạng.",
+              "Sử dụng bộ lọc (filters) Wireshark để trích xuất thông tin đăng nhập thô."
+            ],
+            content: "### 1. Quét SYN Scan với Nmap\nSYN Scan (Half-open scan) không hoàn thành bắt tay 3 bước, giúp tăng tốc độ quét và hạn chế ghi log:\n```bash\nnmap -sS -sV 192.168.56.101\n```\n### 2. Bắt gói tin Wireshark\nChặn bắt lưu lượng mạng và phân tích chuỗi TCP Stream để tìm mật khẩu truyền không mã hóa."
+          }
+        ],
+        labs: [
+          {
+            id: "cy-lab1",
+            title: "Lab 1: Thực hiện Audit An ninh mạng nội bộ",
+            description: "Thực hiện quét phát hiện các lỗi bảo mật dịch vụ chạy trên máy ảo local và phân tích gói tin để bắt thông tin đăng nhập HTTP.",
+            steps: [
+              "Bước 1: Khởi động máy ảo Kali Linux và mục tiêu, kiểm tra kết nối ping.",
+              "Bước 2: Chạy Nmap quét toàn bộ cổng mở và phát hiện hệ điều hành.",
+              "Bước 3: Mở Wireshark bắt gói tin, đăng nhập thử vào trang web DVWA cục bộ và tìm mật khẩu."
             ]
           }
         ]

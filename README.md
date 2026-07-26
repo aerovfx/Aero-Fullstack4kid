@@ -15,10 +15,11 @@ Hệ thống cung cấp 8 lộ trình học tập chuyên sâu được thiết 
 | | [Rust & Axum Web API](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_BACK_END/rust-backend-10weeks/) | Ownership, Borrowing & Lifetimes, Tokio Runtime, Axum HTTP Server, SQLx (PostgreSQL), JWT. |
 | **3. Software Tools** | [Git, GitHub & Docker](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/3_SOFTWARE_DEV/git-docker-10weeks/) | Git commits, Branching, Merge Conflicts, GitHub Flow (PRs), Dockerfile, Docker Compose, CI/CD. |
 | **4. Data Science** | [NumPy & Pandas Foundations](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_DATA_SCIENCE/data-science-10weeks/) | Môi trường Jupyter, Tính toán ma trận với NumPy, Làm sạch & Phân nhóm DataFrame bằng Pandas. |
-| **5. Cybersecurity & AI** | [Cybersec & Next-Gen AI](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_ARTIFICIAL_INTELLIGENCE/cybersec-ai-10weeks/) | Lập trình socket Python/C++, Phân tích gói tin Scapy, AI Vulnerability Scanning, AI Log Auditing. |
-| | [Practical Cybersecurity](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_ARTIFICIAL_INTELLIGENCE/cybersecurity-10weeks/) | Lab Setup (Kali), Bash Scripting, Nmap Scanning, Wireshark Sniffing, Hashcat Cracking, Metasploit, Snort. |
+| **5. Artificial Intelligence**| [AI: Machine Learning & NLP](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_ARTIFICIAL_INTELLIGENCE/) | Nguyên lý AI, Học máy hồi quy/phân loại Scikit-Learn, Mạng nơ-ron sâu, Xử lý ngôn ngữ tự nhiên (NLP). |
 | **6. Web3 & Blockchain**| [Ethereum, Solidity & DApps](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_WEB3/blockchain-dapps-10weeks/) | EVM, Hợp đồng thông minh Solidity, Tiêu chuẩn Token ERC-20/NFTs, Remix IDE, Ethers.js, MetaMask. |
 | | [Rust & Solana Programs](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_WEB3/rust-web3-10weeks/) | SVM (Solana Virtual Machine), Account Model, Anchor Framework, SPL Tokens, CPI calls, Unit tests. |
+| **7. Cybersecurity** | [Cybersec & Next-Gen AI](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersec-ai-10weeks/) | Lập trình socket Python/C++, Phân tích gói tin Scapy, AI Vulnerability Scanning, AI Log Auditing. |
+| | [Practical Cybersecurity](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersecurity-10weeks/) | Lab Setup (Kali), Bash Scripting, Nmap Scanning, Wireshark Sniffing, Hashcat Cracking, Metasploit, Snort. |
 
 ---
 
@@ -38,10 +39,11 @@ Thư mục gốc của repository được tối ưu hoá và dọn dẹp cực 
 
 ```text
 /Users/dangvietchung/Aero-Fullstack4kid/
-├── courses/                     ← [Chính] Chứa 8 khoá học 10 tuần, tài liệu thô gốc & phụ lục
+├── courses/                     ← [Chính] Chứa các khoá học 10 tuần, tài liệu thô gốc & phụ lục
 │   ├── 1_FRONT_END/             ← Chứa khoá học 10 tuần & thư mục tài liệu thô gốc Front-end
 │   ├── ...                      
 │   ├── 6_WEB3/                  ← Chứa các khoá học 10 tuần & thư mục tài liệu thô gốc Web3
+│   ├── 7_SECURITY/              ← Chứa 2 khoá học 10 tuần về Bảo mật & Công cụ bảo mật
 │   └── APPENDIX_A/              ← Phụ lục tài liệu học tập (Swift, tips, etc.)
 ├── platform/                    ← Nền tảng ứng dụng Web hiển thị giáo trình tương tác (React / Vite)
 │   ├── src/                     ← Mã nguồn giao diện (Roadmap, Lesson Viewer, AI Simulator, Code Center)

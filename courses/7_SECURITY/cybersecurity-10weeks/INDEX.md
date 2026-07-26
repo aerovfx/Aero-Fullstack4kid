@@ -38,8 +38,8 @@ Chào mừng bạn đến với khoá học **Kỹ thuật Bảo mật & Kiểm 
 
 | Tài liệu / Document | Mô tả / Description |
 |---------------------|---------------------|
-| [Lịch Trình Học / Schedule](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_ARTIFICIAL_INTELLIGENCE/cybersecurity-10weeks/schedule.md) | Phân bổ 20 buổi học chi tiết và yêu cầu đầu ra / Detail schedule for 20 sessions |
-| [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_ARTIFICIAL_INTELLIGENCE/cybersecurity-10weeks/projects/final_project.md) | Danh sách 3 hướng dự án tốt nghiệp Bảo mật / 3 tracks of final projects |
+| [Lịch Trình Học / Schedule](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersecurity-10weeks/schedule.md) | Phân bổ 20 buổi học chi tiết và yêu cầu đầu ra / Detail schedule for 20 sessions |
+| [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersecurity-10weeks/projects/final_project.md) | Danh sách 3 hướng dự án tốt nghiệp Bảo mật / 3 tracks of final projects |
 
 ---
 
