@@ -37,13 +37,13 @@ Thư mục gốc của repository được tối ưu hoá và dọn dẹp cực 
 
 ```text
 /Users/dangvietchung/Aero-Fullstack4kid/
-├── courses/                     ← [Chính] Chứa 8 khoá học 10 tuần (đầy đủ INDEX, schedule, bài học)
-│   └── 4_MOBILE_DEV/.../code/   ← [Có chứa các file Colab / Jupyter Notebook .ipynb học tập]
+├── courses/                     ← [Chính] Chứa 8 khoá học 10 tuần & tài liệu học tập
+│   ├── 4_MOBILE_DEV/.../code/   ← [Có chứa các file Colab / Jupyter Notebook .ipynb học tập]
+│   └── original_materials/      ← Tài liệu học tập thô gốc ban đầu của hệ thống
 ├── platform/                    ← Nền tảng ứng dụng Web hiển thị giáo trình tương tác (React / Vite)
 │   ├── src/                     ← Mã nguồn giao diện (Roadmap, Lesson Viewer, AI Simulator, Code Center)
 │   ├── public/                  ← Tài nguyên tĩnh của website
 │   └── package.json             ← Các thư viện phụ thuộc
-├── original_materials/          ← Tài liệu học tập thô gốc ban đầu của hệ thống
 ├── venv/                        ← Thư mục môi trường ảo Python cô lập
 ├── docs/                        ← Các tài liệu hướng dẫn và ghi chú rời
 └── README.md                    ← [Tệp tin hiện tại] Tài liệu hướng dẫn chung
