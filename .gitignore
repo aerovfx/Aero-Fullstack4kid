@@ -15,3 +15,9 @@ venv/
 .env/
 *.pyc
 __pycache__/
+
+# Node.js dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+*.local
