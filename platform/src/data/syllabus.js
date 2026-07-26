@@ -288,6 +288,54 @@ export const coursesData = {
       }
     ]
   },
+  "5_CYBERSECURITY": {
+    id: "5_CYBERSECURITY",
+    title: "Cybersecurity & Practical Pentesting",
+    shortDesc: "Đào tạo kỹ năng thực chiến an ninh mạng, kiểm thử xâm nhập thực tế và sử dụng các công cụ Kali Linux (Nmap, Wireshark, Hashcat, Metasploit).",
+    syllabus: [
+      {
+        id: "cy-m1",
+        title: "Module 1: Dò quét mạng & Phân tích an ninh hệ thống",
+        shortDesc: "Học cách thiết lập môi trường Lab ảo và thực hiện dò quét cổng, phân tích lưu lượng mạng.",
+        lessons: [
+          {
+            id: "cy-w1",
+            title: "Bài 1: Thiết lập Lab ảo & Linux cơ bản",
+            duration: "2.5 giờ",
+            objectives: [
+              "Cài đặt phần mềm ảo hóa VirtualBox và hệ điều hành Kali Linux.",
+              "Thành thạo các lệnh quản trị Linux CLI căn bản.",
+              "Viết và chạy thành công script Bash đơn giản đầu tiên."
+            ],
+            content: "### 1. Mô hình phòng Lab bảo mật\nPhòng lab bao gồm máy tấn công (Kali Linux) và máy mục tiêu (Windows/Linux Server lỗi) kết nối thông qua mạng Host-only cô lập.\n### 2. Các lệnh Linux cơ bản\n- \`ip a\`: Kiểm tra card mạng.\n- \`chmod +x script.sh\`: Cấp quyền chạy file script."
+          },
+          {
+            id: "cy-w2",
+            title: "Bài 2: Dò quét mạng Nmap & Phân tích Wireshark",
+            duration: "2.5 giờ",
+            objectives: [
+              "Sử dụng các kỹ thuật quét SYN Scan, UDP Scan của Nmap để phát hiện cổng mở.",
+              "Cấu hình Wireshark chặn bắt và giải mã dữ liệu mạng.",
+              "Sử dụng bộ lọc (filters) Wireshark để trích xuất thông tin đăng nhập thô."
+            ],
+            content: "### 1. Quét SYN Scan với Nmap\nSYN Scan (Half-open scan) không hoàn thành bắt tay 3 bước, giúp tăng tốc độ quét và hạn chế ghi log:\n```bash\nnmap -sS -sV 192.168.56.101\n```\n### 2. Bắt gói tin Wireshark\nChặn bắt lưu lượng mạng và phân tích chuỗi TCP Stream để tìm mật khẩu truyền không mã hóa."
+          }
+        ],
+        labs: [
+          {
+            id: "cy-lab1",
+            title: "Lab 1: Thực hiện Audit An ninh mạng nội bộ sử dụng Nmap và Wireshark",
+            description: "Thực hiện quét phát hiện các lỗi bảo mật dịch vụ chạy trên máy ảo local và phân tích gói tin để bắt thông tin đăng nhập HTTP.",
+            steps: [
+              "Bước 1: Khởi động máy ảo Kali Linux và mục tiêu, kiểm tra kết nối ping.",
+              "Bước 2: Chạy Nmap quét toàn bộ cổng mở và phát hiện hệ điều hành.",
+              "Bước 3: Mở Wireshark bắt gói tin, đăng nhập thử vào trang web DVWA cục bộ và tìm mật khẩu."
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "6_WEB3": {
     id: "6_WEB3",
     title: "Web3: Ethereum, Solidity & DApps",

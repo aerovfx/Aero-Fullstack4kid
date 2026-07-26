@@ -16,6 +16,7 @@ Hệ thống cung cấp 8 lộ trình học tập chuyên sâu được thiết 
 | **3. Software Tools** | [Git, GitHub & Docker](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/3_SOFTWARE_DEV/git-docker-10weeks/) | Git commits, Branching, Merge Conflicts, GitHub Flow (PRs), Dockerfile, Docker Compose, CI/CD. |
 | **4. Data Science** | [NumPy & Pandas Foundations](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_MOBILE_DEV/data-science-10weeks/) | Môi trường Jupyter, Tính toán ma trận với NumPy, Làm sạch & Phân nhóm DataFrame bằng Pandas. |
 | **5. Cybersecurity & AI** | [Cybersec & Next-Gen AI](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_ARTIFICIAL_INTELLIGENCE/cybersec-ai-10weeks/) | Lập trình socket Python/C++, Phân tích gói tin Scapy, AI Vulnerability Scanning, AI Log Auditing. |
+| | [Practical Cybersecurity](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_ARTIFICIAL_INTELLIGENCE/cybersecurity-10weeks/) | Lab Setup (Kali), Bash Scripting, Nmap Scanning, Wireshark Sniffing, Hashcat Cracking, Metasploit, Snort. |
 | **6. Web3 & Blockchain**| [Ethereum, Solidity & DApps](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_WEB3/blockchain-dapps-10weeks/) | EVM, Hợp đồng thông minh Solidity, Tiêu chuẩn Token ERC-20/NFTs, Remix IDE, Ethers.js, MetaMask. |
 | | [Rust & Solana Programs](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_WEB3/rust-web3-10weeks/) | SVM (Solana Virtual Machine), Account Model, Anchor Framework, SPL Tokens, CPI calls, Unit tests. |
 

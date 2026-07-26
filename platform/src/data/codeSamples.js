@@ -457,5 +457,59 @@ pub mod ErrorCode {
     MathOverflow,
 }
 `
+  },
+  {
+    id: "sec-nmap-recon",
+    title: "Nmap Scanning Commands Handbook",
+    language: "bash",
+    description: "Tổng hợp các câu lệnh dò quét cổng mạng, phát hiện dịch vụ và hệ điều hành thông dụng bằng Nmap.",
+    code: `# 1. Quét nhanh 100 cổng phổ biến nhất (Fast scan)
+nmap -F 192.168.56.101
+
+# 2. Quét kiểm tra cổng mở sử dụng SYN Scan (Half-open)
+nmap -sS 192.168.56.101
+
+# 3. Quét phát hiện phiên bản dịch vụ và hệ điều hành mục tiêu
+nmap -sV -O 192.168.56.101
+
+# 4. Quét toàn bộ 65535 cổng mạng với tốc độ cao (T4)
+nmap -p- -T4 192.168.56.101
+
+# 5. Sử dụng Script kiểm tra lỗ hổng bảo mật dịch vụ (NSE Scripts)
+nmap --script vuln 192.168.56.101
+`
+  },
+  {
+    id: "sec-hashcat-rules",
+    title: "Hashcat Password Recovery Commands",
+    language: "bash",
+    description: "Bộ lệnh bẻ khóa mã băm mật khẩu MD5, SHA-256 sử dụng từ điển (Wordlist) và tấn công Brute-force với Hashcat.",
+    code: `# 1. Bẻ khóa MD5 (Mode 0) sử dụng file từ điển rockyou.txt
+hashcat -m 0 hash_md5.txt /usr/share/wordlists/rockyou.txt
+
+# 2. Bẻ khóa SHA-256 (Mode 1400) sử dụng file từ điển
+hashcat -m 1400 hash_sha256.txt /usr/share/wordlists/rockyou.txt
+
+# 3. Tấn công Brute-force mật khẩu MD5 có 8 ký tự số
+hashcat -m 0 -a 3 hash_md5.txt ?d?d?d?d?d?d?d?d
+
+# 4. Kiểm tra danh sách thiết bị GPU hỗ trợ tăng tốc bẻ khóa
+hashcat -I
+`
+  },
+  {
+    id: "sec-snort-rules",
+    title: "Snort IDS Rules Configuration",
+    language: "bash",
+    description: "Các quy tắc cấu hình luật (rules) của Snort IDS để phát hiện hành vi quét mạng Nmap hoặc tấn công DoS ICMP.",
+    code: `# 1. Cảnh báo khi phát hiện kết nối ICMP (Ping)
+alert icmp any any -> $HOME_NET any (msg:"ICMP Ping scan detected"; sid:1000001; rev:1;)
+
+# 2. Cảnh báo khi phát hiện quét cổng TCP SYN Scan (Nmap)
+alert tcp any any -> $HOME_NET any (flags: S; msg:"TCP SYN scan activity detected"; sid:1000002; rev:1;)
+
+# 3. Cảnh báo khi phát hiện lưu lượng truy cập HTTP chứa ký tự SQL Injection cơ bản
+alert tcp any any -> $HOME_NET 80 (msg:"SQL Injection Attempt Detected"; content:"UNION SELECT"; nocase; sid:1000003; rev:1;)
+`
   }
 ];
