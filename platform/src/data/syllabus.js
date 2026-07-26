@@ -2,11 +2,11 @@
 export const coursesData = {
   "1_FRONT_END": {
     id: "1_FRONT_END",
-    title: "Front-End Development Foundations",
+    title: "Front-End: HTML, CSS, JS & React",
     shortDesc: "Lập trình giao diện Web hiện đại sử dụng HTML5, CSS3, JavaScript ES6+ và thư viện React.js.",
     syllabus: [
       {
-        id: "m1",
+        id: "fe-m1",
         title: "Module 1: Thiết kế giao diện với HTML5 & CSS3",
         shortDesc: "Làm chủ cú pháp HTML5, các thẻ ngữ nghĩa và thuộc tính CSS3 căn bản.",
         lessons: [
@@ -36,7 +36,7 @@ export const coursesData = {
         labs: [
           {
             id: "fe-lab1",
-            title: "Lab 1: Tạo Giao diện Portfolio Cá nhân dùng HTML & CSS",
+            title: "Lab 1: Tạo Giao diện Portfolio Cá nhân",
             description: "Thực hành thiết kế một trang web giới thiệu bản thân hoàn chỉnh, chia thành các phần Header, About, Skills, Projects, và Contact sử dụng Flexbox và Grid.",
             steps: [
               "Bước 1: Viết mã HTML phân tách các phần bằng thẻ semantic (header, section, footer).",
@@ -50,11 +50,11 @@ export const coursesData = {
   },
   "2_BACK_END": {
     id: "2_BACK_END",
-    title: "Back-End Development Foundations",
+    title: "Back-End: Node.js & Express API",
     shortDesc: "Xây dựng máy chủ ứng dụng web chuyên nghiệp sử dụng Node.js, Express.js, RESTful API và MongoDB.",
     syllabus: [
       {
-        id: "m2",
+        id: "be-m1",
         title: "Module 1: Máy chủ Node.js & Định tuyến Express",
         shortDesc: "Tìm hiểu kiến trúc bất đồng bộ của Node.js và xây dựng API router bằng Express.",
         lessons: [
@@ -96,13 +96,61 @@ export const coursesData = {
       }
     ]
   },
+  "2_BACK_END_RUST": {
+    id: "2_BACK_END_RUST",
+    title: "Back-End: Rust & Axum Web API",
+    shortDesc: "Lập trình hệ thống máy chủ hiệu năng cao, kiểm soát bộ nhớ an toàn (Ownership/Borrowing) và web APIs tốc độ cao với Axum/Tokio.",
+    syllabus: [
+      {
+        id: "rust-be-m1",
+        title: "Module 1: Ngôn ngữ Rust & Lập trình mạng bất đồng bộ",
+        shortDesc: "Tìm hiểu cú pháp cốt lõi của Rust, cơ chế quản lý bộ nhớ an toàn và runtime Tokio.",
+        lessons: [
+          {
+            id: "rbe-w1",
+            title: "Bài 1: Làm chủ Ownership & Borrowing",
+            duration: "2.5 giờ",
+            objectives: [
+              "Hiểu quy tắc sở hữu bộ nhớ (Ownership rules) và cơ chế dọn dẹp biến.",
+              "Phân biệt tham chiếu bất biến (immutable borrow) và tham chiếu khả biến (mutable borrow).",
+              "Sử dụng clippy để sửa các lỗi biên dịch thông thường."
+            ],
+            content: "### 1. Quy tắc Ownership trong Rust\n- Mỗi giá trị trong Rust chỉ có một biến sở hữu (owner) tại một thời điểm.\n- Khi owner đi ra ngoài phạm vi (out of scope), giá trị sẽ tự động bị hủy (drop).\n- Việc gán giá trị String từ biến này sang biến khác sẽ chuyển quyền sở hữu (move semantics).\n### 2. Vay mượn (Borrowing)\nThay vì chuyển quyền sở hữu, ta có thể cho hàm mượn thông qua tham chiếu `&`:\n```rust\nfn calculate_length(s: &String) -> usize { s.len() }\n```"
+          },
+          {
+            id: "rbe-w2",
+            title: "Bài 2: Máy chủ HTTP Axum & Serde JSON",
+            duration: "2.5 giờ",
+            objectives: [
+              "Khởi tạo server HTTP bằng thư viện Axum bất đồng bộ.",
+              "Sử dụng Serde để tự động parse (deserialize) dữ liệu JSON đầu vào.",
+              "Tạo các endpoint RESTful trả về mã trạng thái HTTP thích hợp."
+            ],
+            content: "### 1. Khởi tạo Axum Server\n```rust\nuse axum::{routing::get, Router};\n#[tokio::main]\nasync fn main() {\n    let app = Router::new().route(\"/\", get(|| async { \"Hello Axum\" }));\n    let listener = tokio::net::TcpListener::bind(\"127.0.0.1:3000\").await.unwrap();\n    axum::serve(listener, app).await.unwrap();\n}\n```"
+          }
+        ],
+        labs: [
+          {
+            id: "rbe-lab1",
+            title: "Lab 1: Xây dựng RESTful API CRUD quản lý người dùng với CSDL PostgreSQL",
+            description: "Thực hành thiết lập cơ sở dữ liệu Postgres, sử dụng SQLx kết nối và viết API thêm/sửa/xóa thông tin người dùng bằng Axum.",
+            steps: [
+              "Bước 1: Cài đặt SQLx CLI và khởi chạy PostgreSQL cục bộ.",
+              "Bước 2: Viết mã nguồn Rust kết nối database pool thông qua biến môi trường.",
+              "Bước 3: Viết các struct đầu vào/đầu ra và mapping với truy vấn SQLx."
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "3_SOFTWARE_DEV": {
     id: "3_SOFTWARE_DEV",
-    title: "Software Development Tools (Git & Docker)",
+    title: "Software Tools: Git, GitHub & Docker",
     shortDesc: "Làm chủ quy trình quản lý phiên bản mã nguồn với Git và đóng gói triển khai ứng dụng với Docker.",
     syllabus: [
       {
-        id: "m3",
+        id: "dev-m1",
         title: "Module 1: Git & GitHub trong Môi trường Chuyên nghiệp",
         shortDesc: "Làm chủ quy trình commit, branch, merge conflict và cộng tác nhóm qua Pull Requests.",
         lessons: [
@@ -146,11 +194,11 @@ export const coursesData = {
   },
   "4_MOBILE_DEV": {
     id: "4_MOBILE_DEV",
-    title: "Foundational Data Science (NumPy & Pandas)",
+    title: "Data Science: NumPy & Pandas",
     shortDesc: "Học phân tích dữ liệu, xử lý ma trận số học với NumPy và làm sạch bảng dữ liệu với thư viện Pandas.",
     syllabus: [
       {
-        id: "m4",
+        id: "ds-m1",
         title: "Module 1: Phân tích Dữ liệu số với NumPy",
         shortDesc: "Tìm hiểu cấu trúc mảng nhiều chiều và các phép toán vector hóa hiệu năng cao.",
         lessons: [
@@ -194,11 +242,11 @@ export const coursesData = {
   },
   "5_ARTIFICIAL_INTELLIGENCE": {
     id: "5_ARTIFICIAL_INTELLIGENCE",
-    title: "Cybersecurity & Next-Gen AI Applications",
+    title: "AI & Cybersecurity: Tools & Sniffers",
     shortDesc: "Lập trình Python/C++ hệ thống, phân tích gói tin mạng và ứng dụng mô hình AI (Ollama/Gemini) tự động hóa an ninh thông tin.",
     syllabus: [
       {
-        id: "m5-mod1",
+        id: "sec-m1",
         title: "Module 1: Lập trình Python & C++ cho An ninh mạng",
         shortDesc: "Lập trình socket mạng bằng Python và kiểm soát bộ nhớ Stack/Heap bằng C++.",
         lessons: [
@@ -228,7 +276,7 @@ export const coursesData = {
         labs: [
           {
             id: "sec-lab1",
-            title: "Lab 1: Phát triển TCP Port Scanner đa luồng bằng Python & C++",
+            title: "Lab 1: Phát triển TCP Port Scanner đa luồng",
             description: "Lập trình một công cụ quét cổng TCP song song sử dụng thread trong Python và C++, so sánh tốc độ thực thi giữa hai phiên bản trên cổng localhost.",
             steps: [
               "Bước 1: Viết bản Python sử dụng queue và module threading để quét 1024 cổng đầu tiên.",
@@ -242,11 +290,11 @@ export const coursesData = {
   },
   "6_WEB3": {
     id: "6_WEB3",
-    title: "Web3 & Blockchain Development (Solidity & DApps)",
+    title: "Web3: Ethereum, Solidity & DApps",
     shortDesc: "Học lập trình hợp đồng thông minh Solidity trên Ethereum, tiêu chuẩn Token ERC-20/721 và kết nối DApp Frontend.",
     syllabus: [
       {
-        id: "m6",
+        id: "web3-m1",
         title: "Module 1: Lập trình Hợp đồng Thông minh Solidity",
         shortDesc: "Làm chủ ngôn ngữ Solidity, cấu trúc EVM, các kiểu dữ liệu và triển khai contract trên Remix.",
         lessons: [
@@ -276,12 +324,60 @@ export const coursesData = {
         labs: [
           {
             id: "web3-lab1",
-            title: "Lab 1: Viết và Triển khai Contract Quản lý tài khoản Ngân hàng phi tập trung",
+            title: "Lab 1: Viết và Triển khai Contract Ngân hàng phi tập trung",
             description: "Lập trình một contract Solidity cho phép nạp tiền (deposit), rút tiền (withdraw) kèm theo cơ chế lưu trữ số dư của từng tài khoản sử dụng mapping.",
             steps: [
               "Bước 1: Tạo file Bank.sol trong Remix IDE và khai báo mapping từ address sang uint.",
               "Bước 2: Viết hàm deposit nhận tiền gửi (payable) và cập nhật số dư.",
               "Bước 3: Viết hàm withdraw kiểm tra điều kiện ví người gửi có đủ tiền (require) trước khi chuyển."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "6_WEB3_RUST": {
+    id: "6_WEB3_RUST",
+    title: "Web3: Rust & Solana Smart Contracts",
+    shortDesc: "Lập trình hợp đồng thông minh hiệu năng cao cho hệ sinh thái Solana sử dụng Anchor Framework bằng ngôn ngữ Rust.",
+    syllabus: [
+      {
+        id: "rust-web3-m1",
+        title: "Module 1: Kiến trúc Solana SVM & Lập trình Anchor",
+        shortDesc: "Làm chủ mô hình tài khoản Solana Account Model và cấu trúc Anchor Program.",
+        lessons: [
+          {
+            id: "rw3-w1",
+            title: "Bài 1: Solana Account Model & CLI",
+            duration: "2.5 giờ",
+            objectives: [
+              "Hiểu sự khác biệt về lưu trữ trạng thái giữa EVM (World State) và SVM (Account Model).",
+              "Sử dụng Solana CLI để truy vấn số dư, xem dữ liệu tài khoản và airdrop SOL.",
+              "Hiểu khái niệm Rent và Rent-exempt đối với tài khoản Solana."
+            ],
+            content: "### 1. Solana Account Model\n- Trong Solana, mã thực thi (Smart Contract) và dữ liệu (State) được tách biệt hoàn toàn.\n- Executable Account chỉ chứa bytecode của chương trình.\n- Data Account chứa trạng thái biến dữ liệu và được sở hữu bởi chương trình đó.\n### 2. Rent-exempt\nTài khoản dữ liệu phải duy trì một lượng SOL tối thiểu để được miễn phí duy trì lưu trữ trên validator."
+          },
+          {
+            id: "rw3-w2",
+            title: "Bài 2: Hợp đồng thông minh với Anchor Framework",
+            duration: "2.5 giờ",
+            objectives: [
+              "Viết chương trình Anchor hoàn chỉnh sử dụng các macro #[program] và #[account].",
+              "Thiết lập struct Account đầu vào để tự động kiểm tra chữ ký và phân quyền.",
+              "Chạy Solana Local Validator cục bộ để deploy và debug chương trình."
+            ],
+            content: "### 1. Viết Anchor Program đơn giản\n```rust\nuse anchor_lang::prelude::*;\ndeclare_id!(\"Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS\");\n#[program]\npub mod hello_world {\n    use super::*;\n    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {\n        msg!(\"Hello World from Anchor Program!\");\n        Ok(())\n    }\n}\n#[derive(Accounts)]\npub struct Initialize<'info> {}\n```"
+          }
+        ],
+        labs: [
+          {
+            id: "rw3-lab1",
+            title: "Lab 1: Phát triển chương trình Token Minting và chuyển token (SPL Token)",
+            description: "Thực hành viết chương trình Solana Anchor để thực hiện đúc (mint) token mới và lập trình hàm chuyển (transfer) SPL Token an toàn.",
+            steps: [
+              "Bước 1: Khai báo phụ thuộc spl-token trong tệp Cargo.toml.",
+              "Bước 2: Viết struct Context nhận các tài khoản Mint, Token Account và Authority.",
+              "Bước 3: Viết logic gọi chéo (CPI - Cross Program Invocation) sang Token Program để mint token."
             ]
           }
         ]

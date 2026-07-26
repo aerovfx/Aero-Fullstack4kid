@@ -123,6 +123,54 @@ app.listen(PORT, () => {
 });
 `
   },
+  {
+    id: "be-rust-axum",
+    title: "Rust Axum Async HTTP APIs",
+    language: "rust",
+    description: "Máy chủ HTTP bất đồng bộ viết bằng Rust sử dụng Axum Framework và Tokio Runtime.",
+    code: `use axum::{
+    routing::{get, post},
+    Json, Router, response::IntoResponse, http::StatusCode
+};
+use serde::{Deserialize, Serialize};
+use std::net::SocketAddr;
+
+#[derive(Deserialize, Serialize)]
+struct User {
+    id: u64,
+    username: String,
+}
+
+// Handler trả về danh sách users dạng JSON
+async fn get_users() -> impl IntoResponse {
+    let users = vec![
+        User { id: 1, username: "alice".to_string() },
+        User { id: 2, username: "bob".to_string() }
+    ];
+    (StatusCode::OK, Json(users))
+}
+
+// Handler nhận JSON đăng ký user mới
+async fn create_user(Json(payload): Json<User>) -> impl IntoResponse {
+    // Xử lý lưu database tại đây...
+    (StatusCode::CREATED, Json(payload))
+}
+
+#[tokio::main]
+async fn main() {
+    // Khởi tạo routing
+    let app = Router::new()
+        .route("/users", get(get_users))
+        .route("/users", post(create_user));
+
+    let addr = SocketAddr::from(([127, 0, 0, 1], 8080));
+    println!("Server running on http://{}", addr);
+    
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
+    axum::serve(listener, app).await.unwrap();
+}
+`
+  },
 
   // --- SOFTWARE TOOLS SAMPLES ---
   {
@@ -199,18 +247,18 @@ networks:
 A = np.random.randint(1, 10, size=(3, 3))
 B = np.random.randint(1, 10, size=(3, 3))
 
-print("Ma trận A / Matrix A:\n", A)
-print("Ma trận B / Matrix B:\n", B)
+print("Ma trận A / Matrix A:\\n", A)
+print("Ma trận B / Matrix B:\\n", B)
 
 # Nhân ma trận (Matrix Multiplication)
 C = np.dot(A, B)
-print("\nTích ma trận C / Dot Product:\n", C)
+print("\\nTích ma trận C / Dot Product:\\n", C)
 
 # Tính toán các chỉ số thống kê trên ma trận C
 mean_val = np.mean(C)
 std_dev = np.std(C)
 
-print(f"\nGiá trị trung bình / Mean: {mean_val:.2f}")
+print(f"\\nGiá trị trung bình / Mean: {mean_val:.2f}")
 print(f"Độ lệch chuẩn / Std Deviation: {std_dev:.2f}")
 
 # Lọc dữ liệu bằng Boolean Indexing (Phần tử > trung bình)
@@ -233,7 +281,7 @@ data = {
     'revenue': [1500, None, 3000, 1200, 800, 2500]
 }
 df = pd.DataFrame(data)
-print("Dữ liệu gốc / Original DataFrame:\n", df)
+print("Dữ liệu gốc / Original DataFrame:\\n", df)
 
 # 1. Làm sạch: Điền khuyết giá trị trung bình cho cột revenue
 mean_revenue = df['revenue'].mean()
@@ -244,7 +292,7 @@ df['category'] = df['category'].fillna('Unknown')
 
 # 3. Tính tổng doanh thu theo từng danh mục (GroupBy & Sum)
 summary = df.groupby('category')['revenue'].sum().reset_index()
-print("\nBáo cáo doanh số / Sales Report by Category:\n", summary)
+print("\\nBáo cáo doanh số / Sales Report by Category:\\n", summary)
 `
   },
 
@@ -307,42 +355,6 @@ int main() {
 }
 `
   },
-  {
-    id: "sec-ai-scanner",
-    title: "AI-Powered Source Code Auditor",
-    language: "python",
-    description: "Script Python tích hợp API quét mã nguồn lỗi logic và đề xuất bản vá an toàn theo chuẩn OWASP.",
-    code: `import os
-import requests
-import json
-
-API_KEY = os.getenv("GEMINI_API_KEY", "MOCK_KEY")
-API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
-
-def audit_code(code):
-    prompt = f"""
-Bạn là chuyên gia rà soát mã nguồn bảo mật (Secure Code Reviewer).
-Phân tích đoạn mã sau và chỉ ra các lỗ hổng (Buffer Overflow, SQLi, v.v.).
-Trả về JSON duy nhất:
-{{
-  "has_vuln": true/false,
-  "vulnerability": "Tên lỗi",
-  "explanation": "Chi tiết lỗi",
-  "fix": "Mã code đã sửa lỗi"
-}}
-Mã nguồn:
-{code}
-"""
-    payload = {"contents": [{"parts": [{"text": prompt}]}]}
-    res = requests.post(API_URL, json=payload)
-    return res.json()
-
-# Ví dụ chạy test với mã nguồn C++ có lỗi strcpy
-bad_code = "void copy(char* src) { char dest[10]; strcpy(dest, src); }"
-print("[*] Đang gửi mã nguồn cho AI quét bảo mật...")
-# response = audit_code(bad_code)
-`
-  },
 
   // --- WEB3 & BLOCKCHAIN SAMPLES ---
   {
@@ -382,6 +394,67 @@ contract SimpleBank {
     function getBalance() public view returns (uint256) {
         return balances[msg.sender];
     }
+}
+`
+  },
+  {
+    id: "web3-rust-solana",
+    title: "Solana Anchor Counter Program",
+    language: "rust",
+    description: "Hợp đồng thông minh viết bằng Rust trên blockchain Solana sử dụng Anchor Framework để tăng giảm trạng thái tài khoản Counter.",
+    code: `use anchor_lang::prelude::*;
+
+declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+
+#[program]
+pub mod solana_counter {
+    use super::*;
+
+    // Hàm khởi tạo bộ đếm
+    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
+        let counter_account = &mut ctx.accounts.counter_account;
+        counter_account.count = 0;
+        counter_account.owner = *ctx.accounts.user.key;
+        Ok(())
+    }
+
+    // Hàm tăng bộ đếm có kiểm tra phân quyền sở hữu
+    pub fn increment(ctx: Context<Increment>) -> Result<()> {
+        let counter_account = &mut ctx.accounts.counter_account;
+        // Kiểm tra an toàn trước khi tăng tránh overflow
+        counter_account.count = counter_account.count.checked_add(1).ok_or(error!(ErrorCode::MathOverflow))?;
+        Ok(())
+    }
+}
+
+#[derive(Accounts)]
+pub struct Initialize<'info> {
+    // Khởi tạo tài khoản Counter mới chi trả phí rent bởi user
+    #[account(init, payer = user, space = 8 + 8 + 32)]
+    pub counter_account: Account<'info, Counter>,
+    #[account(mut)]
+    pub user: Signer<'info>,
+    pub system_program: Program<'info, System>,
+}
+
+#[derive(Accounts)]
+pub struct Increment<'info> {
+    // Ràng buộc chỉ cho phép Owner của Counter gọi hàm
+    #[account(mut, has_one = owner)]
+    pub counter_account: Account<'info, Counter>,
+    pub owner: Signer<'info>,
+}
+
+#[account]
+pub struct Counter {
+    pub count: u64,
+    pub owner: Pubkey,
+}
+
+#[error_code]
+pub mod ErrorCode {
+    #[msg("Phép tính bị tràn số / Math calculation overflow.")]
+    MathOverflow,
 }
 `
   }

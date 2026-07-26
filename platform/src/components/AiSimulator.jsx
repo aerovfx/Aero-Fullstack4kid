@@ -217,6 +217,41 @@ export default function AiSimulator() {
    }
    \`\`\`
         `;
+      } else if (promptLower.includes('rust') || promptLower.includes('solana') || promptLower.includes('anchor') || promptLower.includes('borrow') || promptLower.includes('ownership')) {
+        botResponse = `### [!] HƯỚNG DẪN LẬP TRÌNH RUST & SOLANA ANCHOR PROGRAM:
+        
+1. **Quản lý bộ nhớ (Ownership & Borrowing) trong Rust**:
+   - Rust đảm bảo an toàn bộ nhớ không cần garbage collector bằng luật sở hữu.
+   - Tránh lỗi borrow checker bằng cách truyền tham chiếu hằng \`&s\` hoặc tham chiếu khả biến \`&mut s\` thay vì clone dữ liệu.
+
+2. **Cơ cấu Solana Anchor Program**:
+   - Anchor là framework giúp viết contract Solana nhanh chóng và an toàn, tự động sinh tệp IDL để kết nối frontend.
+   - Sử dụng macro \`#[program]\` định nghĩa logic và \`#[derive(Accounts)]\` để xác thực tài khoản.
+
+3. **Ví dụ bộ đếm Counter bằng Rust/Anchor**:
+   \`\`\`rust
+   use anchor_lang::prelude::*;
+   
+   #[program]
+   pub mod my_counter {
+       use super::*;
+       pub fn increment(ctx: Context<Increment>) -> Result<()> {
+           ctx.accounts.counter.count += 1;
+           Ok(())
+       }
+   }
+   
+   #[derive(Accounts)]
+   pub struct Increment<'info> {
+       #[account(mut, has_one = owner)]
+       pub counter: Account<'info, Counter>,
+       pub owner: Signer<'info>,
+   }
+   
+   #[account]
+   pub struct Counter { pub count: u64, pub owner: Pubkey }
+   \`\`\`
+        `;
       } else if (promptLower.includes('nmap') || promptLower.includes('port') || promptLower.includes('log') || promptLower.includes('security')) {
         botResponse = `### [!] HỖ TRỢ KỸ THUẬT AN NINH MẠNG & BẢO MẬT:
         
@@ -225,15 +260,14 @@ Tôi có các giải pháp sau cho câu hỏi bảo mật của bạn:
 - **Log máy chủ**: Gửi log thô của Nginx/Syslog, tôi sẽ phát hiện các mẫu tấn công SQL Injection/XSS.
 - **Quét code lỗi**: Gửi hàm C++ hoặc Python, tôi sẽ kiểm tra lỗi bảo mật bộ nhớ (Buffer Overflow, Pointer leaks).
         `;
-      } else {
         botResponse = `### [!] ĐÃ NHẬN YÊU CẦU CỦA BẠN:
         
 Tôi sẵn sàng hỗ trợ bạn phân tích hoặc viết mã nguồn cho các kỹ năng:
 - **Front-End**: Xây dựng layout responsive CSS, React hooks, APIs.
-- **Back-End**: Lập trình Express routes, cơ sở dữ liệu MongoDB/SQL, JWT Auth.
+- **Back-End**: Lập trình Node.js Express, Axum Rust API, PostgreSQL.
 - **Software Tools**: Quản trị repository Git, viết Dockerfile/Docker Compose.
 - **Data Science**: Xử lý mảng NumPy, làm sạch và group DataFrames bằng Pandas.
-- **Web3**: Lập trình Solidity Smart Contracts, tiêu chuẩn ERC-20/NFTs.
+- **Web3**: Lập trình Solidity Ethereum, Rust Solana Smart Contracts.
 
 *Mẹo: Chọn một trong các Prompt mẫu được thiết kế sẵn ở phía trên để chạy thử nghiệm nhanh.*`;
       }
