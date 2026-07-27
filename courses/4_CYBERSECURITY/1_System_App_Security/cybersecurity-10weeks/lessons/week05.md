@@ -1,6 +1,6 @@
-# Tuần 5: Giám sát mạng nội bộ với Kali Linux & Nmap / Week 5: Local Network Auditing with Kali Linux & Nmap
+# Tuần 5: Sniffing & Traffic Analysis với Wireshark (CEH v12 Module 08 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
 ### Vietnamese
 Trong tuần này, học sinh sẽ học cách:

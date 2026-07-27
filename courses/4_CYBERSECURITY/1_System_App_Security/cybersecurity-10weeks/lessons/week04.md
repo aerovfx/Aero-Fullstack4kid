@@ -1,6 +1,6 @@
-# Tuần 4: Đa luồng trong C++ & Phòng chống Tràn bộ đệm / Week 4: Multi-threading in C++ & Buffer Overflow Prevention
+# Tuần 4: Vulnerability Assessment & Buffer Overflow Defense (CEH v12 Module 04-07 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
 ### Vietnamese
 Trong tuần này, học sinh sẽ học cách thiết kế và quản lý các ứng dụng đa luồng (multi-threading) sử dụng ngôn ngữ lập trình C++. Chúng ta sẽ khám phá sự khác biệt giữa đồng thời (concurrency) và song song (parallelism), cách đồng bộ hóa dữ liệu giữa các luồng để tránh tình trạng tương tranh (race conditions) và bế tắc (deadlocks). Ngoài ra, một phần rất quan trọng của bài học là hiểu về tổ chức bộ nhớ trong C++ (Stack và Heap) và khái niệm về lỗi tràn bộ đệm (Buffer Overflow). Sinh viên sẽ học cách phòng ngừa lỗi này bằng các phương pháp lập trình phòng thủ (defensive programming).

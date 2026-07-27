@@ -1,6 +1,6 @@
-# Tuần 10: Phát triển các Công cụ tự động hóa bảo mật tích hợp AI / Week 10: Developing AI-integrated Security Automation Tools
+# Tuần 10: Penetration Testing, SOC Operations & Capstone Project (CEH v12 Module 20 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
 ### Vietnamese (Tiếng Việt)
 - Hiểu được các nguyên tắc cơ bản của trung tâm điều hành bảo mật (SOC - Security Operations Center) và vai trò thiết yếu của tự động hóa trong việc xử lý khối lượng lớn dữ liệu an ninh mạng.

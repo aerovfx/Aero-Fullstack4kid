@@ -1,6 +1,6 @@
-# Tuần 09: Kiểm toán mã nguồn và Phân tích nhật ký bảo mật bằng AI / Week 09: Secure Code Auditing & Security Log Analysis using AI
+# Tuần 9: Cloud & AI Security Auditing (CEH v12 Module 17 & AI Aligned)
 
-## 1. Mục Tiêu / Objectives
+## 1. Mục Tiêu / Objectives (CEH v12 Aligned)
 
 ### Tiếng Việt (Vietnamese)
 - **Hiểu về Kiểm toán Mã nguồn An toàn:** Nắm bắt các nguyên tắc cơ bản của việc viết mã an toàn và cách kiểm tra mã nguồn để phát hiện các lỗ hổng bảo mật phổ biến (như SQL Injection, XSS) từ góc độ phòng thủ.

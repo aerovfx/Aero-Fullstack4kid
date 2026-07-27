@@ -1,6 +1,6 @@
-# Tuần 08: Prompt Engineering cho AI trong OSINT & Đánh giá rủi ro / Week 08: Prompt Engineering for AI in OSINT & Risk Assessment
+# Tuần 8: Cryptography & Wireless Network Security (CEH v12 Module 16 & 19 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
 ### Tiếng Việt
 - **Hiểu về OSINT (Open Source Intelligence):** Nắm vững các khái niệm cơ bản về trí tuệ nguồn mở, cách thức thu thập và phân tích thông tin công khai một cách hợp pháp và an toàn.

@@ -1,6 +1,6 @@
-# Tuần 06: Phân tích lưu lượng mạng và phát hiện bất thường với Wireshark / Week 06: Network Traffic Analysis & Threat Detection with Wireshark
+# Tuần 6: Social Engineering & Phishing Header Analysis (CEH v12 Module 09 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
 ### Tiếng Việt
 - Hiểu được cấu trúc của các gói tin mạng cơ bản (TCP/IP, UDP, ICMP).

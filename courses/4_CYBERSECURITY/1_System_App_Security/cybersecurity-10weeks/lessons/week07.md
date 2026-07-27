@@ -1,6 +1,6 @@
-# Tuần 07: Cơ chế Mã hóa mật khẩu & Phân tích Giao thức Wi-Fi / Week 07: Password Hashing Mechanisms & Wi-Fi Protocol Security Analysis
+# Tuần 7: Hacking Web Applications & OWASP Top 10 Audit (CEH v12 Module 14 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
 ### Tiếng Việt
 *   **Hiểu Rõ Bản Chất Của Hashing:** Phân biệt rõ ràng giữa mã hóa (encryption) và băm (hashing), tại sao băm mật khẩu một chiều lại an toàn.

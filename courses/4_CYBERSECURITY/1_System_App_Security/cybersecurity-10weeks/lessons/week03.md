@@ -1,6 +1,6 @@
-# Tuần 3: C++ cơ bản, Con trỏ và Quản lý bộ nhớ Stack & Heap / Week 3: C++ Basics, Pointers, and Stack/Heap Memory Management
+# Tuần 3: System Hacking & Memory Security (CEH v12 Module 06 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
 ### Tiếng Việt (Vietnamese)
 - Nắm vững cú pháp cơ bản của ngôn ngữ C++: biến, kiểu dữ liệu, cấu trúc điều khiển.
