@@ -1,14 +1,14 @@
-# Tuần 2: Trinh sát Mạng & Kỹ thuật Quét Cổng (Network Reconnaissance & Port Scanning)
+# Tuần 2: Scanning Networks & Kỹ thuật Quét Cổng (CEH v12 Module 03 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
-Trong tuần 2, chúng ta sẽ bước vào giai đoạn đầu tiên của mọi cuộc kiểm thử bảo mật (Penetration Testing): Trinh sát (Reconnaissance). Học viên sẽ tự tay xây dựng một công cụ rà quét cổng mạng (Port Scanner) bằng Python để tìm ra các "cánh cửa" đang mở trên hệ thống, từ đó đánh giá các điểm yếu tiềm ẩn. / In week 2, we enter the first phase of any penetration test: Reconnaissance. Students will build a Port Scanner using Python to find open "doors" on a system, thereby assessing potential vulnerabilities.
+Trong tuần 2, chúng ta sẽ đi sâu vào kỹ thuật **Scanning Networks** (CEH v12 Module 03). Học viên sẽ học nguyên lý quét cổng TCP Connect Scan, SYN Scan và tự tay lập trình công cụ Port Scanner bằng Python qua 3 cấp độ từ cơ bản đến đa luồng tốc độ cao.
 
 **Mục tiêu cụ thể / Specific Objectives:**
-1. Hiểu rõ nguyên lý hoạt động của kỹ thuật Port Scanning (TCP Connect).
-2. Nắm vững danh sách các Port thông dụng và dịch vụ đi kèm (80, 443, 21, 22, 3306).
-3. Lập trình công cụ Scanner bằng Python qua 3 cấp độ: Quét 1 cổng -> Quét dải cổng (Vòng lặp) -> Quét đa luồng tốc độ cao (Multi-threading).
-4. Khắc sâu nguyên tắc Đạo đức: Tuyệt đối chỉ quét hệ thống Localhost.
+1. Hiểu rõ quy trình rà quét mạng (Scanning Networks) theo chuẩn CEH v12 và CompTIA Security+.
+2. Nắm vững cơ chế hoạt động của TCP Connect Scan, SYN Scan, FIN Scan và danh sách các cổng thông dụng (80, 443, 21, 22, 3306).
+3. Lập trình công cụ Port Scanner bằng Python qua 3 cấp độ: Single Port -> Port Range -> Multi-threaded Fast Scanner.
+4. Tuân thủ CEH Code of Ethics: Tuyệt đối chỉ rà quét thiết bị cá nhân hoặc Localhost (`127.0.0.1`).
 
 ---
 

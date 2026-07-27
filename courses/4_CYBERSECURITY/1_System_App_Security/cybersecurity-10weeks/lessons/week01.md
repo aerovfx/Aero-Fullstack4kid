@@ -1,14 +1,14 @@
-# Tuần 1: Giới thiệu Python cho Security & Lập trình Socket cơ bản / Week 1: Introduction to Python for Security & Basic Socket Programming
+# Tuần 1: Footprinting, Reconnaissance & Lập trình Socket Python (CEH v12 Module 01-02 Aligned)
 
-## Mục Tiêu / Objectives
+## Mục Tiêu / Objectives (CEH v12 Aligned)
 
-Trong tuần học đầu tiên này, chúng ta sẽ đặt nền móng vững chắc cho toàn bộ khóa học bằng cách tìm hiểu vai trò của Python trong lĩnh vực An ninh mạng, đồng thời nắm bắt các nguyên lý cốt lõi của lập trình mạng thông qua Socket. Các bài thực hành code sẽ được thiết kế tăng dần từ cơ bản đến phức tạp. / In this first week, we will lay a solid foundation for the entire course by exploring the role of Python in Cybersecurity and grasping the core principles of network programming through Sockets. Hands-on coding will progress from basic to complex.
+Trong tuần học đầu tiên này, chúng ta sẽ đặt nền móng vững chắc cho toàn bộ khóa học bằng cách tìm hiểu quy trình **Footprinting & Reconnaissance** (CEH v12 Module 01-02) và vai trò của Python trong Lập trình mạng Socket. Các bài thực hành code sẽ được thiết kế tăng dần từ cơ bản đến phức tạp trên môi trường Localhost an toàn.
 
 **Mục tiêu cụ thể / Specific Objectives:**
-1. Hiểu rõ tại sao Python là "vũ khí" số 1 của các hacker và chuyên gia bảo mật.
-2. Nắm vững khái niệm Địa chỉ IP, Port (Cổng), TCP/UDP và Localhost.
-3. Thực hành lập trình Socket qua 3 cấp độ: Cơ bản (Echo) -> Trung bình (Chat vòng lặp) -> Phức tạp (Bảo mật & Quản lý lỗi).
-4. Khắc sâu nguyên tắc Đạo đức Hacker (White Hat Ethics) và tuyệt đối chỉ thực hành trên Localhost (127.0.0.1).
+1. Nắm vững khung lý thuyết Footprinting & OSINT Reconnaissance theo chuẩn CEH v12 và CompTIA Security+.
+2. Hiểu rõ khái niệm Địa chỉ IP, Port (Cổng), TCP/UDP, Bắt tay 3 bước (3-way Handshake) và Localhost.
+3. Thực hành lập trình Socket Python qua 3 cấp độ: Cơ bản (Echo) -> Trung bình (Chat vòng lặp) -> Phức tạp (Bảo mật & Quản lý lỗi).
+4. Khắc sâu CEH Code of Ethics và tuyệt đối chỉ thực hành trên Localhost (`127.0.0.1`).
 
 ---
 
