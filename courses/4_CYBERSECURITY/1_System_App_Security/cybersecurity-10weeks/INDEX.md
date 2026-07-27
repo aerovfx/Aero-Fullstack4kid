@@ -47,6 +47,7 @@ Chào mừng bạn đến với khoá học **Ethical Hacking & Pentesting Thự
 | [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/references/software.md) | Setup Kali Linux, Metasploitable, Wireshark, VS Code, Python |
 | [An Toàn & Đạo Đức / Safety & Ethics](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/references/safety.md) | Quy định an toàn Pentesting, CEH Code of Ethics và Luật An ninh mạng |
 | [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/projects/final_project.md) | 3 Hướng đề tài tốt nghiệp Capstone và Rubric 100 điểm |
+| [Google Colab Notebooks](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/notebooks/cybersecurity_10weeks_colab.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/) Notebook thực hành trực tiếp trên trình duyệt / Mobile |
 
 ---
 

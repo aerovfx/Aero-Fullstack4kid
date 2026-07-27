@@ -47,6 +47,7 @@ Chào mừng bạn đến với khoá học **Mật Mã Học Thực Chiến & B
 | [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/references/software.md) | Setup OpenSSL, GnuPG, Python `cryptography`, PyCryptodome, C++ OpenSSL |
 | [An Toàn & Đạo Đức / Safety & Ethics](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/references/safety.md) | Quy tắc an toàn thông tin, bảo vệ khóa riêng tư (Private Key) |
 | [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/projects/final_project.md) | 3 Hướng đề tài tốt nghiệp Capstone và Rubric 100 điểm |
+| [Google Colab Notebooks](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/notebooks/crypto_10weeks_colab.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/) Notebook chạy thực hành trực tiếp trên trình duyệt / Mobile |
 
 ---
 

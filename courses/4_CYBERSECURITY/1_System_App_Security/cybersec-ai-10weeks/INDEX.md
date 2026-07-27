@@ -43,6 +43,7 @@ Chào mừng bạn đến với khoá học **An ninh mạng & Ứng dụng AI t
 | [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/references/software.md) | Hướng dẫn cài đặt Kali Linux, VS Code, Ollama / Setup instructions for Kali, VS Code, Ollama |
 | [An Toàn & Đạo Đức / Safety & Ethics](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/references/safety.md) | Quy tắc đạo đức nghề nghiệp và an toàn thông tin / Pentesting ethics rules and guidelines |
 | [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/projects/final_project.md) | Danh sách 3 hướng dự án tốt nghiệp / 3 tracks of final projects |
+| [Google Colab Notebooks](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/notebooks/cybersec_ai_colab.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/) Notebook thực hành trực tiếp trên trình duyệt / Mobile |
 
 ---
 
