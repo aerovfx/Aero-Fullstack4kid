@@ -1,17 +1,82 @@
-# Ethical Hacking & Pentesting (CEH v12 Aligned)
+# Khoá Học: Kỹ Thuật An Ninh Mạng & Lập Trình Bảo Mật (10 Tuần) / Course: Cybersecurity Engineering & Secure Programming (10 Weeks)
 
-Khóa học 10 tuần về An ninh mạng thực chiến, được thiết kế bám sát theo khung kỹ năng của chứng chỉ **Certified Ethical Hacker (CEH v12)** và **CompTIA Security+**.
+Chào mừng bạn đến với khoá học **Kỹ Thuật An Ninh Mạng & Lập Trình Bảo Mật (10 Tuần)**. Chương trình đào tạo chuẩn STEM được thiết kế dành cho học viên từ trình độ cơ bản đến nâng cao, kết hợp giữa lập trình hệ thống C/C++, tự động hóa bảo mật Python, kiểm toán hạ tầng Kali Linux, và kỹ thuật phòng thủ chiều sâu (Defense-in-Depth).
 
-## Mục Tiêu Khóa Học
-- Làm chủ tư duy của Hacker Mũ Trắng (Ethical Hacker) và quy trình Pentest (Cyber Kill Chain).
-- Sử dụng thành thạo hệ điều hành Kali Linux và các công cụ hàng đầu (Nmap, Wireshark, Burp Suite, Hashcat, Metasploit).
-- Khả năng tự thiết lập môi trường Lab ảo (VirtualBox/VMware, Metasploitable, DVWA).
-- Nắm bắt các kỹ thuật tấn công và phòng thủ ứng dụng Web (OWASP Top 10).
+---
 
-## Yêu Cầu Đầu Vào
-- Kiến thức căn bản về Mạng máy tính (OSI, TCP/IP) và Linux.
+## 🗺️ Bản Đồ Lộ Trình Học Tập / Course Roadmap
 
-## Cấu trúc thư mục
-- `schedule.md`: Lộ trình chi tiết 10 tuần.
-- `lessons/`: Các bài giảng lý thuyết và Lab từng tuần.
-- `projects/`: Đồ án thực hành kiểm thử xâm nhập cuối khoá.
+```
+                                    ┌────────────────────────────────────────────────────────┐
+                                    │     PHẦN 1: AN NINH HỆ THỐNG & LẬP TRÌNH BẢO MẬT       │
+                                    │     PART 1: SYSTEM SECURITY & SECURE PROGRAMMING       │
+                                    └──────────────────────────┬─────────────────────────────┘
+                                                               │
+                                         Tuần 1: Mạng máy tính & Lập trình Socket Python
+                                         Tuần 2: Quét cổng & Trinh sát mạng (Port Scanning)
+                                         Tuần 3: Quản lý bộ nhớ C/C++ & Con trỏ (Pointers)
+                                         Tuần 4: Đa luồng & Phòng chống Tràn bộ đệm (BOF)
+                                         Tuần 5: Kiểm toán hệ thống với Kali Linux & Nmap
+                                                               │
+                                                               ▼
+                                    ┌────────────────────────────────────────────────────────┐
+                                    │     PHẦN 2: PHÂN TÍCH LƯU LƯỢNG & MÃ HÓA NÂNG CAO      │
+                                    │     PART 2: TRAFFIC ANALYSIS & ADVANCED CRYPTO         │
+                                    └──────────────────────────┬─────────────────────────────┘
+                                                               │
+                                         Tuần 6: Bắt & Phân tích gói tin với Wireshark/Scapy
+                                         Tuần 7: Mã hóa mật khẩu, Bcrypt & Bảo mật Wi-Fi
+                                         Tuần 8: Thu thập tình báo nguồn mở OSINT & Phân tích
+                                         Tuần 9: Kiểm toán mã nguồn SAST & Phân tích Web Log
+                                         Tuần 10: Xây dựng hệ thống SOC Alert & Báo cáo Capstone
+                                                               │
+                                                               ▼
+                                    ┌────────────────────────────────────────────────────────┐
+                                    │             BẢO VỆ DỰ ÁN CUỐI KHOÁ / DEMO DAY          │
+                                    └────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🗂️ Danh Mục Tài Liệu / Document Index
+
+| Tài liệu / Document | Mô tả / Description |
+|---------------------|---------------------|
+| [Lịch Trình Học / Schedule](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/schedule.md) | Lịch trình 20 buổi học chi tiết và checklist sản phẩm đầu ra |
+| [Thiết Bị Phòng Lab / Components Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/references/components.md) | Danh sách thiết bị phần cứng & công cụ phòng lab với giá VNĐ |
+| [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/references/software.md) | Hướng dẫn cài đặt Kali Linux, VS Code, GCC/G++ và Python libraries |
+| [An Toàn & Đạo Đức / Safety & Ethics](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/references/safety.md) | Quy định an toàn thông tin, đạo đức Pentesting và pháp lý |
+| [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/projects/final_project.md) | 3 Hướng đề tài tốt nghiệp Capstone và Rubric đánh giá |
+
+---
+
+## 📦 Danh Mục Thiết Bị Phòng Lab (BOM) / Hardware Bill of Materials
+
+| Tên Thiết Bị / Component | Thông Số Kỹ Thuật / Specification | SL / Qty | Giá Ước Tính / Est Price | Nơi Mua Đề Xuất / Suggested Source |
+|--------------------------|-----------------------------------|----------|---------------------------|-------------------------------------|
+| USB Wi-Fi Monitor Card   | Chipset RT3070 hoặc AR9271 (Monitor Mode & Packet Injection) | 1 | 250,000 VNĐ | Shopee / Lazada |
+| Raspberry Pi 4 Model B   | RAM 4GB (Máy chủ mục tiêu thử nghiệm mạng nội bộ) | 1 | 1,500,000 VNĐ | Raspberry Pi VN / Shopee |
+| USB Live Flash Drive 32GB| USB 3.0 High Speed (Chạy Kali Linux Live) | 1 | 120,000 VNĐ | Tiki / Phong Vũ |
+
+---
+
+## 🛠️ Công Nghệ & Phần Mềm Sử Dụng / Software Stack
+
+- **Hệ điều hành**: Kali Linux (VMware / VirtualBox / Live USB) & Windows / macOS Host.
+- **Ngôn ngữ lập trình**: Python 3.10+ và C++ (GCC/G++ 11+).
+- **Thư viện chính**:
+  - Python: `socket`, `scapy`, `requests`, `threading`, `bcrypt`, `pandas`, `re`.
+  - C++: `<thread>`, `<mutex>`, `<vector>`, `<cstring>`, `<iostream>`.
+
+---
+
+## 📊 Phân Bổ Thời Gian & Đánh Giá / Time Distribution & Grading
+
+- **Lý thuyết**: 30%
+- **Thực hành Lab**: 40%
+- **Lập trình công cụ tự động hóa**: 30%
+
+### Tiêu Chí Đánh Giá / Assessment Rubric
+- **Bài tập & thực hành tuần học**: 40%
+- **Mã nguồn dự án cá nhân / GitHub repo**: 20%
+- **Dự án cuối khoá (Capstone Project)**: 40% (Bao gồm code, báo cáo và Demo Day).
