@@ -362,3 +362,34 @@ $result = $conn->query($query);
 | **AI Integration** | Mock API code functions logically. | Successfully sends requests to a real API (e.g., Gemini) and receives a response. | Constructs an optimized prompt, AI returns standard JSON format (Threat Score, Reason). |
 | **Code Auditing (Homework)** | Correctly identifies the SQL Injection flaw. | Explains basic exploitation (`' OR 1=1 --`). | Rewrites complete PHP code using Prepared Statements (`$stmt->prepare()`). |
 | **Defensive Mindset** | Recognizes threats. | Understands the purpose of defense over offense. | Suggests long-term architectural solutions (e.g., using WAF, SIEM). |
+
+---
+
+## Phụ Lục Chuyên Sâu (Deep-Dive Appendix): OWASP Top 10 & Regex Log Matching
+
+### 1. Các Mẫu Biểu Thức Chính Quy (Regex) Phân Tích Web Log Phổ Biến
+
+```python
+# Mẫu Regex phát hiện SQL Injection trong URL/Query String
+SQLI_PATTERN = r"(?i)(\%27|\'|\-\-|\%23|SELECT|INSERT|DELETE|UNION|UPDATE|DROP)"
+
+# Mẫu Regex phát hiện Cross-Site Scripting (XSS)
+XSS_PATTERN = r"(?i)(<script>|\%3Cscript\%3E|javascript:|onload=|onerror=)"
+
+# Mẫu Regex phát hiện Path Traversal (Truy cập thư mục trái phép)
+PATH_TRAVERSAL_PATTERN = r"(\.\.\/|\.\.\\|\%2e\%2e\%2f)"
+```
+
+### 2. Tóm Tắt Quy Trình Kiểm Toán Mã Nguồn An Toàn (Secure Code Audit Lifecycle)
+
+```text
+1. Thu thập mã nguồn & Phân loại tài sản
+               ↓
+2. Chạy công cụ Phân tích tĩnh (Static Analysis / SAST)
+               ↓
+3. Dùng AI đánh giá ngữ nghĩa & Lọc cảnh báo giả (False Positives)
+               ↓
+4. Đề xuất bản vá an toàn (Prepared Statements / Escaping)
+               ↓
+5. Kiểm thử lại (Re-testing & Verification)
+```

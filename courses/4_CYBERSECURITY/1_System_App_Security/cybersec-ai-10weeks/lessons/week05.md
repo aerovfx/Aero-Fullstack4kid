@@ -381,3 +381,32 @@ Use the `systemctl stop <service_name>` command to close the services you opened
 *Ghi chú cho Giảng Viên: Hãy đảm bảo học sinh không kết nối mạng Kali Linux của họ theo chế độ "Bridged" đối với mạng trường học để tránh việc vô tình quét các thiết bị khác trong lớp. Chế độ "NAT" hoặc "Host-only" là lý tưởng.*
 
 *Instructor Note: Ensure students do not connect their Kali Linux network in "Bridged" mode to the school network to prevent accidental scanning of other classroom devices. "NAT" or "Host-only" mode is ideal.*
+
+---
+
+## Phụ Lục Chuyên Sâu (Deep-Dive Appendix): Nmap Cheat Sheet & Defensive Commands
+
+### 1. Bảng Tra Cứu Cờ Lệnh Nmap Phổ Biến (Nmap Options Cheat Sheet)
+
+| Cờ Lệnh (Option) | Chức năng (Description) | Ví dụ sử dụng (Example) |
+| :--- | :--- | :--- |
+| `-sS` | TCP SYN Scan (Bán mở, nhanh và hiệu quả) | `nmap -sS 127.0.0.1` |
+| `-sT` | TCP Connect Scan (Đầy đủ 3-way handshake) | `nmap -sT 127.0.0.1` |
+| `-sV` | Phát hiện phiên bản dịch vụ (Service Version) | `nmap -sV 127.0.0.1` |
+| `-O` | Đoán hệ điều hành (OS Detection) | `nmap -O 127.0.0.1` |
+| `-A` | Quét toàn diện (Bao gồm -sV, -O, -sC và traceroute) | `nmap -A 127.0.0.1` |
+| `-p <range>` | Chỉ định dải cổng cần quét | `nmap -p 80,443,22 127.0.0.1` |
+| `-oN <file>` | Lưu kết quả dưới dạng văn bản thường | `nmap -sV -oN audit.txt 127.0.0.1` |
+
+### 2. Các Lệnh Quản Lý Service Cần Thiết Trên Kali Linux (Systemd)
+
+```bash
+# Khởi động dịch vụ web Apache
+sudo systemctl start apache2
+
+# Kiểm tra trạng thái dịch vụ SSH
+sudo systemctl status ssh
+
+# Dừng dịch vụ để đóng cổng an toàn
+sudo systemctl stop apache2
+```

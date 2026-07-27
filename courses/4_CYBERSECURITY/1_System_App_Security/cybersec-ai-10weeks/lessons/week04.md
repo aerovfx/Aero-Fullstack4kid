@@ -391,3 +391,23 @@ void processRequest(char* req) {
 
 ---
 *End of Week 4 Lesson Plan*
+
+---
+
+## Phụ Lục Chuyên Sâu (Deep-Dive Appendix): Kỹ Thuật Đọc Memory Dump & Biên Dịch An Toàn C++
+
+### 1. Cơ chế Bảo vệ Bộ Nhớ Mặc định của Trình biên dịch (Compiler Defenses)
+Các trình biên dịch hiện đại (GCC, Clang, MSVC) được tích hợp sẵn các cơ chế bảo mật nhằm giảm thiểu tác động của lỗi tràn bộ đệm:
+- **Stack Canaries (-fstack-protector):** Chèn một giá trị bí mật (Canary) vào giữa biến cục bộ và Return Address trên Stack. Khi hàm kết thúc, trình biên dịch kiểm tra xem Canary có bị thay đổi không. Nếu có, chương trình lập tức dừng (`Aborted / Segmentation Fault`) để ngăn chặn thực thi mã độc.
+- **ASLR (Address Space Layout Randomization):** Ngẫu nhiên hóa địa chỉ vùng nhớ Stack, Heap, và Libraries mỗi khi chương trình khởi chạy, khiến kẻ tấn công khó đoán địa chỉ bộ nhớ.
+- **DEP / NX Bit (Data Execution Prevention / No-Execute):** Đánh dấu vùng nhớ Stack và Heap là KHÔNG THỂ THỰC THI (Non-executable), ngăn chặn việc chèn và chạy shellcode trực tiếp từ Stack.
+
+### 2. Bảng So Sánh Các Hàm Chuỗi Trong C/C++ (Safe vs Unsafe String Functions)
+
+| Hàm không an toàn (DANGER) | Hàm thay thế an toàn (SECURE) | Ghi chú an toàn |
+| :--- | :--- | :--- |
+| `strcpy(dest, src)` | `strncpy_s()` hoặc `std::string` | `strcpy` không kiểm tra độ dài buffer đích. |
+| `strcat(dest, src)` | `strncat_s()` hoặc `operator+` | `strcat` gây tràn bộ đệm khi nối chuỗi dài. |
+| `gets(buffer)` | `fgets(buffer, size, stdin)` | `gets()` đã bị gỡ bỏ hoàn toàn khỏi chuẩn C11. |
+| `sprintf(buf, fmt, ...)` | `snprintf(buf, size, fmt, ...)` | `snprintf` giới hạn số ký tự tối đa được ghi. |
+

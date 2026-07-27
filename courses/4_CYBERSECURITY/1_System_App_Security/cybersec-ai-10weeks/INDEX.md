@@ -29,7 +29,7 @@ Chào mừng bạn đến với khoá học **An ninh mạng & Ứng dụng AI t
                                                                ▼
                                     ┌────────────────────────────────────────────────────────┐
                                     │             BẢO VỆ DỰ ÁN CUỐI KHOÁ / DEMO DAY          │
-                                    └────────────────────────────────────────────────────────┘
+                                    └──────────────────────────┬─────────────────────────────┘
 ```
 
 ---
@@ -38,11 +38,11 @@ Chào mừng bạn đến với khoá học **An ninh mạng & Ứng dụng AI t
 
 | Tài liệu / Document | Mô tả / Description |
 |---------------------|---------------------|
-| [Lịch Trình Học / Schedule](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersec-ai-10weeks/schedule.md) | Phân bổ 20 buổi học chi tiết và yêu cầu đầu ra / Detail schedule for 20 sessions and deliverables |
-| [Thiết Bị Phòng Lab / Components Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersec-ai-10weeks/references/components.md) | Danh sách linh kiện lab thực hành (Wi-Fi Card, Pi...) / Hardware lab components shopping list |
-| [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersec-ai-10weeks/references/software.md) | Hướng dẫn cài đặt Kali Linux, VS Code, Ollama / Setup instructions for Kali, VS Code, Ollama |
-| [An Toàn & Đạo Đức / Safety & Ethics](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersec-ai-10weeks/references/safety.md) | Quy tắc đạo đức nghề nghiệp và an toàn thông tin / Pentesting ethics rules and guidelines |
-| [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersec-ai-10weeks/projects/final_project.md) | Danh sách 3 hướng dự án tốt nghiệp / 3 tracks of final projects |
+| [Lịch Trình Học / Schedule](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/schedule.md) | Phân bổ 20 buổi học chi tiết và yêu cầu đầu ra / Detail schedule for 20 sessions and deliverables |
+| [Thiết Bị Phòng Lab / Components Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/references/components.md) | Danh sách linh kiện lab thực hành (Wi-Fi Card, Pi...) / Hardware lab components shopping list |
+| [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/references/software.md) | Hướng dẫn cài đặt Kali Linux, VS Code, Ollama / Setup instructions for Kali, VS Code, Ollama |
+| [An Toàn & Đạo Đức / Safety & Ethics](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/references/safety.md) | Quy tắc đạo đức nghề nghiệp và an toàn thông tin / Pentesting ethics rules and guidelines |
+| [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/projects/final_project.md) | Danh sách 3 hướng dự án tốt nghiệp / 3 tracks of final projects |
 
 ---
 
@@ -60,12 +60,12 @@ Chào mừng bạn đến với khoá học **An ninh mạng & Ứng dụng AI t
 
 ## 🛠️ Công Nghệ & Phần Mềm Sử Dụng / Software Stack
 
-- **Hệ điều hành**: Kali Linux (VM hoặc Live USB) & Windows 10/11 làm Host.
+- **Hệ điều hành**: Kali Linux (VM hoặc Live USB) & Windows 10/11 / macOS làm Host.
 - **Ngôn ngữ**: Python 3.10+ & C++ (GCC/G++ 11+).
 - **Mô hình AI**: Ollama (chạy local Llama 3 / Mistral) & APIs (Gemini/OpenAI).
 - **Thư viện chính**:
-  - Python: \`socket\`, \`scapy\`, \`requests\`, \`threading\`, \`json\`.
-  - C++: \`<thread>\`, \`<mutex>\`, \`<vector>\`, \`<winsock2.h>\` / \`<sys/socket.h>\`.
+  - Python: `socket`, `scapy`, `requests`, `threading`, `json`, `bcrypt`, `pandas`, `scikit-learn`.
+  - C++: `<thread>`, `<mutex>`, `<vector>`, `<winsock2.h>` / `<sys/socket.h>`.
 
 ---
 

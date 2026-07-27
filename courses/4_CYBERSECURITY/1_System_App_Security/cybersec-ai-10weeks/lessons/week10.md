@@ -404,3 +404,44 @@ Prepare a course summary report (3-5 pages long). Content should include:
 
 ---
 [End of Document]
+
+---
+
+## Phụ Lục Chuyên Sâu (Deep-Dive Appendix): Kiến Trúc Phòng Thủ Chiều Sâu (Defense-In-Depth Architecture)
+
+### 1. Tổng Kết Mô Hình Bảo Mật 10 Tuần (10-Week Security Master Plan)
+
+```text
+               🌍 INTERNET / LAN
+                      │
+           ┌──────────▼──────────┐
+           │   Firewall & WAF    │ (Quản lý Cổng & Lọc Traffic)
+           └──────────┬──────────┘
+                      │
+           ┌──────────▼──────────┐
+           │ Net Recon (Nmap)    │ (Rà soát dịch vụ & Cổng mở)
+           └──────────┬──────────┘
+                      │
+           ┌──────────▼──────────┐
+           │ Wireshark Sniffer   │ (Giám sát gói tin & Phát hiện SYN Flood)
+           └──────────┬──────────┘
+                      │
+           ┌──────────▼──────────┐
+           │ App & Data Hashing  │ (Bcrypt / Salt / Secure Coding C++)
+           └──────────┬──────────┘
+                      │
+           ┌──────────▼──────────┐
+           │ AI SOC Automation   │ (Isolation Forest / Threat Intel LLM)
+           └─────────────────────┘
+```
+
+### 2. Bảng Tóm Tắt Kỹ Năng Đã Đạt Được (Skills Matrix)
+
+| Tuần | Chủ đề chính | Kỹ năng kỹ thuật đạt được |
+| :--- | :--- | :--- |
+| **Week 1-2** | Socket Programming & Scanning | Lập trình Client/Server, TCP Handshake, Port Scanning đa luồng. |
+| **Week 3-4** | C++ System & Memory | Con trỏ, Memory Leak, Stack vs Heap, Phòng chống Buffer Overflow. |
+| **Week 5-6** | Reconnaissance & Traffic | Sử dụng Nmap trong Kali Linux, Phân tích PCAP bằng Wireshark & Scapy. |
+| **Week 7** | Cryptography & Password | Hashing (Bcrypt/Salt/Pepper), WPA2/WPA3 Wi-Fi Security Analysis. |
+| **Week 8-9** | AI OSINT & Code Audit | Prompt Engineering cho Threat Intel, Kiểm toán SAST, Log Parsing. |
+| **Week 10** | Capstone AI SOC Monitoring | Tự động hóa SOC với Machine Learning (Isolation Forest Anomaly Detection). |

@@ -441,3 +441,28 @@ if __name__ == "__main__":
 
 ---
 *Tài liệu nội bộ khóa học Aero-Fullstack4kid - Cybersecurity & AI. Vui lòng không sao chép khi chưa được phép.*
+
+---
+
+## Phụ Lục Chuyên Sâu (Deep-Dive Appendix): Prompt Engineering Patterns for OSINT
+
+### 1. Kỹ Thuật System Prompt Cho Phân Tích Tình Báo Mối Đe Dọa (Threat Intel Persona Pattern)
+
+```text
+[SYSTEM PROMPT]
+Bạn là một Chuyên gia Phân tích Tình báo Mối đe dọa (Threat Intelligence Analyst) cấp cao.
+Nhiệm vụ của bạn là phân tích đoạn văn bản tin tức bảo mật được cung cấp và trích xuất các Chỉ số Thỏa hiệp (IOCs).
+
+[QUY TẮC NGHIÊM NGẠT]:
+1. Chỉ trích xuất thông tin xuất hiện trực tiếp trong văn bản. TUYỆT ĐỐI KHÔNG tự suy đoán hoặc bịa đặt dữ liệu (Zero Hallucination).
+2. Kết quả phải trả về dưới dạng duy nhất một chuỗi JSON hợp lệ. Không kèm theo văn bản giải thích.
+```
+
+### 2. So Sánh Mô Hình AI Cục Bộ (Ollama) và Mô Hình Đám Mây (Cloud API)
+
+| Tiêu chí | Local LLM (Ollama / Llama 3) | Cloud API (Gemini / OpenAI) |
+| :--- | :--- | :--- |
+| **Bảo mật dữ liệu** | 🛡️ Tuyệt đối (Dữ liệu không rời máy) | ⚠️ Dữ liệu gửi qua Internet |
+| **Chi phí** | 🆓 Hoàn toàn miễn phí | 💳 Tính phí theo Token/Usage |
+| **Yêu cầu phần cứng** | 💻 Cần máy RAM >= 16GB / GPU | ☁️ Chỉ cần kết nối Internet nhẹ |
+| **Chất lượng phản hồi**| ⚡ Tốt cho tác vụ phân loại/JSON | 🧠 Cực kỳ thông minh & suy luận sâu |

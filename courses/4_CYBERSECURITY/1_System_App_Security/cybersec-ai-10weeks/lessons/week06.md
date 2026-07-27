@@ -329,3 +329,25 @@ if __name__ == "__main__":
 - Nếu môi trường lớp học hạn chế quyền Admin/Root để chạy Wireshark ở chế độ Promiscuous, hãy chuẩn bị sẵn các file `.pcap` chất lượng để học viên tải về và tập trung vào kỹ năng phân tích bằng các bộ lọc.
 - Ensure students understand the difference between *passive packet sniffing* and *active network scanning*.
 - If the classroom environment restricts Admin/Root privileges to run Wireshark in Promiscuous mode, prepare high-quality `.pcap` files for students to download and focus on analysis skills using filters.
+
+---
+
+## Phụ Lục Chuyên Sâu (Deep-Dive Appendix): Wireshark Display Filters & TCP Flags Reference
+
+### 1. Bảng Tra Cứu Bộ Lọc Wireshark Phổ Biến (Wireshark Display Filters)
+
+| Mục tiêu lọc (Filter Objective) | Cú pháp Wireshark (Filter Syntax) | Ý nghĩa (Description) |
+| :--- | :--- | :--- |
+| **Theo IP nguồn** | `ip.src == 192.168.1.100` | Lọc các gói tin xuất phát từ IP cụ thể |
+| **Theo IP đích** | `ip.dst == 127.0.0.1` | Lọc các gói tin có đích đến là IP cụ thể |
+| **Theo Cổng TCP** | `tcp.port == 80 || tcp.port == 443` | Lọc lưu lượng Web (HTTP/HTTPS) |
+| **Gói SYN (Khởi tạo kết nối)** | `tcp.flags.syn == 1 && tcp.flags.ack == 0` | Rất hữu ích để phát hiện hành vi Port Scanning |
+| **Gói RST (Từ chối kết nối)** | `tcp.flags.reset == 1` | Phát hiện cổng đóng hoặc bị chặn bởi Firewall |
+| **Lọc DNS Queries** | `dns.flags.response == 0` | Chỉ hiển thị các yêu cầu truy vấn tên miền |
+
+### 2. Ý Nghĩa Các Cờ TCP (TCP Flags Summary)
+
+- **SYN (Synchronize):** Yêu cầu khởi tạo kết nối (Bắt tay bước 1).
+- **ACK (Acknowledgment):** Xác nhận đã nhận dữ liệu hoặc gói SYN/FIN.
+- **FIN (Finish):** Yêu cầu đóng kết nối một cách êm đẹp.
+- **RST (Reset):** Ngắt kết nối ngay lập tức (thường do cổng đóng hoặc lỗi mạng).

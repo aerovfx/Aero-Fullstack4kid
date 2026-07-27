@@ -460,3 +460,22 @@ Dựa vào mã nguồn `secure_auth_manager.py`, hãy thực hiện các nâng c
 *Bản quyền tài liệu thuộc về chương trình đào tạo Aero-Fullstack4kid.*
 *Document copyright belongs to Aero-Fullstack4kid training program.*
 *End of Document / Hết tài liệu.*
+
+---
+
+## Phụ Lục Chuyên Sâu (Deep-Dive Appendix): Hashing Algorithm Comparison & WPA3 Mechanics
+
+### 1. Bảng So Sánh Các Thuật Toán Băm Mật Khẩu (Password Hashing Comparison)
+
+| Thuật Toán | Trạng Thái An Toàn | Work Factor / Cost Factor | Đánh Giá Phòng Thủ |
+| :--- | :--- | :--- | :--- |
+| **MD5 / SHA-1** | ❌ KHÔNG AN TOÀN | Rất nhanh (NANO-giây) | Tuyệt đối không dùng cho mật khẩu (Dễ bị Rainbow Table / GPU Crack). |
+| **SHA-256 / SHA-512**| ⚠️ KHÔNG KHUYÊN DÙNG | Nhanh (MICRO-giây) | Phù hợp kiểm tra tính toàn vẹn file, nhưng không an toàn cho mật khẩu nếu không có Salt/KDF. |
+| **PBKDF2** | ✅ AN TOÀN | Tùy chỉnh (Iterations: 100,000+) | Tiêu chuẩn của NIST, hỗ trợ tốt trên nhiều nền tảng cũ. |
+| **Bcrypt** | 🛡️ RẤT AN TOÀN | Tùy chỉnh (Work Factor: 10-14) | Thuật toán chuẩn mực cho Web App, tự động sinh Salt 128-bit. |
+| **Argon2** | 🏆 AN TOÀN NHẤT | Tùy chỉnh (Memory & Time cost) | Quán quân Password Hashing Competition (PHC), chống lại tấn công phần cứng GPU/ASIC. |
+
+### 2. Sự Khác Biệt Giữa WPA2 và WPA3
+
+- **WPA2 (4-Way Handshake):** Dễ bị bắt gói tin Handshake và bẻ khóa từ điển ngoại tuyến (Offline Dictionary Attack).
+- **WPA3 (SAE - Simultaneous Authentication of Equals):** Sử dụng cơ chế trao đổi khóa Dragonfly. Mỗi lần thử mật khẩu yêu cầu tương tác trực tiếp với Access Point, vô hiệu hóa các công cụ bẻ khóa từ điển offline.
