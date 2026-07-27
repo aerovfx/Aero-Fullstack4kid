@@ -1,0 +1,12 @@
+#!/bin/bash
+# Wrapper script for md2docx_nd30.py using virtual environment
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+VENV_PYTHON="$PROJECT_DIR/.venv/bin/python3"
+
+if [ ! -f "$VENV_PYTHON" ]; then
+    echo "[-] Virtualenv not found at $PROJECT_DIR/.venv. Using system python3..."
+    VENV_PYTHON="python3"
+fi
+
+"$VENV_PYTHON" "$SCRIPT_DIR/md2docx_nd30.py" "$@"
