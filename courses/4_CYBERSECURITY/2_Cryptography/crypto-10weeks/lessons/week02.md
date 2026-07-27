@@ -126,13 +126,44 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Mô Phỏng Lỗi Mã Hóa ECB Mode
-Viết một script Python đọc một file ảnh Bitmap (`.bmp`), mã hóa phần dữ liệu pixel bằng AES-ECB và AES-CBC, sau đó lưu lại file ảnh mới để quan sát sự lộ lọt cấu trúc hình ảnh của ECB Mode.
+---
 
-### Task 2: Xây Dựng File Encrypter CLI
-Viết ứng dụng dòng lệnh Python nhận vào đường dẫn tệp tin và mật khẩu, tự động mã hóa tệp bằng AES-256-GCM và lưu thành file `.enc`.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 2.1: Lập Trình Công Cụ Mã Hóa Tệp AES-256-GCM (AES File Encryptor CLI)
+Viết script Python `aes_file_tool.py` nhận vào đường dẫn tệp tin và mật khẩu chuỗi từ người dùng. Script thực hiện:
+1. Dẫn xuất khóa 32 bytes từ mật khẩu.
+2. Mã hóa tệp tin bằng AES-256-GCM với Nonce 12 bytes ngẫu nhiên.
+3. Ghi tệp mã hóa chứa cấu trúc: `[12 bytes Nonce] + [16 bytes Tag] + [Ciphertext]`.
+
+- **Đầu vào (Input):** `input.txt` (nội dung bất kỳ) và `Password = "SecretKey2026"`
+- **Đầu ra kỳ vọng (Expected Output):** Tạo tệp `input.txt.enc`. Khi giải mã sai mật khẩu hoặc bị sửa 1 byte dữ liệu, chương trình báo lỗi `Invalid Tag` và không xuất file hỏng.
+
+#### Bài 2.2: So Sánh Tính Chất Khuếch Tán (Avalanche Effect)
+Viết script Python mã hóa 2 chuỗi văn bản chỉ khác nhau 1 bit duy nhất bằng AES-128. Đếm số lượng bit bị thay đổi giữa 2 Ciphertext thu được và in ra tỷ lệ phần trăm (Kỳ vọng $\approx 50\%$).
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 2.3: Mô Phỏng Trực Quan Hóa Lỗi Mã Hóa Chế Độ ECB (ECB Image Visualizer)
+Viết script Python đọc một file ảnh Bitmap (`.bmp` 24-bit color). Giữ nguyên 54 bytes tiêu đề (Header) của ảnh `.bmp`, chỉ mã hóa phần dữ liệu Pixel bằng:
+1. Chế độ AES-ECB.
+2. Chế độ AES-CBC.
+
+Lưu 2 file ảnh mới `encrypted_ecb.bmp` và `encrypted_cbc.bmp`. Mở 2 ảnh xem trực quan và viết báo cáo giải thích tại sao đường nét cấu trúc ảnh vẫn hiện rõ ở file ECB nhưng biến mất hoàn toàn ở file CBC.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 2.4: Đo Hiệu Năng Mã Hóa AES Trên Google Colab
+Mở Google Colab notebook và thực thi bài lab:
+1. Sinh dữ liệu ngẫu nhiên dung lượng 50MB bằng `os.urandom()`.
+2. Đo thời gian mã hóa (tính bằng ms) giữa AES-128-GCM, AES-256-GCM và AES-256-CBC.
+3. Vẽ biểu đồ so sánh tốc độ mã hóa (MB/giây) và đưa ra nhận xét về ảnh hưởng của độ dài khóa tới hiệu năng.
 
 ---
 
@@ -140,8 +171,8 @@ Viết ứng dụng dòng lệnh Python nhận vào đường dẫn tệp tin v�
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lý Thuyết AES & Block Modes** | Phân tích sâu sắc sự khác biệt giữa ECB, CBC, GCM và cơ chế AEAD. | Hiểu cơ bản cấu trúc AES và sự nguy hiểm của ECB mode. | Nắm khái niệm AES nhưng chưa giải thích được IV và MAC Tag. | Nhầm lẫn giữa AES và thuật toán mã hóa cổ điển. |
-| **Thực Hành Code Python** | Viết code AES-256-GCM hoàn chỉnh, xử lý lỗi `ValueError` khi MAC tag sai. | Code mã hóa/giải mã chạy đúng nhưng thiếu kiểm tra tính toàn vẹn. | Code báo lỗi thư viện hoặc tái sử dụng Nonce cố định. | Không chạy được mã nguồn Python. |
+| **Phân Tích Thuật Toán** | Giải thích sâu sắc tại sao ECB làm lộ cấu trúc, cơ chế AEAD của GCM và Avalanche Effect. | Hiểu các chế độ mã hóa ECB, CBC, GCM và ý nghĩa của IV/Nonce. | Nắm được định nghĩa AES nhưng chưa giải thích được MAC Tag. | Nhầm lẫn giữa AES và thuật toán mã hóa cổ điển. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành đủ 4 bài (AES GCM CLI, Avalanche test, ECB BMP image lab & Colab benchmark). | Hoàn thành Bài 2.1 và Bài 2.2 chạy đúng không lỗi. | Code có lỗi xử lý file nhị phân hoặc dùng sai kích thước Nonce. | Không nộp mã nguồn thực thi. |
 
 ---
 

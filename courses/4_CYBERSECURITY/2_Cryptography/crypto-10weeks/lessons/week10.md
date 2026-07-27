@@ -156,12 +156,50 @@ if __name__ == "__main__":
 
 ---
 
-## Đánh Giá Capstone & Demo Day Rubric
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
+
+---
+
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 10.1: Xây Dựng Khung Mã Nguồn Trình Chat E2EE Hoàn Chỉnh (E2EE Messenger Core)
+Hoàn thiện script Python `e2ee_messenger_engine.py` bao gồm 4 khối chức năng:
+1. Sinh cặp khóa Identity (`Ed25519`) và cặp khóa Ephemeral (`X25519`).
+2. Thực hiện bắt tay ECDH + HKDF để sinh Session Key đối xứng 256-bit.
+3. Mã hóa nội dung tin nhắn bằng `AES-256-GCM`.
+4. Ký số lên Ciphertext bằng `Ed25519` để chống giả mạo người gửi.
+
+- **Đầu ra kỳ vọng (Expected Output):** Người nhận giải mã mượt mà và kiểm tra đúng chữ ký số. Nếu kẻ tấn công thay đổi 1 byte Ciphertext trên đường truyền, chương trình lập tức cảnh báo `[SECURITY ALERT] Message signature verification failed!`.
+
+#### Bài 10.2: Đóng Gói Module Lưu Trữ Khóa Bí Mật An Toàn (Secure Storage Manager)
+Viết module mã hóa file chứa Private Keys trên thiết bị cuối bằng `Argon2id` + `AES-256-GCM` để bảo vệ khóa bí mật khi máy tính/điện thoại bị tắt.
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 10.3: Phân Tích Rủi Ro Tấn Công Man-in-the-Middle (MitM) & Giả Mạo Khóa (KCI Attack)
+Viết báo cáo đánh giá an toàn mật mã cho ứng dụng E2EE Messenger:
+1. Mô tả kịch bản Server chuyển tiếp giả mạo Public Key của Bob khi gửi cho Alice và cách cơ chế Chữ ký số Ed25519 ngăn chặn cuộc tấn công này.
+2. Phân tích cách sử dụng **Mã an toàn danh tính (Safety Numbers / QR Code Fingerprint)** để xác minh thủ công giữa hai người dùng (ví dụ: Fingerprint = `SHA-256(Alice_PubKey || Bob_PubKey)`).
+
+---
+
+### 🔴 Phần C: Bài Tập Tốt Nghiệp Capstone & Demo Day (Capstone Defense)
+
+#### Bài 10.4: Bảo Vệ Dự Án Capstone Cuối Khóa & Demo Ứng Dụng
+1. Hoàn thiện mã nguồn ứng dụng Capstone đã chọn (Track A: E2EE Messenger, Track B: Password Vault, hoặc Track C: PKI CA Authority).
+2. Đóng gói mã nguồn đẩy lên GitHub repository công khai kèm tệp `README.md` hướng dẫn cài đặt và sử dụng.
+3. Chuẩn bị Slide thuyết trình (8-10 trang) và thực hiện Demo ứng dụng trực tiếp trước hội đồng đánh giá trong buổi Demo Day (Buổi 20).
+
+---
+
+## Đánh Giá / Assessment Rubric
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
 | **Kiến Trúc Mật Mã E2EE** | Thiết kế luồng mã hóa E2EE hoàn chỉnh, dùng đúng AES-GCM, ECDH Curve25519, Ed25519 và HKDF. | Dùng đúng thuật toán mã hóa đối xứng và bất đối xứng nhưng thiếu chữ ký số xác thực. | Ứng dụng chạy được nhưng còn đè ngẫu nhiên IV hoặc dùng mã hóa không xác thực. | Không triển khai được mô hình E2EE. |
-| **Báo Cáo Kỹ Thuật (Report)** | Báo cáo chi tiết sơ đồ luồng dữ liệu, phân tích rủi ro MitM và bảo vệ tốt trước lớp. | Báo cáo đầy đủ nội dung theo cấu trúc yêu cầu. | Báo cáo sơ sài, thiếu sơ đồ luồng dữ liệu mật mã. | Không nộp báo cáo Capstone. |
+| **Hoàn Thành Bài Tập & Capstone** | Hoàn thành xuất sắc cả 4 bài, ứng dụng Capstone chạy mượt mà, slide thuyết trình ấn tượng và bảo vệ thành công. | Hoàn thành Bài 10.1 và Bài 10.2 chạy đúng không lỗi. | Code có lỗi xử lý ngoại lệ hoặc chưa nộp slide thuyết trình Capstone. | Không nộp dự án Capstone. |
 
 ---
 

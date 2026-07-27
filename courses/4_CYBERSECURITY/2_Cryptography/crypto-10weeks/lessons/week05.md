@@ -121,13 +121,43 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Mã Hóa Kết Hợp Hybrid Encryption (RSA + AES)
-Viết script Python mã hóa một file dung lượng lớn bằng AES-256-GCM với một Session Key ngẫu nhiên. Sau đó mã hóa Session Key này bằng RSA-OAEP 2048-bit.
+---
 
-### Task 2: Cài Đặt Thuật Toán Euclid Mở Rộng
-Viết hàm Python tự tính nghịch đảo đồng dư cho các tham số số nguyên lớn $2048$-bit.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 5.1: Cài Đặt Thuật Toán Euclid Mở Rộng & Tính Nghịch Đảo Đồng Dư
+Viết script Python `modular_math.py` cài đặt 2 hàm:
+1. `extended_gcd(a, b)`: Trả về $\gcd(a, b)$ và các hệ số Bézout $x, y$ sao cho $a \cdot x + b \cdot y = \gcd(a, b)$.
+2. `mod_inverse(e, phi)`: Tìm số nguyên $d$ sao cho $(e \cdot d) \equiv 1 \pmod{\phi(n)}$.
+
+- **Đầu vào (Input):** `e = 65537`, `phi = 3120` (với $p=61, q=53$)
+- **Đầu ra kỳ vọng (Expected Output):** $d = 2753$. Xác minh $(65537 \times 2753) \bmod 3120 == 1$.
+
+#### Bài 5.2: Triển Khai Textbook RSA Từ Đầu
+Viết class `SimpleRSA` thực hiện sinh cặp khóa $(e, d, n)$ từ 2 số nguyên tố nhỏ $p=61, q=53$, mã hóa và giải mã số nguyên thông điệp.
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 5.3: Mã Hóa Kết Hợp Mã Hóa Khối & Khóa Công Khai (RSA-OAEP + AES-GCM Hybrid Encryption)
+Viết script Python `hybrid_crypto.py` mã hóa tệp tin có kích thước bất kỳ (ví dụ 10MB):
+1. Sinh ngẫu nhiên Session Key AES 256-bit.
+2. Mã hóa tệp tin bằng AES-256-GCM với Session Key.
+3. Mã hóa Session Key bằng RSA-OAEP 2048-bit với Public Key của bên nhận.
+4. Đóng gói tệp ra dạng: `[Len(EncKey)] + [Encrypted Session Key] + [AES Nonce] + [AES Tag] + [AES Ciphertext]`.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 5.4: So Sánh Tốc Độ Sinh Khóa & Mã Hóa RSA 2048-bit vs 4096-bit Trên Colab
+Mở Google Colab notebook và thực hiện:
+1. Đo thời gian sinh khóa (Key Generation) của RSA-2048 và RSA-4096.
+2. Đo thời gian mã hóa và giải mã 100 lần.
+3. Đánh giá sự suy giảm hiệu năng khi tăng độ dài khóa RSA gấp đôi và giải thích lý do ngành công nghiệp mật mã chuyển hướng sang ECC.
 
 ---
 
@@ -135,8 +165,8 @@ Viết hàm Python tự tính nghịch đảo đồng dư cho các tham số s�
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lý Thuyết Số & RSA** | Giải thích sâu sắc toán học RSA, Euclid mở rộng, nghịch đảo đồng dư và lý do cần OAEP. | Hiểu quy trình sinh khóa RSA và công thức mã hóa/giải mã. | Nắm được công thức RSA nhưng chưa giải thích được bài toán phân tích số nguyên. | Nhầm lẫn giữa RSA và AES. |
-| **Thực Hành Code Python** | Lập trình RSA từ đầu và Hybrid Encryption (RSA+AES) chuẩn xác. | Code sinh khóa và mã hóa RSA chạy đúng với tham số nhỏ. | Code có lỗi tính toán số dư hoặc chưa xử lý được chuỗi văn bản. | Không chạy được mã nguồn Python. |
+| **Phân Tích Thuật Toán** | Giải thích sâu sắc toán học RSA, Euclid mở rộng, nghịch đảo đồng dư và lý do cần OAEP & Hybrid Encryption. | Hiểu quy trình sinh khóa RSA và công thức mã hóa/giải mã. | Nắm được công thức RSA nhưng chưa giải thích được bài toán phân tích số nguyên. | Nhầm lẫn giữa RSA và AES. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành đủ 4 bài (Euclid mở rộng module, Simple RSA, Hybrid Encryption CLI & Colab benchmark). | Hoàn thành Bài 5.1 và Bài 5.2 chạy đúng không lỗi. | Code có lỗi tính toán số dư hoặc chưa xử lý được chuỗi văn bản. | Không nộp mã nguồn thực thi. |
 
 ---
 

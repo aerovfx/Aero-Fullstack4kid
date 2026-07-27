@@ -121,13 +121,43 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Mô Phỏng Bắt Tay ECDHE + AES-GCM
-Viết chương trình Python mô phỏng cuộc hội thoại an toàn 2 chiều giữa Alice và Bob: Sinh khóa ECDH ngẫu nhiên, trao đổi khóa, tạo khóa phiên AES bằng HKDF, sau đó mã hóa và giải mã tin nhắn bằng AES-256-GCM.
+---
 
-### Task 2: So Sánh Tốc Độ Sinh Khóa RSA vs ECC
-Viết script Python đo thời gian sinh khóa RSA 3072-bit và thời gian sinh khóa Curve25519 (100 lần lặp) để so sánh hiệu năng.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 6.1: Module Trao Đổi Khóa ECDH Curve25519 & Dẫn Xuất Khóa HKDF
+Viết script Python `ecdh_manager.py` cho phép 2 thực thể Alice và Bob:
+1. Sinh cặp khóa X25519 (Private Key & Public Key).
+2. Trao đổi Public Key và tính toán điểm bí mật chung (Raw Shared Secret).
+3. Dùng hàm HKDF-SHA256 để chuyển đổi Raw Shared Secret thành khóa đối xứng AES 256-bit chuẩn.
+
+- **Đầu ra kỳ vọng (Expected Output):** `Alice Session Key (Hex) == Bob Session Key (Hex)`.
+
+#### Bài 6.2: Kiểm Trợ Bài Toán ECDLP Với Tham Số Đường Cong Nhỏ
+Viết script Python tính toán phép nhân điểm $P = k \cdot G$ trên đường cong $y^2 \equiv x^3 + a x + b \pmod p$ với các tham số nhỏ $p=23, a=1, b=1$. Cho trước $P$ và $G$, thử vét cạn số $k$ để thấy độ phức tạp tăng nhanh ra sao khi $p$ tăng lớn.
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 6.3: Mô Phỏng Cơ Chế Bảo Mật Chuyển Tiếp (Perfect Forward Secrecy - PFS)
+Viết script Python `pfs_chat_simulation.py` mô phỏng 10 phiên hội thoại giữa Alice và Bob:
+- Mỗi phiên sinh cặp khóa ECDH tạm thời mới (Ephemeral Key Pair).
+- Mã hóa tin nhắn phiên đó bằng AES-GCM với khóa phiên động.
+- Hủy khóa phiên ngay khi phiên hội thoại kết thúc.
+- Giả lập trường hợp kẻ tấn công đánh cắp được Private Key dài hạn của Server và chứng minh kẻ tấn công **KHÔNG THỂ GIẢI MÃ** được 10 phiên làm việc trước đó.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 6.4: So Sánh Tốc Độ Sinh Khóa & Trao Đổi Khóa RSA-3072 vs ECC Curve25519
+Mở Google Colab notebook và thực hiện:
+1. Đo thời gian sinh 1,000 cặp khóa RSA-3072 so với 1,000 cặp khóa Curve25519.
+2. Đo thời gian tính toán khóa trao đổi secret.
+3. Vẽ biểu đồ hiển thị lý do tại sao các giao thức mạng hiện đại (TLS 1.3, WireGuard, SSH) bắt buộc chuyển đổi sang ECC.
 
 ---
 
@@ -135,8 +165,8 @@ Viết script Python đo thời gian sinh khóa RSA 3072-bit và thời gian sin
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lý Thuyết ECC & ECDH** | Giải thích sâu sắc toán học ECC, trao đổi khóa ECDH, HKDF và ý nghĩa của Perfect Forward Secrecy. | Hiểu quy trình trao đổi khóa ECDH và ưu điểm của ECC so với RSA. | Nắm được định nghĩa ECDH nhưng chưa giải thích được PFS. | Nhầm lẫn trao đổi khóa với mã hóa đối xứng. |
-| **Thực Hành Code Python** | Lập trình ECDH với Curve25519 và HKDF chuẩn xác, kết hợp AES-GCM mượt mà. | Code trao đổi khóa ECDH chạy đúng và xác nhận 2 khóa trùng khớp. | Code có lỗi chuyển đổi kiểu dữ liệu Public Key. | Không chạy được mã nguồn Python. |
+| **Phân Tích Thuật Toán** | Giải thích sâu sắc toán học ECC, trao đổi khóa ECDH, vai trò của HKDF và cơ chế bảo mật chuyển tiếp PFS. | Hiểu quy trình trao đổi khóa ECDH và ưu điểm của ECC so me với RSA. | Nắm được định nghĩa ECDH nhưng chưa giải thích được PFS. | Nhầm lẫn trao đổi khóa với mã hóa đối xứng. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành đủ 4 bài (ECDH HKDF module, ECDLP test, PFS chat simulation & Colab ECC vs RSA benchmark). | Hoàn thành Bài 6.1 và Bài 6.2 đúng yêu cầu. | Code có lỗi chuyển đổi kiểu dữ liệu Public Key. | Không nộp mã nguồn thực thi. |
 
 ---
 

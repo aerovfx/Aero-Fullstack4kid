@@ -110,13 +110,43 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Nghiên Cứu Chuẩn PQC CRYSTALS-Kyber (ML-KEM)
-Đọc tài liệu công bố chuẩn PQC của NIST và viết báo cáo tóm tắt (2 trang) về nguyên lý trao đổi khóa của ML-KEM.
+---
 
-### Task 2: Mô Phỏng ZKP Xác Thực Mật Khẩu
-Viết script Python triển khai giao thức ZKP đơn giản cho phép Client chứng minh với Server rằng mình biết mật khẩu mà không cần gửi mật khẩu qua mạng.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 9.1: Triển Khai Giao Thức Schnorr Zero-Knowledge Proof (Schnorr ZKP Simulator)
+Viết script Python `schnorr_zkp.py` mô phỏng cuộc đối thoại giữa Người chứng minh (Prover - Alice) và Người xác minh (Verifier - Bob):
+1. Alice giữ bí mật $x = 123456$, công khai $y = g^x \bmod p$.
+2. Alice gửi Cam kết (Commitment) $t = g^r \bmod p$.
+3. Bob gửi Thử thách (Challenge) $c$ ngẫu nhiên.
+4. Alice phản hồi $s = r + c \cdot x$.
+5. Bob kiểm tra đẳng thức $g^s \equiv t \cdot y^c \pmod p$.
+
+- **Đầu ra kỳ vọng (Expected Output):** `[+] Verification Result: TRUE`. Chứng minh thành công mà không lộ $x$.
+
+#### Bài 9.2: Mô Phỏng Mã Hóa Đồng Hình Thêm (Additive Homomorphic Encryption)
+Viết script Python mô phỏng tính chất đồng hình của RSA/Paillier: Mã hóa 2 số nguyên $m_1 = 15$ và $m_2 = 25$ thành $C_1$ và $C_2$. Thực hiện tính toán trực tiếp trên $C_1, C_2$ để thu được $C_3$ sao cho khi giải mã $C_3$ ra đúng kết quả $40$.
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 9.3: Phân Tích Thuật Toán Shor & Tác Động Tới Hệ Mật Lưới PQC
+Viết báo cáo kỹ thuật (2-3 trang Markdown):
+1. Phân tích nguyên lý toán học khiến Máy tính Lượng tử phá hủy RSA và ECDH trong thời gian đa thức nhờ Thuật toán Shor.
+2. Trình bày bài toán Lưới **Learning With Errors (LWE)** làm nền tảng cho chuẩn Mật mã Hậu Lượng tử NIST **CRYSTALS-Kyber (ML-KEM)** và **CRYSTALS-Dilithium (ML-DSA)**.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 9.4: Xây Dựng Trình Xác Thực Thẻ Căn Cước Không Tiết Lộ Tuổi (ZKP e-ID Verification)
+Mở Google Colab notebook và thực hiện bài lab:
+1. Giả lập một hệ thống Căn cước công dân số ZKP.
+2. Người dùng chứng minh mình đã đủ 18 tuổi mà **KHÔNG CẦN TIẾT LỘ** ngày tháng năm sinh chính xác.
+3. Chạy xác minh và in kết quả kiểm chứng.
 
 ---
 
@@ -124,8 +154,8 @@ Viết script Python triển khai giao thức ZKP đơn giản cho phép Client 
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lý Thuyết ZKP & PQC** | Giải thích sâu sắc 3 điều kiện ZKP, tác động của Thuật toán Shor/Grover và nguyên lý Mật mã Bài toán Lưới. | Hiểu khái niệm ZKP, nhận thức được mối đe dọa lượng tử tới RSA/ECC. | Nắm được định nghĩa ZKP nhưng chưa giải thích được PQC. | Nhầm lẫn ZKP với mã hóa thông thường. |
-| **Thực Hành Code Python** | Lập trình giao thức Schnorr ZKP chuẩn xác, xác minh đẳng thức toán học mượt mà. | Code ZKP chạy đúng và trả về kết quả verification hợp lệ. | Code có lỗi tính toán số dư modulo. | Không chạy được mã nguồn Python. |
+| **Phân Tích Thuật Toán** | Giải thích sâu sắc 3 điều kiện ZKP, tác động của Thuật toán Shor/Grover và nguyên lý Mật mã Bài toán Lưới PQC. | Hiểu khái niệm ZKP, nhận thức được mối đe dọa lượng tử tới RSA/ECC. | Nắm được định nghĩa ZKP nhưng chưa giải thích được PQC. | Nhầm lẫn ZKP với mã hóa thông thường. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành đủ 4 bài (Schnorr ZKP simulator, Homomorphic encryption demo, PQC report & Colab ZKP e-ID lab). | Hoàn thành Bài 9.1 và Bài 9.2 chạy đúng không lỗi. | Code có lỗi tính toán số dư modulo. | Không nộp mã nguồn thực thi. |
 
 ---
 

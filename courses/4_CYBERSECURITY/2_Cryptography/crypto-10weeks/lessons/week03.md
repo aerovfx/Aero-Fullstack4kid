@@ -108,13 +108,41 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Mô Phỏng Tấn Công Nonce Reuse
-Viết một script Python mã hóa 2 chuỗi văn bản bằng cùng một chìa khóa và cùng 1 Nonce với ChaCha20. Thực hiện phép XOR 2 ciphertext thu được và dùng kỹ thuật đoán từ (Word Dragging) để tìm lại nội dung Plaintext.
+---
 
-### Task 2: So Sánh Tốc Độ Mã Hóa AES vs ChaCha20
-Viết chương trình đo thời gian mã hóa 100MB dữ liệu giữa AES-256-GCM và ChaCha20-Poly1305 trong Python.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 3.1: Module Mã Hóa Luồng ChaCha20-Poly1305 (ChaCha20 Stream Module)
+Viết class Python `StreamCipherManager` hỗ trợ mã hóa và giải mã chuỗi byte theo thời gian thực (Real-time Stream) bằng ChaCha20-Poly1305.
+
+- **Đầu vào (Input):** `Data = b"PACKET_PAYLOAD_DATA"`, `Key = 32 bytes random`
+- **Đầu ra kỳ vọng (Expected Output):** Mã hóa trả về `(nonce, ciphertext, tag)`. Giải mã trả về đúng dữ liệu gốc và xác thực tính toàn vẹn.
+
+#### Bài 3.2: Kiểm Trợ Sự Khác Biệt PRNG vs CSPRNG
+Viết script Python sinh $10,000$ số ngẫu nhiên 32-bit bằng `random.randint()` (PRNG) và `secrets.randbelow()` (CSPRNG). Đếm số lần lặp lại số ngẫu nhiên để thấy điểm khác biệt về độ an toàn mật mã.
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 3.3: Mô Phỏng Tấn Công Tái Sử Dụng Nonce (Nonce Reuse Attack Simulation)
+Viết script Python `nonce_reuse_attack.py` thực hiện các bước:
+1. Cho 2 thông điệp Plaintext tiếng Anh $P_1 = \text{"ATTACK AT DAWN TODAY"}$ và $P_2 = \text{"RETREAT TO BASE NOW"}$.
+2. Mã hóa cả $P_1$ và $P_2$ bằng ChaCha20 sử dụng **CÙNG MỘT KEY VÀ CÙNG MỘT NONCE** để thu được $C_1$ và $C_2$.
+3. Thực hiện phép toán $C_1 \oplus C_2$.
+4. Chứng minh $C_1 \oplus C_2 == P_1 \oplus P_2$ (Khóa hoàn toàn bị bóc tách).
+5. Sử dụng kỹ thuật đoán từ (Word Dragging với các từ phổ biến như `"THE"`, `"ATTACK"`) để khôi phục lại $P_1$ và $P_2$.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 3.4: So Sánh Tốc Độ Mã Hóa ChaCha20 vs AES-GCM Trên Mobile Colab
+Mở Google Colab notebook và thực hiện:
+1. Đo thời gian mã hóa 100MB dữ liệu giữa ChaCha20-Poly1305 và AES-256-GCM.
+2. Đánh giá tốc độ xử lý trên CPU không có tăng tốc phần cứng AES-NI và giải thích lý do tại sao các ứng dụng di động (Android/iOS) ưa chuộng ChaCha20.
 
 ---
 
@@ -122,8 +150,8 @@ Viết chương trình đo thời gian mã hóa 100MB dữ liệu giữa AES-256
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lý Thuyết Stream Cipher & CSPRNG** | Giải thích sâu sắc nguyên lý Keystream, thảm họa Nonce Reuse và sự khác biệt PRNG vs CSPRNG. | Hiểu cơ bản cơ chế Stream Cipher và tác hại của việc dùng trùng Nonce. | Nắm được định nghĩa Stream Cipher nhưng chưa hiểu bản chất toán học XOR. | Nhầm lẫn giữa Stream Cipher và Block Cipher. |
-| **Thực Hành Code Python** | Lập trình ChaCha20-Poly1305 chuẩn xác, đo đạc tốc độ mã hóa mượt mà. | Code mã hóa chạy đúng nhưng chưa xử lý được MAC Tag validation. | Code có lỗi biên dịch hoặc dùng sai kích thước Nonce. | Không chạy được mã nguồn Python. |
+| **Phân Tích Thuật Toán** | Giải thích sắc bén nguyên lý Keystream, thảm họa Nonce Reuse và sự khác biệt PRNG vs CSPRNG. | Hiểu cơ bản cơ chế Stream Cipher và tác hại của việc dùng trùng Nonce. | Nắm được định nghĩa Stream Cipher nhưng chưa hiểu bản chất toán học XOR. | Nhầm lẫn giữa Stream Cipher và Block Cipher. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành đủ 4 bài (ChaCha20 module, PRNG vs CSPRNG test, Nonce Reuse attack simulation & Colab benchmark). | Hoàn thành Bài 3.1 và Bài 3.2 đúng yêu cầu. | Code có lỗi biên dịch hoặc chưa tính đúng phép XOR hai ciphertext. | Không nộp mã nguồn thực thi. |
 
 ---
 

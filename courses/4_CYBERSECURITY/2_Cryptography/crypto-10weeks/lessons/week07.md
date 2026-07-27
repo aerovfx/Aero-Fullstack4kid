@@ -113,17 +113,45 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Tự Tạo Local Root CA bằng OpenSSL CLI
-Sử dụng các lệnh OpenSSL CLI để:
-1. Sinh khóa bí mật Root CA `rootCA.key`.
-2. Tạo chứng chỉ tự ký Root CA `rootCA.crt` (thời hạn 10 năm).
-3. Sinh khóa Server `server.key` và tạo yêu cầu cấp chứng chỉ `server.csr`.
-4. Dùng `rootCA.crt` ký và cấp chứng chỉ `server.crt`.
+---
 
-### Task 2: Viết Trình Xác Thực Hợp Đồng PDF
-Viết script Python đọc file bản ký hợp đồng kèm file chữ ký Ed25519 và xác thực tính toàn vẹn.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 7.1: Module Ký Số & Xác Thực Hợp Đồng Ed25519 (Ed25519 Document Signer)
+Viết script Python `ed25519_signer.py` hỗ trợ:
+1. Sinh cặp khóa Ed25519 (Private Key & Public Key).
+2. Ký tệp tin PDF/Text bất kỳ.
+3. Xuất file chữ ký riêng biệt `.sig`.
+4. Viết chức năng kiểm tra tính toàn vẹn và hợp lệ của chữ ký.
+
+- **Đầu vào (Input):** `contract.txt`, `signature.sig`, `public_key.pub`
+- **Đầu ra kỳ vọng (Expected Output):** Nối đúng `[VALID SIGNATURE]`. Nếu tệp bị sửa 1 ký tự, báo `[INVALID SIGNATURE - FILE TAMPERED!]`.
+
+#### Bài 7.2: Phân Tích Cấu Trúc Chứng Chỉ Số X.509
+Viết script Python dùng thư viện `cryptography` đọc tệp chứng chỉ X.509 (`.crt` hoặc `.pem`) của trang web `google.com` và in các thông tin: Subject, Issuer, Serial Number, Expiration Date, và Public Key Algorithm.
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 7.3: Tự Xây Dựng Hạ Tầng Cấp Chứng Chỉ Local Root CA Bằng OpenSSL CLI
+Viết script Bash/Python tự động hóa quy trình PKI:
+1. Tạo Private Key `rootCA.key` và chứng chỉ tự ký Root CA `rootCA.crt` (thời hạn 10 năm).
+2. Tạo Private Key cho Web Server `server.key` và file Yêu cầu Cấp Chứng chỉ `server.csr`.
+3. Dùng Root CA ký và cấp phát chứng chỉ số X.509 `server.crt` có mở rộng SAN (Subject Alternative Name = `localhost`, `127.0.0.1`).
+4. Kiểm tra chuỗi chứng chỉ bằng lệnh `openssl verify -CAfile rootCA.crt server.crt`.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 7.4: Mô Phỏng Toàn Bộ Quy Trình Bắt Tay TLS 1.3 (TLS 1.3 Handshake Simulator)
+Mở Google Colab notebook và thực hiện mô phỏng luồng bắt tay TLS 1.3 (1 Round-Trip):
+1. Client gửi `ClientHello` chứa Ephemeral ECDH Key Share (`client_eph_pub`).
+2. Server phản hồi `ServerHello` chứa Ephemeral ECDH Key Share (`server_eph_pub`) + Certificate X.509 + Signature.
+3. Cả hai bên tự tính toán Master Session Key và bắt đầu truyền dữ liệu mã hóa AES-GCM.
 
 ---
 
@@ -131,8 +159,8 @@ Viết script Python đọc file bản ký hợp đồng kèm file chữ ký Ed2
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lý Thuyết Chữ Ký Số & PKI** | Giải thích sâu sắc nguyên lý Ký số, 3 tính chất bảo mật, Chuỗi tin tưởng X.509 và bắt tay TLS 1.3. | Hiểu quy trình Ký/Xác thực chữ ký và khái niệm CA. | Nắm được định nghĩa Chữ ký số nhưng nhầm lẫn với Encryption. | Nhầm lẫn giữa Private Key ký và Public Key mã hóa. |
-| **Thực Hành Code Python & OpenSSL** | Lập trình Ed25519 chuẩn xác, tạo thành công Local Root CA bằng OpenSSL CLI. | Code ký/xác thực Ed25519 chạy đúng và phát hiện được dữ liệu bị sửa đổi. | Code báo lỗi thư viện hoặc không tạo được chứng chỉ OpenSSL. | Không chạy được mã nguồn Python. |
+| **Phân Tích Thuật Toán** | Giải thích sâu sắc nguyên lý Ký số, 3 tính chất bảo mật (Integrity, Auth, Non-repudiation), Chuỗi tin tưởng X.509 và Bắt tay TLS 1.3. | Hiểu quy trình Ký/Xác thực chữ ký và khái niệm CA. | Nắm được định nghĩa Chữ ký số nhưng nhầm lẫn với Encryption. | Nhầm lẫn giữa Private Key ký và Public Key mã hóa. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành đủ 4 bài (Ed25519 signer module, X.509 parser, Local Root CA OpenSSL automation & Colab TLS 1.3 simulator). | Hoàn thành Bài 7.1 và Bài 7.2 đúng yêu cầu. | Code báo lỗi thư viện hoặc không tạo được chứng chỉ OpenSSL. | Không nộp mã nguồn thực thi. |
 
 ---
 

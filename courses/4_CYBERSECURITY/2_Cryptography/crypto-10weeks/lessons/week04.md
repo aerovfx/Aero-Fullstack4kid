@@ -113,13 +113,44 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Xây Dựng Trình Kiểm Tra Tính Toàn Vẹn Thư Mục (File Integrity Monitor)
-Viết script Python quét qua toàn bộ các tệp trong một thư mục, lưu giá trị băm SHA-256 của từng tệp vào tệp JSON. Khi chạy lại, script phải phát hiện tệp nào đã bị sửa đổi, thêm mới hoặc xóa đi.
+---
 
-### Task 2: Mô Phỏng Tấn Công Birthday Attack Trên Hash Ngắn
-Viết script Python tìm va chạm (Collision) cho một hàm băm SHA-256 bị cắt ngắn còn 24 bits (3 bytes) để đo số lần thử trung bình cần thiết.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 4.1: Hệ Thống Giám Sát Tính Toàn Vẹn Thư Mục (File Integrity Monitor - FIM)
+Viết script Python `file_integrity_monitor.py` quét qua một thư mục mục tiêu, tính mã băm SHA-256 của từng tệp và lưu vào tệp `hashes.json`. Khi chạy lại ở chế độ kiểm tra (`--check`), script đối chiếu và thông báo rõ ràng các trạng thái:
+- `[ADDED]`: Tệp mới tạo.
+- `[MODIFIED]`: Tệp bị chỉnh sửa nội dung.
+- `[DELETED]`: Tệp đã bị xóa.
+
+- **Đầu ra kỳ vọng (Expected Output):**
+  ```text
+  [+] Scanning directory: ./data
+  [⚠️ MODIFIED]: ./data/config.sys (SHA-256 Hash Mismatch!)
+  [➕ ADDED]   : ./data/backdoor.py
+  ```
+
+#### Bài 4.2: Xây Dựng Module Chữ Ký HMAC API
+Viết module Python sinh và xác thực chữ ký HMAC-SHA256 cho các gói tin JSON API. Sử dụng `hmac.compare_digest()` để chống tấn công Timing Attack.
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 4.3: Mô Phỏng Tấn Công Khái Niệm Timing Side-Channel Trên Phép So Sánh HMAC
+Viết script Python so sánh thời gian thực thi của toán tử so sánh chuỗi thông thường `str1 == str2` (kết thúc ngay khi thấy 1 ký tự sai) và `hmac.compare_digest(str1, str2)` (thời gian cố định). Giải thích tại sao kẻ tấn công có thể đoán từng byte của chữ ký HMAC bằng phép đo thời gian nanosecond.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 4.4: Mô Phỏng Tấn Công Birthday Attack Tìm Va Chạm Hash Ngắn
+Mở Google Colab notebook và thực hiện:
+1. Định nghĩa hàm băm `short_hash(data)` bằng cách lấy 24 bits đầu tiên (3 bytes) của giá trị băm SHA-256.
+2. Sinh các chuỗi ngẫu nhiên liên tục và lưu vào mảng cho đến khi tìm thấy 2 chuỗi khác nhau có cùng giá trị `short_hash`.
+3. Đếm số lần lặp và so sánh với lý thuyết Birthday Paradox ($\approx 2^{24/2} = 2^{12} = 4096$ lần).
 
 ---
 
@@ -127,8 +158,8 @@ Viết script Python tìm va chạm (Collision) cho một hàm băm SHA-256 bị
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lý Thuyết Hàm Băm & HMAC** | Giải thích sắc bén 3 tính chất hàm băm, Birthday Attack và lý do cần dùng HMAC. | Hiểu các khái niệm chính, giải thích được SHA-256 và HMAC. | Nắm được định nghĩa hàm băm nhưng nhầm lẫn HMAC với Hashing thường. | Nhầm lẫn Hashing với Encryption. |
-| **Thực Hành Code Python** | Lập trình FIM và HMAC verification chuẩn xác, sử dụng `compare_digest` chống Timing Attack. | Code chạy đúng chức năng băm file và HMAC. | Code có lỗi đọc file lớn hoặc không tính đúng HMAC. | Không chạy được mã nguồn Python. |
+| **Phân Tích Thuật Toán** | Giải thích sâu sắc 3 tính chất hàm băm, Birthday Attack và lý do cần HMAC thay vì Hashing đơn thuần. | Hiểu các khái niệm chính, giải thích được SHA-256, HMAC và FIM. | Nắm được định nghĩa hàm băm nhưng nhầm lẫn HMAC với Hashing thường. | Nhầm lẫn Hashing với Encryption. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành đủ 4 bài (File Integrity Monitor, HMAC module, Timing attack simulation & Colab Birthday attack). | Hoàn thành Bài 4.1 và Bài 4.2 đúng yêu cầu. | Code có lỗi đọc file dung lượng lớn hoặc dùng sai toán tử so sánh HMAC. | Không nộp mã nguồn thực thi. |
 
 ---
 

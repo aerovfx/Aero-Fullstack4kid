@@ -205,22 +205,48 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà / Homework
-
-### Đề bài: Ứng dụng mã hoá tin nhắn sơ cấp (Caesar Cipher)
-Dựa trên kiến thức của Cấp độ 2 (Chat liên tục), hãy nâng cấp ứng dụng Chat của bạn:
-1. **Client**: Viết một hàm dịch vòng chữ cái (Caesar Cipher) đơn giản. Khi người dùng nhập "HELLO", mã hoá nó thành "KHOOR" (dịch 3 ký tự) rồi mới gửi đi qua mạng.
-2. **Server**: Khi nhận được "KHOOR", nó phải gọi hàm giải mã ngược lại 3 ký tự để in ra màn hình từ "HELLO".
-
-**Yêu cầu nộp bài:** 
-Nén 2 file `crypto_client.py` và `crypto_server.py` kèm theo ảnh chụp màn hình terminal minh chứng.
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
 ---
 
-## Đánh Giá / Assessment Rubric Table
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
 
-| Tiêu chí / Criteria | Xuất sắc / Excellent (90-100%) | Tốt / Good (70-89%) | Cần cố gắng / Needs Improvement (<70%) |
-| :--- | :--- | :--- | :--- |
-| **1. Tuân thủ An toàn** | Hardcode `127.0.0.1`. Tuyệt đối không để hở IP ra LAN/Public. (30 điểm) | Dùng localhost nhưng code viết thiếu cẩn thận, dễ nhầm lẫn. (20 điểm) | Dùng IP `0.0.0.0`. (0 điểm, FAIL toàn phần). |
-| **2. Logic Mã Hoá** | Mã hoá và giải mã chính xác 2 chiều, xử lý tốt khoảng trắng (space). (40 điểm) | Mã hoá được nhưng thỉnh thoảng lỗi ký tự đặc biệt. (25 điểm) | Mã hoá sai nguyên lý hoặc không chạy được. (10 điểm) |
-| **3. Xử Lý Vòng Lặp** | Client và Server chat qua lại liên tục không bị kẹt (block). Thoát duyên dáng khi gõ EXIT. (30 điểm) | Có vòng lặp nhưng lỗi logic khiến ứng dụng bị treo giữa chừng. (15 điểm) | Chỉ gửi được 1 tin nhắn rồi ngắt kết nối. (0 điểm) |
+#### Bài 1.1: Trình Chat Socket 2 Chiều Liên Tục (Continuous Socket Chat)
+Xây dựng cặp script Python `chat_server.py` và `chat_client.py` chạy trên Localhost `127.0.0.1:8888`.
+- Server lắng nghe và duy trì kết nối với Client.
+- Client và Server thay nhau nhập tin nhắn từ bàn phím và gửi cho đối phương.
+- Khi một trong hai bên gõ `EXIT` hoặc `QUIT`, kết nối phải ngắt an toàn mà không làm sụp đổ chương trình.
+
+#### Bài 1.2: Server Ghi Log Kết Nối Chuyên Nghiệp (Secure Logging Server)
+Cập nhật `chat_server.py` sử dụng module `logging` của Python:
+- Ghi vết địa chỉ IP, Port và dấu mốc thời gian (Timestamp) của mọi kết nối đến.
+- Tự động chặn và từ chối các kết nối có địa chỉ IP khác `127.0.0.1`.
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 1.3: Ứng Dụng Chat Mã Hóa Mạng Sơ Cấp (Crypto Socket Chat)
+Nâng cấp cặp script Chat Socket bằng cách bổ sung lớp mã hóa Caesar Cipher:
+1. **Client:** Nhập tin nhắn Plaintext, tự động dịch chuyển 3 vị trí ký tự (Mã hóa Caesar) trước khi truyền gói tin qua Socket.
+2. **Server:** Nhận gói tin mã hóa từ Socket, tự động giải mã ngược 3 vị trí để khôi phục nội dung gốc và ghi Log.
+3. Xử lý các ký tự đặc biệt, dấu cách và kiểm tra trôi dữ liệu (Buffer Overflow prevention).
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 1.4: Thử Nghiệm Kiểm Tra Cổng TCP & Payload Nhị Phân Trên Colab
+Mở Google Colab notebook và thực thi bài lab:
+1. Tạo một mô phỏng TCP Echo Server chạy ẩn trong Colab trên cổng `127.0.0.1:9999`.
+2. Tạo Client gửi 5 gói tin thử nghiệm chứa cả văn bản và mảng byte nhị phân.
+3. In kết quả phản hồi của Server và biểu đồ phân tích độ trễ kết nối TCP (Round-Trip Time).
+
+---
+
+## Đánh Giá / Assessment Rubric
+
+| Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tuân Thủ An Toàn** | Tuyệt đối ràng buộc socket vào `127.0.0.1`, xử lý ngoại lệ `try...except` và `logging` chuyên nghiệp. | Hardcode `127.0.0.1` nhưng thiếu logging vết sự cố. | Code chạy được trên Localhost nhưng gán IP `0.0.0.0`. | Không tuân thủ nguyên tắc an toàn Localhost. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành xuất sắc cả 4 bài (Chat 2 chiều, Secure Logging Server, Crypto Socket Chat & Colab TCP test). | Hoàn thành Bài 1.1 và Bài 1.2 đúng yêu cầu. | Code có lỗi trôi vòng lặp hoặc chỉ gửi được 1 tin nhắn rồi ngắt. | Không nộp mã nguồn thực thi. |

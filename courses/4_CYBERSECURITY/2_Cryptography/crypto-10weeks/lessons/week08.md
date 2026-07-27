@@ -112,13 +112,43 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Đo Thời Gian Bẻ Khóa Mật Khẩu SHA-256 vs Argon2id
-Viết script Python đo thời gian thực hiện 10,000 phép băm mật khẩu giữa SHA-256 thuần túy và Argon2id để so sánh mức độ làm chậm tấn công vét cạn.
+---
 
-### Task 2: Xây Dựng Secure Auth Module Với Argon2id & Lockout
-Cập nhật hệ thống xác thực người dùng từ Tuần 7, thay thế Bcrypt bằng Argon2id và bổ sung Pepper từ biến môi trường.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 8.1: Hệ Thống Xác Thực Mật Khẩu Sử Dụng Argon2id & Pepper
+Viết class Python `SecureAuthManager` quản lý đăng ký và đăng nhập người dùng:
+1. Nhận mật khẩu người dùng, kết hợp với Pepper bí mật đọc từ biến môi trường (`os.getenv("SECRET_PEPPER")`).
+2. Băm mật khẩu bằng Argon2id với Salt ngẫu nhiên tự động (`time_cost=2, memory_cost=65536, parallelism=2`).
+3. Lưu thông tin vào tệp JSON `users_db.json`.
+4. Viết hàm `login(username, password)` xác thực tài khoản và khóa tài khoản khi nhập sai 5 lần liên tiếp.
+
+- **Đầu ra kỳ vọng (Expected Output):** Đăng nhập đúng báo `[200 OK] Welcome!`. Đăng nhập sai 5 lần báo `[429 LOCKED] Account locked for 15 minutes!`.
+
+#### Bài 8.2: So Sánh Tính Chất Độc Nhất Của Salt
+Viết script Python băm 10 lần cùng một mật khẩu `"Password123"` với 10 Salt ngẫu nhiên khác nhau bằng Argon2id. In ra 10 chuỗi Hash thu được để chứng minh vĩnh viễn không trùng lặp (vô hiệu hóa Rainbow Table).
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 8.3: Đo Đoạc Tốc Độ Bẻ Khóa Vét Cạn (GPU Cracking Slowdown Benchmark)
+Viết script Python `cracking_speed_benchmark.py`:
+1. Thực hiện $100,000$ phép băm mật khẩu bằng `SHA-256` đơn thuần và đo tổng thời gian (ms).
+2. Thực hiện $100$ phép băm mật khẩu bằng `Argon2id` và đo tổng thời gian (ms).
+3. Quy đổi ra tốc độ số phép băm/giây và giải thích tại sao Argon2id làm chậm khả năng bẻ khóa của kẻ tấn công gấp hàng ngàn lần.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 8.4: Tùy Chỉnh Tham Số Memory Cost & Parallelism Của Argon2id Trên Colab
+Mở Google Colab notebook và thực hiện bài lab:
+1. Thử nghiệm thay đổi tham số `memory_cost` từ `8MB`, `64MB` đến `512MB` và `time_cost` từ 1 đến 5.
+2. Quản lý dung lượng bộ nhớ RAM tiêu tốn khi 10 luồng đồng thời thực hiện băm Argon2id.
+3. Rút ra tham số tối ưu (Production Tuning Guidelines) cho máy chủ Web 4 Core RAM 8GB.
 
 ---
 
@@ -126,8 +156,8 @@ Cập nhật hệ thống xác thực người dùng từ Tuần 7, thay thế B
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lý Thuyết Password Hashing & KDFs** | Giải thích sâu sắc lý do SHA-256 không an toàn cho mật khẩu, nguyên lý Salt/Pepper và 3 tham số của Argon2id. | Hiểu các khái niệm Salt, PBKDF2, Bcrypt và Argon2id. | Nắm được định nghĩa Salt nhưng chưa giải thích được tính chất Memory-Hard. | Nhầm lẫn băm mật khẩu với mã hóa đối xứng. |
-| **Thực Hành Code Python** | Lập trình Argon2id chuẩn xác với `argon2-cffi`, xử lý ngoại lệ và cấu hình tham số production. | Code băm và xác thực Argon2id chạy đúng không lỗi. | Code có lỗi biên dịch hoặc thiếu thư viện `argon2-cffi`. | Không chạy được mã nguồn Python. |
+| **Phân Tích Thuật Toán** | Giải thích sâu sắc lý do SHA-256 không an toàn cho mật khẩu, nguyên lý Salt/Pepper và 3 tham số của Argon2id (Time, Memory, Parallelism). | Hiểu các khái niệm Salt, PBKDF2, Bcrypt và Argon2id. | Nắm được định nghĩa Salt nhưng chưa giải thích được tính chất Memory-Hard. | Nhầm lẫn băm mật khẩu với mã hóa đối xứng. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành đủ 4 bài (Argon2id auth manager, Salt uniqueness test, GPU cracking benchmark & Colab tuning lab). | Hoàn thành Bài 8.1 và Bài 8.2 chạy đúng không lỗi. | Code có lỗi biên dịch hoặc thiếu thư viện `argon2-cffi`. | Không nộp mã nguồn thực thi. |
 
 ---
 

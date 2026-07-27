@@ -187,13 +187,51 @@ if __name__ == "__main__":
 
 ---
 
-## Bài Về Nhà & Lab / Homework
+## Bài Tập Thực Hành & Bài Về Nhà / Hands-on Exercises & Homework
 
-### Task 1: Tự Động Phá Mã Caesar bằng Brute-Force
-Viết một script Python nhận vào một đoạn Ciphertext mã hóa Caesar và in ra tất cả 26 khả năng giải mã cùng điểm số tần suất Tiếng Anh tương ứng để tự động tìm ra Plaintext đúng.
+---
 
-### Task 2: Cài Đặt Vigenère Decryptor
-Viết hàm `vigenere_decrypt(ciphertext: str, key: str) -> str` hoàn chỉnh và kiểm thử với các thông điệp mẫu.
+### 🟢 Phần A: Bài Tập Cơ Bản (Basic Level)
+
+#### Bài 1.1: Trình Tự Động Phá Mã Caesar Bằng Từ Điển (Dictionary-based Caesar Solver)
+Viết script Python `caesar_solver.py` tự động thử 26 khóa từ $k = 0$ đến $25$. Script tự động đếm số lượng từ tiếng Anh thông dụng (như `"THE"`, `"AND"`, `"IN"`, `"IS"`, `"YOU"`, `"THAT"`) trong văn bản giải mã và tự xuất ra kết quả có điểm số cao nhất.
+
+- **Đầu vào (Input):** `Ciphertext = "KHOOR ZRUOG! WKLV LV D VHFUHW PHVVDJH."`
+- **Đầu ra kỳ vọng (Expected Output):**
+  ```text
+  [+] Detected Best Key: 3 (Match Score: 5)
+  [+] Decrypted Plaintext: "HELLO WORLD! THIS IS A SECRET MESSAGE."
+  ```
+
+#### Bài 1.2: Cài Đặt Trình Giải Mã Vigenère (Vigenère Decryptor)
+Viết hàm Python `vigenere_decrypt(ciphertext: str, key: str) -> str` giải mã chuẩn xác các ký tự chữ hoa, chữ thường và giữ nguyên các dấu câu, khoảng trắng.
+
+- **Đầu vào (Input):** `Ciphertext = "ISWZXE XJS RNWY TIQQ TR XJS HFXYQJ"`, `Key = "FORTIFICATION"`
+- **Đầu ra kỳ vọng (Expected Output):** `Plaintext = "DEFEND THE EAST WALL OF THE CASTLE"`
+
+---
+
+### 🟡 Phần B: Bài Tập Nâng Cao (Advanced Level)
+
+#### Bài 1.3: Phân Tích Độ Dài Từ Khóa Vigenère Bằng Chỉ Số Trùng Khớp (Index of Coincidence - IC)
+Viết script Python `vigenere_ic_analyzer.py` tính chỉ số $IC$ cho văn bản mã hóa để đoán độ dài từ khóa $m \in \{1, 2, \dots, 10\}$.
+
+**Công thức Chỉ số Trùng Khớp $IC$:**
+$$IC = \frac{\sum_{i=A}^{Z} f_i (f_i - 1)}{N(N - 1)}$$
+*Trong đó $f_i$ là số lần xuất hiện của chữ cái $i$, $N$ là tổng số chữ cái.*
+- Nếu $IC \approx 0.066$: Văn bản là Tiếng Anh đơn bảng (Caesar / Monoalphabetic).
+- Nếu $IC \approx 0.038$: Văn bản mã hóa đa bảng ngẫu nhiên.
+
+---
+
+### 🔴 Phần C: Thực Hành Colab / Mini Project (Hands-on Colab Lab)
+
+#### Bài 1.4: Xây Dựng Trình Trực Quan Hóa Tần Suất Ký Tự (Colab Visualizer)
+Mở Google Colab notebook và thực hiện các bước sau:
+1. Nhập một đoạn văn bản tiếng Anh dài 500 từ.
+2. Mã hóa đoạn văn bản bằng thuật toán Caesar với khóa ngẫu nhiên $k$.
+3. Vẽ biểu đồ cột (Bar Chart) so sánh tần suất xuất hiện của 26 chữ cái giữa Plaintext và Ciphertext bằng thư viện `matplotlib`.
+4. Viết nhận xét về sự dịch chuyển của đỉnh biểu đồ (ví dụ: đỉnh cao nhất `'E'` dịch chuyển sang chữ cái nào).
 
 ---
 
@@ -201,8 +239,8 @@ Viết hàm `vigenere_decrypt(ciphertext: str, key: str) -> str` hoàn chỉnh v
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Hiểu Lý Thuyết Mật Mã** | Giải thích sắc bén Kerckhoffs's Principle, tần suất chữ cái và toán tử Modulo. | Hiểu các khái niệm chính, giải thích được Caesar và Vigenère. | Nắm định nghĩa nhưng chưa giải thích được phân tích tần suất. | Nhầm lẫn giữa mã hóa và giải mã. |
-| **Thực Hành Code Python** | Code chạy mượt mà, xử lý tốt cả chữ hoa, chữ thường và dấu cách. | Code chạy đúng với chuỗi ký tự hoa cơ bản. | Code có lỗi biên dịch nhỏ hoặc chưa xử lý được ký tự đặc biệt. | Code không thể thực thi được. |
+| **Phân Tích Thuật Toán** | Giải thích sâu sắc nguyên lý Kerckhoffs, công thức Modulo 26 và chỉ số IC. | Giải thích đúng thuật toán Caesar, Vigenère và phân tích tần suất cơ bản. | Hiểu cách dịch chuyển ký tự nhưng chưa giải thích được phân tích tần suất. | Nhầm lẫn giữa mã hóa và giải mã. |
+| **Hoàn Thành Bài Tập Code** | Hoàn thành cả 4 bài (tự động phá mã Caesar, Vigenère decryptor, IC analyzer & Colab chart). | Hoàn thành Bài 1.1 và Bài 1.2 đúng yêu cầu. | Code có lỗi xử lý chữ thường hoặc chưa tự động chấm điểm từ điển. | Không nộp mã nguồn thực thi. |
 
 ---
 
