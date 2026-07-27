@@ -244,6 +244,177 @@ Mở Google Colab notebook và thực thi bài lab:
 
 ---
 
+### 💡 Đáp Án Tham Khảo Cho Bài Lab Colab (Lab Reference Solution)
+
+Bạn có thể thực hiện toàn bộ bài lab này trong một notebook Google Colab. Vì Colab không cho phép mở cổng ra Internet, việc chạy TCP server trên `127.0.0.1:9999` là hoàn toàn phù hợp.
+
+#### Cell 1 - TCP Echo Server (chạy nền)
+
+```python
+import socket
+import threading
+
+HOST = "127.0.0.1"
+PORT = 9999
+
+def handle_client(conn, addr):
+    print(f"[SERVER] Connected: {addr}")
+
+    while True:
+        data = conn.recv(1024)
+
+        if not data:
+            break
+
+        print(f"[SERVER] Received: {data}")
+        conn.sendall(data)
+
+    conn.close()
+    print(f"[SERVER] Closed: {addr}")
+
+
+def start_server():
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
+    server.bind((HOST, PORT))
+    server.listen()
+
+    print(f"[SERVER] Listening on {HOST}:{PORT}")
+
+    while True:
+        conn, addr = server.accept()
+
+        t = threading.Thread(
+            target=handle_client,
+            args=(conn, addr),
+            daemon=True
+        )
+        t.start()
+
+
+threading.Thread(
+    target=start_server,
+    daemon=True
+).start()
+```
+
+---
+
+#### Cell 2 - TCP Client gửi 5 gói tin
+
+```python
+import socket
+import time
+
+TEST_PAYLOADS = [
+    b"HELLO",
+    b"TCP LAB",
+    bytes([0, 1, 2, 3, 255]),
+    b"CyberSecurity Week02",
+    bytes(range(32))
+]
+
+rtts = []
+
+for i, payload in enumerate(TEST_PAYLOADS, start=1):
+
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    start = time.perf_counter()
+
+    client.connect(("127.0.0.1", 9999))
+
+    client.sendall(payload)
+
+    response = client.recv(1024)
+
+    end = time.perf_counter()
+
+    rtt_ms = (end - start) * 1000
+
+    rtts.append(rtt_ms)
+
+    print(f"\nPacket #{i}")
+    print(f"Sent     : {payload}")
+    print(f"Received : {response}")
+    print(f"RTT      : {rtt_ms:.3f} ms")
+
+    client.close()
+```
+
+**Ví dụ đầu ra:**
+
+```text
+Packet #1
+Sent     : b'HELLO'
+Received : b'HELLO'
+RTT      : 0.82 ms
+
+Packet #3
+Sent     : b'\x00\x01\x02\x03\xff'
+Received : b'\x00\x01\x02\x03\xff'
+RTT      : 0.74 ms
+```
+
+---
+
+#### Cell 3 - Phân tích độ trễ RTT
+
+```python
+print("\n===== RTT SUMMARY =====")
+
+print(f"Min RTT : {min(rtts):.3f} ms")
+print(f"Max RTT : {max(rtts):.3f} ms")
+print(f"Avg RTT : {sum(rtts)/len(rtts):.3f} ms")
+```
+
+---
+
+#### Cell 4 - Vẽ biểu đồ RTT
+
+```python
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(8,4))
+
+plt.plot(
+    range(1, len(rtts)+1),
+    rtts,
+    marker="o"
+)
+
+plt.xlabel("Packet Number")
+plt.ylabel("RTT (ms)")
+plt.title("TCP Echo Server Round-Trip Time")
+plt.xticks(range(1, 6))
+plt.grid(True)
+
+plt.show()
+```
+
+**Kết quả mong đợi:** Một đồ thị thể hiện thời gian phản hồi của 5 gói tin:
+
+| Packet # | RTT (ms) |
+| --- | --- |
+| Packet 1 | 0.82 ms |
+| Packet 2 | 0.71 ms |
+| Packet 3 | 0.74 ms |
+| Packet 4 | 0.79 ms |
+| Packet 5 | 0.88 ms |
+
+#### Mục tiêu học được từ bài lab
+
+1. Tạo TCP Echo Server bằng Python.
+2. Sử dụng `socket.bind()`, `listen()`, `accept()`.
+3. Sử dụng TCP Client với `connect()`, `sendall()`, `recv()`.
+4. Truyền dữ liệu dạng text và binary.
+5. Đo Round-Trip Time (RTT) bằng `time.perf_counter()`.
+6. Phân tích hiệu năng kết nối TCP bằng biểu đồ.
+
+---
+
 ## Đánh Giá / Assessment Rubric
 
 | Tiêu Chí | Xuất Sắc (9-10) | Tốt (7-8) | Đạt (5-6) | Cần Cố Gắng (<5) |
