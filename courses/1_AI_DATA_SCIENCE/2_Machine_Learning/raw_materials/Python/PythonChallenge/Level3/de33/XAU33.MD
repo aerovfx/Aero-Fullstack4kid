@@ -1,0 +1,1 @@
+Đảo ngược một xâu: Đảo ngược các ký tự trong một xâu. Ví dụ: "Hello" thành "olleH".

@@ -4,22 +4,32 @@ Chào mừng bạn đến với **Fullstack4kid Academy** - Kho lưu trữ tài 
 
 ---
 
-## 🗺️ Bản Đồ Kiến Thức / Curriculum Map (8 Khoá Học 10 Tuần)
+## 🗺️ Bản Đồ Kiến Thức / Curriculum Map (6 Khoa Chuyên Môn)
 
-Hệ thống cung cấp 8 lộ trình học tập chuyên sâu được thiết kế khoa học trong 10 tuần:
+Hệ thống cung cấp các lộ trình học tập chuyên sâu được thiết kế khoa học trong 10 tuần, phân bổ vào 6 khoa (Domains) chuẩn mực của ngành Khoa học Máy tính:
 
-| Phân Loại / Category | Khoá Học / Course Path | Nội Dung Chính / Core Topics |
+| Khoa (Domain) | Khoá Học / Course Path | Nội Dung Chính / Core Topics |
 |---|---|---|
-| **1. Front-End** | [HTML, CSS, JS & React](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/1_FRONT_END/html-css-js-10weeks/) | HTML5, CSS3, Flexbox/Grid, Responsive Web Design, JavaScript ES6+, API, React Hooks. |
-| **2. Back-End** | [Node.js & Express API](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_BACK_END/nodejs-api-10weeks/) | Server Node.js, Express Router, Custom Middleware, RESTful API, MongoDB/Mongoose, JWT Auth. |
-| | [Rust & Axum Web API](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_BACK_END/rust-backend-10weeks/) | Ownership, Borrowing & Lifetimes, Tokio Runtime, Axum HTTP Server, SQLx (PostgreSQL), JWT. |
-| **3. Software Tools** | [Git, GitHub & Docker](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/3_SOFTWARE_DEV/git-docker-10weeks/) | Git commits, Branching, Merge Conflicts, GitHub Flow (PRs), Dockerfile, Docker Compose, CI/CD. |
-| **4. Data Science** | [NumPy & Pandas Foundations](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_DATA_SCIENCE/data-science-10weeks/) | Môi trường Jupyter, Tính toán ma trận với NumPy, Làm sạch & Phân nhóm DataFrame bằng Pandas. |
-| **5. Artificial Intelligence**| [AI: Machine Learning & NLP](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_ARTIFICIAL_INTELLIGENCE/) | Nguyên lý AI, Học máy hồi quy/phân loại Scikit-Learn, Mạng nơ-ron sâu, Xử lý ngôn ngữ tự nhiên (NLP). |
-| **6. Web3 & Blockchain**| [Ethereum, Solidity & DApps](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_WEB3/blockchain-dapps-10weeks/) | EVM, Hợp đồng thông minh Solidity, Tiêu chuẩn Token ERC-20/NFTs, Remix IDE, Ethers.js, MetaMask. |
-| | [Rust & Solana Programs](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_WEB3/rust-web3-10weeks/) | SVM (Solana Virtual Machine), Account Model, Anchor Framework, SPL Tokens, CPI calls, Unit tests. |
-| **7. Cybersecurity** | [Cybersec & Next-Gen AI](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersec-ai-10weeks/) | Lập trình socket Python/C++, Phân tích gói tin Scapy, AI Vulnerability Scanning, AI Log Auditing. |
-| | [Practical Cybersecurity](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/7_SECURITY/cybersecurity-10weeks/) | Lab Setup (Kali), Bash Scripting, Nmap Scanning, Wireshark Sniffing, Hashcat Cracking, Metasploit, Snort. |
+| **1. AI & Data Science** | [Khoa học Dữ liệu (Data Science)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/1_AI_DATA_SCIENCE/1_Data_Science/data-science-10weeks/) | Tính toán ma trận với NumPy, Làm sạch & Phân nhóm DataFrame bằng Pandas. |
+| | [Học máy & Học sâu (ML & DL)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/) | Học máy cơ bản, Mạng nơ-ron sâu, Xử lý ngôn ngữ tự nhiên (NLP). |
+| | [Thị giác máy tính (Computer Vision)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/1_AI_DATA_SCIENCE/3_Computer_Vision/computer-vision-10weeks/) | OpenCV, Xử lý ảnh, Haar Cascades, CNNs, Nhận diện khuôn mặt & YOLO. |
+| **2. Software Engineering** | [Web/Mobile: HTML, CSS, JS & React](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/html-css-js-10weeks/) | Web Frontend, Responsive Design, JavaScript ES6+, React Hooks. |
+| | [Web/Mobile: Node.js & Express API](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/nodejs-api-10weeks/) | Web Backend, RESTful API, MongoDB/Mongoose, JWT Auth. |
+| | [Web/Mobile: Rust & Axum Web API](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/rust-backend-10weeks/) | Backend hiệu năng cao, Ownership, Tokio Runtime, SQLx. |
+| | [Web/Mobile: React Native & Expo](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/react-native-10weeks/) | Cross-platform Mobile App Development. |
+| | [Cloud Computing: AWS, GCP & Terraform](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/2_Cloud_Computing/cloud-computing-10weeks/) | Điện toán đám mây, Ảo hoá, Quản lý hạ tầng (IaC) tự động. |
+| | [DevOps: CI/CD, Git & Docker](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/3_DevOps/devops-ci-cd-10weeks/) | Quản lý mã nguồn, Docker Compose, CI/CD Pipeline, Vận hành tự động. |
+| | [Web3: Ethereum & DApps](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/blockchain-dapps-10weeks/) | EVM, Hợp đồng thông minh Solidity, Decentralized Web3. |
+| | [Web3: Rust & Solana](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/rust-web3-10weeks/) | Solana Virtual Machine, Anchor Framework, Smart Contracts. |
+| | [CS Fundamentals: Scratch (K-12)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/0_CS_Fundamentals/scratch-10weeks/) | Lập trình nền tảng: Kéo thả, Vòng lặp, Điều kiện, Biến, Hàm. |
+| **3. Infra & Networking** | [Mạng Máy tính (Computer Networks)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/3_INFRA_NETWORKING/1_Computer_Networks/ccna-10weeks/) | Cisco CCNA, OSI/TCP, OSPF, VLAN, IPv4/IPv6, ACL, NAT. |
+| | [Quản trị Hệ thống (System Admin)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/3_INFRA_NETWORKING/2_System_Administration/sysadmin-10weeks/) | Linux/Windows Server, Bash Script, Nginx, UFW, Cron, Giám sát. |
+| **4. Cybersecurity** | [Bảo mật Hệ thống (System Security)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/) | Tìm kiếm lỗ hổng (CEH), Hệ thống phát hiện xâm nhập, OWASP. |
+| | [Mật mã học (Cryptography)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/) | RSA, AES, Hash, Chữ ký điện tử, PKI, Mật mã Blockchain. |
+| **5. Graphics & HCI** | [Thiết kế UI/UX (Figma)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_GRAPHICS_HCI/1_UI_UX_Design/ui-ux-design-10weeks/) | Design Thinking, User Research, Wireframe, Prototyping. |
+| | [Game Dev & VR (Unity/Unreal)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_GRAPHICS_HCI/2_VR_AR_GameDev/unity-csharp-10weeks/) | Đồ hoạ 2D/3D, C# Scripting, Hybrid C++/Blueprints, Thực tế Ảo. |
+| **6. Hardware & Embedded**| [Thiết kế Vi mạch (Chip Design)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_HARDWARE_EMBEDDED/1_Chip_Design/chip-design-10weeks/) | Kiến trúc CPU, Mạch Logic số, Verilog, FPGA. |
+| | [Internet vạn vật (IoT/Robotics)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/iot-robotics-10weeks/) | Arduino, ESP32, Cảm biến, Mạch cầu H, MQTT, Smart Home. |
 
 ---
 
@@ -40,11 +50,28 @@ Thư mục gốc của repository được tối ưu hoá và dọn dẹp cực 
 ```text
 /Users/dangvietchung/Aero-Fullstack4kid/
 ├── courses/                     ← [Chính] Chứa các khoá học 10 tuần, tài liệu thô gốc & phụ lục
-│   ├── 1_FRONT_END/             ← Chứa khoá học 10 tuần & thư mục tài liệu thô gốc Front-end
-│   ├── ...                      
-│   ├── 6_WEB3/                  ← Chứa các khoá học 10 tuần & thư mục tài liệu thô gốc Web3
-│   ├── 7_SECURITY/              ← Chứa 2 khoá học 10 tuần về Bảo mật & Công cụ bảo mật
-│   └── APPENDIX_A/              ← Phụ lục tài liệu học tập (Swift, tips, etc.)
+│   ├── 1_AI_DATA_SCIENCE/       ← Khoa Khoa học Dữ liệu & Trí tuệ Nhân tạo
+│   │   ├── 1_Data_Science/      ← Phân nhánh Khoa học Dữ liệu
+│   │   ├── 2_Machine_Learning/  ← Phân nhánh Học máy & Học sâu
+│   │   └── 3_Computer_Vision/   ← Phân nhánh Thị giác máy tính
+│   ├── 2_SOFTWARE_ENGINEERING/  ← Khoa Kỹ thuật Phần mềm
+│   │   ├── 0_CS_Fundamentals/   ← Nền tảng khoa học máy tính (Scratch/Pascal)
+│   │   ├── 1_Web_Mobile/        ← Phân nhánh Frontend, Backend và Ứng dụng Di động
+│   │   ├── 2_Cloud_Computing/   ← Phân nhánh Điện toán đám mây & Hạ tầng
+│   │   ├── 3_DevOps/            ← Phân nhánh Vận hành và Tự động hóa CI/CD
+│   │   └── 4_Web3_Blockchain/   ← Phân nhánh Công nghệ Chuỗi khối và Web phi tập trung
+│   ├── 3_INFRA_NETWORKING/      ← Khoa Cơ sở hạ tầng & Mạng máy tính
+│   │   ├── 1_Computer_Networks/ ← Phân nhánh Mạng máy tính (CCNA)
+│   │   └── 2_System_Administration/ ← Phân nhánh Quản trị Hệ thống (Linux/Windows Server)
+│   ├── 4_CYBERSECURITY/         ← Khoa An ninh mạng & Ethical Hacking
+│   │   ├── 1_System_App_Security/ ← Phân nhánh Bảo mật hệ thống & ứng dụng
+│   │   └── 2_Cryptography/      ← Phân nhánh Mật mã học ứng dụng
+│   ├── 5_GRAPHICS_HCI/          ← Khoa Đồ hoạ Máy tính & Tương tác
+│   │   ├── 1_UI_UX_Design/      ← Phân nhánh Thiết kế Trải nghiệm Người dùng
+│   │   └── 2_VR_AR_GameDev/     ← Phân nhánh Phát triển Game & Thực tế Ảo
+│   ├── 6_HARDWARE_EMBEDDED/     ← Khoa Phần cứng, Vi điều khiển & IoT
+│   │   ├── 1_Chip_Design/       ← Phân nhánh Thiết kế vi mạch số
+│   │   └── 2_IoT_Smart_Devices/ ← Phân nhánh Kết nối thiết bị IoT
 ├── platform/                    ← Nền tảng ứng dụng Web hiển thị giáo trình tương tác (React / Vite)
 │   ├── src/                     ← Mã nguồn giao diện (Roadmap, Lesson Viewer, AI Simulator, Code Center)
 │   ├── public/                  ← Tài nguyên tĩnh của website

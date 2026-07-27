@@ -1,1 +1,0 @@
-Giải mã xâu từ thuật toán XOR: Thực hiện phép XOR giữa mỗi ký tự trong xâu đã được mã hoá với cùng khóa mã hóa để giải mã xâu ban đầu.

@@ -1,0 +1,1 @@
+Kiểm tra xem hai xâu có phải là hoán vị của nhau hay không: Xác định xem hai xâu cho trước có chứa cùng các ký tự và cùng số lần xuất hiện của các ký tự không.

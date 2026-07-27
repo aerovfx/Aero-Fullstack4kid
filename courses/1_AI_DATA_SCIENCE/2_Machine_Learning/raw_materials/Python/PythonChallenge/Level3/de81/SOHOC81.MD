@@ -1,0 +1,1 @@
+Bài toán: Tính tổng hai số với hàm lambda

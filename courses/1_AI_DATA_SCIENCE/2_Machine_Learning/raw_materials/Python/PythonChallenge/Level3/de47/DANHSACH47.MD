@@ -1,0 +1,2 @@
+Loại bỏ phần tử theo điều kiện
+Viết một chương trình Python nhận vào một danh sách và một điều kiện, sau đó loại bỏ các phần tử trong danh sách thỏa mãn điều kiện đó. In ra danh sách sau khi đã loại bỏ phần tử.

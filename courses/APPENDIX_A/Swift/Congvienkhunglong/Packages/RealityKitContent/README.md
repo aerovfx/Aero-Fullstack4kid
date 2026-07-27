@@ -1,4 +1,0 @@
-# RealityKitContent
-
-Mô tả package
-

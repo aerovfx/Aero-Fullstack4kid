@@ -1,0 +1,1 @@
+Viết chương trình nhập vào họ tên của một người. Sau đó in chuỗi họ tên ra màn hình với các ký tự đầu đổi thành chữ hoa, toàn bộ chuỗi họ và tên đổi thành chữ hoa.

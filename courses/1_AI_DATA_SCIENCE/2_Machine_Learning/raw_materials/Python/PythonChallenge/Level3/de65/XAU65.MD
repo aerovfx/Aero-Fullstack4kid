@@ -1,0 +1,1 @@
+Mã hoá và nén xâu dựa trên sự tương đồng: Xây dựng một hệ thống mã hoá và nén dựa trên sự tương đồng giữa các xâu. Các xâu giống nhau sẽ được mã hoá và nén thành các mã chung.

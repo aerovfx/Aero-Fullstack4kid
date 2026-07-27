@@ -1,0 +1,1 @@
+ Viết chương trình tìm các số có 3 chữ số mà tổng lập phương các chữ số của nó bằng chính nó (các số Amstrong).

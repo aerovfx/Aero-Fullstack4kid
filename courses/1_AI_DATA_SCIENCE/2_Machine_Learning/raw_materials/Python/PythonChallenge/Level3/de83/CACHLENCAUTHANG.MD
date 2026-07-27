@@ -1,0 +1,2 @@
+Tính số cách lên cầu thang khi có 1 bậc bị hỏng
+Một cầu thang có 11 bậc. Nam đi lên cầu thang bằng cách bước từng bậc hoặc 3 bậc mỗi lần. Biết rằng Nam không thể bước lên bậc thang thứ 6 vì nó đã bị hỏng. Hỏi có tất cả bao nhiêu cách để bạn Nam có thể đi lên cầu thang theo cách trên?

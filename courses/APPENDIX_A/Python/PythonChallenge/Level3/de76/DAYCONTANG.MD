@@ -1,1 +1,0 @@
-Cho dãy số gồm n số. Tìm dãy con lớn nhất các phần tử tăng (giảm) dần.

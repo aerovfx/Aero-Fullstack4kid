@@ -1,1 +1,0 @@
-Hai số tự nhiên A, B được coi là hữu nghị nếu như số này bằng tổng các ước số của số kia và ngược lại. Lập trình tìm và in ra màn hình các cặp số hữu nghị trong phạm vi từ 1 đến 10000. (Lưu ý, số 1 được coi là ước số của mọi số còn mỗi số không được coi là ước số của chính nó)

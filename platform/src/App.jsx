@@ -10,10 +10,10 @@ import { codeSamples } from './data/codeSamples';
 
 function App() {
   const [activeTab, setActiveTab] = useState('roadmap');
-  const [activeCourse, setActiveCourse] = useState('5_ARTIFICIAL_INTELLIGENCE');
+  const [activeCourse, setActiveCourse] = useState('1_AI_DATA_SCIENCE');
   
   const coursesList = Object.values(coursesData);
-  const activeCourseData = coursesData[activeCourse] || coursesData['5_ARTIFICIAL_INTELLIGENCE'];
+  const activeCourseData = coursesData[activeCourse] || coursesData['1_AI_DATA_SCIENCE'];
 
   const [activeModule, setActiveModule] = useState(activeCourseData.syllabus[0].id);
   const [activeLesson, setActiveLesson] = useState(activeCourseData.syllabus[0].lessons[0]);

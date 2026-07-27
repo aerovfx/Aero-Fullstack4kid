@@ -1,1 +1,0 @@
-Đếm số từ trong xâu: Đếm số từ trong một xâu, trong đó các từ được phân tách bằng khoảng trắng.

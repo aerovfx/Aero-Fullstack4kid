@@ -1,1 +1,0 @@
-Nhập vào số tự nhiên n (0 < n < 10) và hai mảng số nguyên A, B có n phần tử đại diện cho hai tập hợp theo yêu cầu không có hai phần tử trùng nhau trong cùng một tập hợp. (Do đó, trong quá trình nhập nếu phần tử vừa nhập vào đã có trong mảng thì không bổ sung vào mảng). In ra màn hình tập hợp A, tập hợp B và các phần tử là giao của hai tập hợp A và B.

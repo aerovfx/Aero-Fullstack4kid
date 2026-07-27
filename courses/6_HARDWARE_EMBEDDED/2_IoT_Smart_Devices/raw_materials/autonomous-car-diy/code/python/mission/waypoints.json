@@ -1,0 +1,55 @@
+{
+  "name": "Trường THCS Nguyễn Trãi - Vòng sân trường",
+  "description": "Mission thử nghiệm: xe tự chạy 4 điểm xung quanh sân trường",
+  "created": "2026-07-26",
+  "settings": {
+    "base_speed": 180,
+    "slow_speed": 100,
+    "arrival_radius_m": 1.5,
+    "max_hdop": 2.0,
+    "min_satellites": 6
+  },
+  "waypoints": [
+    {
+      "id": 1,
+      "lat": 21.028511,
+      "lon": 105.804817,
+      "label": "Điểm xuất phát - Cổng trường",
+      "arrival_radius": 1.5,
+      "action": "start",
+      "notes": "GPS lock tốt nhất ở đây"
+    },
+    {
+      "id": 2,
+      "lat": 21.028590,
+      "lon": 105.804817,
+      "label": "Góc Bắc sân",
+      "arrival_radius": 1.5,
+      "action": "waypoint"
+    },
+    {
+      "id": 3,
+      "lat": 21.028590,
+      "lon": 105.804900,
+      "label": "Góc Đông-Bắc sân",
+      "arrival_radius": 1.5,
+      "action": "waypoint"
+    },
+    {
+      "id": 4,
+      "lat": 21.028511,
+      "lon": 105.804900,
+      "label": "Góc Đông sân",
+      "arrival_radius": 1.5,
+      "action": "waypoint"
+    },
+    {
+      "id": 5,
+      "lat": 21.028511,
+      "lon": 105.804817,
+      "label": "Về điểm xuất phát (RTH)",
+      "arrival_radius": 2.0,
+      "action": "return_home"
+    }
+  ]
+}

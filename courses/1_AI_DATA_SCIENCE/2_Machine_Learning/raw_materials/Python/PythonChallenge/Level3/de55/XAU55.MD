@@ -1,0 +1,1 @@
+Mã hoá xâu bằng thuật toán Caesar Cipher: Dịch chuyển các ký tự trong xâu theo một số bước cố định để mã hoá xâu. Ví dụ: "HELLO" với bước dịch chuyển là 3 được mã hoá thành "KHOOR".

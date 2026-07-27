@@ -1,0 +1,1 @@
+Tìm phần tử nhỏ thứ k trong danh sách.

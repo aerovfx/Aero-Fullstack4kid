@@ -1,0 +1,1 @@
+Gọi abcd là một số có 4 chữ số. Hãy lập chương trình tìm tất cả các số có 4 chữ số thỏa mãn biểu thức: abcd=(ab + cd)^2. Ví dụ 2025=(20 + 25)^2.

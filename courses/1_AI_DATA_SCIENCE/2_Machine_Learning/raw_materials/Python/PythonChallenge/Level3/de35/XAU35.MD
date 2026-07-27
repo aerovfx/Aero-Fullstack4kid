@@ -1,0 +1,1 @@
+Xóa các ký tự trùng nhau trong một xâu: Xóa các ký tự trùng nhau trong một xâu và chỉ giữ lại một ký tự duy nhất cho mỗi loại.

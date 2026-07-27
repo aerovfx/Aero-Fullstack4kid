@@ -1,0 +1,13 @@
+Đề thi tin học trẻ huyện VŨ QUANG
+Lần thứ 4 nằm 2019
+Bảng B khối THCS
+Thời gian 150 phút không kế thời gian giao đề.
+
+Khhi viết các số tự nhiên tăng dần từ 1,2,3,...liên tiếp nhau, ta nhận được một dãy các chữ số: 12345678910111213141516..Hãy cho biết độ dài của dãy số trên khi ta ghép các số tự nhiên từ 1 đến N ( N <= 10^9)
+Dữ liệu vào tệp văn bản DDDS.INP gồm duy nhất số tự nhiên N
+Dữ liệu ra ghi vào tệp văn bản DDDS.OUT là giá trị độ dài của dãy số trên.
+
+DDDS.INP      DDDS.OUY
+8               8
+15              21
+

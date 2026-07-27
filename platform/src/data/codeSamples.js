@@ -1,4 +1,23 @@
 export const codeSamples = [
+  // --- CS FUNDAMENTALS SAMPLES ---
+  {
+    id: "cs-scratch-logic",
+    title: "Scratch Pseudo-code Logic",
+    language: "json",
+    description: "Mô phỏng tư duy khối lệnh Scratch cho chức năng nhảy (Jump) và rơi tự do của nhân vật (Gravity).",
+    code: `[
+  { "Event": "When [Space] key pressed" },
+  { "Action": "Set [Y velocity] to (10)" },
+  { "Loop": "Forever", "Do": [
+      { "Action": "Change Y by (Y velocity)" },
+      { "Action": "Change [Y velocity] by (-1) // Gravity" },
+      { "Condition": "If <touching [Ground]>", "Then": [
+          { "Action": "Set [Y velocity] to (0)" }
+      ]}
+  ]}
+]`
+  },
+
   // --- FRONT-END SAMPLES ---
   {
     id: "fe-html-profile",
@@ -510,6 +529,283 @@ alert tcp any any -> $HOME_NET any (flags: S; msg:"TCP SYN scan activity detecte
 
 # 3. Cảnh báo khi phát hiện lưu lượng truy cập HTTP chứa ký tự SQL Injection cơ bản
 alert tcp any any -> $HOME_NET 80 (msg:"SQL Injection Attempt Detected"; content:"UNION SELECT"; nocase; sid:1000003; rev:1;)
+`
+  },
+
+  // --- NETWORKING SAMPLES ---
+  {
+    id: "nw-cisco-ios",
+    title: "Cisco IOS CLI Handbook",
+    language: "bash",
+    description: "Tổng hợp các câu lệnh cấu hình cơ bản thiết bị Cisco Router và Switch (chuẩn CCNA).",
+    code: `# 1. Truy cập chế độ đặc quyền và cấu hình toàn cục
+Switch> enable
+Switch# configure terminal
+
+# 2. Đặt tên thiết bị và bảo mật mật khẩu
+Switch(config)# hostname SW1
+SW1(config)# enable secret P@ssw0rd
+
+# 3. Cấu hình địa chỉ IP cho Router Interface
+Router(config)# interface GigabitEthernet0/0/0
+Router(config-if)# ip address 192.168.1.1 255.255.255.0
+Router(config-if)# no shutdown
+
+# 4. Cấu hình định tuyến tĩnh (Static Route)
+Router(config)# ip route 10.0.0.0 255.0.0.0 192.168.1.2
+
+# 5. Cấu hình định tuyến động OSPFv2
+Router(config)# router ospf 1
+Router(config-router)# network 192.168.1.0 0.0.0.255 area 0
+
+# 6. Lưu cấu hình vào NVRAM
+Router# write memory
+# Hoặc: Router# copy running-config startup-config
+`
+  },
+
+  // --- CLOUD & DEVOPS SAMPLES ---
+  {
+    id: "do-terraform-aws",
+    title: "Terraform AWS EC2 Instance",
+    language: "hcl",
+    description: "Khởi tạo máy chủ ảo EC2 trên AWS sử dụng cấu hình Terraform (Infrastructure as Code).",
+    code: `provider "aws" {
+  region = "ap-southeast-1"
+}
+
+resource "aws_instance" "web_server" {
+  ami           = "ami-0c55b159cbfafe1f0" # Ubuntu 20.04 LTS
+  instance_type = "t2.micro"
+
+  tags = {
+    Name        = "DevOps-WebServer"
+    Environment = "Production"
+  }
+}
+`
+  },
+  {
+    id: "do-k8s-deployment",
+    title: "Kubernetes Deployment & Service",
+    language: "yaml",
+    description: "Cấu hình YAML để triển khai ứng dụng thành nhiều bản sao (replicas) và xuất bản dịch vụ qua LoadBalancer trên Kubernetes.",
+    code: `apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.23.4
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+`
+  },
+
+  // --- MOBILE APP DEVELOPMENT SAMPLES ---
+  {
+    id: "mb-react-native-login",
+    title: "React Native Login Screen",
+    language: "javascript",
+    description: "Giao diện màn hình đăng nhập đơn giản sử dụng React Native Core Components và Flexbox Styling.",
+    code: `import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+
+export default function LoginScreen() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    if(email === 'admin' && password === '123') {
+      Alert.alert('Thành công', 'Đăng nhập hợp lệ!');
+    } else {
+      Alert.alert('Lỗi', 'Sai thông tin đăng nhập.');
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Đăng Nhập</Text>
+      
+      <TextInput 
+        style={styles.input} 
+        placeholder="Email" 
+        value={email}
+        onChangeText={setEmail}
+      />
+      <TextInput 
+        style={styles.input} 
+        placeholder="Mật khẩu" 
+        secureTextEntry 
+        value={password}
+        onChangeText={setPassword}
+      />
+      
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Đăng Nhập Ngay</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: '#fff' },
+  title: { fontSize: 28, fontWeight: 'bold', marginBottom: 30, textAlign: 'center' },
+  input: { borderWidth: 1, borderColor: '#ddd', padding: 15, borderRadius: 8, marginBottom: 15 },
+  button: { backgroundColor: '#007AFF', padding: 15, borderRadius: 8, alignItems: 'center' },
+  buttonText: { color: 'white', fontWeight: 'bold', fontSize: 16 }
+});
+`
+  },
+
+  // --- GAME DEVELOPMENT SAMPLES ---
+  {
+    id: "gd-unity-player-move",
+    title: "Unity 2D Player Movement",
+    language: "csharp",
+    description: "Script C# điều khiển nhân vật di chuyển và nhảy (Platformer) sử dụng Unity Rigidbody2D và Input System.",
+    code: `using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+    
+    private Rigidbody2D rb;
+    private bool isGrounded = false;
+
+    void Start()
+    {
+        // Lấy Component Rigidbody2D đã gắn trên nhân vật
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        // Lấy Input từ bàn phím (A/D hoặc Mũi tên trái/phải)
+        float moveInput = Input.GetAxis("Horizontal");
+        
+        // Cập nhật vận tốc di chuyển (giữ nguyên vận tốc rơi của trục Y)
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+
+        // Kiểm tra phím Space để nhảy
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            isGrounded = false;
+        }
+    }
+
+    // Kiểm tra va chạm với mặt đất (bục/platform)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+}
+`
+  },
+  {
+    id: "gd-unreal-line-trace",
+    title: "Unreal C++ Melee Line Trace",
+    language: "cpp",
+    description: "Cơ chế chém trúng (Hit Detection) trong UE5 sử dụng LineTraceSingleByChannel phát tia Raycast từ kiếm để xét sát thương siêu chính xác.",
+    code: `void AMainCharacter::PerformMeleeAttack()
+{
+    // Lấy vị trí bắt đầu và kết thúc của lưỡi kiếm (Sockets gắn trên vũ khí)
+    FVector StartLocation = EquippedWeapon->GetItemMesh()->GetSocketLocation("StartSocket");
+    FVector EndLocation = EquippedWeapon->GetItemMesh()->GetSocketLocation("EndSocket");
+
+    FHitResult HitResult;
+    FCollisionQueryParams QueryParams;
+    QueryParams.AddIgnoredActor(this); // Bỏ qua va chạm với bản thân
+    QueryParams.AddIgnoredActor(EquippedWeapon);
+
+    // Phát tia Line Trace kiểm tra va chạm
+    bool bHit = GetWorld()->LineTraceSingleByChannel(
+        HitResult,
+        StartLocation,
+        EndLocation,
+        ECC_Visibility,
+        QueryParams
+    );
+
+    if (bHit)
+    {
+        AActor* HitActor = HitResult.GetActor();
+        if (HitActor && HitActor->ActorHasTag("Enemy"))
+        {
+            // Gây sát thương lên quái vật
+            UGameplayStatics::ApplyDamage(
+                HitActor, 
+                BaseDamage, 
+                GetController(), 
+                this, 
+                UDamageType::StaticClass()
+            );
+
+            // Sinh hiệu ứng toé lửa tại điểm va chạm
+            UNiagaraFunctionLibrary::SpawnSystemAtLocation(
+                GetWorld(),
+                HitEffect,
+                HitResult.ImpactPoint,
+                HitResult.ImpactNormal.Rotation()
+            );
+        }
+    }
+}
+`
+  },
+
+  // --- HARDWARE & EMBEDDED SAMPLES ---
+  {
+    id: "hw-esp32-led",
+    title: "ESP32 Blink LED (C++)",
+    language: "cpp",
+    description: "Chương trình C++ cơ bản trên vi điều khiển ESP32 để chớp tắt đèn LED liên tục mỗi giây.",
+    code: `#define LED_PIN 2
+
+void setup() {
+  // Cấu hình chân LED là đầu ra
+  pinMode(LED_PIN, OUTPUT);
+  Serial.begin(115200);
+  Serial.println("Hệ thống khởi động!");
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH); // Bật đèn
+  Serial.println("LED Bật");
+  delay(1000);                 // Chờ 1 giây
+  
+  digitalWrite(LED_PIN, LOW);  // Tắt đèn
+  Serial.println("LED Tắt");
+  delay(1000);                 // Chờ 1 giây
+}
 `
   }
 ];

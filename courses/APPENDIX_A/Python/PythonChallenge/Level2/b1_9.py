@@ -1,7 +1,0 @@
-a = input('nhap vao a:')
-b = input('nhap vao b:')
-print('Truoc khi doi a=',a,' va b=',b)
-a=int(a)+int(b)
-b=int(a)-int(b)
-a=int(a)-int(b)
-print('Sau khi doi a=',a,' va b=',b)

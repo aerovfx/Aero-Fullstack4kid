@@ -1,0 +1,1 @@
+Kiểm tra xâu con lặp lại: Kiểm tra xem một xâu có chứa một xâu con lặp lại hay không.

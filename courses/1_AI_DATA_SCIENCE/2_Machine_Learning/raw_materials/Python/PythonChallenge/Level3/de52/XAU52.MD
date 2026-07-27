@@ -1,0 +1,1 @@
+Nén xâu bằng thuật toán Huffman: Xây dựng một bảng mã để nén xâu với số lượng ký tự xuất hiện nhiều nhất được mã hóa bằng các xâu ngắn hơn và số lượng ký tự xuất hiện ít nhất được mã hóa bằng các xâu dài hơn.

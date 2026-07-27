@@ -1,0 +1,1 @@
+Chuyển đổi xâu thành số: Chuyển đổi một xâu số thành một số nguyên hoặc số thực.

@@ -1,0 +1,1 @@
+Tách các từ trong một xâu: Tách các từ trong một xâu và lưu chúng vào một danh sách hoặc một mảng.

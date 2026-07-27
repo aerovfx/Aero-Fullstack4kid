@@ -1,1 +1,0 @@
-Kiểm tra xem một xâu có phải là xâu Palindrome hay không: Xác định xem một xâu cho trước có thể được đọc xuôi hay ngược đều giống nhau không. Ví dụ: "level", "radar".
