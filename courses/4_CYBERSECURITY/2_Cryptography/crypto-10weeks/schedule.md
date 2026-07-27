@@ -1,42 +1,45 @@
-# Lộ trình Mật mã học (Cryptography) Ứng dụng (10 Tuần)
+# Lịch Trình Chi Tiết 10 Tuần (Mật Mã Học Thực Chiến)
 
-## Tuần 1: Nhập môn Mật mã học & Lịch sử mã hoá
-- Từ mã Caesar cổ đại đến mã hóa Enigma. Hiểu các khái niệm cơ bản: Plaintext, Ciphertext, Encryption, Decryption, Key.
-- [Chi tiết bài học](lessons/week01.md)
+Chương trình học gồm 20 buổi (mỗi tuần 2 buổi, mỗi buổi 2.5 giờ).
 
-## Tuần 2: Mã hóa đối xứng (Symmetric Encryption)
-- Nghiên cứu nguyên lý hoạt động của các thuật toán mã hoá đối xứng như DES, 3DES và AES. Ứng dụng mã hoá file bằng Python (Cryptography library).
-- [Chi tiết bài học](lessons/week02.md)
+---
 
-## Tuần 3: Mã hóa bất đối xứng (Asymmetric Encryption)
-- Sự ra đời của khoá công khai (Public Key) và khoá bí mật (Private Key). Phân tích thuật toán RSA và trao đổi khoá Diffie-Hellman.
-- [Chi tiết bài học](lessons/week03.md)
+## 🗓️ Lịch Trình Chi Tiết Các Buổi Học / Detailed Schedule
 
-## Tuần 4: Hàm băm (Hashing Algorithms)
-- Đặc điểm của hàm băm một chiều. Tìm hiểu MD5, SHA-1, SHA-256. Ứng dụng trong việc lưu trữ mật khẩu an toàn và kiểm tra tính toàn vẹn của tệp tin (Checksum).
-- [Chi tiết bài học](lessons/week04.md)
+| Tuần / Week | Buổi / Session | Nội Dung Học / Topics | Hoạt Động Thực Hành / Labs & Tasks | Chuẩn Bị / Preparation |
+|-------------|----------------|-----------------------|-----------------------------------|------------------------|
+| **Tuần 1** | Buổi 1 | Lịch sử Mật mã & Mã hóa thế thế Caesar/Vigenère | Lập trình Python mã hóa và giải mã Caesar Cipher | Cài đặt Python 3.10+ |
+| | Buổi 2 | Thống kê Tần suất (Frequency Analysis) & Phá mã | Viết script Python phân tích tần suất ký tự bẻ mã Vigenère | Đọc tài liệu Cryptanalysis |
+| **Tuần 2** | Buổi 3 | Mã hóa khối đối xứng (Block Ciphers) & AES-128/256 | Lập trình AES-GCM & AES-CBC sử dụng `pycryptodome` | Cài đặt `pycryptodome` |
+| | Buổi 4 | So sánh Chế độ hoạt động (ECB vs CBC vs GCM) | Mã hóa tệp ảnh bitmap để minh họa lỗ hổng ECB Mode | Đọc tài liệu NIST SP 800-38A |
+| **Tuần 3** | Buổi 5 | Mã hóa dòng (Stream Ciphers) & ChaCha20 | Thực hành mã hóa dữ liệu tốc độ cao với ChaCha20-Poly1305 | Đọc RFC 7539 |
+| | Buổi 6 | Ngẫu nhiên mật mã (CSPRNG vs PRNG) & Nonce reuse | Lập trình minh họa nguy cơ khi tái sử dụng Nonce/IV | Cài đặt thư viện `secrets` |
+| **Tuần 4** | Buổi 7 | Hàm băm mật mã (Cryptographic Hash Functions) | Thực hành tính băm SHA-256, SHA-3 và kiểm tra tính toàn vẹn | Đọc RFC 6234 |
+| | Buổi 8 | Mã xác thực thông điệp HMAC & Merkle Trees | Xây dựng hệ thống kiểm tra chữ ký thông điệp HMAC | Cài đặt `hashlib` & `hmac` |
+| **Tuần 5** | Buổi 9 | Lý thuyết Số & Toán học mật mã (Modular Math & GCD) | Lập trình thuật toán Euclidian mở rộng & Tính số dư lớn | Ôn tập Đại số đồng dư |
+| | Buổi 10 | Thuật toán mã hóa bất đối xứng RSA | Lập trình thuật toán RSA từ đầu (Sinh khóa $(e, d, n)$) | Đọc RFC 8017 (PKCS #1) |
+| **Tuần 6** | Buổi 11 | Đường cong Elliptic (ECC) & Trao đổi khóa DH | Thực hành trao đổi khóa Diffie-Hellman & ECDH | Đọc tài liệu ECC Math |
+| | Buổi 12 | Tính chất Bảo mật Chuyển tiếp (Perfect Forward Secrecy) | Lập trình mô phỏng bắt tay ECDHE sinh khóa phiên động | Cài đặt `cryptography` |
+| **Tuần 7** | Buổi 13 | Chữ ký số (Digital Signatures: RSA & ECDSA) | Lập trình tạo và xác thực chữ ký số bằng Python | Đọc chuẩn FIPS 186-4 |
+| | Buổi 14 | Hạ tầng Khóa công khai PKI & Chứng chỉ X.509 | Tạo Certificate Authority (CA) riêng & Cấp chứng chỉ SSL | Cài đặt OpenSSL CLI |
+| **Tuần 8** | Buổi 15 | Cơ chế Băm mật khẩu (Password Hashing & Salting) | Lập trình hệ thống băm mật khẩu với Bcrypt và Salt | Cài đặt `bcrypt` |
+| | Buổi 16 | Hàm dẫn xuất khóa KDFs (PBKDF2 & Argon2id) | Thực hành cấu hình Argon2id chống bẻ khóa GPU | Cài đặt `argon2-cffi` |
+| **Tuần 9** | Buổi 17 | Bằng chứng Không Tiết lộ (Zero-Knowledge Proofs - ZKP) | Thực hành bài toán ZKP đơn giản (Schnorr Protocol concept) | Đọc tài liệu ZKP Intro |
+| | Buổi 18 | Mật mã Hậu Lượng tử (Post-Quantum Cryptography - PQC) | Tìm hiểu chuẩn mã hóa PQC (Kyber/Dilithium) của NIST | Đọc NIST PQC Standards |
+| **Tuần 10**| Buổi 19 | Xây dựng Ứng dụng Mã hóa Đầu-Cuối (E2EE Messenger) | Kết hợp ECDH + AES-GCM + Ed25519 tạo Chat E2EE | Hoàn thiện mã nguồn Python |
+| | Buổi 20 | Bảo vệ Dự án Capstone & Demo Day | Thuyết trình sản phẩm và báo cáo đánh giá an toàn mật mã | Hoàn thiện Slide & Report |
 
-## Tuần 5: Chữ ký điện tử (Digital Signatures)
-- Kết hợp Hashing và Asymmetric Encryption để tạo chữ ký số. Xác thực danh tính người gửi và đảm bảo thông điệp không bị thay đổi (Non-repudiation).
-- [Chi tiết bài học](lessons/week05.md)
+---
 
-## Tuần 6: Cơ sở hạ tầng khóa công khai (PKI) & Chứng chỉ số
-- Cách chứng chỉ SSL/TLS hoạt động. Vai trò của Tổ chức phát hành chứng chỉ (CA). Xây dựng một mini CA nội bộ bằng OpenSSL.
-- [Chi tiết bài học](lessons/week06.md)
+## 🎯 Checklist Sản Phẩm Đầu Ra Từng Tuần / Weekly Deliverables
 
-## Tuần 7: Bảo mật giao thức mạng (SSL/TLS & VPN)
-- Phân tích quá trình TLS Handshake bảo vệ dữ liệu truyền tải trên Internet. Nguyên lý hoạt động của IPSec và mã hóa VPN.
-- [Chi tiết bài học](lessons/week07.md)
-
-## Tuần 8: Mật mã học trong Blockchain & Tiền điện tử
-- Cách SHA-256 tạo thành chuỗi khối (Blockchain). Cơ chế chữ ký Elliptic Curve (ECDSA) dùng trong Bitcoin và Ethereum. Khái niệm ví tiền điện tử.
-- [Chi tiết bài học](lessons/week08.md)
-
-## Tuần 9: Mật mã học Hậu lượng tử (Post-Quantum Cryptography)
-- Mối đe dọa từ máy tính lượng tử đối với RSA. Tổng quan về các thuật toán mã hóa mới có khả năng chống lại máy tính lượng tử.
-- [Chi tiết bài học](lessons/week09.md)
-
-## Tuần 10: Đồ án cuối khoá: Ứng dụng Nhắn tin Mã hoá End-to-End
-- Thiết kế và lập trình một ứng dụng chat (Python Socket) sử dụng mã hóa E2EE (End-to-End Encryption) mô phỏng theo chuẩn tín hiệu của WhatsApp/Signal.
-- [Chi tiết bài học](lessons/week10.md)
-
+- [ ] **Tuần 1**: Script Python mã hóa/phá mã Caesar và Vigenère bằng Thống kê tần suất.
+- [ ] **Tuần 2**: Script Python mã hóa tệp bằng AES-256-GCM và bài lab minh họa lỗ hổng ECB Mode.
+- [ ] **Tuần 3**: Module Python mã hóa dòng ChaCha20-Poly1305 và công cụ sinh số ngẫu nhiên CSPRNG.
+- [ ] **Tuần 4**: Công cụ kiểm tra tính toàn vẹn tệp tin bằng SHA-256 & HMAC.
+- [ ] **Tuần 5**: Module Python triển khai thuật toán RSA (Sinh khóa, Mã hóa, Giải mã).
+- [ ] **Tuần 6**: Script Python mô phỏng trao đổi khóa ECDH tạo khóa phiên bí mật.
+- [ ] **Tuần 7**: Hệ thống cấp và xác thực chứng chỉ số X.509 bằng OpenSSL CLI & Python.
+- [ ] **Tuần 8**: Module xác thực người dùng sử dụng thuật toán Argon2id & Bcrypt.
+- [ ] **Tuần 9**: Báo cáo phân tích chuẩn mã hóa Hậu lượng tử PQC (Kyber & Dilithium).
+- [ ] **Tuần 10**: Mã nguồn hoàn chỉnh ứng dụng Chat E2EE hoặc Vault mã hóa hóa tệp đẩy lên GitHub.
