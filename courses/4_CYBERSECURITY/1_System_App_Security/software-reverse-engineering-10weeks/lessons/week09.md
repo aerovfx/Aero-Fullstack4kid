@@ -2,7 +2,55 @@
 
 ## Nguồn bài học
 
-**Analysing the PE for a graphical User Interface-Based Program**. Giáo trình mở rộng thành attack-surface review và CI hardening cho PE được phép phân tích.
+- **Analysing the PE for a graphical User Interface-Based Program**. Giáo trình mở rộng thành attack-surface review và CI hardening cho PE được phép phân tích.
+
+## Chuyên đề: Phân Tích Chuyên Sâu PE GUI, Import Table, Resources & Kiểm Soát CI Hardening
+
+### 1. Lời mở đầu: Bề mặt tấn công (Attack Surface) của một Tệp PE GUI
+
+Ứng dụng GUI không chỉ là các câu lệnh Assembly trong phân vùng `.text`. Toàn bộ cấu trúc **PE Metadata**, bao gồm các thư viện hệ thống được import (IAT), tài nguyên nhúng (`.rsrc`), và cờ bảo mật của trình biên dịch, tạo nên một bề mặt tấn công tổng thể (Attack Surface). Việc rà soát PE Metadata giúp nhà nghiên cứu phát hiện các thông tin nhạy cảm bị rò rỉ (như đường dẫn PDB Debug, API endpoints, hoặc hardcoded keys) trước khi nạp ứng dụng vào môi trường gỡ lỗi động.
+
+### 2. Phân tích Các Phân Vùng Cốt Lõi (Section Permissions & Anomaly Detection)
+
+```text
++-------------------------------------------------------------------------+
+| Section | Thuộc tính Mặc định | Ý nghĩa & Dấu hiệu Bất thường          |
++-------------------------------------------------------------------------+
+| .text   | Read + Execute (R-X)| Chứa mã máy. Nếu thấy Write (W+X) -> Bất thường|
+| .rdata  | Read-Only (R--)     | Hằng số, IAT. Chứa chuỗi văn bản tĩnh.  |
+| .data   | Read + Write (RW-)  | Biến toàn cục.                           |
+| .rsrc   | Read-Only (R--)     | Icon, Dialog, Manifest, Sub-binaries.   |
+| .reloc  | Read-Only (R--)     | Bảng Relocation phục vụ ASLR.            |
++-------------------------------------------------------------------------+
+```
+
+* **Dấu hiệu Cảnh báo W+X**: Phân vùng vừa có quyền Ghi vừa có quyền Thực thi (`Writable + Executable`) thường là dấu hiệu của Stub giải nén (Packer), JIT Compiler hoặc mã tự thay đổi (Self-modifying code).
+
+### 3. Rà soát Tài nguyên Nhúng (Resource & Config Security Review)
+
+Trong quá trình Triage các ứng dụng GUI, nhà phân tích cần kiểm tra phân vùng `.rsrc` và `.rdata` để phát hiện:
+1. **Đường dẫn Debug PDB (Program Database)**: Tiết lộ tên tài khoản Windows, cấu trúc thư mục nội bộ và phiên bản MSVC compiler của lập trình viên (ví dụ: `C:\Users\admin\SecretProject\Release\app.pdb`).
+2. **API Endpoints & Manifest Permissions**: Các URL môi trường Test/Staging bị bỏ quên hoặc Manifest yêu cầu quyền Administrator (`requireAdministrator`) không cần thiết.
+3. **Hardcoded Secrets**: Các chuỗi kết nối Database, API Key hoặc Private Key nạp sẵn trong tài nguyên tệp.
+
+### 4. Thiết lập Quy trình CI/CD Build Hardening (Phòng thủ Sản xuất)
+
+Để bảo vệ các tệp thực thi PE khỏi các kỹ thuật khai thác bảo mật, quy trình CI/CD cần bật đầy đủ các cờ Linker/Compiler:
+
+```text
+[Source Code] ──► [MSVC / Linker Flags] ──► [Hardened PE Binary] ──► [Artifact Sign]
+                   - /DYNAMICBASE (ASLR)
+                   - /NXCOMPAT (DEP)
+                   - /GUARD:CF (CFG)
+                   - /GS (Buffer Security Check)
+```
+
+| Cờ Bảo mật | Tác dụng Phòng thủ |
+|---|---|
+| **/DYNAMICBASE** | Kích hoạt ASLR, ngẫu nhiên hóa địa chỉ nạp trong RAM mỗi lần chạy. |
+| **/NXCOMPAT** | Kích hoạt DEP/NX, cấm thực thi mã trên Stack và Heap. |
+| **/GUARD:CF** | Kích hoạt Control Flow Guard (CFG), xác minh tính hợp lệ của các cuộc gọi hàm gián tiếp (`indirect calls`). |
+| **/GS** | Chèn Stack Canaries (Cookie) để phát hiện và ngăn chặn tràn bộ nhớ Stack. |
 
 ## Kết quả cần đạt
 

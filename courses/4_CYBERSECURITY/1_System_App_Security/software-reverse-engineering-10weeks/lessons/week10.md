@@ -2,7 +2,50 @@
 
 ## Nguồn bài học
 
-**Crack Serial Key of An Application Software For the First Time** được chuyển thành đánh giá thiết kế license phòng thủ. Khóa học không tạo keygen, serial hợp lệ hoặc hướng dẫn bypass phần mềm thật.
+- **Crack Serial Key of An Application Software For the First Time** được chuyển thành đánh giá thiết kế license phòng thủ. Khóa học không tạo keygen, serial hợp lệ hoặc hướng dẫn bypass phần mềm thật.
+
+## Chuyên đề: Đánh Giá Thiết Kế License Integrity, Chống Can Thiệp (Anti-Tamper) & Đồ Á Capstone
+
+### 1. Lời mở đầu: Mô hình Đe dọa (Threat Model) cho Ứng dụng Máy Trạm
+
+Khi phát hành một phần mềm thương mại chạy trên máy trạm của khách hàng, nhà phát triển phải giả định rằng người dùng có toàn quyền kiểm soát môi trường phần cứng và hệ điều hành: họ có thể đọc bộ nhớ RAM, sửa file trên đĩa cứng, tạm dừng tiến trình qua Debugger hoặc thay đổi đồng hồ hệ thống. Một thiết kế bảo vệ bản quyền bền vững không dựa vào việc "giấu thuật toán" (Security through Obscurity) mà dựa trên các nguyên tắc mã hóa bất đối xứng (Public-key Cryptography) và xác thực từ Server.
+
+### 2. So sánh Checksum, HMAC và Digital Signature
+
+```text
++-----------------------------------------------------------------------------------------+
+| Cơ chế | Secret tại Client? | Khả năng Chống Giả Mạo | Trường hợp Sử dụng Phù hợp      |
++-----------------------------------------------------------------------------------------+
+| Checksum (CRC32/SHA256) | Không | Không (Kẻ tấn công tự tính lại Hash) | Kiểm tra lỗi truyền file ngẫu nhiên |
+| HMAC (Shared Secret)    | Có   | Yếu (Lộ Shared Key trong RAM)       | Hai Server tin cậy giao tiếp      |
+| Digital Signature (Ed25519) | Không | Rất cao (Client chỉ giữ Public Key) | Phát hành License Certificate    |
++-----------------------------------------------------------------------------------------+
+```
+
+### 3. Mô hình Xác thực License bằng Chữ ký số Ed25519
+
+```json
+{
+  "version": 1,
+  "product": "toy-re-lab",
+  "license_id": "LIC-2026-99881",
+  "customer_id": "student-001",
+  "hardware_hash": "a1b2c3d4e5f6...",
+  "issued_at": "2026-01-01T00:00:00Z",
+  "expires_at": "2026-02-01T00:00:00Z",
+  "features": ["analysis-lab", "advanced-capstone"]
+}
+```
+
+* **Server Side**: Nhà phát hành dùng Private Key (được bảo vệ trong HSM/Server) để ký số lên chuỗi JSON trên.
+* **Client Side**: Ứng dụng nhúng Public Key để xác minh chữ ký (`crypto_sign_verify_detached`). Ngăn chặn tuyệt đối việc kẻ tấn công tự viết Keygen hoặc sửa ngày hết hạn trong License File.
+
+### 4. Quy định & Tiêu chí Đánh giá Đồ án Capstone
+
+Học viên lựa chọn 1 trong 3 hướng Đồ án Capstone phòng thủ:
+- **Option A: Parser Hardening**: Phân tích PE toy app bị lỗi parser, tái lập crash, sửa mã nguồn C/C++, thực hiện Fuzzing/Negative testing và phát hành bản vá có manifest.
+- **Option B: GUI Authorization Hardening**: Truy vết luồng sự kiện GUI tới Service Boundary, loại bỏ các quyết định bảo mật sai lầm chỉ nằm ở Client-side, chuyển sang mô hình Fail-closed.
+- **Option C: Signed License Integrity Design**: Đánh giá thiết kế license không an toàn, xây dựng mô hình mã hóa chữ ký số bất đối xứng kèm theo bộ Unit Test xác minh.
 
 ## Kết quả cần đạt
 
