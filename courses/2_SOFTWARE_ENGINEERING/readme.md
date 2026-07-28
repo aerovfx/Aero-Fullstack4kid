@@ -1,3 +1,18 @@
+# Software Engineering
+
+Kho học liệu phát triển phần mềm, từ nền tảng khoa học máy tính đến web, mobile, cloud, DevOps và blockchain.
+
+## Lộ trình ngôn ngữ lập trình
+
+Các khóa nền tảng mới được đặt tại [`5_Programming_Languages`](5_Programming_Languages/INDEX.md):
+
+- **Rust Fundamentals**: ownership, borrowing, enum, trait, xử lý lỗi, concurrency và CLI.
+- **Modern C++**: RAII, STL, smart pointer, generic programming, testing và CMake.
+- **Modern C#/.NET**: OOP, LINQ, async/await, dependency injection, testing và Web API.
+
+Rust Backend và Rust Web3 vẫn là các lộ trình chuyên sâu, học sau Rust Fundamentals.
+
+## Web3
 
 Web3 là thế hệ tiếp theo của internet, tập trung vào công nghệ blockchain, phi tập trung (decentralization) và quyền sở hữu dữ liệu. Dưới đây là các lĩnh vực chính của Web3:
 

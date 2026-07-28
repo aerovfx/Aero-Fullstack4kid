@@ -1,5 +1,9 @@
 torch
 torchvision
+tensorflow
+opencv-python
+ultralytics
+mediapipe
 numpy
 pandas
 matplotlib

@@ -17,3 +17,7 @@ Chào mừng bạn đến với khoá học cấu hình và quản trị mạng 
 - `schedule.md`: Lộ trình chi tiết 10 tuần.
 - `lessons/`: Bài giảng và lab thực hành từng tuần.
 - `projects/`: Đồ án cuối khoá.
+
+## Chuyên đề học tiếp
+
+Sau phần CCNA core, học viên có thể học [Cisco VoIP & CME](voice-cme-specialization/INDEX.md), một module 10 tuần được biên soạn từ 26 video thực hành về SCCP, SIP, Voice VLAN, codec, CUBE, dial-peer, E1 và translation rule.
