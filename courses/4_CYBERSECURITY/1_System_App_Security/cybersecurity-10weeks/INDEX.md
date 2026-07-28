@@ -80,3 +80,8 @@ Chào mừng bạn đến với khoá học **Ethical Hacking & Pentesting Thự
 - **Bài tập & thực hành Lab tuần học**: 40%
 - **Mã nguồn công cụ cá nhân / GitHub repo**: 20%
 - **Dự án cuối khoá (Capstone Project)**: 40% (Bao gồm Báo cáo Pentest Report, Code và Demo Day).
+
+## Chuyên đề học tiếp
+
+- [Software Reverse Engineering & Secure Patching](../software-reverse-engineering-10weeks/INDEX.md): phân tích PE Windows, x64dbg, control-flow audit, secure patching và anti-tamper trong môi trường được ủy quyền.
+- [Cisco ASA Firewall Administration](../asa-firewall-10weeks/INDEX.md): vận hành và hardening firewall ASA.
