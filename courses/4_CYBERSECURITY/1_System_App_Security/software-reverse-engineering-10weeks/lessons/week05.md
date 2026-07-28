@@ -1,29 +1,71 @@
 # Tuần 5: Audit branch và tìm root cause
 
-## Nguồn
+## Nguồn bài học
 
-Bài 7 về reversing jump được chuyển thành phân tích control-flow phòng thủ.
+**Reversing Jumps in Software Cracking** được chuyển thành bài audit control flow phòng thủ. Không thực hành đảo jump để vượt license hoặc authorization.
 
-## Mục tiêu
+## Kết quả cần đạt
 
-- Theo dõi dữ liệu dẫn tới conditional branch.
-- Phân biệt symptom patch với root-cause fix.
-- Phát hiện quyết định bảo mật chỉ nằm ở client.
+- Truy dữ liệu từ input đến `cmp/test` và conditional branch.
+- Phân biệt branch behavior, business rule và security boundary.
+- Chứng minh vì sao client-side-only decision không phải trust anchor.
+- Đề xuất fix từ source cùng test tampering.
 
-## Case study lab
+## 1. Branch không phải root cause
 
-Toy app kiểm tra quyền bằng một boolean lấy từ file cấu hình. Học viên không đảo jump để “mở khóa”; thay vào đó phải trả lời:
+Một branch chỉ thể hiện quyết định tại build cụ thể. Đổi `je` thành `jne` có thể thay outcome nhưng:
 
-- Giá trị được tạo, biến đổi và kiểm tra ở đâu?
-- Input có được xác thực/chữ ký hay người dùng tự sửa được?
-- Quyết định có được server hoặc trust boundary đáng tin xác minh lại không?
-- Compiler optimization ảnh hưởng control flow thế nào?
+- Không sửa dữ liệu đầu vào không đáng tin.
+- Không tạo authorization đáng tin cậy.
+- Có thể phá error path và gây fail-open.
+- Không tồn tại sau rebuild/version update.
+- Không cung cấp test, review, provenance hoặc rollback đúng chuẩn.
 
-## Fix ưu tiên
+## 2. Toy case study
 
-Đưa authorization tới thành phần tin cậy, ký dữ liệu cấu hình, xử lý fail-closed và thêm test tampering. Đảo một branch chỉ che symptom, không phải bản vá bảo mật.
+```c
+#include <stdbool.h>
+#include <string.h>
 
-## Bài tập
+bool feature_allowed(const char *role, bool server_approved) {
+    if (role == NULL) return false;
+    return server_approved && strcmp(role, "student-lab") == 0;
+}
+```
 
-Vẽ control-flow graph cho hàm lab và viết finding gồm impact, evidence, root cause, fix từ source, regression tests và residual risk.
+Phiên bản lỗi chỉ kiểm tra `role` đọc từ file cục bộ. Phiên bản sửa còn yêu cầu `server_approved` từ thành phần tin cậy giả lập. Đây là mô hình dạy trust boundary, không phải cơ chế license production.
+
+## 3. Data-flow questions
+
+1. Input được tạo ở đâu và ai kiểm soát?
+2. Parse/normalize trước hay sau validation?
+3. Giá trị có chữ ký/xác thực hoặc freshness không?
+4. Có đường gọi nào bỏ qua validation không?
+5. Failure/timeout dẫn đến deny hay allow?
+6. UI state có bị dùng thay authorization server-side không?
+
+## 4. Lab
+
+1. Chạy test matrix cho `role = NULL`, empty, `student-lab`, mixed case và chuỗi dài.
+2. Dùng symbol để tới `feature_allowed` và vẽ CFG.
+3. Ghi data origin, comparison, branch và caller sử dụng return value.
+4. Không sửa jump. Chuyển sang source, bổ sung trust input và fail-closed.
+5. Thêm unit test cho config tampering, timeout và approval false.
+6. Build lại, tính hash và kiểm tra behavior cũ không bị phá.
+
+## 5. Finding template
+
+```markdown
+Title: Authorization decision relies on user-controlled local role
+Impact: Local user may request a privileged UI path
+Evidence: input origin + CFG + test case; no third-party target
+Root cause: untrusted client field used as sole authorization decision
+Fix: enforce decision at trusted service; verify signed response; fail closed
+Regression: allow valid approval, deny missing/invalid/stale approval
+Residual risk: offline mode and clock policy require separate design
+```
+
+## Bài tập và rubric
+
+Nộp CFG, data-flow map, finding và source fix. Chấm: root cause 30, evidence 25, remediation 20, tests 15, residual risk 10. Bài chỉ đảo opcode/branch không đạt.
 

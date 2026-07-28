@@ -27,6 +27,9 @@ Biết C/C++ cơ bản, số hexadecimal, process/thread, stack/heap và assembl
 - `code/pe_triage.py`: kiểm tra PE32/PE32+ tĩnh, mitigation và section mà không thực thi file.
 - `code/test_pe_triage.py`: unit test tạo PE tổng hợp, không cần binary bên ngoài.
 - `code/hash_manifest.py`: tạo/xác minh manifest SHA-256 cho artifact lab.
+- `code/toy_control_flow.c`: chương trình C tự biên dịch để học assembly, branch và breakpoint.
+- `code/test_toy_control_flow.py`: build toy program với warning-as-error và kiểm tra boundary.
+- [`code/README.md`](code/README.md): lệnh build Debug/Release và chạy test.
 
 ## Đầu ra
 

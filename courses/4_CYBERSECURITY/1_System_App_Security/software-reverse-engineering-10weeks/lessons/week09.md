@@ -1,30 +1,64 @@
-# Tuần 9: PE GUI, imports, resources và cấu hình
+# Tuần 9: PE GUI, imports, resources và build hardening
 
-## Nguồn
+## Nguồn bài học
 
-Bài 11: phân tích PE cho chương trình GUI.
+**Analysing the PE for a graphical User Interface-Based Program**. Giáo trình mở rộng thành attack-surface review và CI hardening cho PE được phép phân tích.
 
-## Mục tiêu
+## Kết quả cần đạt
 
-- Đọc PE header, section, import table và resource ở mức triage.
-- Nhận diện secret/config nhúng không an toàn.
-- Đánh giá mitigation mà không chỉ dựa vào tên section.
+- Đọc PE architecture, subsystem, section, import và resource ở mức triage.
+- Nhận diện secret/config/debug path nhúng không phù hợp.
+- Đánh giá ASLR, DEP/NX, CFG và signing/provenance có giới hạn.
+- Chuyển finding thành CI/release control.
 
-## Checklist
+## 1. Từ PE metadata tới câu hỏi kiểm chứng
 
-- Architecture, subsystem và compile timestamp có đáng tin không?
-- Section permission có W+X bất thường không?
-- Import nào liên quan file, registry, process, network, crypto?
-- Resource/string có endpoint, debug path hoặc credential không?
-- Binary có ASLR/DEP/CFG/signature theo yêu cầu release không?
+| Observation | Câu hỏi tiếp theo | Không được kết luận ngay |
+|---|---|---|
+| GUI subsystem | Entry/event model nào? | “Không có console nên an toàn” |
+| Network import | Code path nào gọi, endpoint nào? | “Đây là malware” |
+| High-entropy section | Packed/compressed/resource? | “Chắc chắn bị pack” |
+| Debug path | Có lộ username/build layout? | “Có source code” |
+| CFG/NX flag | Load config và build policy đúng? | “Không thể exploit” |
+| Signature | Chain/timestamp/revocation hợp lệ? | “Publisher đáng tin tuyệt đối” |
 
-Tool output cần được xác minh với nhiều nguồn. Timestamp có thể bị thay đổi; string có thể không reachable; import có thể được load động.
+## 2. Section permissions
 
-## Lab
+Các section thường gặp: `.text` (code), `.rdata` (read-only data), `.data` (writable data), `.rsrc` (resources), `.reloc` (relocation). Tên chỉ là convention; cần dựa vào flags và RVA/raw layout.
 
-So sánh hai build của toy GUI: một build chứa API key giả trong resource và một build đọc secret từ secure configuration. Viết finding, không trích xuất/hiển thị secret thật.
+Section vừa writable vừa executable (W+X) cần điều tra và justification, nhưng không tự động là lỗ hổng. JIT/runtime đặc biệt có thể tạo executable memory theo cơ chế riêng.
 
-## Bài tập
+## 3. Resource/config review
 
-Đề xuất CI checks cho secret scanning, compiler hardening, signing và reproducible provenance.
+Tìm trong toy build:
+
+- API endpoint môi trường test/production.
+- Private key, password hoặc shared secret giả được cố tình nhúng.
+- Debug PDB path chứa username/internal directory.
+- Manifest yêu cầu quyền cao không cần thiết.
+- Version metadata và update URL.
+
+Không in secret thật vào báo cáo; dùng redaction và secret identifier.
+
+## 4. Lab Debug vs Hardened
+
+1. Chạy `pe_triage.py --json` cho hai build.
+2. Dùng DIE/PE viewer độc lập để cross-check.
+3. So sánh sections, imports, resources, entry point và mitigation flags.
+4. Dùng strings chỉ như discovery; xác minh reachability bằng source/symbol/lab execution.
+5. Viết tối đa ba finding có evidence.
+6. Đề xuất CI gate và build option tương ứng.
+
+## 5. CI/release controls
+
+- Warning-as-error và secure compiler/linker flags phù hợp toolchain.
+- Secret scanning trước build và scan artifact sau build.
+- SBOM/provenance, dependency review và artifact signing.
+- Reproducible build khi khả thi; ghi lý do nếu không.
+- Test signature verification, timestamp và update channel.
+- Không phát hành debug symbol/path công khai ngoài policy.
+
+## Bài tập và rubric
+
+Nộp comparison report, JSON outputs và CI hardening checklist. Chấm: PE interpretation 30, evidence cross-check 20, findings 20, CI controls 20, giới hạn/false positives 10.
 
