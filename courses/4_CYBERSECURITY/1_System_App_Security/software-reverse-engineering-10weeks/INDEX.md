@@ -24,10 +24,10 @@ Biết C/C++ cơ bản, số hexadecimal, process/thread, stack/heap và assembl
 
 - [Lịch trình 10 tuần](schedule.md)
 - `lessons/week01.md` đến `week10.md`
-- `code/pe_triage.py`: kiểm tra PE tĩnh an toàn, không thực thi file.
+- `code/pe_triage.py`: kiểm tra PE32/PE32+ tĩnh, mitigation và section mà không thực thi file.
+- `code/test_pe_triage.py`: unit test tạo PE tổng hợp, không cần binary bên ngoài.
 - `code/hash_manifest.py`: tạo/xác minh manifest SHA-256 cho artifact lab.
 
 ## Đầu ra
 
 Học viên có thể triage PE, đọc control flow, dùng debugger có kiểm soát, lập báo cáo finding, sửa lỗi từ source hoặc patch binary lab khi không còn source, rồi chứng minh bản vá đúng và không phá chức năng khác.
-
