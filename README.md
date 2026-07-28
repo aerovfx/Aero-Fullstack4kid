@@ -1,107 +1,170 @@
-# 🎓 Học Viện Lập Trình Đa Khoá Học / Fullstack4kid Academy
+# Fullstack4kid Academy
 
-Chào mừng bạn đến với **Fullstack4kid Academy** - Kho lưu trữ tài liệu học tập và nền tảng hiển thị giáo trình tương tác 10 tuần, bao gồm các chủ đề lập trình hiện đại từ Front-End, Back-End, Công cụ phát triển, Khoa học dữ liệu đến An ninh mạng và Công nghệ Web3/Blockchain.
+Kho giáo trình công nghệ theo lộ trình 10 tuần, gồm bài giảng, code minh họa, bài tập, đồ án và tư liệu tham khảo cho sáu nhóm ngành.
 
----
+## Điều hướng nhanh
 
-## 🗺️ Bản Đồ Kiến Thức / Curriculum Map (6 Khoa Chuyên Môn)
+- [Danh mục toàn bộ khóa học](#danh-mục-khóa-học)
+- [Tìm bài giảng, code và tư liệu](#cách-tìm-tài-liệu-trong-mỗi-khóa)
+- [Lộ trình học đề xuất](#lộ-trình-học-đề-xuất)
+- [Chạy nền tảng web](#chạy-nền-tảng-web)
+- [Quy tắc đóng góp nội dung](#quy-tắc-cấu-trúc)
+- [Nguyên tắc an toàn](#an-toàn-và-sử-dụng-có-trách-nhiệm)
 
-Hệ thống cung cấp các lộ trình học tập chuyên sâu được thiết kế khoa học trong 10 tuần, phân bổ vào 6 khoa (Domains) chuẩn mực của ngành Khoa học Máy tính:
+## Bắt đầu trong 3 bước
 
-| Khoa (Domain) | Khoá Học / Course Path | Nội Dung Chính / Core Topics |
+1. Chọn một khóa trong bảng bên dưới và mở `INDEX.md`.
+2. Mở `schedule.md` để xem thứ tự 10 tuần, sau đó học trong `lessons/`.
+3. Chạy code trong `code/`, `notebooks/` hoặc làm đồ án tại `projects/`; dùng `raw_materials/` để đọc thêm, không coi đó là giáo trình đã chuẩn hóa.
+
+## Danh mục khóa học
+
+### 1. AI & Data Science
+
+| Khóa học | Giáo trình | Lịch học | Bài giảng / Code |
+|---|---|---|---|
+| Data Science | [Mở khóa](courses/1_AI_DATA_SCIENCE/1_Data_Science/data-science-10weeks/INDEX.md) | [10 tuần](courses/1_AI_DATA_SCIENCE/1_Data_Science/data-science-10weeks/schedule.md) | [Bài giảng](courses/1_AI_DATA_SCIENCE/1_Data_Science/data-science-10weeks/lessons/) · [Notebook](courses/1_AI_DATA_SCIENCE/1_Data_Science/data-science-10weeks/code/) |
+| Machine Learning | [Mở khóa](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/INDEX.md) | [10 tuần](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/schedule.md) | [Bài giảng](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/lessons/) · [Đồ án](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/projects/) |
+| Computer Vision | [Mở khóa](courses/1_AI_DATA_SCIENCE/3_Computer_Vision/computer-vision-10weeks/INDEX.md) | [10 tuần](courses/1_AI_DATA_SCIENCE/3_Computer_Vision/computer-vision-10weeks/schedule.md) | [Bài giảng + code](courses/1_AI_DATA_SCIENCE/3_Computer_Vision/computer-vision-10weeks/lessons/) |
+
+Tư liệu bổ sung: [Data Science](courses/1_AI_DATA_SCIENCE/1_Data_Science/raw_materials/) · [Machine Learning/Python](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/raw_materials/) · [Trang khoa](courses/1_AI_DATA_SCIENCE/readme.md)
+
+### 2. Software Engineering
+
+| Nhóm | Khóa học | Giáo trình | Học liệu |
+|---|---|---|---|
+| Nền tảng | Scratch | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/0_CS_Fundamentals/scratch-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/0_CS_Fundamentals/scratch-10weeks/lessons/) · [Đồ án](courses/2_SOFTWARE_ENGINEERING/0_CS_Fundamentals/scratch-10weeks/projects/) |
+| Ngôn ngữ | Rust | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/rust-fundamentals-10weeks/INDEX.md) | [Lịch học](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/rust-fundamentals-10weeks/schedule.md) · [Bài giảng](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/rust-fundamentals-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/rust-fundamentals-10weeks/code/) |
+| Ngôn ngữ | Modern C++ | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/cpp-modern-10weeks/INDEX.md) | [Code](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/cpp-modern-10weeks/code/) |
+| Ngôn ngữ | C#/.NET | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/csharp-dotnet-10weeks/INDEX.md) | [Code](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/csharp-dotnet-10weeks/code/) |
+| Web | HTML/CSS/JavaScript | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/html-css-js-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/html-css-js-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/html-css-js-10weeks/code/) |
+| Backend | Node.js API | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/nodejs-api-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/nodejs-api-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/nodejs-api-10weeks/code/) |
+| Backend | Rust + Axum | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/rust-backend-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/rust-backend-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/rust-backend-10weeks/code/) |
+| Mobile | React Native | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/react-native-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/react-native-10weeks/lessons/) · [Đồ án](courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/react-native-10weeks/projects/) |
+| Cloud | Cloud Computing | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/2_Cloud_Computing/cloud-computing-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/2_Cloud_Computing/cloud-computing-10weeks/lessons/) · [Đồ án](courses/2_SOFTWARE_ENGINEERING/2_Cloud_Computing/cloud-computing-10weeks/projects/) |
+| DevOps | CI/CD, Git, Docker | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/3_DevOps/devops-ci-cd-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/3_DevOps/devops-ci-cd-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/3_DevOps/devops-ci-cd-10weeks/code/) |
+| Web3 | Ethereum DApps | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/blockchain-dapps-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/blockchain-dapps-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/blockchain-dapps-10weeks/code/) |
+| Web3 | Rust + Solana | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/rust-web3-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/rust-web3-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/rust-web3-10weeks/code/) |
+
+Điểm vào chung: [Danh mục ngôn ngữ](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/INDEX.md) · [Trang Software Engineering](courses/2_SOFTWARE_ENGINEERING/readme.md) · [Tư liệu tổng hợp](courses/2_SOFTWARE_ENGINEERING/raw_materials/)
+
+### 3. Infrastructure & Networking
+
+| Khóa học | Giáo trình | Lịch học | Bài giảng / Chuyên đề |
+|---|---|---|---|
+| CCNA 200-301 | [Mở khóa](courses/3_INFRA_NETWORKING/1_Computer_Networks/ccna-10weeks/INDEX.md) | [10 tuần](courses/3_INFRA_NETWORKING/1_Computer_Networks/ccna-10weeks/schedule.md) | [Bài giảng](courses/3_INFRA_NETWORKING/1_Computer_Networks/ccna-10weeks/lessons/) |
+| Cisco VoIP & CME | [Mở chuyên đề](courses/3_INFRA_NETWORKING/1_Computer_Networks/ccna-10weeks/voice-cme-specialization/INDEX.md) | [10 tuần](courses/3_INFRA_NETWORKING/1_Computer_Networks/ccna-10weeks/voice-cme-specialization/schedule.md) | [Bài giảng + cấu hình](courses/3_INFRA_NETWORKING/1_Computer_Networks/ccna-10weeks/voice-cme-specialization/lessons/) |
+| System Administration | [Mở khóa](courses/3_INFRA_NETWORKING/2_System_Administration/sysadmin-10weeks/INDEX.md) | [10 tuần](courses/3_INFRA_NETWORKING/2_System_Administration/sysadmin-10weeks/schedule.md) | [Bài giảng](courses/3_INFRA_NETWORKING/2_System_Administration/sysadmin-10weeks/lessons/) |
+
+### 4. Cybersecurity
+
+| Khóa học | Giáo trình | Lịch học | Bài giảng / Code |
+|---|---|---|---|
+| Ethical Hacking & Pentesting | [Mở khóa](courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/INDEX.md) | [10 tuần](courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/schedule.md) | [Bài giảng](courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/lessons/) · [Notebook](courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/notebooks/) |
+| Cybersecurity + AI | [Mở khóa](courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/INDEX.md) | [10 tuần](courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/schedule.md) | [Bài giảng](courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/lessons/) · [Notebook](courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/notebooks/) |
+| Cisco ASA Firewall | [Mở khóa](courses/4_CYBERSECURITY/1_System_App_Security/asa-firewall-10weeks/INDEX.md) | [10 tuần](courses/4_CYBERSECURITY/1_System_App_Security/asa-firewall-10weeks/schedule.md) | [Bài giảng + cấu hình](courses/4_CYBERSECURITY/1_System_App_Security/asa-firewall-10weeks/lessons/) |
+| Software Reverse Engineering | [Mở khóa](courses/4_CYBERSECURITY/1_System_App_Security/software-reverse-engineering-10weeks/INDEX.md) | [10 tuần](courses/4_CYBERSECURITY/1_System_App_Security/software-reverse-engineering-10weeks/schedule.md) | [Bài giảng](courses/4_CYBERSECURITY/1_System_App_Security/software-reverse-engineering-10weeks/lessons/) · [Code phòng thủ](courses/4_CYBERSECURITY/1_System_App_Security/software-reverse-engineering-10weeks/code/) |
+| Cryptography | [Mở khóa](courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/INDEX.md) | [10 tuần](courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/schedule.md) | [Bài giảng](courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/lessons/) · [Notebook](courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/notebooks/) |
+
+### 5. Graphics, UI/UX & Game Development
+
+| Khóa học | Giáo trình | Lịch học | Bài giảng |
+|---|---|---|---|
+| UI/UX Design | [Mở khóa](courses/5_GRAPHICS_HCI/1_UI_UX_Design/ui-ux-design-10weeks/INDEX.md) | [10 tuần](courses/5_GRAPHICS_HCI/1_UI_UX_Design/ui-ux-design-10weeks/schedule.md) | [Bài giảng](courses/5_GRAPHICS_HCI/1_UI_UX_Design/ui-ux-design-10weeks/lessons/) |
+| Unity + C# | [Mở khóa](courses/5_GRAPHICS_HCI/2_VR_AR_GameDev/unity-csharp-10weeks/INDEX.md) | [10 tuần](courses/5_GRAPHICS_HCI/2_VR_AR_GameDev/unity-csharp-10weeks/schedule.md) | [Bài giảng](courses/5_GRAPHICS_HCI/2_VR_AR_GameDev/unity-csharp-10weeks/lessons/) |
+| Unreal RPG | [Mở khóa](courses/5_GRAPHICS_HCI/2_VR_AR_GameDev/unreal-rpg-10weeks/INDEX.md) | [10 tuần](courses/5_GRAPHICS_HCI/2_VR_AR_GameDev/unreal-rpg-10weeks/schedule.md) | [Bài giảng](courses/5_GRAPHICS_HCI/2_VR_AR_GameDev/unreal-rpg-10weeks/lessons/) |
+
+### 6. Hardware, Embedded & IoT
+
+| Khóa học | Giáo trình | Lịch học | Bài giảng |
+|---|---|---|---|
+| Chip Design | [Mở khóa](courses/6_HARDWARE_EMBEDDED/1_Chip_Design/chip-design-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/1_Chip_Design/chip-design-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/1_Chip_Design/chip-design-10weeks/lessons/) |
+| Arduino Autonomous Car | [Mở khóa](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/arduino-autonomous-car-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/arduino-autonomous-car-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/arduino-autonomous-car-10weeks/lessons/) |
+| Raspberry Pi Autonomous Car | [Mở khóa](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/raspi4-autonomous-car-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/raspi4-autonomous-car-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/raspi4-autonomous-car-10weeks/lessons/) |
+| IoT Robotics | [Mở khóa](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/iot-robotics-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/iot-robotics-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/iot-robotics-10weeks/lessons/) |
+| Micro:bit | [Mở khóa](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/microbit-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/microbit-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/microbit-10weeks/lessons/) |
+| Raspberry Pi Pico STEM | [Mở khóa](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/pico-stem-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/pico-stem-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/pico-stem-10weeks/lessons/) |
+| DIY Drone | [Mở khóa](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/drone-diy-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/drone-diy-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/drone-diy-10weeks/lessons/) |
+
+Tư liệu phần cứng: [IoT raw materials](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/raw_materials/)
+
+## Cách tìm tài liệu trong mỗi khóa
+
+| Tên | Vai trò | Nên mở khi |
 |---|---|---|
-| **1. AI & Data Science** | [Khoa học Dữ liệu (Data Science)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/1_AI_DATA_SCIENCE/1_Data_Science/data-science-10weeks/) | Tính toán ma trận với NumPy, Làm sạch & Phân nhóm DataFrame bằng Pandas. |
-| | [Học máy & Học sâu (ML & DL)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/) | Học máy cơ bản, Mạng nơ-ron sâu, Xử lý ngôn ngữ tự nhiên (NLP). |
-| | [Thị giác máy tính (Computer Vision)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/1_AI_DATA_SCIENCE/3_Computer_Vision/computer-vision-10weeks/) | OpenCV, Xử lý ảnh, Haar Cascades, CNNs, Nhận diện khuôn mặt & YOLO. |
-| **2. Software Engineering** | [Web/Mobile: HTML, CSS, JS & React](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/html-css-js-10weeks/) | Web Frontend, Responsive Design, JavaScript ES6+, React Hooks. |
-| | [Web/Mobile: Node.js & Express API](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/nodejs-api-10weeks/) | Web Backend, RESTful API, MongoDB/Mongoose, JWT Auth. |
-| | [Web/Mobile: Rust & Axum Web API](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/rust-backend-10weeks/) | Backend hiệu năng cao, Ownership, Tokio Runtime, SQLx. |
-| | [Web/Mobile: React Native & Expo](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/react-native-10weeks/) | Cross-platform Mobile App Development. |
-| | [Cloud Computing: AWS, GCP & Terraform](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/2_Cloud_Computing/cloud-computing-10weeks/) | Điện toán đám mây, Ảo hoá, Quản lý hạ tầng (IaC) tự động. |
-| | [DevOps: CI/CD, Git & Docker](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/3_DevOps/devops-ci-cd-10weeks/) | Quản lý mã nguồn, Docker Compose, CI/CD Pipeline, Vận hành tự động. |
-| | [Web3: Ethereum & DApps](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/blockchain-dapps-10weeks/) | EVM, Hợp đồng thông minh Solidity, Decentralized Web3. |
-| | [Web3: Rust & Solana](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/rust-web3-10weeks/) | Solana Virtual Machine, Anchor Framework, Smart Contracts. |
-| | [CS Fundamentals: Scratch (K-12)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/2_SOFTWARE_ENGINEERING/0_CS_Fundamentals/scratch-10weeks/) | Lập trình nền tảng: Kéo thả, Vòng lặp, Điều kiện, Biến, Hàm. |
-| **3. Infra & Networking** | [Mạng Máy tính (Computer Networks)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/3_INFRA_NETWORKING/1_Computer_Networks/ccna-10weeks/) | Cisco CCNA, OSI/TCP, OSPF, VLAN, IPv4/IPv6, ACL, NAT. |
-| | [Quản trị Hệ thống (System Admin)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/3_INFRA_NETWORKING/2_System_Administration/sysadmin-10weeks/) | Linux/Windows Server, Bash Script, Nginx, UFW, Cron, Giám sát. |
-| **4. Cybersecurity** | [Bảo mật Hệ thống (System Security)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/) | Tìm kiếm lỗ hổng (CEH), Hệ thống phát hiện xâm nhập, OWASP. |
-| | [Mật mã học (Cryptography)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/) | RSA, AES, Hash, Chữ ký điện tử, PKI, Mật mã Blockchain. |
-| **5. Graphics & HCI** | [Thiết kế UI/UX (Figma)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_GRAPHICS_HCI/1_UI_UX_Design/ui-ux-design-10weeks/) | Design Thinking, User Research, Wireframe, Prototyping. |
-| | [Game Dev & VR (Unity/Unreal)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/5_GRAPHICS_HCI/2_VR_AR_GameDev/unity-csharp-10weeks/) | Đồ hoạ 2D/3D, C# Scripting, Hybrid C++/Blueprints, Thực tế Ảo. |
-| **6. Hardware & Embedded**| [Thiết kế Vi mạch (Chip Design)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_HARDWARE_EMBEDDED/1_Chip_Design/chip-design-10weeks/) | Kiến trúc CPU, Mạch Logic số, Verilog, FPGA. |
-| | [Internet vạn vật (IoT/Robotics)](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/iot-robotics-10weeks/) | Arduino, ESP32, Cảm biến, Mạch cầu H, MQTT, Smart Home. |
+| `INDEX.md` | Trang đầu khóa học | Muốn biết mục tiêu, yêu cầu và cách bắt đầu |
+| `schedule.md` | Lộ trình tuần/buổi | Muốn biết thứ tự học |
+| `lessons/` | Bài giảng chính | Học lý thuyết, lab và bài tập |
+| `code/` | Code chạy được | Muốn thực hành hoặc đối chiếu lời giải |
+| `notebooks/` | Jupyter/Colab | Học dữ liệu, AI hoặc security analysis |
+| `projects/` | Đồ án và rubric | Làm sản phẩm cuối khóa |
+| `references/` | Phần mềm, thiết bị, an toàn | Chuẩn bị môi trường hoặc tra cứu |
+| `raw_materials/` | Tư liệu nguồn chưa chuẩn hóa | Đọc sâu hoặc truy xuất tài liệu cũ |
 
----
+Tìm nhanh bằng terminal:
 
-## 🎯 Đối Tượng Học Tập / Target Audience
+```bash
+# Liệt kê toàn bộ khóa học
+find courses -name INDEX.md -print
 
-Mỗi khoá học được xây dựng với phương pháp sư phạm dễ tiếp cận nhưng đi sâu vào bản chất kỹ thuật, phù học với:
-1. **Học sinh & Sinh viên (KIDS / Teens / Students)**: Thích khám phá công nghệ, có tư duy logic cơ bản và muốn tự tay xây dựng các trang web, trò chơi hoặc bot thông minh.
-2. **Người mới bắt đầu (Beginners)**: Những người chuyển ngành hoặc mong muốn có nền tảng vững chắc về lập trình phần mềm chuẩn công nghiệp.
-3. **Lập trình viên muốn nâng cao kỹ năng (Aspiring Developers)**: Muốn làm chủ các công nghệ hiện đại và hiệu năng cao như **Rust**, **Docker**, hay lập trình **Smart Contracts (Solidity/Solana)**.
-4. **Học viên đam mê bảo mật (Security Enthusiasts)**: Tiếp cận an ninh mạng từ góc độ lập trình viên, hiểu cơ chế tấn công và lập trình công cụ phòng thủ tích hợp AI.
+# Tìm nội dung theo từ khóa
+rg -n -i "ownership|YOLO|VLAN|cryptography" courses
 
----
-
-## 🗂️ Sắp Xếp Thư Mục Không Gian Làm Việc / Workspace Architecture
-
-Thư mục gốc của repository được tối ưu hoá và dọn dẹp cực kỳ gọn gàng:
-
-```text
-/Users/dangvietchung/Aero-Fullstack4kid/
-├── courses/                     ← [Chính] Chứa các khoá học 10 tuần, tài liệu thô gốc & phụ lục
-│   ├── 1_AI_DATA_SCIENCE/       ← Khoa Khoa học Dữ liệu & Trí tuệ Nhân tạo
-│   │   ├── 1_Data_Science/      ← Phân nhánh Khoa học Dữ liệu
-│   │   ├── 2_Machine_Learning/  ← Phân nhánh Học máy & Học sâu
-│   │   └── 3_Computer_Vision/   ← Phân nhánh Thị giác máy tính
-│   ├── 2_SOFTWARE_ENGINEERING/  ← Khoa Kỹ thuật Phần mềm
-│   │   ├── 0_CS_Fundamentals/   ← Nền tảng khoa học máy tính (Scratch/Pascal)
-│   │   ├── 1_Web_Mobile/        ← Phân nhánh Frontend, Backend và Ứng dụng Di động
-│   │   ├── 2_Cloud_Computing/   ← Phân nhánh Điện toán đám mây & Hạ tầng
-│   │   ├── 3_DevOps/            ← Phân nhánh Vận hành và Tự động hóa CI/CD
-│   │   └── 4_Web3_Blockchain/   ← Phân nhánh Công nghệ Chuỗi khối và Web phi tập trung
-│   ├── 3_INFRA_NETWORKING/      ← Khoa Cơ sở hạ tầng & Mạng máy tính
-│   │   ├── 1_Computer_Networks/ ← Phân nhánh Mạng máy tính (CCNA)
-│   │   └── 2_System_Administration/ ← Phân nhánh Quản trị Hệ thống (Linux/Windows Server)
-│   ├── 4_CYBERSECURITY/         ← Khoa An ninh mạng & Ethical Hacking
-│   │   ├── 1_System_App_Security/ ← Phân nhánh Bảo mật hệ thống & ứng dụng
-│   │   └── 2_Cryptography/      ← Phân nhánh Mật mã học ứng dụng
-│   ├── 5_GRAPHICS_HCI/          ← Khoa Đồ hoạ Máy tính & Tương tác
-│   │   ├── 1_UI_UX_Design/      ← Phân nhánh Thiết kế Trải nghiệm Người dùng
-│   │   └── 2_VR_AR_GameDev/     ← Phân nhánh Phát triển Game & Thực tế Ảo
-│   ├── 6_HARDWARE_EMBEDDED/     ← Khoa Phần cứng, Vi điều khiển & IoT
-│   │   ├── 1_Chip_Design/       ← Phân nhánh Thiết kế vi mạch số
-│   │   └── 2_IoT_Smart_Devices/ ← Phân nhánh Kết nối thiết bị IoT
-├── platform/                    ← Nền tảng ứng dụng Web hiển thị giáo trình tương tác (React / Vite)
-│   ├── src/                     ← Mã nguồn giao diện (Roadmap, Lesson Viewer, AI Simulator, Code Center)
-│   ├── public/                  ← Tài nguyên tĩnh của website
-│   └── package.json             ← Các thư viện phụ thuộc
-├── venv/                        ← Thư mục môi trường ảo Python cô lập
-├── docs/                        ← Các tài liệu hướng dẫn và ghi chú rời
-└── README.md                    ← [Tệp tin hiện tại] Tài liệu hướng dẫn chung
+# Liệt kê code, notebook và cấu hình thực hành
+rg --files courses -g '*.py' -g '*.rs' -g '*.cpp' -g '*.cs' -g '*.js' -g '*.ipynb'
 ```
 
----
+## Lộ trình học đề xuất
 
-## 💻 Cách Khởi Chạy Nền Tảng Giao Diện Web / How to Run the Web Platform
+- **Người mới:** Scratch hoặc Rust/C++/C# nền tảng → Web/Backend → Cloud/DevOps.
+- **AI:** Python nền tảng → Data Science → Machine Learning → Computer Vision.
+- **Mạng:** CCNA core → System Administration → VoIP/CME hoặc ASA Firewall.
+- **Bảo mật:** Network/System fundamentals → Ethical Hacking → Cryptography, ASA hoặc Reverse Engineering.
+- **IoT:** C/C++ nền tảng → Pico/Micro:bit → IoT Robotics → xe tự hành/drone.
+- **Game:** C# → Unity hoặc C++ → Unreal.
 
-Để xem giáo trình trực quan, sử dụng **Trình giả lập AI Trợ lý** và tra cứu **Kho code mẫu**, hãy chạy ứng dụng web cục bộ:
+## Cấu trúc repository
 
-### 1. Cài đặt các thư viện phụ thuộc (Dependencies)
-Mở terminal tại thư mục `platform/` và chạy lệnh:
+```text
+Aero-Fullstack4kid/
+├── courses/       # Giáo trình, bài giảng, code, dự án và tư liệu nguồn
+├── platform/      # Ứng dụng React/Vite hiển thị giáo trình
+├── docs/          # Tài liệu vận hành và ghi chú chung
+├── tools/         # Công cụ hỗ trợ xử lý học liệu
+└── README.md      # Bản đồ điều hướng hiện tại
+```
+
+## Chạy nền tảng web
+
+Yêu cầu Node.js và npm:
+
 ```bash
 cd platform
 npm install
-```
-
-### 2. Khởi chạy máy chủ phát triển (Development Server)
-Chạy lệnh sau để khởi chạy local server:
-```bash
 npm run dev
 ```
-Sau đó truy cập địa chỉ hiển thị trên terminal (thông thường là `http://localhost:5173`) để sử dụng giao diện HUD của học viện.
 
----
+Mở địa chỉ Vite in trên terminal, thường là `http://localhost:5173`.
 
-## 🛡️ Nguyên Tắc An Toàn / Safety & Ethical Use
-Toàn bộ mã nguồn và kiến thức liên quan đến an ninh mạng (Module 5) được thiết kế cho mục đích giảng dạy phòng thủ, kiểm thử an toàn (auditing) và lập trình an toàn. Nghiêm cấm sử dụng các công cụ được tạo ra để thực hiện các cuộc tấn công không được cấp phép vào hệ thống khác.
+## Quy tắc cấu trúc
+
+Khi thêm khóa mới, ưu tiên cấu trúc:
+
+```text
+course-name-10weeks/
+├── INDEX.md
+├── schedule.md
+├── lessons/week01.md ... week10.md
+├── code/           # Nếu có code minh họa
+├── projects/       # Nếu có đồ án
+└── references/     # Nếu có hướng dẫn phụ thuộc/an toàn
+```
+
+- Dùng liên kết tương đối; không dùng `file:///Users/...` hoặc đường dẫn riêng của một máy.
+- Code mẫu phải có lệnh chạy, xử lý lỗi cơ bản và được kiểm thử khi có thể.
+- Tách tư liệu nguồn khỏi bài giảng đã biên tập.
+- Khi thêm khóa, cập nhật bảng điều hướng trong README này.
+
+## An toàn và sử dụng có trách nhiệm
+
+Nội dung cybersecurity chỉ dành cho hệ thống, binary và môi trường mà học viên sở hữu hoặc được ủy quyền rõ ràng. Không dùng giáo trình để truy cập trái phép, phá bản quyền, vượt DRM/license hoặc gây gián đoạn hệ thống thật. Các lab nguy hiểm phải chạy trong môi trường cô lập và có khả năng khôi phục.
