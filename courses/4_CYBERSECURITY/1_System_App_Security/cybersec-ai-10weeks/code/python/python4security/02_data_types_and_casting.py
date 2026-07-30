@@ -10,6 +10,7 @@ domain = "google.com"
 http_port = 80
 ssh_port = 22
 
+
 # 3. Số thực (Float - float): Lưu thời gian trễ (timeout) hoặc phiên bản phần mềm
 timeout_seconds = 2.5
 
@@ -25,3 +26,4 @@ user_input_port = input("Nhập cổng muốn quét (vd: 443): ") # Ví dụ nh�
 # Nếu chúng ta muốn làm toán (vd cộng thêm 1) với Port này, ta phải ép nó về số nguyên (int)
 real_port = int(user_input_port)
 print(f"Cổng tiếp theo sẽ quét là: {real_port + 1}")
+
