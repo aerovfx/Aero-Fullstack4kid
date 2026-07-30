@@ -1,117 +1,407 @@
-# Tuần 4: Stepping, call stack và breakpoint
+# Giáo trình Cyber Security – Reverse Engineering
 
-## Nguồn bài học
+## Tuần 4 – Bài 4
 
-- **Stepping Into Call Function of x64dbg**.
-- **How to Use Breakpoints in Software Cracking**.
-- **Stepping Into Call Function of x64dbg**.
-- **How to Use Breakpoints in Software Cracking**.
-- Kỹ thuật được áp dụng để debug toy binary, không nhằm vượt kiểm soát phần mềm thật.
+# Cơ Chế Debugging: Stepping, Call Stack & Breakpoints Trong x64dbg
 
-## Chuyên đề: Phá Vỡ Rào Cản Mã Nguồn — 5 Bí Mật Về Breakpoint Trong Kỹ Thuật Đảo Ngược Phần Mềm
+---
 
-### 1. Lời mở đầu: Cảm giác lạc lối giữa những dòng code
+# 1. Mục tiêu bài học
 
-Đối với một "newbie" khi lần đầu dấn thân vào thế giới kỹ thuật đảo ngược (Reverse Engineering), khoảnh khắc mở một tệp tin thực thi trong trình gỡ lỗi như x64dbg (hay SDPG64) thường mang lại cảm giác choáng ngợp đến nghẹt thở. Trước mắt bạn không phải là giao diện thân thiện của ứng dụng, mà là một mê cung của những địa chỉ bộ nhớ RAM, các mã Hex vô hồn và hàng ngàn dòng lệnh Assembly nhảy múa liên tục. Trong mớ hỗn độn của Stack và Registers đó, mã nguồn thực sự của ứng dụng dường như đang lẩn trốn sau lớp vỏ bọc cứng nhắc của mã máy. Làm thế nào để chúng ta có thể "dừng thời gian", đóng băng trạng thái của CPU để soi xét từng chân tơ kẽ tóc của logic phần mềm? Bí mật nằm ở Breakpoint (Điểm dừng) — công cụ tối thượng cho phép bạn chiếm quyền kiểm soát luồng thực thi, buộc ứng dụng phải dừng lại và tiết lộ những bí mật sâu kín nhất của nó.
+Sau khi hoàn thành bài này, học viên có thể:
 
-### 2. Takeaway 1: Breakpoint - Khi phần mềm cũng cần một "khoảng nghỉ" như con người
+* Làm chủ các phím tắt và thao tác gỡ lỗi trong x64dbg: **Step Over (F8)**, **Step Into (F7)**, **Run (F9)**, **Execute Till Return (Ctrl+F9)**.
+* Đọc hiểu cửa sổ **Call Stack** và quản lý các khung gọi hàm (Call Frames).
+* Phân biệt và ứng dụng 3 loại điểm ngắt chính: **Software Breakpoint (INT 3)**, **Hardware Breakpoint (DR0-DR7)** và **Memory Breakpoint**.
+* Sử dụng Breakpoint hiệu quả để tìm điểm kiểm tra logic đăng ký mà không mất thời gian đọc toàn bộ mã máy.
 
-Trong kỹ thuật đảo ngược, Breakpoint không chỉ đơn giản là lệnh dừng. Nó là một sự can thiệp có tính toán vào chu kỳ xử lý của CPU. Để hiểu bản chất của nó, hãy nhìn vào cách thức vận hành của chính chúng ta. Một ứng dụng khi thực thi cũng giống như một con người đang mải miết làm việc; nó cần những điểm dừng chiến thuật để chúng ta có thể kiểm tra xem "nó đang nghĩ gì" (dữ liệu trong thanh ghi) và "nó định làm gì tiếp theo".
+---
 
-> *"Cũng giống như con người khi bạn làm điều gì đó... bạn phải nghỉ ngơi lần đầu tiên, đó cũng là cách các ứng dụng hoạt động."*
+# 2. Kiến thức chính
 
-Việc đặt một Breakpoint chính là cách bạn tạo ra một "khoảng nghỉ" cưỡng bức. Thay vì để mã lệnh trôi đi với tốc độ hàng triệu phép tính mỗi giây, bạn đóng băng nó lại tại một địa chỉ bộ nhớ cụ thể để quan sát sự thay đổi của các biến số và luồng logic ngay tại thời điểm then chốt.
+## 2.1 Các Thao Tác Stepping Trong Debugger
 
-### 3. Takeaway 2: Đừng nhầm lẫn giữa "Hệ điều hành" và "Ứng dụng"
+Khi đính kèm ứng dụng vào x64dbg, chương trình tạm dừng ở điểm ngắt hệ thống. Người phân tích sử dụng các thao tác Stepping để duyệt qua từng dòng lệnh Assembly:
 
-Một cái bẫy kinh điển mà các "script kiddies" thường mắc phải là bắt đầu phân tích ngay khi vừa nạp ứng dụng vào debugger. Khi bạn mở ứng dụng trong debugger, trình gỡ lỗi sẽ dừng lại ở **System Breakpoint**. Đây là giai đoạn cực kỳ quan trọng cần lưu ý: Tại thời điểm này, bạn đang đứng ở lớp vỏ của Windows (Operating System), nơi hệ điều hành chuẩn bị bàn giao quyền điều khiển cho ứng dụng. Mọi dòng mã bạn thấy lúc này chỉ là các thư viện hệ thống dùng chung, hoàn toàn không liên quan đến logic phân tích mà bạn đang tìm kiếm. Để thực sự chạm tay vào mục tiêu, bạn phải nhấn "Run" (`F9`) để vượt qua lớp rào chắn hệ thống, tiến thẳng tới **Entry Point** — điểm khởi đầu thực sự của mã nguồn ứng dụng. Chỉ khi ở Entry Point, hành trình giải mã của bạn mới chính thức bắt đầu.
-
-### 4. Takeaway 3: String References – Bản đồ kho báu trong mê cung Hex
-
-Thay vì cuộn chuột vô vọng qua hàng vạn dòng lệnh Disassembly, một chuyên gia lão luyện sẽ luôn tìm kiếm những "dấu vết văn bản" (Strings). Trong ứng dụng CLI (Command Line Interface) chúng ta đang nghiên cứu, có chứa một thông báo ẩn: `"try harder"`. Các lập trình viên thường để lại các chuỗi ký tự này như một lời gợi ý hoặc thông báo trạng thái (ví dụ: thông báo sai Serial Key hoặc yêu cầu nhập mật khẩu). Những chuỗi văn bản này chính là những "biển báo giao thông" quý giá. Tìm thấy chuỗi `"try harder"` đồng nghĩa với việc bạn đã xác định được tọa độ của hàm xử lý logic quan trọng. Đây là lối tắt thông minh nhất để dẫn bạn đến thẳng "trái tim" của phần mềm mà không cần phải đọc hiểu từng dòng mã máy phức tạp.
-
-### 5. Takeaway 4: Quy trình "Chuột phải" thần thánh để lọc nhiễu dữ liệu
-
-Để truy vết các chuỗi ký tự trong x64dbg / SDPG64, bạn cần thực hiện một quy trình kỹ thuật chuẩn xác nhằm loại bỏ sự nhiễu loạn từ hàng ngàn DLL hệ thống. Quy trình cụ thể như sau:
-
-- **Bước 1**: Tại cửa sổ Disassembly (vùng chứa mã có thể đọc được), nhấp chuột phải.
-- **Bước 2**: Chọn **Search for -> Current Module**. *Lưu ý*: Việc chọn "Current Module" là cực kỳ quan trọng để debugger chỉ tập trung tìm kiếm trong phạm vi mã nguồn của chính ứng dụng mục tiêu, thay vì quét toàn bộ bộ nhớ RAM khổng lồ.
-- **Bước 3**: Chọn **String references**. Khi danh sách hiện ra, bạn chỉ cần tìm chuỗi `"try harder"`. Việc Double-click vào dòng này sẽ lập tức đưa màn hình Disassembly "nhảy" đến đúng địa chỉ bộ nhớ chứa lệnh in đoạn văn bản đó. Lúc này, toàn bộ logic kiểm tra mật khẩu hay bản quyền bao quanh chuỗi ký tự đó sẽ hiện ra rõ mồn một trước mắt bạn.
-
-### 6. Takeaway 5: Kiểm chứng giả thuyết bằng cơ chế "Break" và "Run"
-
-Sau khi đã đặt Breakpoint tại một hàm Call (ví dụ: `call`) hoặc một lệnh Jump gần chuỗi `"try harder"`, công việc còn lại là kiểm chứng luồng thực thi. Khi bạn chạy một ứng dụng CLI trong môi trường gỡ lỗi, màn hình Command Prompt ban đầu sẽ hoàn toàn trống rỗng (blank). Chỉ khi bạn nhấn "Run" (`F9`) và CPU thực thi đến đúng địa chỉ bạn đã đánh dấu, chương trình mới tạm dừng (Paused) và nội dung `"try harder"` mới xuất hiện. Bằng cách đặt Breakpoint tại các điểm rẽ nhánh logic (Jumps), bạn có thể quan sát cách ứng dụng đưa ra quyết định: Tại sao nó lại nhảy đến thông báo lỗi? Điều kiện nào cần được thỏa mãn để nó nhảy đến thông báo thành công? Kiểm soát được Breakpoint tại các điểm nhảy này chính là chìa khóa để thay đổi định mệnh của phần mềm.
-
-### Kết luận và Câu hỏi gợi mở
-
-Làm chủ Breakpoint không chỉ là học cách dừng một chương trình; đó là học cách thấu hiểu ngôn ngữ tư duy của lập trình viên thông qua mã máy. Từ việc phân biệt System Breakpoint cho đến việc truy quét String References trong Current Module, bạn đã nắm trong tay những kỹ thuật cơ bản nhưng mạnh mẽ nhất để giải mã bất kỳ ứng dụng nào. Đây chính là nền tảng vững chắc để chúng ta tiến tới thử thách thực sự ở bài học tiếp theo: **Reverse Jumps** — kỹ thuật đảo ngược các lệnh nhảy để bẻ lái hoàn toàn logic của phần mềm theo ý muốn của bạn.
-
-> *Nếu bạn có thể dừng bất kỳ khoảnh khắc nào trong một quy trình logic phức tạp, bạn sẽ chọn dừng ở đâu để tìm ra lỗ hổng của nó?*
-
-## Kết quả cần đạt
-
-- Chọn đúng run, pause, step into, step over, run until return và run to user code.
-- Phân biệt software, hardware, memory và conditional breakpoint.
-- Đọc call stack, argument/return value theo calling convention.
-- Tạo debugging timeline có thể lặp lại sau restart.
-
-## 1. Stepping đúng mục đích
-
-| Thao tác | Dùng khi | Rủi ro |
-|---|---|---|
-| Step into | Muốn hiểu callee | Rơi sâu vào runtime/library |
-| Step over | Call đã biết/không liên quan | Bỏ qua side effect cần quan sát |
-| Run until return | Đang ở callee không cần thiết | Có thể chạy nhiều code hơn dự kiến |
-| Run to user code | Muốn bỏ loader/runtime | Tool có thể nhận diện module chưa hoàn hảo |
-| Pause | Cần snapshot trạng thái | Dừng giữa critical section có thể làm lệch timing |
-
-## 2. Breakpoint types
-
-- **Software breakpoint:** thường thay instruction bằng trap byte; linh hoạt nhưng thay đổi code memory tạm thời.
-- **Hardware breakpoint:** dùng debug register; số lượng ít, phù hợp execute/read/write tại địa chỉ cụ thể.
-- **Memory breakpoint:** theo dõi page access; có thể noisy và ảnh hưởng timing.
-- **Conditional breakpoint:** chỉ dừng khi expression/thread/counter thỏa điều kiện.
-
-Breakpoint là công cụ quan sát, không phải bằng chứng tự thân. Luôn ghi câu hỏi mà breakpoint đang kiểm tra.
-
-## 3. Calling convention x64 khái quát
-
-Trên Windows x64, bốn integer/pointer argument đầu thường qua `RCX`, `RDX`, `R8`, `R9`; return value thường ở `RAX`. Stack vẫn chứa return address, shadow space và dữ liệu khác. Compiler có thể inline hoặc tối ưu nên không áp dụng máy móc.
-
-## 4. Lab từng bước
-
-Target là `toy_control_flow` do khóa cung cấp.
-
-1. Tính hash, tạo working copy và snapshot.
-2. Đặt breakpoint tại `main` bằng symbol hoặc module entry đã xác minh.
-3. Run tới `classify_score` và ghi thread/call stack.
-4. Quan sát argument trước call, step into, ghi branch và `RAX` trước return.
-5. Restart target; đặt conditional breakpoint chỉ khi score bằng `80`.
-6. Tạo hardware execute breakpoint tại cùng function và so sánh hành vi.
-7. Xóa breakpoint, restart và chứng minh target chạy bình thường.
-
-## 5. Debugging timeline
-
-```markdown
-Question: classify_score nhận input ở đâu?
-Breakpoint: toy.exe + RVA <...>
-Precondition: argv[1] = 80
-Observation: first integer argument = 80; return register = 2
-State modified by analyst: No
-Conclusion: function maps 80 to class 2 (high confidence)
-Evidence: W04-E03 screenshot + register export
+```text
+[Phím tắt]    [Tên thao tác]          [Hành vi gỡ lỗi]
+─────────────────────────────────────────────────────────────────────────────
+F7            Step Into               Đi vào bên trong hàm của lệnh CALL
+F8            Step Over               Chạy qua lệnh CALL mà không nhảy vào trong
+F9            Run / Continue          Cho phép chương trình chạy tự do tới Breakpoint tiếp theo
+Ctrl + F9     Execute till Return     Chạy liên tục cho đến khi gặp lệnh RET của hàm hiện tại
+Alt + F9      Run to User Code        Chạy thoát khỏi DLL hệ thống về mã nguồn ứng dụng
 ```
 
-## Lỗi thường gặp
+---
 
-- Đặt breakpoint trên địa chỉ tuyệt đối không ổn định.
-- Quên tắt breakpoint rồi đo performance.
-- Nhầm first-chance exception với crash cuối cùng.
-- Sửa memory/register và trộn kết quả với run nguyên bản.
-- Bước qua system library hàng nghìn instruction mà không có câu hỏi.
-- Dùng breakpoint quá rộng làm Heisenbug/timing thay đổi.
+## 2.2 Call Stack và Quản Lý Khung Gọi Hàm (Call Frames)
 
-## Bài tập và rubric
+Call Stack là cửa sổ trong x64dbg ghi lại chuỗi các lệnh `CALL` đã dẫn chương trình đến vị trí hiện tại.
 
-Nộp timeline tối đa 12 bước cho ba input, kèm call stack và so sánh software/hardware breakpoint. Chấm: breakpoint choice 25, call/argument reasoning 25, reproducibility 20, evidence 20, safety 10.
+```text
+Cửa sổ Call Stack trong x64dbg:
+Address          Return Address    Function / Module
+──────────────────────────────────────────────────────────────────────────────
+00007FF610001050 00007FF610001200  toy_validator.check_serial (Mã ứng dụng)
+00007FF610001200 00007FF82A104030  toy_validator.main
+00007FF82A104030 0000000000000000  KERNEL32.BaseThreadInitThunk (Windows OS)
+```
 
+### Ý nghĩa của Call Stack:
+* Giúp người phân tích xác định **nguồn gốc hàm nào đã gọi hàm hiện tại**.
+* Cho phép click đúp vào dòng địa chỉ trong Call Stack để quay lại vị trí gọi hàm trước đó.
+
+---
+
+## 2.3 Các Loại Breakpoints (Điểm Ngắt) Chi Tiết
+
+Breakpoints là công cụ giúp "đóng băng" thời gian thực thi của chương trình tại một thời điểm hoặc vị trí cụ thể.
+
+```text
+    ┌──────────────────────────────────────────────────────────────┐
+    │                     Hệ Thống Breakpoint                      │
+    └──────────────────────────────┬───────────────────────────────┘
+                                   │
+      ┌────────────────────────────┼────────────────────────────┐
+      ▼                            ▼                            ▼
+[Software Breakpoint]     [Hardware Breakpoint]       [Memory Breakpoint]
+- Mã op: 0xCC (INT 3)     - Thanh ghi DR0-DR7         - Đổi PAGE protection
+- Dễ bị Anti-Debug phát   - Khó bị phát hiện          - Bẫy đọc/ghi vùng nhớ
+  hiện (Check 0xCC)       - Tối đa 4 điểm ngắt        - Tốc độ chậm hơn
+```
+
+### 1. Software Breakpoint (Phím tắt F2):
+Debugger ghi đè opcode byte đầu tiên tại địa chỉ đích bằng `0xCC` (ngắt phần mềm `INT 3`). Khi CPU chạy tới địa chỉ đó, ngắt `INT 3` được kích hoạt và trả quyền kiểm soát lại cho Debugger.
+
+### 2. Hardware Breakpoint:
+Sử dụng các thanh ghi gỡ lỗi chuyên dụng trên vi xử lý x86/x64 (`DR0`, `DR1`, `DR2`, `DR3` để lưu địa chỉ; `DR7` để lưu cấu hình ngắt khi Đọc/Ghi/Thực thi).  
+✔ **Ưu điểm**: Không sửa đổi mã trong bộ nhớ RAM, vượt qua kỹ thuật quét `0xCC` anti-debugging.
+
+### 3. Memory Breakpoint:
+Debugger thay đổi quyền bảo vệ của trang bộ nhớ (Memory Page Protection) thành `PAGE_NOACCESS` hoặc `PAGE_GUARD`. Khi chương trình truy cập trang nhớ này, một ngoại lệ được kích hoạt để tạm dừng.
+
+---
+
+# 3. Thuật ngữ quan trọng
+
+| Thuật ngữ | Ý nghĩa |
+|---|---|
+| **Step Into (F7)** | Lệnh gỡ lỗi đi sâu vào trong hàm |
+| **Step Over (F8)** | Lệnh gỡ lỗi nhảy qua hàm |
+| **Software BP (INT 3)** | Điểm ngắt phần mềm bằng byte 0xCC |
+| **Hardware BP (DR0-DR7)** | Điểm ngắt phần cứng bằng thanh ghi CPU Debug Registers |
+| **Memory BP** | Điểm ngắt bộ nhớ khi có thao tác Đọc/Ghi |
+| **Call Stack** | Ngăn xếp lưu lịch sử chuỗi lời gọi hàm |
+| **Return Address** | Địa chỉ trả về trên Stack khi kết thúc hàm |
+| **Entry Point (EP)** | Địa chỉ lệnh đầu tiên được thực thi của file PE |
+
+---
+
+# 4. Ví dụ minh họa
+
+## Ví dụ 1: Đặt Software Breakpoint tại điểm kiểm tra Serial
+
+Trong x64dbg, chuyển tới địa chỉ `0x00401580` chứa lệnh so sánh:
+```assembly
+00401580 | 83F8 00 | cmp eax, 0 | Đặt Breakpoint nhấn F2 tại đây (Biến 83 thành CC ngầm)
+```
+Nhấn **F9** để chạy ứng dụng. Nhập chuỗi serial bất kỳ vào phần mềm và nhấn Submit. Chương trình sẽ dừng ngay lập tức tại dòng `00401580`.
+
+---
+
+## Ví dụ 2: Dùng Hardware Breakpoint bẫy chuỗi Password nhập vào
+
+1. Nhập chuỗi `"MySecretPass"` trên giao diện ứng dụng.
+2. Tìm địa chỉ chuỗi `"MySecretPass"` trong Cửa sổ Memory Map (Địa chỉ `0x0250AB80`).
+3. Click chuột phải vào địa chỉ `0x0250AB80` → **Breakpoint** → **Hardware, Access** → **Byte**.
+4. Nhấn **F9** để tiếp tục. Ngay khi chương trình đọc từng ký tự để kiểm tra, Hardware Breakpoint sẽ kích hoạt dừng CPU đúng dòng lệnh đọc password!
+
+---
+
+# 5. Ghi nhớ
+
+```text
+[Nhập liệu trên GUI] ──► [Kích hoạt Hardware BP trên Memory / Software BP tại API]
+                                                 │
+                                                 ▼
+[Chương trình tạm dừng] ◄── [Debugger bắt ngắt INT 3 / DR0-DR7 Exception]
+         │
+         ▼
+[Dùng F8 (Step Over) / F7 (Step Into) để trace logic kiểm tra]
+```
+
+> **Ghi nhớ**: "Hardware Breakpoint ngắt trên vùng nhớ (Access/Write) là vũ khí tối thượng để tìm kiếm đoạn mã xử lý dữ liệu nhập vào mà không cần đọc mã nguồn!"
+
+---
+
+# 6. Câu hỏi ôn tập
+
+### Câu 1 (Nhận biết)
+Phím tắt nào trong x64dbg dùng để thực hiện thao tác Step Over (chạy qua lệnh `CALL` mà không nhảy vào trong hàm)?
+A. F7  
+B. F8  
+C. F9  
+D. F2  
+
+**Đáp án:** B
+
+---
+
+### Câu 2 (Thông hiểu)
+Software Breakpoint mặc định trong x64dbg hoạt động bằng cơ chế nào bên dưới bộ nhớ?
+A. Thay đổi giá trị thanh ghi RAX thành 0  
+B. Ghi đè byte lệnh đầu tiên bằng opcode 0xCC (lệnh ngắt INT 3)  
+C. Xóa file EXE khỏi ổ cứng  
+D. Đóng chương trình đang chạy  
+
+**Đáp án:** B
+
+---
+
+### Câu 3 (Thông hiểu)
+Tại sao Hardware Breakpoint lại có khả năng chống lại các kỹ thuật phát hiện debugger (Anti-debugging) tốt hơn Software Breakpoint?
+*Gợi ý trả lời:* Vì Hardware Breakpoint dùng các thanh ghi phần cứng của CPU (`DR0-DR7`) để bẫy điểm dừng chứ không sửa đổi mã byte trong bộ nhớ RAM (không chèn byte `0xCC`), do đó các kỹ thuật quét toàn vẹn bộ nhớ (Checksum/CRC) không phát hiện được.
+
+---
+
+### Câu 4 (Vận dụng)
+Khi đang gỡ lỗi một hàm trong x64dbg, chương trình vô tình nhảy vào một DLL hệ thống của Windows (`NTDLL.DLL`). Bạn sử dụng phím tắt hoặc thao tác nào để thoát nhanh về lại mã nguồn của ứng dụng chính?
+*Gợi ý trả lời:* Nhấn **Alt + F9** (Run to User Code) hoặc nhấn **Ctrl + F9** (Execute till Return) rồi nhấn **F7/F8** để thoát khỏi DLL hệ thống về mã ứng dụng.
+
+---
+
+### Câu 5 (Vận dụng)
+Trình bày các bước dùng Call Stack để xác định hàm chính kiểm tra bản quyền khi chương trình hiển thị hộp thoại thông báo lỗi `"Invalid Serial Key"`.
+*Gợi ý trả lời:* 
+1. Đặt Software Breakpoint tại hàm Windows API hiển thị thông báo (`MessageBoxA/W`).
+2. Nhập key sai để chương trình kích hoạt breakpoint dừng tại `MessageBoxA`.
+3. Mở cửa sổ **Call Stack** trong x64dbg.
+4. Click đúp vào dòng Call Frame ngay bên dưới `MessageBoxA` (thuộc module ứng dụng chính) để quay lại vị trí ngay sau câu lệnh `CALL MessageBox`.
+5. Cuộn ngược lên vài dòng Assembly để tìm câu lệnh `CMP/TEST` và `JNE/JE` đã dẫn đến thông báo lỗi.
+
+---
+
+## Tổng kết bài học
+
+* Làm chủ các thao tác Stepping (F7, F8, F9, Ctrl+F9, Alt+F9).
+* Phân tích và truy vết nguồn gốc câu lệnh bằng cửa sổ **Call Stack**.
+* Phân biệt sâu sắc cơ chế của Software, Hardware và Memory Breakpoint.
+
+---
+
+# Bổ sung: Giao Diện x64dbg, Cơ Chế CALL/RET & Conditional Breakpoint
+
+## Phần A — Giao Diện x64dbg Chi Tiết (Bài 3)
+
+### A.1 Các cửa sổ chính trong x64dbg
+
+```text
+┌─────────────────────────────────────────────────────────────────────┐
+│                        x64dbg Main Window                           │
+├──────────────────────┬──────────────────────────────────────────────┤
+│  CPU / Disassembly   │  Registers (RAX, RBX, RCX, RDX, RSP, RBP,   │
+│  (Mã Assembly)       │            RIP, RFLAGS...)                   │
+├──────────────────────┼──────────────────────────────────────────────┤
+│  Stack               │  Dump / Hexview                              │
+│  (Ngăn xếp)          │  (Bộ nhớ dạng Hex)                          │
+├──────────────────────┴──────────────────────────────────────────────┤
+│  Tabs: Breakpoints | Memory Map | Call Stack | Handles | Threads    │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+| Cửa sổ | Vai trò |
+|---|---|
+| **CPU / Disassembly** | Hiển thị mã Assembly tại vị trí RIP hiện tại |
+| **Registers** | Hiển thị giá trị tức thời của tất cả thanh ghi CPU |
+| **Stack** | Hiển thị dữ liệu trên Ngăn xếp (vùng RSP đang trỏ) |
+| **Memory Map** | Liệt kê tất cả vùng nhớ được cấp phát cho tiến trình |
+| **Dump / Hexview** | Xem bộ nhớ dạng thô (Hex + ASCII) |
+| **Breakpoints** | Danh sách và quản lý tất cả điểm ngắt đã đặt |
+| **Call Stack** | Chuỗi lời gọi hàm dẫn đến vị trí hiện tại |
+
+### A.2 Mở chương trình trong x64dbg
+
+```text
+Cách 1: Menu File → Open → Chọn file EXE
+Cách 2: Kéo thả file EXE vào cửa sổ x64dbg
+Cách 3: Command Line: x64dbg.exe "C:\path\to\target.exe"
+
+→ Chương trình tự động dừng tại System Breakpoint (trước Entry Point)
+→ Nhấn F9 để chạy tiếp đến Entry Point của ứng dụng
+```
+
+### A.3 Phím tắt điều khiển thực thi tổng hợp
+
+| Phím tắt | Tên | Hành vi |
+|---|---|---|
+| **F2** | Toggle Breakpoint | Bật/tắt Software Breakpoint tại dòng hiện tại |
+| **F7** | Step Into | Đi vào bên trong hàm của lệnh CALL |
+| **F8** | Step Over | Chạy qua lệnh CALL mà không đi vào |
+| **F9** | Run / Continue | Chạy tiếp đến Breakpoint tiếp theo |
+| **Ctrl + F9** | Execute till Return | Chạy đến lệnh RET của hàm hiện tại |
+| **Alt + F9** | Run to User Code | Thoát khỏi DLL hệ thống về mã ứng dụng |
+| **Ctrl + G** | Go to Address | Chuyển Disassembly tới địa chỉ cụ thể |
+| **F4** | Run to Cursor | Chạy đến dòng lệnh đang được chọn |
+
+---
+
+## Phần B — Cơ Chế CALL & RET Chi Tiết (Bài 4)
+
+### B.1 Lệnh CALL — Gọi hàm
+
+Khi CPU thực thi lệnh `CALL target_function`:
+1. **Push Return Address**: CPU đẩy địa chỉ lệnh tiếp theo (sau CALL) lên Stack.
+2. **Jump**: CPU cập nhật `RIP/EIP` về địa chỉ đầu tiên của hàm đích.
+3. **Execute**: CPU thực thi các lệnh trong hàm đích.
+
+```assembly
+; Ví dụ: CALL tại địa chỉ 0x00401050
+00401050 | E8 AB000000 | CALL verify_serial   ; Push 0x00401055, JMP verify_serial
+00401055 | 83F8 01     | CMP EAX, 1           ; Lệnh tiếp theo sau CALL (Return Address)
+```
+
+```text
+Stack trước CALL:             Stack sau CALL:
+┌──────────────┐              ┌──────────────┐
+│              │              │  0x00401055  │ ← RSP (Return Address được đẩy vào)
+│              │              │              │
+└──────────────┘              └──────────────┘
+```
+
+### B.2 Lệnh RET — Trả về từ hàm
+
+Khi CPU thực thi lệnh `RET`:
+1. **Pop Return Address**: CPU lấy địa chỉ từ đỉnh Stack (`RSP`).
+2. **Jump Back**: CPU cập nhật `RIP/EIP` về địa chỉ vừa lấy.
+3. `RSP` tăng lên 8 bytes (x64) hoặc 4 bytes (x86).
+
+### B.3 Chuỗi Call Stack thực tế
+
+```text
+Cửa sổ Call Stack trong x64dbg (đọc từ dưới lên trên):
+───────────────────────────────────────────────────────────────────
+Address          Return Address    Function/Module
+00401010         00401080          toy_validator.main
+00401080         004010C0          toy_validator.check_login
+004010C0         004010F0          toy_validator.verify_serial
+004010F0         004010FF          toy_validator.compare_strings   ← Đang ở đây
+───────────────────────────────────────────────────────────────────
+```
+
+**Cách sử dụng**: Click đúp vào bất kỳ dòng nào trong Call Stack để x64dbg chuyển Disassembly tới vị trí lời gọi hàm tương ứng.
+
+---
+
+## Phần C — Conditional Breakpoint & Memory Breakpoint Chi Tiết (Bài 5)
+
+### C.1 Conditional Breakpoint (Điểm ngắt có điều kiện)
+
+Conditional Breakpoint chỉ dừng chương trình khi một điều kiện cụ thể được thỏa mãn, giúp tránh phải dừng hàng trăm lần ở vòng lặp không cần thiết.
+
+```text
+Cách tạo Conditional Breakpoint trong x64dbg:
+1. Click chuột phải vào dòng lệnh cần Breakpoint
+2. Chọn "Set Conditional Breakpoint"
+3. Nhập điều kiện, ví dụ:
+   - "EAX == 0"                    → Dừng khi EAX = 0
+   - "DWORD:[ESP] == 0x1234ABCD"   → Dừng khi giá trị Stack top = 0x1234ABCD
+   - "RCX == 5 && RDX == 10"       → Dừng khi cả hai điều kiện thỏa mãn
+4. Nhấn OK → Breakpoint màu vàng xuất hiện
+```
+
+### C.2 Memory Breakpoint — Bẫy truy cập vùng nhớ
+
+Memory Breakpoint dừng chương trình khi có bất kỳ thao tác Đọc/Ghi nào trên một vùng bộ nhớ cụ thể.
+
+```text
+Cách đặt Memory Breakpoint:
+1. Mở Memory Map (tab)
+2. Click chuột phải vào vùng nhớ muốn theo dõi
+3. Chọn:
+   - "Set Memory Breakpoint on Access"  → Bẫy cả đọc lẫn ghi
+   - "Set Memory Breakpoint on Write"   → Chỉ bẫy khi ghi
+4. Khi chương trình truy cập vùng nhớ đó, x64dbg sẽ dừng
+```
+
+### C.3 Best Practices khi đặt Breakpoints
+
+```text
+✔ Đặt BP tại Entry Point để nắm bức tranh tổng thể trước.
+✔ Dùng Intermodular Calls để tìm nhanh vị trí CALL API cần BP.
+✔ Ghi chú địa chỉ và mục đích của từng BP vào tài liệu phân tích.
+✔ Dùng Conditional BP thay vì thông thường khi phân tích vòng lặp.
+✔ Dùng Hardware BP khi cần tránh bị Anti-Debug phát hiện.
+✘ KHÔNG đặt quá nhiều BP không cần thiết — làm chậm quá trình trace.
+```
+
+---
+
+## Bài thực hành Lab tổng hợp
+
+### Lab 1: Khám phá giao diện x64dbg
+- Mở `toy_control_flow.exe` trong x64dbg.
+- Nhận diện và đặt tên cho từng cửa sổ: CPU, Registers, Stack, Memory Map.
+- Nhấn F9 để chạy đến Entry Point. Ghi lại giá trị RIP, RSP, RAX.
+
+### Lab 2: Phân tích chuỗi CALL/RET
+- Tìm một lệnh `CALL` trong Disassembly.
+- Ghi lại: địa chỉ của CALL, địa chỉ hàm được gọi, Return Address sẽ là gì.
+- Nhấn F7 để đi vào hàm. Quan sát Stack — Return Address có xuất hiện đỉnh Stack không?
+- Nhấn Ctrl+F9 để thoát hàm. Quan sát RIP quay về Return Address đúng không?
+
+### Lab 3: Conditional Breakpoint thực hành
+- Đặt Conditional Breakpoint tại một lệnh hay được gọi trong vòng lặp.
+- Điều kiện: `EAX == 10` (chỉ dừng lần thứ 10 giá trị EAX=10).
+- Chạy chương trình và xác nhận BP chỉ kích hoạt khi điều kiện thỏa.
+
+### Lab 4: Memory Breakpoint thực hành
+- Nhập chuỗi bất kỳ vào toy program (nếu có giao diện).
+- Dùng Memory Map tìm vùng nhớ chứa chuỗi nhập vào.
+- Đặt Memory Breakpoint on Access.
+- Tiếp tục chạy — quan sát x64dbg dừng tại lệnh nào đọc chuỗi đó.
+
+---
+
+## Câu hỏi ôn tập bổ sung
+
+### Câu 1 (Nhận biết)
+Cửa sổ nào trong x64dbg hiển thị chuỗi lời gọi hàm dẫn đến vị trí hiện tại?  
+A. Memory Map  
+B. Registers  
+C. Call Stack  
+D. Dump  
+
+**Đáp án:** C
+
+---
+
+### Câu 2 (Thông hiểu)
+Khi lệnh `CALL verify_password` được thực thi, điều gì xảy ra với thanh ghi `RSP`?  
+A. RSP tăng lên 8 bytes  
+B. RSP giảm đi 8 bytes (địa chỉ trả về được đẩy vào Stack)  
+C. RSP không thay đổi  
+D. RSP về giá trị 0  
+
+**Đáp án:** B
+
+---
+
+### Câu 3 (Thông hiểu)
+Conditional Breakpoint khác gì so với Software Breakpoint thông thường?  
+*Gợi ý trả lời:* Software Breakpoint dừng chương trình mỗi lần CPU đi qua địa chỉ đó. Conditional Breakpoint chỉ dừng khi một điều kiện cụ thể được thỏa mãn (ví dụ EAX==0), rất hữu ích trong vòng lặp hoặc khi muốn bắt một trường hợp đặc biệt.
+
+---
+
+### Câu 4 (Vận dụng)
+Bạn đang trace một vòng lặp chạy 1000 lần và chỉ muốn dừng lại ở lần thứ 100 (khi biến đếm ECX = 900). Nên dùng loại Breakpoint nào và điều kiện là gì?  
+*Gợi ý trả lời:* Dùng Conditional Breakpoint với điều kiện `ECX == 900`. Phím F9 chạy qua 999 lần không thỏa, chỉ dừng đúng lần thứ 100.
+
+---
+
+## Tổng kết phần bổ sung
+
+* Nắm vững **giao diện x64dbg** và chức năng của từng cửa sổ.
+* Hiểu cơ chế **CALL/RET** và quản lý Return Address trên Stack.
+* Làm chủ **Conditional Breakpoint** và **Memory Breakpoint** nâng cao.
+* Đọc thành thạo **Call Stack** để truy vết nguồn gốc lời gọi hàm.

@@ -1,136 +1,439 @@
-# Tuần 3: Assembly và control flow nền tảng
+# Giáo trình Cyber Security – Reverse Engineering
 
-## Nguồn bài học
+## Tuần 3 – Bài 3
 
-- **Basic Steps of x64dbg Debugger** — giao diện CPU, register, memory, stack và các thao tác chạy/đi từng lệnh. Bài học dùng chương trình lớp tự biên dịch có symbol.
+# Kiến Trúc Máy Tính, Thanh Ghi CPU, Bộ Nhớ & Assembly Cơ Bản
 
-## Chuyên đề: Hướng Dẫn Thiết Lập Môi Trường — Những Bài Học Đắt Giá Cho Người Mới Bắt Đầu
+---
 
-Bạn có còn nhớ cảm giác phấn khích khi lần đầu tiên tò mò nhấn chuột phải vào một tệp `.exe` và tự hỏi điều gì thực sự đang diễn ra bên dưới lớp vỏ bóng bẩy của giao diện người dùng? Thế giới của kỹ thuật đảo ngược (reverse engineering) chính là hành trình giải mã "linh hồn" của phần mềm, nơi những dòng mã máy vô cảm trở thành một câu chuyện có logic. Tuy nhiên, rào cản lớn nhất khiến nhiều "nhà thám hiểm" bỏ cuộc không phải là độ khó của mã lệnh, mà là sự lúng túng khi thiết lập vũ khí tác chiến. Bài viết này không chỉ là một hướng dẫn kỹ thuật; nó là lộ trình giúp bạn xây dựng một không gian làm việc chuyên nghiệp, biến những lỗi hệ thống khó chịu thành những bài học nhập môn đầy giá trị.
+# 1. Mục tiêu bài học
 
-### Bài học 1: Triết lý Mã nguồn mở và quyền năng của "Sourcing Out"
+Sau khi hoàn thành bài này, học viên có thể:
 
-Trong "kho vũ khí" của một chuyên gia bảo mật, **x64dbg** (bao gồm cả biến thể **x32dbg**) là thanh kiếm sắc bén nhất. Điểm khác biệt lớn nhất giữa một công cụ chuyên nghiệp thực thụ và các phần mềm thương mại chính là triết lý **Open Source (Mã nguồn mở)**.
+* Hiểu kiến trúc vi xử lý x86 và x64 (IA-32 và x86-64).
+* Nắm vững danh sách và vai trò của các thanh ghi CPU phổ biến (`RAX`, `RBX`, `RCX`, `RDX`, `RSP`, `RBP`, `RIP`, `EFLAGS`).
+* Phân biệt cấu trúc phân vùng bộ nhớ Process (Code/Text, Data, Heap, Stack).
+* Đọc hiểu các câu lệnh Assembly x86/x64 căn bản (`MOV`, `PUSH`, `POP`, `ADD`, `SUB`, `CMP`, `TEST`, `JMP`, `JE`, `JNE`, `CALL`, `RET`).
+* Áp dụng kiến thức Assembly để theo dõi luồng tính toán dữ liệu trong x64dbg.
 
-Thay vì nhìn thấy những nhãn giá (pricing) đắt đỏ, bạn được tự do tiếp cận mã nguồn. Như một nhà nghiên cứu đã từng chia sẻ, mã nguồn mở nghĩa là mọi người đều có quyền "source out" – tìm hiểu tận gốc rễ chương trình và sử dụng nó cho mục đích cá nhân, miễn là tuân thủ các điều khoản và điều kiện đi kèm. Sự tự do này chính là nền tảng cốt lõi để cộng đồng cùng nhau phát triển và chia sẻ tri thức mà không bị ngăn cách bởi rào cản tài chính.
+---
 
-### Bài học 2: "Bức tường" lỗi DLL – Bài tập tư duy đầu tiên
+# 2. Kiến thức chính
 
-Một lỗi kinh điển mà hầu hết mọi người đều gặp phải khi chạy debugger trên một bản Windows mới cài đặt là thông báo: `API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL missing`. Thực tế, đây không phải là lỗi phần mềm, mà là do hệ điều hành của bạn đang ở trạng thái "sơ khai", thiếu hụt các thư viện thực thi cần thiết.
+## 2.1 Kiến trúc x86 vs x64 và Các Thanh Ghi CPU
 
-Thay vì nản lòng, hãy kích hoạt tư duy của một cracker/reverser: quan sát, sao chép và tìm kiếm. Một "pro-tip" dành cho bạn là hãy truy cập `wwhacks.net`, trang web hàng đầu cung cấp quy trình giải quyết các vấn đề này một cách triệt để.
+CPU thực thi lệnh trực tiếp trên các thanh ghi (Registers) — các ô nhớ siêu tốc tích hợp ngay trong lõi vi xử lý.
 
-> *"Tất cả những gì bạn cần làm là sao chép chính xác lỗi bạn gặp phải và dán nó vào Google để tìm quy trình giải quyết vấn đề."*
+```text
+Thanh ghi 64-bit (x64)    Thanh ghi 32-bit (x86)    16-bit    8-bit High / Low
+─────────────────────────────────────────────────────────────────────────────
+RAX                      EAX                       AX        AH / AL
+RBX                      EBX                       BX        BH / BL
+RCX                      ECX                       CX        CH / CL
+RDX                      EDX                       DX        DH / DL
+RSI                      ESI                       SI        SIL
+RDI                      EDI                       DI        DIL
+RSP                      ESP                       SP        SPL
+RBP                      EBP                       BP        BPL
+R8  - R15                (Không có trên x86)        -         -
+```
 
-Giải pháp cụ thể là bạn cần cài đặt các bộ thư viện **Microsoft Visual C++ Redistributable (cả hai phiên bản 2015 và 2017)**. Đây là những mảnh ghép còn thiếu để "nhịp cầu" giữa phần mềm và hệ điều hành được thông suốt.
+### Vai trò các thanh ghi chính:
+* **RAX / EAX (Accumulator)**: Lưu kết quả tính toán toán học và giá trị trả về của hàm (`return value`).
+* **RCX / ECX (Counter)**: Đếm vòng lặp (`loop counter`) và truyền tham số thứ nhất trong x64 calling convention.
+* **RDX / EDX (Data)**: Hỗ trợ phép nhân/chia và truyền tham số thứ hai trong x64 calling convention.
+* **RSP / ESP (Stack Pointer)**: Con trỏ chỉ tới đỉnh hiện tại của Ngăn xếp (Stack).
+* **RBP / EBP (Base Pointer)**: Con trỏ chỉ tới đáy của Frame hàm hiện tại.
+* **RIP / EIP (Instruction Pointer)**: Con trỏ lưu địa chỉ lệnh Assembly **tiếp theo** sắp được CPU thực thi.
+* **RFLAGS / EFLAGS**: Lưu các cờ trạng thái sau phép tính (Zero Flag `ZF`, Carry Flag `CF`, Sign Flag `SF`).
 
-### Bài học 3: Phân biệt "Tiền đồn" (DIE) và "Chiến trường" (x64dbg)
+---
 
-Để chiến thắng trong cuộc đấu trí với phần mềm, bạn cần sự phối hợp hiệp đồng giữa hai công cụ: **Detect It Easy (DIE)** và **x64dbg**.
+## 2.2 Phân Vùng Bộ Nhớ Của Ứng Dụng (Process Memory Layout)
 
-- **Detect It Easy (DIE) - Tiền đồn phân tích**: Đây là nơi bạn thực hiện các bước "trinh sát". DIE giúp bạn thực hiện các phân tích chuyên sâu (depth analysis) để biết phần mềm được lập trình bằng ngôn ngữ gì, có bị đóng gói (pack) hay không. Đặc biệt, DIE là công cụ để bạn **tính toán Entry Point** dựa trên các thông số kỹ thuật trước khi thực sự bắt tay vào phân tích.
-- **x64dbg - Chiến trường thực sự**: Sau khi đã có dữ liệu từ DIE, bạn đưa mục tiêu vào x64dbg để thực hiện phân tích. Một lưu ý quan trọng về kiến trúc hệ thống: Nếu bạn đang làm việc trên môi trường ảo hóa Windows 7 32-bit (như trong hướng dẫn này), bạn phải sử dụng **x32dbg**. Việc lựa chọn phiên bản debugger phải tương thích tuyệt đối với kiến trúc (bit-depth) của hệ điều hành và mục tiêu.
+Khi một file EXE được nạp vào bộ nhớ RAM, hệ điều hành Windows phân chia không gian địa chỉ ảo (Virtual Address Space) thành các phân vùng chính:
 
-### Bài học 4: Entry Point - Cánh cửa dẫn vào "ma trận" bộ nhớ
+```text
+0x7FFFFFFFFFFF ┌────────────────────────────────────────┐
+               │ Stack (Phát triển từ địa chỉ cao xuống) │
+               ├────────────────────────────────────────┤
+               │ Heap  (Phát triển từ địa chỉ thấp lên) │
+               ├────────────────────────────────────────┤
+               │ Data Section (.data, .rdata - Hằng số) │
+               ├────────────────────────────────────────┤
+               │ Code Section (.text - Mã Assembly)     │
+0x000000000000 └────────────────────────────────────────┘
+```
 
-Hãy tưởng tượng khi bạn mở Microsoft Word, phần mềm không hiển thị ngay lập tức. Nó được nạp từ ổ cứng vào bộ nhớ tạm thời (RAM) dưới dạng các dãy số nhị phân 0 và 1. Để can thiệp vào quá trình này, bạn phải hiểu hai khái niệm:
+* **Section `.text`**: Chứa toàn bộ các lệnh thực thi Assembly (Read-Only / Execute).
+* **Section `.rdata`**: Chứa hằng số, chuỗi văn bản tĩnh (`"Password incorrect"`).
+* **Section `.data`**: Chứa biến toàn cục có thể thay đổi.
+* **Heap**: Bộ nhớ cấp phát động runtime (`malloc`, `new`).
+* **Stack**: Ngăn xếp lưu trữ biến cục bộ, tham số truyền vào hàm và địa chỉ trả về (`Return Address`).
 
-- **Base Address**: Địa chỉ gốc nơi phần mềm bắt đầu "đóng quân" trong bộ nhớ.
-- **Entry Point (Điểm khởi đầu)**: Đây là vị trí chính xác mà CPU bắt đầu thực thi dòng lệnh đầu tiên của chương trình.
+---
 
-Công thức của một chuyên gia là: **$\text{Base Address} + \text{Offset} = \text{Entry Point}$**. Khi bạn xác định được điểm khởi đầu này trong DIE và khớp nó với debugger, bạn chính thức nắm giữ chìa khóa để điều khiển luồng hoạt động của phần mềm.
+## 2.3 Các Lệnh Assembly Cơ Bản (Instruction Set)
 
-### Bài học 5: Đọc hiểu "Ma trận" – Những nhân vật trong thế giới Hexadecimal
+Assembly sử dụng cú pháp Intel: `Opcode Destination, Source` (Ví dụ: `MOV EAX, EBX` copy giá trị từ EBX vào EAX).
 
-Khi mở một debugger, bạn sẽ đối mặt với một giao diện phức tạp. Đừng lo lắng, hãy nhìn nó như một "ma trận" logic:
+### 1. Lệnh di chuyển dữ liệu & Stack:
+* `MOV dest, src`: Copy giá trị từ `src` vào `dest`.
+* `PUSH src`: Đẩy `src` vào đỉnh Stack (`RSP` giảm đi 8/4 bytes).
+* `POP dest`: Lấy giá trị từ đỉnh Stack gán vào `dest` (`RSP` tăng 8/4 bytes).
 
-- **Opcode (Mã máy)**: Những dãy số **Hexadecimal** (thập lục phân). Đây là cách máy tính đọc các số nhị phân 0 và 1 nhưng được trình bày lại cho gọn gàng hơn.
-- **Assembly (Hợp ngữ)**: Đây là ngôn ngữ trung gian giúp con người đọc được ý đồ của máy tính. Debugger sẽ chuyển đổi các dãy Hexadecimal khô khan thành các lệnh như `MOV`, `JMP`, `CALL`...
-- **Registers (Thanh ghi)**: Hãy chú ý đến `EAX`, `EBX`... Đây là nơi "hành động" thực sự diễn ra. Các thanh ghi này giống như những chiếc hộp chứa dữ liệu tạm thời mà CPU sử dụng để tính toán với tốc độ cực nhanh.
-- **Stack (Ngăn xếp)**: Khác với mã lệnh tĩnh, Stack là một thành phần **động (dynamic)**. Nó liên tục thay đổi, trồi sụt dữ liệu trong suốt quá trình chương trình vận hành để hỗ trợ cho các thanh ghi.
+### 2. Lệnh tính toán & Logic:
+* `ADD dest, src`: `dest = dest + src`.
+* `SUB dest, src`: `dest = dest - src`.
+* `CMP op1, op2`: So sánh `op1` và `op2` bằng cách thực hiện phép trừ ẩn (`op1 - op2`) và cập nhật cờ `EFLAGS` (nếu bằng nhau thì Zero Flag `ZF = 1`).
+* `TEST op1, op2`: Thực hiện phép `AND` bitwise ẩn và cập nhật `ZF` (thường dùng `TEST EAX, EAX` để kiểm tra EAX có bằng 0 hay không).
 
-### Kết luận và Suy ngẫm
+### 3. Lệnh nhảy điều kiện & Hàm:
+* `JMP target`: Nhảy không điều kiện tới địa chỉ `target`.
+* `JE / JZ target`: Nhảy tới `target` nếu bằng nhau (`ZF = 1`).
+* `JNE / JNZ target`: Nhảy tới `target` nếu không bằng nhau (`ZF = 0`).
+* `CALL function`: Gọi hàm (đẩy địa chỉ lệnh tiếp theo vào Stack rồi nhảy tới `function`).
+* `RET`: Trở về từ hàm (rút địa chỉ trả về từ Stack gán vào `RIP`).
 
-Thiết lập một không gian làm việc chỉnh chu và hiểu rõ cách phần mềm tồn tại trong bộ nhớ chính là 50% chặng đường của một người làm reverse engineering thành công. Khi bạn đã biết cách biến lỗi hệ thống thành cơ hội học hỏi và nhìn thấy được logic đằng sau những thanh ghi `EAX`, `EBX`, bạn đã sẵn sàng cho những thử thách lớn hơn.
+---
 
-## Kết quả cần đạt
+# 3. Thuật ngữ quan trọng
 
-- Đọc hexadecimal, little-endian và địa chỉ ảo ở mức cơ bản.
-- Nhận diện register, flag, stack frame, `call`, `ret`, `cmp`, `test` và branch.
-- Chuyển một hàm C nhỏ thành control-flow graph.
-- Ghi địa chỉ theo module offset/RVA để chịu được ASLR.
-
-## 1. Bốn vùng chính trong debugger
-
-| Vùng | Câu hỏi trả lời |
+| Thuật ngữ | Ý nghĩa |
 |---|---|
-| Disassembly | CPU sắp thực hiện instruction nào? |
-| Registers/flags | Input, result tạm và trạng thái so sánh là gì? |
-| Dump/memory | Byte tại địa chỉ đang trỏ tới là gì? |
-| Stack | Return address, local data và chuỗi call hiện tại ra sao? |
+| **CPU Register** | Thanh ghi vi xử lý lưu dữ liệu siêu tốc |
+| **RIP / EIP** | Thanh ghi con trỏ lệnh tiếp theo sẽ thực thi |
+| **Stack (Ngăn xếp)** | Phân vùng bộ nhớ LIFO (Last In First Out) |
+| **Zero Flag (ZF)** | Cờ trạng thái bật lên 1 khi kết quả phép tính bằng 0 |
+| **Opcode** | Mã thao tác Assembly (MOV, CMP, JMP, CALL) |
+| **Operand** | Toán cục của lệnh Assembly (Thanh ghi, bộ nhớ, giá trị trực tiếp) |
+| **Calling Convention** | Quy ước truyền tham số và dọn dẹp Stack giữa các hàm |
+| **Stack Frame** | Khung bộ nhớ Stack riêng của từng lệnh gọi hàm |
 
-Register không có “ý nghĩa cố định” cho toàn bộ chương trình. Ý nghĩa phụ thuộc instruction và calling convention tại thời điểm quan sát.
+---
 
-## 2. Source lab
+# 4. Ví dụ minh họa
 
+## Ví dụ 1: Đoạn mã C và Assembly tương đương kiểm tra Password
+
+Mã nguồn C:
 ```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int classify_score(int score) {
-    if (score < 0 || score > 100) return -1;
-    if (score >= 80) return 2;
-    if (score >= 50) return 1;
-    return 0;
-}
-
-int main(int argc, char **argv) {
-    if (argc != 2) return 2;
-    int score = (int)strtol(argv[1], NULL, 10);
-    printf("class=%d\n", classify_score(score));
-    return 0;
+if (check_password(input) == 1) {
+    printf("Access Granted!\n");
+} else {
+    printf("Access Denied!\n");
 }
 ```
 
-Build Debug và Release. Không tối ưu ở lượt đầu để source/assembly dễ đối chiếu; sau đó bật tối ưu để so sánh.
+Mã Assembly trong x64dbg:
+```assembly
+00007FF610001050 | E8 A0000000            | call check_password                   | Gọi hàm kiểm tra
+00007FF610001055 | 83F8 01                | cmp eax, 1                            | So sánh kết quả trong EAX với 1
+00007FF610001058 | 75 0F                  | jne 00007FF610001069                  | Nếu không bằng 1 (ZF=0), nhảy tới Denied
+00007FF61000105A | 48:8D0D 20200000        | lea rcx, qword ptr ["Access Granted!"]| Nạp chuỗi thành công
+00007FF610001061 | E8 B0010000            | call printf                           | In thông báo
+00007FF610001066 | EB 0D                  | jmp 00007FF610001075                  | Nhảy qua nhánh Denied
+00007FF610001069 | 48:8D0D 30200000        | lea rcx, qword ptr ["Access Denied!"] | Nạp chuỗi thất bại
+00007FF610001070 | E8 A1010000            | call printf                           | In thông báo
+```
 
-## 3. Instruction cần biết
+---
 
-- `mov`: sao chép dữ liệu; không luôn có nghĩa “move ownership”.
-- `lea`: tính địa chỉ hiệu dụng, cũng thường được compiler dùng cho phép toán.
-- `cmp a, b`: cập nhật flag dựa trên phép trừ logic.
-- `test a, a`: thường kiểm tra zero/null.
-- `je/jz`, `jne/jnz`, `jl/jg`, `ja/jb`: branch phụ thuộc signed/unsigned và flags.
-- `call`: lưu return address rồi chuyển control.
-- `ret`: lấy return address và quay về caller.
+# 5. Ghi nhớ
 
-## 4. Lab x64dbg
+```text
+            [ Lệnh so sánh: CMP EAX, 1 / TEST EAX, EAX ]
+                                 │
+                     Cập nhật cờ Zero Flag (ZF)
+                                 │
+              ┌──────────────────┴──────────────────┐
+              ▼                                     ▼
+        ZF = 1 (Bằng nhau)                   ZF = 0 (Khác nhau)
+              │                                     │
+      Lệnh JE/JZ thực thi                   Lệnh JNE/JNZ thực thi
+```
 
-1. Mở đúng x32dbg/x64dbg theo PE target.
-2. Đi tới module của toy app, không phân tích startup code của hệ thống quá sớm.
-3. Tìm `classify_score` bằng symbol/map do build tạo.
-4. Test `-1`, `49`, `50`, `79`, `80`, `101`.
-5. Trước mỗi conditional branch, ghi operands và ZF/SF/OF/CF liên quan.
-6. Vẽ basic block và edge; đánh dấu return value từng đường.
-7. Lặp lại với Release, ghi nơi compiler inline, reorder hoặc dùng conditional move.
+> **Ghi nhớ**: "Mọi quyết định phân nhánh trong phần mềm biên dịch đều phụ thuộc vào kết quả của các lệnh so sánh (`CMP`, `TEST`) và cờ trạng thái CPU (đặc biệt là `Zero Flag`)!"
 
-## 5. Evidence table
+---
 
-| Input | Module offset | Observation | Expected return | Actual |
-|---:|---|---|---:|---:|
-| -1 | `<module>+...` | range check fails | -1 | |
-| 50 | `<module>+...` | middle branch | 1 | |
-| 80 | `<module>+...` | high branch | 2 | |
+# 6. Câu hỏi ôn tập
 
-## Lỗi thường gặp
+### Câu 1 (Nhận biết)
+Thanh ghi CPU nào lưu trữ địa chỉ lệnh Assembly tiếp theo sẽ được thực thi trên kiến trúc x64?
+A. RAX  
+B. RSP  
+C. RIP  
+D. RBP  
 
-- Đọc nhầm signed branch thành unsigned.
-- Ghi địa chỉ tuyệt đối rồi không tìm lại được do ASLR.
-- Đổi register/flag trong lúc quan sát nhưng không ghi modified state.
-- Cho rằng disassembler luôn tách đúng boundary của function/data.
-- Suy ra source chính xác từ một build tối ưu.
+**Đáp án:** C
 
-## Bài tập và rubric
+---
 
-Nộp control-flow graph, function map, bảng sáu input và so sánh Debug/Release. Chấm: instruction/flags 30, CFG 25, evidence 20, optimization reasoning 15, giới hạn kết luận 10.
+### Câu 2 (Thông hiểu)
+Lệnh Assembly `CMP EAX, EBX` thực hiện thao tác toán học nào dưới nền tảng?
+A. Cộng EAX với EBX và gán vào EAX  
+B. Trừ EAX cho EBX (ngầm) và cập nhật các cờ trạng thái RFLAGS mà không đổi giá trị EAX  
+C. Nhân EAX với EBX  
+D. Copy EBX vào EAX  
 
+**Đáp án:** B
+
+---
+
+### Câu 3 (Thông hiểu)
+Giá trị trả về (`return value`) của một hàm C/C++ chuẩn trên x86/x64 thường được lưu trữ trong thanh ghi nào khi hàm kết thúc?
+*Gợi ý trả lời:* Lưu trữ trong thanh ghi `EAX` (trên x86) hoặc `RAX` (trên x64).
+
+---
+
+### Câu 4 (Vận dụng)
+Một đoạn mã Assembly trong x64dbg có dạng:
+```assembly
+TEST EAX, EAX
+JZ 0x00401050
+```
+Giải thích ý nghĩa và điều kiện để lệnh `JZ` thực hiện cú nhảy.
+*Gợi ý trả lời:* `TEST EAX, EAX` thực hiện phép AND bitwise để kiểm tra EAX. Nếu `EAX == 0`, kết quả phép TEST bằng 0 làm cờ Zero Flag `ZF` bật lên 1. Khi đó, lệnh `JZ` (Jump if Zero) sẽ thực hiện cú nhảy tới địa chỉ `0x00401050`.
+
+---
+
+### Câu 5 (Vận dụng)
+Phân biệt sự khác nhau về hướng phát triển bộ nhớ giữa phân vùng Stack và Heap trong quá trình thực thi chương trình.
+*Gợi ý trả lời:* Phân vùng Stack phát triển từ vùng địa chỉ cao xuống vùng địa chỉ thấp (khi PUSH thì RSP giảm). Phân vùng Heap phát triển từ vùng địa chỉ thấp lên vùng địa chỉ cao (khi cấp phát `malloc` thì con trỏ heap tăng lên).
+
+---
+
+## Tổng kết bài học
+
+* Làm chủ các thanh ghi CPU x86/x64 và phân vùng bộ nhớ Process.
+* Đọc hiểu luồng thực thi Assembly của các câu lệnh tính toán, so sánh và rẽ nhánh.
+* Nắm vững cơ chế kiểm tra điều kiện thông qua thanh ghi cờ `EFLAGS` (`Zero Flag`).
+
+---
+
+# Bổ sung Bài 6: Phân Tích Lệnh Jump & Luồng Điều Kiện Trong Assembly
+
+## 1. Mục tiêu bổ sung
+
+Sau khi hoàn thành phần này, học viên có thể:
+
+* Phân biệt và sử dụng đúng các lệnh Jump điều kiện và không điều kiện.
+* Hiểu mối quan hệ nhân quả giữa lệnh `CMP`, thanh ghi cờ `EFLAGS` và lệnh Jump.
+* Đọc sơ đồ luồng thực thi (Control Flow) từ Assembly trong x64dbg.
+* Theo dõi nhánh thực thi nào được chọn dựa trên giá trị FLAGS.
+
+---
+
+## 2. Kiến thức chính
+
+### 2.1 Hai nhóm lệnh Jump
+
+**Nhóm 1 — Jump không điều kiện (`JMP`):**
+Luôn nhảy tới địa chỉ đích, bất kể mọi điều kiện.
+
+```assembly
+JMP 0x00401200      ; Luôn nhảy đến 0x00401200
+```
+
+**Nhóm 2 — Jump có điều kiện:**
+Chỉ nhảy khi thanh ghi cờ `EFLAGS` thỏa mãn điều kiện cụ thể.
+
+| Lệnh | Tên đầy đủ | Điều kiện kích hoạt | Cờ kiểm tra |
+|---|---|---|---|
+| `JE` / `JZ` | Jump if Equal / Zero | Hai toán hạng bằng nhau | `ZF = 1` |
+| `JNE` / `JNZ` | Jump if Not Equal / Not Zero | Hai toán hạng khác nhau | `ZF = 0` |
+| `JG` / `JNLE` | Jump if Greater | Lớn hơn (signed) | `ZF=0 AND SF=OF` |
+| `JL` / `JNGE` | Jump if Less | Nhỏ hơn (signed) | `SF ≠ OF` |
+| `JGE` / `JNL` | Jump if Greater or Equal | Lớn hơn hoặc bằng | `SF = OF` |
+| `JLE` / `JNG` | Jump if Less or Equal | Nhỏ hơn hoặc bằng | `ZF=1 OR SF≠OF` |
+| `JA` / `JNBE` | Jump if Above | Lớn hơn (unsigned) | `CF=0 AND ZF=0` |
+| `JB` / `JNAE` | Jump if Below | Nhỏ hơn (unsigned) | `CF = 1` |
+
+---
+
+### 2.2 Thanh ghi cờ EFLAGS — Trung tâm điều phối nhánh
+
+Sau khi lệnh `CMP` (hoặc `TEST`) thực thi, CPU tự động cập nhật các cờ trong thanh ghi `EFLAGS/RFLAGS`:
+
+```text
+EFLAGS Register (32-bit):
+┌────┬────┬────┬────┬──────────────────────────┐
+│ OF │ SF │ ZF │ CF │   ...  (các cờ khác)      │
+└────┴────┴────┴────┴──────────────────────────┘
+```
+
+* **ZF (Zero Flag)**: Bật lên `1` khi kết quả phép tính bằng `0` (hai toán hạng bằng nhau).
+* **CF (Carry Flag)**: Bật lên `1` khi có số nhớ (carry/borrow) — dùng cho phép so sánh unsigned.
+* **SF (Sign Flag)**: Bật lên `1` khi kết quả âm (bit cao nhất = 1).
+* **OF (Overflow Flag)**: Bật lên `1` khi kết quả tràn số nguyên có dấu (signed overflow).
+
+---
+
+### 2.3 Quan sát Jump trong x64dbg
+
+```text
+Quy trình quan sát luồng thực thi:
+
+Bước 1: Đặt Breakpoint (F2) trước lệnh CMP/TEST
+        ↓
+Bước 2: Nhấn F9 chạy đến Breakpoint
+        ↓
+Bước 3: Nhấn F8 (Step Over) thực thi lệnh CMP
+        ↓
+Bước 4: Quan sát cửa sổ Registers: ZF thay đổi 0→1 hay không?
+        ↓
+Bước 5: Nhấn F8 lần nữa — x64dbg hiển thị nhánh Jump nào được chọn
+         (Mũi tên màu xanh = Jump thực hiện / Màu xám = Không nhảy)
+```
+
+---
+
+## 3. Thuật ngữ quan trọng
+
+| Thuật ngữ | Ý nghĩa |
+|---|---|
+| **JMP** | Lệnh nhảy không điều kiện |
+| **JE / JZ** | Jump if Equal / Zero — nhảy khi ZF=1 |
+| **JNE / JNZ** | Jump if Not Equal / Not Zero — nhảy khi ZF=0 |
+| **JG / JL** | Jump if Greater / Less (so sánh có dấu signed) |
+| **JA / JB** | Jump if Above / Below (so sánh không dấu unsigned) |
+| **CMP** | Lệnh so sánh (thực hiện phép trừ ẩn, cập nhật FLAGS) |
+| **EFLAGS** | Thanh ghi chứa các cờ trạng thái CPU |
+| **ZF** | Zero Flag — bật khi kết quả = 0 |
+| **CF** | Carry Flag — bật khi có số nhớ |
+| **SF** | Sign Flag — bật khi kết quả âm |
+| **OF** | Overflow Flag — bật khi tràn số |
+| **Control Flow** | Luồng điều khiển thực thi chương trình |
+
+---
+
+## 4. Ví dụ minh họa
+
+### Ví dụ 1: Kiểm tra Password đúng/sai
+
+```assembly
+; Giả sử EAX chứa kết quả kiểm tra password (1 = đúng, 0 = sai)
+00401050 | CMP EAX, 1          ; So sánh EAX với 1
+00401053 | JE  0x00401070      ; Nếu bằng 1 (ZF=1) → nhảy tới "Access Granted"
+00401055 | PUSH "Access Denied!"
+00401060 | CALL MessageBoxA
+00401065 | JMP 0x00401080      ; Nhảy qua nhánh Granted
+00401070 | PUSH "Access Granted!"
+00401078 | CALL MessageBoxA
+```
+
+**Phân tích:**
+- Nếu `EAX = 1`: `CMP EAX,1` → kết quả trừ = 0 → **ZF = 1** → `JE` nhảy đến `0x401070` → Thông báo "Access Granted!"
+- Nếu `EAX = 0`: `CMP EAX,1` → kết quả trừ = -1 → **ZF = 0** → `JE` KHÔNG nhảy → Thông báo "Access Denied!"
+
+---
+
+### Ví dụ 2: Kiểm tra Serial Key không bằng nhau
+
+```assembly
+CMP EAX, 5
+JNE Wrong       ; Nếu EAX ≠ 5 (ZF=0) → nhảy tới Wrong
+; ... nhánh đúng
+Wrong:
+; ... nhánh sai
+```
+
+---
+
+### Ví dụ 3: Vẽ sơ đồ Control Flow
+
+```text
+            [CMP EAX, serial]
+                   │
+        ┌──────────┴──────────┐
+        │                     │
+    ZF = 1 (Bằng)         ZF = 0 (Khác)
+        │                     │
+    [JE nhảy]           [Không nhảy]
+        │                     │
+  "Correct Key"          "Wrong Key"
+```
+
+---
+
+## 5. Bài thực hành (Lab)
+
+### Lab 1: Theo dõi ZF trong x64dbg
+- Mở `toy_control_flow.exe` bằng x64dbg.
+- Tìm lệnh `CMP` hoặc `TEST` trong disassembly.
+- Đặt Breakpoint (F2) trước lệnh CMP.
+- Nhấn F8 để thực thi CMP và quan sát sự thay đổi của ZF trong cửa sổ Registers.
+- Ghi lại: ZF = 0 hay 1? Lệnh Jump nào theo sau? Nhánh nào được chọn?
+
+### Lab 2: Vẽ sơ đồ luồng Control Flow
+- Tìm một đoạn code có `CMP` + `JE/JNE` trong toy program.
+- Vẽ sơ đồ text mô tả hai nhánh có thể xảy ra.
+- Đặt Breakpoint và chạy thử cả hai trường hợp để xác nhận.
+
+### Lab 3: Theo dõi thay đổi của nhiều cờ FLAGS
+- Thực hiện `CMP EAX, EBX` với nhiều giá trị khác nhau trong x64dbg.
+- Ghi lại giá trị của ZF, CF, SF, OF sau mỗi lần CMP.
+- Điền vào bảng kết quả:
+
+| EAX | EBX | ZF | CF | SF | OF | Kết quả CMP |
+|---|---|---|---|---|---|---|
+| 5 | 5 | 1 | 0 | 0 | 0 | Bằng nhau |
+| 5 | 3 | 0 | 0 | 0 | 0 | EAX lớn hơn |
+| 3 | 5 | 0 | 1 | 1 | 0 | EAX nhỏ hơn |
+
+---
+
+## 6. Câu hỏi ôn tập
+
+### Câu 1 (Nhận biết)
+Lệnh `JNE` (Jump if Not Equal) sẽ thực hiện cú nhảy khi điều kiện nào của cờ EFLAGS?  
+A. ZF = 1  
+B. ZF = 0  
+C. CF = 1  
+D. SF = 1  
+
+**Đáp án:** B
+
+---
+
+### Câu 2 (Thông hiểu)
+Phân biệt sự khác nhau giữa lệnh `JE` và `JG` trong assembly x86/x64.  
+*Gợi ý trả lời:* `JE` (Jump if Equal) nhảy khi ZF=1 (hai toán hạng bằng nhau). `JG` (Jump if Greater — Signed) nhảy khi ZF=0 AND SF=OF, tức là khi toán hạng đầu tiên lớn hơn toán hạng thứ hai theo kiểu so sánh có dấu (signed comparison).
+
+---
+
+### Câu 3 (Thông hiểu)
+Lệnh `CMP EAX, EBX` thực sự thực hiện thao tác nào dưới nền?  
+*Gợi ý trả lời:* Lệnh CMP thực hiện phép trừ ẩn (`EAX - EBX`) nhưng không lưu kết quả vào bất kỳ thanh ghi nào. Chỉ có thanh ghi cờ EFLAGS được cập nhật dựa trên kết quả phép trừ đó.
+
+---
+
+### Câu 4 (Vận dụng)
+Quan sát đoạn Assembly sau và dự đoán luồng thực thi khi `EAX = 10`:
+```assembly
+MOV EAX, 10
+CMP EAX, 10
+JNE Wrong_Branch
+PUSH "Correct"
+CALL MessageBoxA
+Wrong_Branch:
+PUSH "Wrong"
+CALL MessageBoxA
+```
+*Gợi ý trả lời:* `CMP EAX, 10` → EAX bằng 10 → kết quả trừ = 0 → ZF=1. Lệnh `JNE Wrong_Branch` kiểm tra ZF=0 để nhảy, nhưng ZF=1 nên `JNE` KHÔNG nhảy. Chương trình tiếp tục thực thi nhánh "Correct" ngay bên dưới.
+
+---
+
+### Câu 5 (Vận dụng)
+Kỹ thuật "Reversing Jump" (đảo ngược lệnh nhảy) là gì và trong hoàn cảnh nào nó được áp dụng trong phân tích RE Lab?  
+*Gợi ý trả lời:* Reversing Jump là thay đổi opcode của lệnh nhảy điều kiện sang lệnh nhảy đối lập (ví dụ: đổi `JE` thành `JNE`, hoặc `JNE` thành `JE`). Trong lab RE với toy binary được ủy quyền, kỹ thuật này được dùng để kiểm tra hành vi của chương trình nếu điều kiện kiểm tra bị đảo ngược, nhằm xác nhận giả thuyết về logic kiểm tra.
+
+---
+
+## Tổng kết Bài 6
+
+* Nắm vững toàn bộ bảng lệnh **Jump điều kiện** và cờ **EFLAGS** tương ứng.
+* Hiểu cơ chế hoạt động của chuỗi `CMP → EFLAGS Update → Conditional Jump`.
+* Thực hành quan sát nhánh thực thi trong **x64dbg** thông qua màu sắc mũi tên Jump.
+* Có thể **vẽ Control Flow Graph** từ đoạn Assembly có nhánh điều kiện.

@@ -151,3 +151,185 @@ Giảng viên cung cấp toy binary và source tương ứng. Học viên có th
 
 Nộp source diff, build log, test matrix, manifest, release note và rollback drill. Chấm: fix 30, tests 25, artifact integrity 15, rollback 15, documentation/risk 15.
 
+---
+
+# Bổ sung Bài 7: Quy Trình Patch Phần Mềm Trong x64dbg
+
+## 1. Mục tiêu bổ sung
+
+Sau khi hoàn thành phần này, học viên có thể:
+
+* Hiểu rõ khái niệm Patch trong bối cảnh Reverse Engineering và kiểm thử bảo mật Lab.
+* Thực hiện đầy đủ quy trình 6 bước Patch trong x64dbg trên toy binary được ủy quyền.
+* Phân biệt Patch tạm thời trong bộ nhớ RAM và Patch lưu vĩnh viễn vào tệp thực thi.
+* Kiểm tra kết quả sau khi Patch và phục hồi mã gốc khi cần.
+
+---
+
+## 2. Kiến thức chính
+
+### 2.1 Patch là gì?
+
+**Patch** là hành động thay đổi một hoặc nhiều byte mã máy (Machine Instruction/Opcode) trong chương trình để thay đổi hành vi thực thi của nó.
+
+```text
+Trước khi Patch:              Sau khi Patch:
+74 10  → JE 0x401080          75 10  → JNE 0x401080
+(Nhảy nếu bằng)               (Nhảy nếu khác — đảo ngược logic!)
+```
+
+### 2.2 Quy trình Patch 6 bước trong x64dbg
+
+```text
+Bước 1: Mở chương trình bằng x64dbg → Debug/Analyze
+         ↓
+Bước 2: Phân tích vị trí cần Patch (dùng BP, Intermodular Calls)
+         ↓
+Bước 3: Quan sát Assembly và Registers tại vị trí đó
+         ↓
+Bước 4: Thay đổi lệnh Assembly (Assemble / NOP / Edit bytes)
+         ↓
+Bước 5: Kiểm tra hành vi chương trình sau khi Patch
+         ↓
+Bước 6: Lưu Patch vào tệp nếu cần (Copy to Executable → Save)
+```
+
+### 2.3 Các thao tác Patch quan trọng trong x64dbg
+
+| Thao tác | Cách thực hiện | Kết quả |
+|---|---|---|
+| **Assemble** | Click phải dòng lệnh → Assemble | Nhập lệnh Assembly mới để thay thế |
+| **NOP Instruction** | Click phải → Fill with NOPs | Thay dòng lệnh bằng byte `0x90` (không thao tác) |
+| **Edit Bytes** | Click phải → Edit bytes | Sửa trực tiếp giá trị byte Hex |
+| **Restore Original** | Click phải → Restore Original Bytes | Khôi phục byte gốc trước khi Patch |
+| **Copy to Executable** | Click phải → Patches → Copy to Executable | Áp dụng Patch vào file EXE mới |
+| **Save Patched File** | Sau Copy to Executable → Save | Lưu file EXE đã Patch ra đĩa |
+
+### 2.4 Phân biệt Patch trong RAM và Patch File
+
+| Loại Patch | Ảnh hưởng | Mất sau khi | Khi nào dùng |
+|---|---|---|---|
+| **Memory Patch** (RAM) | Chỉ trong phiên debug hiện tại | Tắt chương trình | Kiểm tra nhanh giả thuyết |
+| **File Patch** (EXE) | Lưu vĩnh viễn vào file trên đĩa | Không mất | Lab có ủy quyền, cần artifact |
+
+---
+
+## 3. Thuật ngữ quan trọng
+
+| Thuật ngữ | Ý nghĩa |
+|---|---|
+| **Patch** | Thay đổi mã máy của chương trình |
+| **Assemble** | Biên dịch ngược lệnh Assembly sang mã máy |
+| **Opcode** | Mã lệnh máy (byte đại diện cho lệnh Assembly) |
+| **NOP** | No Operation — byte `0x90`, không thực hiện thao tác gì |
+| **Restore** | Khôi phục lại mã byte gốc trước khi Patch |
+| **Copy to Executable** | Sao chép các Patch từ RAM sang file EXE trên đĩa |
+| **Byte Diff** | Sự khác biệt giữa byte gốc và byte sau Patch |
+
+---
+
+## 4. Ví dụ minh họa
+
+### Ví dụ 1: Đảo ngược lệnh Jump bằng Assemble
+
+Trong x64dbg, phát hiện logic kiểm tra:
+```assembly
+00401080 | 74 0A | JE 0x40108C   ; Nếu đúng key → nhảy tới Granted
+00401082 | ...   | (nhánh Wrong)
+```
+
+Để kiểm tra nhánh Granted trong Lab toy binary:
+1. Click phải dòng `00401080` → **Assemble**
+2. Nhập lệnh mới: `JNE 0x40108C` (hoặc `JMP 0x40108C`)
+3. Nhấn **OK** → byte `74 0A` biến thành `75 0A` (hoặc `EB 0A`)
+4. Kiểm tra hành vi ứng dụng
+
+### Ví dụ 2: NOP một kiểm tra không cần thiết
+
+Lệnh kiểm tra gây crash trong toy binary:
+```assembly
+00401050 | E8 A0000000 | CALL check_anti_debug  ; Gây crash nếu detect debugger
+```
+
+Patch bằng NOP:
+1. Click phải → **Fill with NOPs**
+2. Kết quả: `00401050 | 90 90 90 90 90 | NOP NOP NOP NOP NOP`
+3. Lệnh `CALL check_anti_debug` bị vô hiệu hóa.
+
+### Ví dụ 3: Lưu Patch vào file để tạo artifact Lab
+
+1. Sau khi Patch trong RAM thành công, vào menu **Debug → Patches**
+2. Click **Copy to Executable**
+3. Trong cửa sổ Hex Editor hiện ra, chọn **File → Save As**
+4. Lưu với tên `toy_validator_patched.exe`
+5. Tính hash SHA-256: `Get-FileHash .\toy_validator_patched.exe -Algorithm SHA256`
+6. Ghi vào manifest: `LAB ONLY - NOT FOR DISTRIBUTION`
+
+---
+
+## 5. Bài thực hành (Lab)
+
+### Lab 1: Patch thử lệnh Assembly
+- Mở `toy_control_flow.exe` bằng x64dbg.
+- Tìm một lệnh `CMP` + `JE/JNE`.
+- Dùng **Assemble** để đảo ngược lệnh Jump (JE → JNE hoặc ngược lại).
+- Chạy và quan sát hành vi thay đổi.
+
+### Lab 2: NOP một lệnh kiểm tra
+- Tìm một `CALL` tới hàm kiểm tra điều kiện.
+- Dùng **Fill with NOPs** để vô hiệu hóa lời gọi hàm.
+- Chạy chương trình và xác nhận điều kiện không còn được kiểm tra.
+
+### Lab 3: Patch file và kiểm tra
+- Sau khi Patch thành công trong Lab 1 hoặc 2:
+  - Dùng **Copy to Executable** → **Save As** → `toy_patched.exe`.
+  - Tính SHA-256 của file gốc và file patch.
+  - Chạy `toy_patched.exe` mà không cần debugger để xác nhận Patch ổn định.
+  - Khôi phục file gốc bằng **Restore Original Bytes** và xác nhận lại hash.
+
+---
+
+## 6. Câu hỏi ôn tập
+
+### Câu 1 (Nhận biết)
+Patch trong Reverse Engineering có nghĩa là gì?  
+A. Cài đặt phần mềm mới  
+B. Thay đổi một hoặc nhiều byte mã máy để thay đổi hành vi chương trình  
+C. Gỡ lỗi chương trình  
+D. Biên dịch mã nguồn C++  
+
+**Đáp án:** B
+
+---
+
+### Câu 2 (Thông hiểu)
+Sự khác biệt giữa Memory Patch và File Patch là gì?  
+*Gợi ý trả lời:* Memory Patch chỉ ảnh hưởng đến phiên chạy hiện tại trong debugger — khi tắt chương trình, mọi thay đổi mất đi. File Patch ghi thay đổi vĩnh viễn vào file EXE trên đĩa bằng chức năng "Copy to Executable".
+
+---
+
+### Câu 3 (Thông hiểu)
+Byte `0x90` trong mã máy x86/x64 có ý nghĩa gì?  
+*Gợi ý trả lời:* `0x90` là opcode của lệnh `NOP` (No Operation). CPU thực thi lệnh NOP mà không làm gì cả và chuyển sang lệnh tiếp theo, thường dùng để "vô hiệu hóa" một lệnh mà không làm xáo trộn địa chỉ của các lệnh xung quanh.
+
+---
+
+### Câu 4 (Vận dụng)
+Tại sao phải tính và ghi lại SHA-256 hash của file trước và sau khi Patch?  
+*Gợi ý trả lời:* Hash SHA-256 là bằng chứng không thể làm giả về sự toàn vẹn của tệp. So sánh hash trước/sau giúp chứng minh chính xác những byte nào đã bị thay đổi, phục vụ Chain of Custody, báo cáo phân tích và rollback khi cần thiết.
+
+---
+
+### Câu 5 (Vận dụng)
+Khi nào nên dùng **Restore Original Bytes** trong x64dbg?  
+*Gợi ý trả lời:* Khi muốn hoàn tác Patch đã thực hiện trong phiên debug hiện tại để khôi phục mã ban đầu của chương trình, ví dụ sau khi kiểm tra một giả thuyết và muốn thử nghiệm một hướng Patch khác.
+
+---
+
+## Tổng kết Bài 7
+
+* Nắm vững khái niệm và phân loại **Patch** (Memory Patch vs File Patch).
+* Thực hành thành thạo quy trình 6 bước Patch trong x64dbg.
+* Làm chủ các thao tác: **Assemble**, **Fill with NOPs**, **Restore Original Bytes**, **Copy to Executable**.
+* Ghi lại hash SHA-256 trước/sau Patch để đảm bảo Chain of Custody trong Lab.
+

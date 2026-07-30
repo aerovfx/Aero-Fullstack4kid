@@ -1,127 +1,192 @@
-# Tuần 5: Audit branch và tìm root cause
+# Giáo trình Cyber Security – Reverse Engineering
 
-## Nguồn bài học
+## Tuần 5 – Bài 5
 
-- **Reversing Jumps in Software Cracking** được chuyển thành bài audit control flow phòng thủ. Không thực hành đảo jump để vượt license hoặc authorization.
+# Phân Tích GUI Application, Windows API & Intermodular Calls
 
-## Chuyên đề: Bí Mật Đằng Sau Những Bản Patch — Quy Trình Phân Tích & Vá Mã Phần Mềm
+---
 
-### 1. Lời mở đầu
+# 1. Mục tiêu bài học
 
-Trong thế giới an ninh mạng, kỹ thuật đảo ngược (Reverse Engineering) không chỉ đơn thuần là việc vượt qua các rào cản bản quyền. Đó là một nghệ thuật phân tích mã nguồn để hiểu rõ bản chất của phần mềm, phục vụ cho việc kiểm thử bảo mật (security auditing) hoặc phân tích mã độc (malware analysis). Tại sao một công cụ yêu cầu mã kích hoạt lại có thể bị "khuất phục" chỉ bởi vài dòng lệnh thay thế? Với tư cách là một chuyên gia, bài học này sẽ dẫn dắt bạn đi qua quy trình làm việc (workflow) từ cơ bản đến nâng cao để xử lý các ứng dụng giao diện dòng lệnh (CLI). Đây là nền tảng quan trọng nhất trước khi bạn đối đầu với những hệ thống phức tạp hơn.
+Sau khi hoàn thành bài này, học viên có thể:
 
-### 2. Điều kiện tiên quyết: Lỗ hổng (Vulnerability) - Cánh cửa dẫn vào hệ thống
+* Phân tích kiến trúc của ứng dụng GUI (Graphical User Interface) trên hệ điều hành Windows.
+* Sử dụng cửa sổ **Intermodular Calls** trong x64dbg để liệt kê toàn bộ các lời gọi API từ ứng dụng sang DLL hệ thống.
+* Đặt Breakpoint thành thạo tại các hàm Windows API thường dùng trong kiểm tra đăng ký (`MessageBoxA/W`, `GetWindowTextA/W`, `GetDlgItemTextA/W`).
+* Theo vết và phân tích luồng logic kiểm tra Serial Key trong ứng dụng GUI.
 
-Trước khi bắt đầu, chúng ta cần hiểu một thực tế: không phải phần mềm nào cũng có thể đảo ngược dễ dàng. Sự tồn tại của một lỗ hổng (vulnerability) hay một điểm yếu trong logic kiểm tra chính là yếu tố quyết định để một chuyên gia có thể can thiệp.
+---
 
-> *"Nếu có một lỗ hổng, bạn có thể đảo ngược ứng dụng và cố gắng tạo ra một bản vá cho nó."*
+# 2. Kiến thức chính
 
-Nếu một ứng dụng được bảo mật hoàn hảo và không có kẽ hở, việc tạo bản vá gần như là bất khả thi. Vì vậy, bước đầu tiên của mọi nhà phân tích chuyên nghiệp luôn là tìm kiếm điểm yếu này.
+## 2.1 Cấu Trúc Ứng Dụng GUI & Windows API
 
-### 3. Bước 1: Trở thành "Thám tử" với công cụ Detect It Easy (DIE)
+Ứng dụng Windows GUI tương tác với người dùng và hệ điều hành thông qua các thông điệp (Messages) và lời gọi hàm Windows API (Application Programming Interface).
 
-Mọi cuộc phân tích chính xác đều bắt đầu bằng việc trinh sát. Công cụ "Detect It Easy" (DIE) đóng vai trò như một chiếc kính hiển vi để chúng ta soi xét file thực thi.
-
-Nhiệm vụ cốt lõi ở đây là phân tích cấu trúc PE (Portable Executable). Bạn cần xác định hai thông số quan trọng: **Image Base** (địa chỉ cơ sở) và **Entry Point** (điểm nhập). Khi kết hợp hai giá trị này, bạn sẽ tính toán được "Actual Entry Point" – vị trí chính xác mà chương trình bắt đầu thực thi mã lệnh của nó. Việc hiểu rõ "điểm bắt đầu" này quan trọng hơn việc lao vào chỉnh sửa ngay lập tức, vì nó giúp bạn không bị lạc trong mê cung của hàng triệu dòng lệnh.
-
-### 4. Bước 2: Gỡ lỗi và Nghệ thuật đảo ngược các "Bước nhảy"
-
-Sau khi định vị được mục tiêu, chúng ta nạp chương trình vào trình gỡ lỗi (debugger) như **x64dbg** (hoặc S64 DBG).
-
-Tại đây, chúng ta sử dụng **Breakpoints** (Điểm dừng). Đây là kỹ thuật sống còn cho phép chuyên gia "tạm dừng" chương trình tại những thời điểm nhạy cảm, ví dụ như ngay trước khi phần mềm kiểm tra mã kích hoạt.
-
-Mục tiêu tối thượng là điều hướng lại các lệnh nhảy (jumps). Trong hợp ngữ (Assembly), các lệnh như `JZ` (Jump if Zero) hoặc `JE` (Jump if Equal) sẽ quyết định số phận của ứng dụng: hoặc là bị từ chối, hoặc là được chấp nhận. Bằng cách đảo ngược chúng (ví dụ chuyển `JZ` thành `JNZ`) hoặc vô hiệu hóa chúng bằng lệnh `NOP` (No Operation), chúng ta sẽ thay đổi hoàn toàn logic của chương trình.
-
-> *"Không ai muốn nhận một thông báo lỗi cả. Mục tiêu của chúng ta là nhận được thông báo tốt lành."*
-
-### 5. Bước 3: "Phẫu thuật" mã nguồn bằng lệnh Patch và Assemble
-
-Khi đã tìm ra đoạn mã gây ra "thông báo lỗi" (bad message), chúng ta tiến hành "phẫu thuật" bằng cách thay thế các hướng dẫn (instructions) cũ bằng hướng dẫn mới thông qua lệnh **Assemble**. Sau đó, chúng ta lưu lại các thay đổi này thành một file thực thi mới đã được vá (patched file).
-
-Để kiểm soát luồng thực thi trong quá trình này, bạn phải thành thạo các lệnh điều khiển sau:
-- **Run (`F9`)**: Thực thi chương trình cho đến khi gặp điểm dừng.
-- **Step over (`F8`)**: Đi qua lệnh hiện tại. Sử dụng lệnh này khi bạn không muốn đi sâu vào chi tiết bên trong của một hàm hệ thống không liên quan.
-- **Step into (`F7`)**: Đi vào bên trong hàm để phân tích chi tiết từng bước nhảy nhỏ nhất.
-- **Call**: Lệnh gọi một chương trình con hoặc hàm.
-- **Execute**: Thực thi một lệnh cụ thể.
-- **Return (`Ctrl+F9` hoặc Run to user code)**: Đây là lệnh cực kỳ quan trọng giúp bạn thoát khỏi các thư viện hệ thống (DLLs) phức tạp để quay trở về đúng phân đoạn mã nguồn của ứng dụng mục tiêu.
-
-### 6. Từ CLI đến GUI: Thử thách mới đang chờ đợi
-
-Toàn bộ quy trình trên đại diện cho Session 1: Xử lý các ứng dụng giao diện dòng lệnh (CLI). Đây là bước đệm hoàn hảo để rèn luyện tư duy logic.
-
-Tuy nhiên, đỉnh cao tiếp theo là giao diện đồ họa (GUI). Ở đó, sự phức tạp tăng lên gấp bội với các sự kiện tương tác người dùng, các cửa sổ thông báo (Pop-up) và các thành phần giao diện đan xem. Đó sẽ là một trận chiến thực sự nơi kỹ năng của bạn sẽ được đẩy lên giới hạn mới.
-
-### 7. Kết luận và Suy ngẫm
-
-Hành trình trở thành một nhà phân tích chuyên sâu trong giới kỹ thuật đảo ngược bắt đầu từ việc nắm vững workflow: từ phân tích cấu trúc PE, thiết lập Breakpoint, cho đến việc lắp ráp (Assemble) lại các lệnh nhảy để biến một "bad message" thành "good message".
-
-Để rèn luyện, bạn nên tìm kiếm các thử thách "CrackMe" trên các trang web chuyên dụng để thực hành kỹ thuật CLI này. Đó là môi trường an toàn và tốt nhất để bạn tự tay tạo ra những bản vá đầu tiên trong phòng thí nghiệm.
-
-> *Bạn đã nắm trong tay quy trình của những chuyên gia hàng đầu. Vậy, bạn đã sẵn sàng để tìm kiếm lỗ hổng đầu tiên và tự tay tạo ra một bản vá cho riêng mình chưa?*
-
-## Kết quả cần đạt
-
-- Truy dữ liệu từ input đến `cmp/test` và conditional branch.
-- Phân biệt branch behavior, business rule và security boundary.
-- Chứng minh vì sao client-side-only decision không phải trust anchor.
-- Đề xuất fix từ source cùng test tampering.
-
-## 1. Branch không phải root cause
-
-Một branch chỉ thể hiện quyết định tại build cụ thể. Đổi `je` thành `jne` có thể thay outcome nhưng:
-
-- Không sửa dữ liệu đầu vào không đáng tin.
-- Không tạo authorization đáng tin cậy.
-- Có thể phá error path và gây fail-open.
-- Không tồn tại sau rebuild/version update.
-- Không cung cấp test, review, provenance hoặc rollback đúng chuẩn.
-
-## 2. Toy case study
-
-```c
-#include <stdbool.h>
-#include <string.h>
-
-bool feature_allowed(const char *role, bool server_approved) {
-    if (role == NULL) return false;
-    return server_approved && strcmp(role, "student-lab") == 0;
-}
+```text
+[Người dùng gõ Serial & Click "Register"]
+                   ↓
+[Windows OS phát thông điệp WM_COMMAND / WM_LBUTTONDOWN]
+                   ↓
+[Windows API: GetWindowTextA() đọc dữ liệu từ ô nhập]
+                   ↓
+[Hàm xử lý sự kiện (Event Handler) trong mã ứng dụng]
+                   ↓
+[Windows API: MessageBoxA() hiển thị kết quả "Success" hoặc "Failed"]
 ```
 
-Phiên bản lỗi chỉ kiểm tra `role` đọc từ file cục bộ. Phiên bản sửa còn yêu cầu `server_approved` từ thành phần tin cậy giả lập. Đây là mô hình dạy trust boundary, không phải cơ chế license production.
+### Các hàm Windows API quan trọng cần theo dõi:
+1. **Lấy dữ liệu nhập từ giao diện**:
+   * `GetWindowTextA` / `GetWindowTextW`: Lấy văn bản từ ô nhập (ANSI / Unicode).
+   * `GetDlgItemTextA` / `GetDlgItemTextW`: Lấy văn bản từ ô Input trong Dialog Box.
+2. **Hiển thị thông báo**:
+   * `MessageBoxA` / `MessageBoxW`: Hiển thị hộp thoại tháo gỡ/thông báo.
+3. **Thao tác Registry & File hệ thống**:
+   * `RegQueryValueExA/W`: Đọc thông tin bản quyền từ Windows Registry.
+   * `CreateFileA/W`, `ReadFile`: Đọc file `.lic` / `.key` đăng ký.
 
-## 3. Data-flow questions
+---
 
-1. Input được tạo ở đâu và ai kiểm soát?
-2. Parse/normalize trước hay sau validation?
-3. Giá trị có chữ ký/xác thực hoặc freshness không?
-4. Có đường gọi nào bỏ qua validation không?
-5. Failure/timeout dẫn đến deny hay allow?
-6. UI state có bị dùng thay authorization server-side không?
+## 2.2 Kỹ Thuật Intermodular Calls Trong x64dbg
 
-## 4. Lab
+Intermodular Calls là tính năng trong x64dbg quét toàn bộ phân vùng `.text` để liệt kê danh sách các lệnh `CALL` trỏ tới hàm thuộc các thư viện liên kết động bên ngoài (như `USER32.DLL`, `KERNEL32.DLL`, `ADVAPI32.DLL`).
 
-1. Chạy test matrix cho `role = NULL`, empty, `student-lab`, mixed case và chuỗi dài.
-2. Dùng symbol để tới `feature_allowed` và vẽ CFG.
-3. Ghi data origin, comparison, branch và caller sử dụng return value.
-4. Không sửa jump. Chuyển sang source, bổ sung trust input và fail-closed.
-5. Thêm unit test cho config tampering, timeout và approval false.
-6. Build lại, tính hash và kiểm tra behavior cũ không bị phá.
-
-## 5. Finding template
-
-```markdown
-Title: Authorization decision relies on user-controlled local role
-Impact: Local user may request a privileged UI path
-Evidence: input origin + CFG + test case; no third-party target
-Root cause: untrusted client field used as sole authorization decision
-Fix: enforce decision at trusted service; verify signed response; fail closed
-Regression: allow valid approval, deny missing/invalid/stale approval
-Residual risk: offline mode and clock policy require separate design
+```text
+Thao tác quét Intermodular Calls trong x64dbg:
+1. Mở ứng dụng trong x64dbg.
+2. Tại cửa sổ CPU, click chuột phải → Search for → Current Module → Intermodular Calls.
+3. Nhập từ khóa tìm kiếm (Ví dụ: "GetWindowText" hoặc "MessageBox").
+4. Click đúp vào địa chỉ lệnh CALL để chuyển thẳng tới dòng lệnh tương ứng trong đĩa Assembly.
 ```
 
-## Bài tập và rubric
+---
 
-Nộp CFG, data-flow map, finding và source fix. Chấm: root cause 30, evidence 25, remediation 20, tests 15, residual risk 10. Bài chỉ đảo opcode/branch không đạt.
+## 2.3 Workflow Theo Vết Serial Key Trong GUI App
 
+```text
+[Bước 1: Tìm lời gọi Windows API (GetWindowText / MessageBox)]
+                          ↓
+[Bước 2: Đặt Breakpoint (F2) tại lệnh CALL API hoặc Entry của API]
+                          ↓
+[Bước 3: Thực thi chương trình (F9) & Nhập Serial giả định trên GUI]
+                          ↓
+[Bước 4: Nhấn Submit → Chương trình dừng tại API]
+                          ↓
+[Bước 5: Dùng Ctrl+F9 (Execute till Return) & F8 để lùi về Hàm Kiểm Tra Chính]
+                          ↓
+[Bước 6: Quan sát bộ nhớ (Hexdump / String Reference) để tìm Serial thật hoặc Logic]
+```
+
+---
+
+# 3. Thuật ngữ quan trọng
+
+| Thuật ngữ | Ý nghĩa |
+|---|---|
+| **Windows API** | Bộ hàm giao tiếp tiêu chuẩn của Windows OS |
+| **Intermodular Calls** | Danh sách lời gọi hàm giữa các module DLL |
+| **Event Handler** | Hàm xử lý sự kiện khi người dùng click button |
+| **ANSI / Unicode** | Chuẩn mã hóa chuỗi ký tự (`*A` cho ANSI, `*W` cho Wide Unicode) |
+| **String References** | Danh sách chuỗi ký tự tĩnh có trong binary |
+| **Import Address Table (IAT)** | Bảng địa chỉ chứa danh sách API nạp runtime |
+
+---
+
+# 4. Ví dụ minh họa
+
+## Ví dụ 1: Tìm hàm MessageBoxA bằng Intermodular Calls
+
+1. Mở bài lab `toy_gui_validator.exe` trong x64dbg.
+2. Click chuột phải → **Search for** → **Current Module** → **Intermodular Calls**.
+3. Lọc từ khóa `MessageBoxA`:
+   ```text
+   Address          Target
+   00007FF610001420 <USER32.MessageBoxA>
+   ```
+4. Click đúp vào địa chỉ `00007FF610001420`. Đặt điểm ngắt **F2** tại lệnh `CALL <USER32.MessageBoxA>`.
+5. Nhấn **F9**, nhập Serial bất kỳ vào ứng dụng và bấm "Check Key". Chương trình sẽ dừng ngay trước khi bảng thông báo lỗi xuất hiện!
+
+---
+
+## Ví dụ 2: Lùi về hàm kiểm tra từ GetWindowTextA
+
+Khi chương trình dừng tại `GetWindowTextA`, nhấn **Ctrl + F9** để thực thi hết hàm API này và trở về mã nguồn ứng dụng:
+```assembly
+004012A0 | E8 50020000 | call <KERNEL32.GetWindowTextA> | Đọc chuỗi nhập
+004012A5 | 8D45 F0     | lea eax, dword ptr ss:[ebp-10]  | EAX chứa con trỏ chuỗi vừa nhập
+004012A8 | 50         | push eax                        | Đẩy chuỗi nhập vào Stack
+004012A9 | E8 30000000 | call toy_gui.check_serial       | CALL hàm kiểm tra logic!
+004012AE | 83F8 01     | cmp eax, 1                      | Kiểm tra kết quả
+```
+→ Nhấn **F7** tại dòng `004012A9` để đi thẳng vào hàm thuật toán `check_serial`!
+
+---
+
+# 5. Ghi nhớ
+
+```text
+[Mở cửa sổ Intermodular Calls] ──► [Tìm kiếm API: GetWindowText / MessageBox]
+                                                 │
+                                                 ▼
+[Quay lại caller trong Mã Ứng Dụng] ◄── [Đặt Breakpoint (F2) & Nhập Serial giả]
+         │
+         ▼
+[Trace thuật toán so sánh chuỗi bằng F8 / Quan sát Memory Hexdump]
+```
+
+> **Ghi nhớ**: "Mọi ứng dụng GUI Windows đều bắt buộc phải thông qua Windows API để lấy dữ liệu nhập vào hoặc xuất kết quả ra màn hình. Intermodular Calls chính là bản đồ dẫn đường nhanh nhất tới điểm kiểm tra!"
+
+---
+
+# 6. Câu hỏi ôn tập
+
+### Câu 1 (Nhận biết)
+Tính năng Intermodular Calls trong x64dbg dùng để tìm kiếm đối tượng nào trong mã thực thi?
+A. Các file ảnh PNG trong giao diện  
+B. Các lời gọi hàm (CALL) tới thư viện liên kết động bên ngoài (DLLs/Windows API)  
+C. Lịch sử các trang web người dùng đã truy cập  
+D. Danh sách các tài khoản Windows trên máy  
+
+**Đáp án:** B
+
+---
+
+### Câu 2 (Thông hiểu)
+Hàm Windows API nào thường được ứng dụng GUI gọi tới để đọc dữ liệu ký tự mà người dùng gõ vào một ô Textbox?
+A. `CreateProcessA`  
+B. `GetWindowTextA` / `GetWindowTextW`  
+C. `ExitProcess`  
+D. `DeleteFileA`  
+
+**Đáp án:** B
+
+---
+
+### Câu 3 (Thông hiểu)
+Sự khác nhau giữa ký tự đuôi `A` và `W` trong tên các hàm Windows API (Ví dụ: `MessageBoxA` và `MessageBoxW`) là gì?
+*Gợi ý trả lời:* Đuôi `A` đại diện cho hàm xử lý chuỗi ký tự chuẩn ANSI (8-bit ASCII), còn đuôi `W` (Wide) đại diện cho hàm xử lý chuỗi ký tự Unicode UTF-16 (16-bit).
+
+---
+
+### Câu 4 (Vận dụng)
+Trình bày kịch bản từng bước để tìm ra vị trí so sánh Serial Key của một ứng dụng Windows GUI mà không có chuỗi văn bản thông báo lỗi cụ thể.
+*Gợi ý trả lời:* 
+1. Sử dụng Intermodular Calls để tìm lời gọi hàm `GetWindowTextA/W` hoặc `GetDlgItemTextA/W`.
+2. Đặt Breakpoint (F2) tại tất cả các vị trí `CALL GetWindowText`.
+3. Nhập dữ liệu thử nghiệm trên giao diện và bấm nút xác nhận để kích hoạt breakpoint.
+4. Khi chương trình dừng tại API, dùng `Ctrl+F9` để thoát khỏi API lùi về mã nguồn ứng dụng.
+5. Dùng `F8` để trace qua các câu lệnh tiếp theo để tìm lệnh gọi hàm so sánh chuỗi hoặc kiểm tra logic (`CMP`, `TEST`).
+
+---
+
+### Câu 5 (Vận dụng)
+Tại sao việc tìm kiếm chuỗi văn bản (String References) đôi khi thất bại không tìm thấy thông báo lỗi, và lúc đó kỹ thuật Intermodular Calls thể hiện ưu thế như thế nào?
+*Gợi ý trả lời:* Vì chuỗi thông báo lỗi có thể đã bị mã hóa (Encrypted), bị nén (Packed) hoặc được ghép từ nhiều đoạn nhỏ tại runtime khiến String Search tĩnh không tìm ra. Lúc đó, lời gọi API hệ thống (`MessageBox`) bắt buộc vẫn phải diễn ra tại runtime, giúp Intermodular Calls bẫy đúng thời điểm API được gọi bất kể chuỗi có bị mã hóa hay không.
+
+---
+
+## Tổng kết bài học
+
+* Hiểu cơ chế hoạt động của ứng dụng Windows GUI và lời gọi Windows API.
+* Sử dụng thành thạo **Intermodular Calls** trong x64dbg để khoanh vùng vị trí gỡ lỗi.
+* Trace và định vị chính xác vị trí hàm kiểm tra dữ liệu đầu vào.

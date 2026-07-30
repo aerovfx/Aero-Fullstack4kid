@@ -1,17 +1,23 @@
-# Lịch trình Software Reverse Engineering
+# Lịch trình Giáo trình Software Reverse Engineering & Secure Patching (10 Tuần)
 
-| Tuần | Chủ đề | Bài nguồn | Sản phẩm |
+| Tuần | Chủ đề | Giai đoạn & Chủ đề chính (41 bài) | Sản phẩm & Lab Artifacts |
 |---|---|---|---|
-| 1 | Phạm vi, đạo đức và lab cô lập | 1, 3 | Authorization + lab checklist |
-| 2 | PE triage với DIE và script | 2 | Static triage report |
-| 3 | Assembly/control flow nền tảng | 4 | Function map |
-| 4 | Stepping, call stack và breakpoint | 5, 6 | Debugging evidence |
-| 5 | Branch/jump audit và root cause | 7 | Control-flow finding |
-| 6 | Secure patching và regression | 8 | Patch + test + rollback |
-| 7 | Quy trình phân tích tái lập | 9 | Analysis playbook |
-| 8 | GUI/event-driven application | 10 | Event-handler map |
-| 9 | PE GUI, import/resource/config | 11 | Attack-surface report |
-| 10 | License integrity và capstone | 12 | Defensive RE report |
+| 1 | Tổng quan Ethical Hacking & Lab cô lập | **Giai đoạn 1**: Tổng quan Ethical Hacking, Đạo đức & Quy tắc RoE, Thiết lập Windows VM & Workspace | Rules of Engagement (RoE) + Lab Isolation Checklist |
+| 2 | Environment Setup & PE Static Triage | **Giai đoạn 1**: Giới thiệu x64dbg & Detect It Easy (DIE), Static Analysis vs Dynamic Analysis, Workflow Triage | Static Triage Report (DIE + `pe_triage.py`) |
+| 3 | Assembly, CPU Registers & Memory | **Giai đoạn 2**: Kiến trúc x86/x64, Thanh ghi CPU, Stack/Heap, Các lệnh Assembly căn bản (MOV, CMP, JMP) | Assembly Function Map & Register Diagram |
+| 4 | Debugging Mechanics (Stepping & Breakpoints) | **Giai đoạn 2**: Debugger Stepping (F7/F8), Call Stack, Software (INT3) & Hardware Breakpoints | Debugging Evidence & Call Stack Analysis |
+| 5 | Windows API & GUI Application Analysis | **Giai đoạn 3**: Phân tích GUI Apps, Windows API (`MessageBox`, `GetWindowText`), Intermodular Calls, Bypass đăng ký | Intermodular Call Map & Registration Finding |
+| 6 | Software Patching & Hardware Breakpoints | **Giai đoạn 4**: Patch thanh ghi (Flags/EAX), Patch bộ nhớ (NOP Sled, Byte Patching), Serial Key Change, Hardware BP | Verified Patch + Rollback Script + Manifest |
+| 7 | Static Code Analyzers & Reverse Engineering | **Giai đoạn 5**: Static Code Analyzer (Ghidra/IDA), Trích xuất Serial Key, Tìm Password & Phân tích cấu trúc hàm | Decompiled Function Map & Serial Extraction Log |
+| 8 | Advanced Assembly & Visual Basic Reverse | **Giai đoạn 6**: Lập trình Assembly, Tạo thuật toán External Keygen, Reverse ứng dụng Visual Basic (VB6) | Keygen Algorithm Specification + VB6 Analysis |
+| 9 | .NET Reverse Engineering & Protections | **Giai đoạn 7**: Crack & Reverse .NET (C#, VB.NET), dnSpy, ILSpy, de4dot, .NET Protection & Deobfuscation | .NET Decompiled Source & Protection Audit |
+| 10 | Obfuscation, DLL Reverse & Capstone Defense | **Giai đoạn 8**: Obfuscation/Deobfuscation, Cracking/Reverse DLL, Anti-debugging, Báo cáo Capstone | Defensive RE Report + Tamper Proofing Recommendations |
 
-Mỗi lab phải ghi hash input/output, snapshot VM, tool version, bằng chứng authorization và tiêu chí dừng. Không dùng phần mềm thương mại làm mục tiêu thực hành.
+---
+
+### Quy tắc Thực hành Lab:
+1. Tất cả lab phải ghi rõ SHA-256 hash của binary trước và sau khi phân tích/patch.
+2. Lưu giữ snapshot VM và log bằng chứng theo chuẩn Chain of Custody.
+3. Không thực thi mẫu không tin cậy ngoài môi trường VM đã cô lập.
+
 
