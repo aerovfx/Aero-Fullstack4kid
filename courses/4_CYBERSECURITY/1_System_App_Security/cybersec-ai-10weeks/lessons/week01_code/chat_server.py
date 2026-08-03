@@ -6,7 +6,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Tạo TCP Socket (I
 # Tránh lỗi "Port is already in use" (Cổng đang được sử dụng) thường gặp khi chạy lại code nhiều lần
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
 
-server.bind(('127.0.0.1', 9999)) # Mở port 9999 trên máy ảo localhost
+server.bind(('192.168.1.100', 80)) # Mở port 9999 trên máy ảo localhost
 server.listen(1) # Bật chế độ lắng nghe
 print("Server Chat đang chạy...")
 

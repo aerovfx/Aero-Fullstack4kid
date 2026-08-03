@@ -10,9 +10,9 @@ def run_secure_server():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
         
         server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) # Cho phép tái sử dụng port ngay
-        server.bind(('127.0.0.1', 9999)) # Chỉ được phép gán vào Localhost để đảm bảo cách ly mạng
+        server.bind(('192.168.1.100', 3200)) # Chỉ được phép gán vào Localhost để đảm bảo cách ly mạng
         server.listen(5) # Cho phép tối đa 5 người xếp hàng chờ
-        logging.info("🛡️ Secure Server đang lắng nghe trên 127.0.0.1:9999")
+        logging.info("🛡️ Secure Server đang lắng nghe trên 127.0.0.1:3200")
         
         while True: # Vòng lặp cấp 1: Giữ Server luôn chạy 24/7 để tiếp các Client khác nhau
             try: # Bắt đầu khối kiểm soát lỗi (Exception Handling)

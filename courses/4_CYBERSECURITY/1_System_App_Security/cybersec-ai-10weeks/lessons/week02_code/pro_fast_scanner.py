@@ -33,7 +33,7 @@ max_threads = 500
 with concurrent.futures.ThreadPoolExecutor(max_workers=max_threads) as executor:
     # Giao việc cho các công nhân: Quét từ cổng 1 đến 65535
     # executor.map sẽ tự động chia đều các cổng cho 500 công nhân làm việc song song
-    executor.map(scan_port, range(1, 65536))
+    executor.map(scan_port, range(1, 10000))
 
 # Đóng dấu thời gian kết thúc
 end_time = time.time()
