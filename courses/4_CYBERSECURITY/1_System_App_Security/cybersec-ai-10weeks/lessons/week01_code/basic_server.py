@@ -4,11 +4,11 @@ import socket # Nhập thư viện socket có sẵn của Python để sử dụ
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Gắn socket này vào địa chỉ IP nội bộ '127.0.0.1' (localhost) và mở cổng 9999 để chờ kết nối
-server.bind(('127.0.0.1', 9999))
+server.bind(('127.0.0.1', 3667))
 
 # Bắt đầu lắng nghe các yêu cầu kết nối tới. Số 1 nghĩa là chỉ cho phép tối đa 1 người chờ trong hàng đợi
 server.listen(1)
-print("Server đang chờ kết nối trên port 9999...")
+print("Server đang chờ kết nối trên port 3667...")
 
 # Hàm accept() sẽ chặn (dừng) chương trình ở dòng này cho đến khi có một client thực sự kết nối vào
 # Nó trả về 2 giá trị: 'client' là một đối tượng socket mới dành riêng để nói chuyện với người này, 'address' là IP và Port của họ

@@ -41,3 +41,12 @@ print(f"BÁO CÁO KẾT QUẢ:")
 print(f"- Tổng số cổng mở: {len(open_ports)} {open_ports}")
 print(f"- Thời gian hoàn thành: {round(end_time - start_time, 2)} giây")
 print("="*40)
+
+# Port 3667: Không phải cổng chuẩn. Thường được các ứng dụng hoặc game sử dụng theo nhu cầu riêng.
+# Port 5000: Rất phổ biến.
+# Thường dùng cho máy chủ phát triển (ví dụ Flask, ASP.NET, Node.js).
+# Có thể được một số dịch vụ UPnP hoặc ứng dụng khác sử dụng.
+# Port 7000: Không có dịch vụ chuẩn duy nhất.
+# Nhiều ứng dụng doanh nghiệp, máy chủ ứng dụng hoặc phần mềm tùy chỉnh sử dụng.
+# Port 7768: Không phải cổng chuẩn, thường do ứng dụng riêng sử dụng.
+# Port 9993: Không có dịch vụ Internet chuẩn phổ biến, thường là cổng của ứng dụng hoặc thiết bị cụ thể.
