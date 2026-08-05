@@ -21,8 +21,8 @@ Từ đây gọi thống nhất:
 
 | Tên | Vai trò | Chạy gì |
 | :--- | :--- | :--- |
-| **MÁY A** | Server / Mục tiêu (Blue Team) | `lan_chat_server.py` hoặc `lan_target_server.py` |
-| **MÁY B** | Client / Scanner (Red Team) | `lan_chat_client.py` hoặc `lan_ex01…03` |
+| **MÁY A** | Server / Mục tiêu (Blue Team) | `lan_chat_server.py` hoặc `30_lan_target_server.py` |
+| **MÁY B** | Client / Scanner (Red Team) | `lan_chat_client.py` hoặc `31…33_lan_*` |
 
 Hai bạn nên **dán giấy note "A" và "B"** lên máy để khỏi nhầm khi làm bài.
 
@@ -230,7 +230,7 @@ Code ở thư mục `lessons/week02_code/`. Đề bài đầy đủ: [`week02_ex
 
 ```bash
 cd ~/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/lessons/week02_code
-python3 lan_target_server.py
+python3 30_lan_target_server.py
 ```
 
 1. Chương trình bắt gõ `YES` để xác nhận đây là mạng lab hợp lệ.
@@ -263,11 +263,11 @@ Nếu `nc` chạy được nghĩa là bài tập chắc chắn chạy được.
 ```bash
 cd ~/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/lessons/week02_code
 
-python3 lan_ex01_first_contact.py      # B1 — nhập IP Máy A, so sánh LAN vs localhost
-python3 lan_ex02_host_discovery.py     # B2 — tự tìm Máy A giữa 254 địa chỉ
-python3 lan_ex03_firewall_duel.py before   # B3 hiệp 1
+python3 31_lan_first_contact.py      # B1 — nhập IP Máy A, so sánh LAN vs localhost
+python3 32_lan_host_discovery.py     # B2 — tự tìm Máy A giữa 254 địa chỉ
+python3 33_lan_firewall_duel.py before   # B3 hiệp 1
 # ... MÁY A vá lỗi (xem 3.4) ...
-python3 lan_ex03_firewall_duel.py after    # B3 hiệp 3
+python3 33_lan_firewall_duel.py after    # B3 hiệp 3
 ```
 
 ## 3.4 — Bài B3: MÁY A vá lỗi bằng firewall macOS
@@ -374,7 +374,7 @@ Lớp 2: Có IP hợp lệ?                → ipconfig getifaddr en0  (không p
 Lớp 3: Hai máy tới được nhau?       → ping -c 4 <IP Máy A>
 Lớp 4: Server có đang chạy?         → trên Máy A: lsof -i :9001
 Lớp 5: Cổng có thông qua LAN?       → trên Máy B: nc -zv <IP Máy A> 9001
-Lớp 6: Bài tập chạy được?           → python3 lan_ex01_first_contact.py
+Lớp 6: Bài tập chạy được?           → python3 31_lan_first_contact.py
 ```
 
 Lớp nào hỏng thì sửa đúng lớp đó, đừng nhảy cóc.
@@ -407,7 +407,7 @@ Lớp nào hỏng thì sửa đúng lớp đó, đừng nhảy cóc.
 │ Tuần 1:                   │   │ Tuần 1:                  │
 │   lan_chat_server.py      │◄──│   lan_chat_client.py     │
 │ Tuần 2:                   │   │ Tuần 2:                  │
-│   lan_target_server.py    │◄──│   lan_ex01/02/03         │
+│   30_lan_target_server.py    │◄──│   31/32/33_lan_*         │
 └───────────────────────────┘   └──────────────────────────┘
               ↓
 ┌─ DỌN DẸP (bắt buộc) ─────────────────────────────────────┐

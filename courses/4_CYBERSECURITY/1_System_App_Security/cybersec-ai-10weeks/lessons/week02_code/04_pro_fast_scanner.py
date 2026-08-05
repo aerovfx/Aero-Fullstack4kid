@@ -2,8 +2,8 @@ import socket
 import time
 import concurrent.futures # Thư viện quản lý Đa luồng (Thread Pool) hiện đại của Python
 
-#target_ip = "127.0.0.1"
-target_ip = "76.223.54.146"
+# AN TOÀN: chỉ được quét localhost (xem cảnh báo pháp lý trong week02.md).
+target_ip = "127.0.0.1"
 open_ports = []
 
 # Đóng dấu thời gian bắt đầu

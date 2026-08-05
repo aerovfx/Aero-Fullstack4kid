@@ -2,9 +2,13 @@ import socket
 import time
 import concurrent.futures 
 
-# 1. THAY ĐỔI QUAN TRỌNG: Đổi thành IP LAN của máy đích
-# Ví dụ: "192.168.1.100", "192.168.0.15", v.v.
-target_ip = "192.168.1.100" 
+# 1. THAY ĐỔI QUAN TRỌNG: Đổi thành IP LAN của máy đích.
+#
+# AN TOÀN - ĐỌC KỸ: chỉ được điền IP của MÁY CHÍNH BẠN trong mạng riêng
+# ở nhà hoặc phòng lab, và phải được chủ mạng đồng ý. Xem quy trình đầy đủ
+# tại huong_dan_lab_2_macbook.md. Quét máy người khác là vi phạm pháp luật.
+# Nếu chỉ muốn thử nghiệm một mình, để nguyên "127.0.0.1".
+target_ip = "127.0.0.1"  # đổi thành IP LAN máy đích của bạn, vd "192.168.1.100"
 open_ports = []
 
 print(f"=== BẮT ĐẦU QUÉT TOÀN BỘ 65535 CỔNG TRÊN {target_ip} ===")

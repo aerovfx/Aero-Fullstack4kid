@@ -97,7 +97,7 @@ if __name__ == "__main__":
     print(f"Máy B: {len(local_open)} cổng mở {sorted(local_open)}")
 
 # NHẬN XÉT:
-# Máy A mở 9001-9003 ra LAN vì lan_target_server.py bind vào "0.0.0.0" - nghĩa là
+# Máy A mở 9001-9003 ra LAN vì 30_lan_target_server.py bind vào "0.0.0.0" - nghĩa là
 # lắng nghe trên MỌI card mạng nên Máy B nhìn thấy. Ngược lại các dịch vụ trên Máy B
 # (PostgreSQL, server dev...) thường bind vào "127.0.0.1" nên chỉ chính nó thấy,
 # máy khác trong nhà quét sẽ báo ĐÓNG. Bind vào đâu quyết định ai được phép gõ cửa.

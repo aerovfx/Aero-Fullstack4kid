@@ -1,12 +1,12 @@
 """
-lab_target_server.py - "Con mồi" cho phòng lab Tuần 2.
+20_lab_target_server.py - "Con mồi" cho phòng lab Tuần 2.
 
 Mở sẵn vài cổng TRÊN LOCALHOST (127.0.0.1) để Scanner của bạn có thứ để tìm thấy.
 Mỗi cổng trả về một Banner khác nhau, phục vụ bài tập Banner Grabbing.
 
 Cách dùng:
-    Terminal 1:  python3 lab_target_server.py     (để chạy nền, đừng tắt)
-    Terminal 2:  python3 ex01_service_checklist.py
+    Terminal 1:  python3 20_lab_target_server.py     (để chạy nền, đừng tắt)
+    Terminal 2:  python3 21_ex_service_checklist.py
 
 Nhấn Ctrl + C để tắt server khi học xong.
 """

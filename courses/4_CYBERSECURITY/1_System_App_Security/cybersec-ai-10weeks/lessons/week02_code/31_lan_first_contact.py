@@ -3,7 +3,7 @@ BÀI LAN 1: BẮT LIÊN LẠC (First Contact) - chạy trên MÁY B
 Thời gian: ~20 phút | Ôn lại: Cấp độ 1 + Cấp độ 2, áp dụng qua mạng thật
 
 BỐI CẢNH:
-Máy A đang chạy lan_target_server.py và mở 3 cổng lab (9001, 9002, 9003).
+Máy A đang chạy 30_lan_target_server.py và mở 3 cổng lab (9001, 9002, 9003).
 Bạn ngồi ở Máy B, nhiệm vụ là tìm ra những cánh cửa đó QUA MẠNG LAN.
 
 NHIỆM VỤ:

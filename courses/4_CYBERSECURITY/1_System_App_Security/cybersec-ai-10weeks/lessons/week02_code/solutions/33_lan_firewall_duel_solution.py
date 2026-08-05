@@ -110,7 +110,7 @@ def compare(before, after):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2 or sys.argv[1] not in ("before", "after"):
-        print("Cách dùng: python3 lan_ex03_firewall_duel.py before|after")
+        print("Cách dùng: python3 33_lan_firewall_duel.py before|after")
         raise SystemExit(1)
 
     phase = sys.argv[1]
@@ -128,7 +128,7 @@ if __name__ == "__main__":
         save_snapshot(target_ip, snap)
         print(f"\nĐã lưu {SNAPSHOT_FILE}.")
         print("Giờ tới lượt MÁY A: bật firewall chặn cổng 9001 và 9002.")
-        print("Xong thì chạy lại:  python3 lan_ex03_firewall_duel.py after")
+        print("Xong thì chạy lại:  python3 33_lan_firewall_duel.py after")
 
     else:
         if not os.path.exists(SNAPSHOT_FILE):

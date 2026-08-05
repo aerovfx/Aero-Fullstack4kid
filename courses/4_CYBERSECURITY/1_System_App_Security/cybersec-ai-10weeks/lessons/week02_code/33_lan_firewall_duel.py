@@ -3,7 +3,7 @@ BÀI LAN 3: SONG ĐẤU TƯỜNG LỬA (Firewall Duel) - Red Team vs Blue Team
 Thời gian: ~30 phút | Ôn lại: Banner Grabbing + Remediation + kiểm chứng
 
 BỐI CẢNH: Hai bạn đóng hai vai.
-    MÁY A = Blue Team (phòng thủ) - chạy lan_target_server.py rồi bật firewall.
+    MÁY A = Blue Team (phòng thủ) - chạy 30_lan_target_server.py rồi bật firewall.
     MÁY B = Red Team  (trinh sát) - chạy file này, quét trước và sau khi A đóng cổng.
 
 LUẬT CHƠI - 3 hiệp:
@@ -33,9 +33,9 @@ LỆNH CHO MÁY A (Blue Team) - chạy ở hiệp 2:
         Remove-NetFirewallRule -DisplayName "Block Lab 9001"
 
 CÁCH CHẠY (trên Máy B):
-    python3 lan_ex03_firewall_duel.py before
+    python3 33_lan_firewall_duel.py before
     ... đợi Máy A vá lỗi ...
-    python3 lan_ex03_firewall_duel.py after
+    python3 33_lan_firewall_duel.py after
 
 AN TOÀN: chỉ IP nội bộ, chỉ máy của nhóm bạn.
 """
@@ -96,7 +96,7 @@ def compare(before, after):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2 or sys.argv[1] not in ("before", "after"):
-        print("Cách dùng: python3 lan_ex03_firewall_duel.py before|after")
+        print("Cách dùng: python3 33_lan_firewall_duel.py before|after")
         raise SystemExit(1)
 
     phase = sys.argv[1]
@@ -114,7 +114,7 @@ if __name__ == "__main__":
         save_snapshot(target_ip, snap)
         print(f"\nĐã lưu {SNAPSHOT_FILE}.")
         print("Giờ tới lượt MÁY A: bật firewall chặn cổng 9001 và 9002 (xem lệnh đầu file).")
-        print("Xong thì chạy lại:  python3 lan_ex03_firewall_duel.py after")
+        print("Xong thì chạy lại:  python3 33_lan_firewall_duel.py after")
 
     else:
         if not os.path.exists(SNAPSHOT_FILE):

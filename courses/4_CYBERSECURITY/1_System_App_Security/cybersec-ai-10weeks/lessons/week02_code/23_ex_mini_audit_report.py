@@ -18,7 +18,7 @@ YÊU CẦU:
 
 AN TOÀN: chỉ quét 127.0.0.1 - chính máy bạn. Đây là bài tự kiểm tra thiết bị của mình.
 
-GỢI Ý: mở lab_target_server.py ở terminal khác để chắc chắn có cổng mở mà chấm điểm.
+GỢI Ý: mở 20_lab_target_server.py ở terminal khác để chắc chắn có cổng mở mà chấm điểm.
 """
 
 import socket

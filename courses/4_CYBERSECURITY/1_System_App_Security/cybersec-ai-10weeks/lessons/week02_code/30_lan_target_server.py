@@ -1,10 +1,10 @@
 """
-lan_target_server.py - "MÁY A" (Máy mục tiêu) trong phòng lab 2 máy.
+30_lan_target_server.py - "MÁY A" (Máy mục tiêu) trong phòng lab 2 máy.
 
 Máy A mở vài cổng dịch vụ giả ra mạng LAN để Máy B (máy quét) tìm thấy.
 
   [MÁY A - Target]  <---- Wi-Fi/LAN nhà bạn ---->  [MÁY B - Scanner]
-  chạy file này                                    chạy lan_ex01/02/03
+  chạy file này                                    chạy 31/32/33_lan_*
 
 =========================== ĐIỀU KIỆN BẮT BUỘC ===============================
 Chỉ chạy bài lab này khi TẤT CẢ các điều sau đều đúng:
@@ -20,7 +20,7 @@ Cách dùng trên MÁY A:
          macOS/Linux:  ifconfig | grep "inet "     hoặc   ip addr
          Windows:      ipconfig
        Ghi lại IP dạng 192.168.x.x hoặc 10.0.x.x -> đây là "IP Máy A".
-    2. python3 lan_target_server.py
+    2. python3 30_lan_target_server.py
     3. Đọc kỹ và gõ YES để xác nhận đây là mạng lab hợp lệ.
     4. Đọc IP Máy A cho bạn ngồi ở Máy B.
 

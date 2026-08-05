@@ -1,8 +1,8 @@
 import socket
 import time
 
-#target_ip = "127.0.0.1"
-target_ip = "76.223.54.146"
+# AN TOÀN: chỉ được quét localhost (xem cảnh báo pháp lý trong week02.md).
+target_ip = "127.0.0.1"
 
 print(f"=== BẮT ĐẦU QUÉT HỆ THỐNG: {target_ip} ===")
 start_time = time.time()
