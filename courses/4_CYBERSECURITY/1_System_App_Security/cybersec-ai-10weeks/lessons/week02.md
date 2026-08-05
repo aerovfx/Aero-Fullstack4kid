@@ -163,11 +163,11 @@ print("="*40)
 
 Bộ bài tập ngắn đi kèm tuần này nằm ở [`week02_exercises.md`](week02_exercises.md), gồm 2 nhóm:
 
-- **Nhóm A — Một máy (Localhost)**: 3 bài trong [`week02_code/exercises/`](week02_code/exercises/)
+- **Nhóm A — Một máy (Localhost)**: 3 bài `ex01…ex03` trong [`week02_code/`](week02_code/)
   1. Checklist dịch vụ (~15 phút) — ôn Cấp độ 1 + 2
   2. Đấu tốc độ: vòng lặp vs đa luồng (~20 phút) — ôn Cấp độ 3
   3. Báo cáo kiểm toán mini (~20 phút) — Banner Grabbing + tư duy Blue Team
-- **Nhóm B — Hai máy cùng mạng LAN**: 3 bài trong [`week02_code/lan_exercises/`](week02_code/lan_exercises/)
+- **Nhóm B — Hai máy cùng mạng LAN**: 3 bài `lan_ex01…lan_ex03` trong [`week02_code/`](week02_code/)
   1. Bắt liên lạc (~20 phút) — hiểu `bind("0.0.0.0")` vs `bind("127.0.0.1")`
   2. Điểm danh thiết bị trong nhà (~25 phút) — host discovery đa luồng
   3. Song đấu tường lửa (~30 phút) — Red Team vs Blue Team, kiểm chứng bản vá

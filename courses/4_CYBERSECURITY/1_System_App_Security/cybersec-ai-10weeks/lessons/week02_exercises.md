@@ -4,10 +4,10 @@ Bộ bài tập đi kèm bài giảng [`week02.md`](week02.md). Gồm **2 nhóm*
 
 | Nhóm | Số bài | Môi trường | Thư mục code |
 | :--- | :--- | :--- | :--- |
-| **A. Một máy (Localhost)** | 3 bài | Chỉ cần 1 máy tính, quét `127.0.0.1` | [`week02_code/exercises/`](week02_code/exercises/) |
-| **B. Hai máy (LAN)** | 3 bài | 2 máy cùng Wi-Fi nhà / phòng lab | [`week02_code/lan_exercises/`](week02_code/lan_exercises/) |
+| **A. Một máy (Localhost)** | 3 bài | Chỉ cần 1 máy tính, quét `127.0.0.1` | `week02_code/ex01…ex03` |
+| **B. Hai máy (LAN)** | 3 bài | 2 máy cùng Wi-Fi nhà / phòng lab | `week02_code/lan_ex01…lan_ex03` |
 
-Mỗi bài có file khởi tạo (`TODO` để học viên tự điền) và file đáp án trong thư mục `solutions/`.
+Tất cả code nằm trong [`week02_code/`](week02_code/). Mỗi bài có file khởi tạo (`TODO` để học viên tự điền) và file đáp án trong `week02_code/solutions/`.
 
 ---
 
@@ -29,7 +29,7 @@ Mỗi bài có file khởi tạo (`TODO` để học viên tự điền) và fil
 Scanner cần có cổng mở để tìm thấy. Mở terminal thứ nhất và chạy:
 
 ```bash
-cd week02_code/exercises
+cd week02_code
 python3 lab_target_server.py
 ```
 
@@ -39,7 +39,7 @@ Server này mở 3 cổng giả trên `127.0.0.1` (9001, 9002, 9003), mỗi cổ
 
 ## Bài A1 — Checklist Dịch Vụ (~15 phút)
 
-**File:** `exercises/ex01_service_checklist.py`
+**File:** `ex01_service_checklist.py`
 **Ôn lại:** Cấp độ 1 + Cấp độ 2 (`connect_ex`, vòng lặp `for`)
 
 Thay vì quét mù cả 65535 cổng, hãy quét đúng danh sách 10 cổng "đáng ngờ" nhất và in ra tên dịch vụ đứng sau mỗi cổng.
@@ -65,7 +65,7 @@ Tổng kết: 3/10 cổng đang mở.
 
 ## Bài A2 — Đấu Tốc Độ: Vòng Lặp vs Đa Luồng (~20 phút)
 
-**File:** `exercises/ex02_speed_battle.py`
+**File:** `ex02_speed_battle.py`
 **Ôn lại:** Cấp độ 3 (`threading`, `start()`, `join()`)
 
 Quét **cùng một dải cổng (8900–9400)** bằng hai cách, bấm giờ cả hai, rồi tính xem đa luồng nhanh hơn bao nhiêu **lần**. Đây là cách bạn tự chứng minh cho mình vì sao threading là bắt buộc.
@@ -98,7 +98,7 @@ Quét **cùng một dải cổng (8900–9400)** bằng hai cách, bấm giờ c
 
 ## Bài A3 — Báo Cáo Kiểm Toán Mini (~20 phút)
 
-**File:** `exercises/ex03_mini_audit_report.py`
+**File:** `ex03_mini_audit_report.py`
 **Ôn lại:** Banner Grabbing (bài về nhà) + tư duy phòng thủ Blue Team
 
 Bạn không còn là hacker — bạn là **chuyên gia kiểm toán an ninh**. Với mỗi cổng mở trên máy mình: lấy Banner → chấm mức rủi ro → đề xuất cách xử lý.
@@ -149,7 +149,7 @@ KHUYẾN NGHỊ XỬ LÝ (Remediation):
 ## Chuẩn bị (làm 1 lần, trên MÁY A)
 
 ```bash
-cd week02_code/lan_exercises
+cd week02_code
 python3 lan_target_server.py
 ```
 
@@ -173,7 +173,7 @@ IP hợp lệ có dạng `192.168.x.x`, `10.x.x.x` hoặc `172.16–31.x.x`.
 
 ## Bài B1 — Bắt Liên Lạc (~20 phút) — chạy trên MÁY B
 
-**File:** `lan_exercises/lan_ex01_first_contact.py`
+**File:** `lan_ex01_first_contact.py`
 
 **Yêu cầu:**
 1. Nhập IP Máy A (code sẽ tự chặn nếu bạn gõ IP công cộng).
@@ -197,7 +197,7 @@ CỔNG    MÁY A (qua LAN)     MÁY B (localhost)
 
 ## Bài B2 — Điểm Danh Thiết Bị Trong Nhà (~25 phút) — chạy trên MÁY B
 
-**File:** `lan_exercises/lan_ex02_host_discovery.py`
+**File:** `lan_ex02_host_discovery.py`
 
 Lần này bạn **không hỏi IP Máy A**. Bạn phải tự tìm nó giữa 254 địa chỉ có thể có — đúng cách một quản trị mạng kiểm kê xem trong nhà đang có bao nhiêu thiết bị.
 
@@ -227,7 +227,7 @@ Tổng cộng: 4 thiết bị đang bật trong mạng.
 
 ## Bài B3 — Song Đấu Tường Lửa (~30 phút) — hai bạn hai vai
 
-**File:** `lan_exercises/lan_ex03_firewall_duel.py`
+**File:** `lan_ex03_firewall_duel.py`
 
 **MÁY A = Blue Team** (phòng thủ) · **MÁY B = Red Team** (trinh sát)
 
