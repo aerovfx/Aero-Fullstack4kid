@@ -48,16 +48,16 @@ def scan_host(ip):
 if __name__ == "__main__":
     # BẢO MẬT KHÓA HỌC: Công cụ kiểm kê phòng thủ này chỉ quét an toàn trên 127.0.0.1 (Localhost)
     # Tuyệt đối không thay đổi thành IP của mạng Wi-Fi (Ví dụ 192.168.1.x) để đảm bảo tuân thủ tiêu chuẩn an toàn!
-    target_ip = "127.0.0.1" 
-    
+    target_ip = "127.0.0.1"
+
     print(f"Đang kiểm tra an ninh mạng trên thiết bị {target_ip}...\n")
-    
+
     all_results = scan_host(target_ip)
-    
+
     print("=" * 60)
     for item in sorted(all_results, key=lambda x: (x["ip"], x["port"])):
         print(f"{item['ip']:15} Port {item['port']:<5} {item['service']}")
-        
+
     print("\nKhuyến nghị phòng thủ:")
     print("- Đóng Telnet (23) nếu không dùng.")
     print("- Hạn chế SSH (22) chỉ cho máy tin cậy.")

@@ -1,4 +1,3 @@
-   
 # 11_buffer_demo.py
 
 MAX_SIZE = 64

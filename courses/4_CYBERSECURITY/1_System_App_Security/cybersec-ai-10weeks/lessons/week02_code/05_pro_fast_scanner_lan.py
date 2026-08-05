@@ -1,8 +1,8 @@
 import socket
 import time
-import concurrent.futures 
+import concurrent.futures
 
-# 1. THAY ĐỔI QUAN TRỌNG: Đổi thành IP LAN của máy đích.
+# Đích quét: điền IP LAN của máy đích.
 #
 # AN TOÀN - ĐỌC KỸ: chỉ được điền IP của MÁY CHÍNH BẠN trong mạng riêng
 # ở nhà hoặc phòng lab, và phải được chủ mạng đồng ý. Xem quy trình đầy đủ
@@ -18,8 +18,8 @@ def scan_port(port):
     """Hàm nhiệm vụ: Đi gõ cửa 1 cổng cụ thể."""
     scanner = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # Thời gian timeout 0.5s là phù hợp cho mạng LAN nội bộ
-    scanner.settimeout(0.5) 
-    
+    scanner.settimeout(0.5)
+
     try:
         if scanner.connect_ex((target_ip, port)) == 0:
             print(f"[+] PHÁT HIỆN CỔNG MỞ: {port}")
@@ -29,15 +29,15 @@ def scan_port(port):
     finally:
         scanner.close()
 
-max_threads = 500 
+max_threads = 500
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=max_threads) as executor:
-    # 2. THAY ĐỔI QUAN TRỌNG: Sửa lại range để quét đủ 65535 cổng
+    # Quét đủ 65535 cổng
     executor.map(scan_port, range(1, 65536))
 
 end_time = time.time()
 
-# 3. THAY ĐỔI QUAN TRỌNG: Sắp xếp lại danh sách các cổng từ nhỏ đến lớn
+# Sắp xếp danh sách cổng từ nhỏ đến lớn cho dễ đọc
 open_ports.sort()
 
 print("\n" + "="*50)
