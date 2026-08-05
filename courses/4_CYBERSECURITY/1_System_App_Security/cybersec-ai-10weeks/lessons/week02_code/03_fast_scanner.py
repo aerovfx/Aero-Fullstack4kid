@@ -9,7 +9,7 @@ def scan_port(port):
     """Hàm quét 1 cổng duy nhất, sẽ được các công nhân (luồng) gọi."""
     scanner = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     scanner.settimeout(0.5)
-    
+
     try:
         result = scanner.connect_ex((target_ip, port))
         if result == 0:
@@ -36,7 +36,7 @@ for t in threads:
     t.join()
 
 end_time = time.time()
-print("\\n" + "="*40)
+print("\n" + "="*40)
 print(f"BÁO CÁO KẾT QUẢ:")
 print(f"- Tổng số cổng mở: {len(open_ports)} {open_ports}")
 print(f"- Thời gian hoàn thành: {round(end_time - start_time, 2)} giây")

@@ -1,11 +1,8 @@
 import socket
 
-# Khai báo mục tiêu an toàn (Luôn là localhost)
 # AN TOÀN: chỉ được quét localhost (xem cảnh báo pháp lý trong week02.md).
 target_ip = "127.0.0.1"
-
-
-port_to_scan = 9999
+port_to_scan = 9999   # đổi thành 9001 nếu đang chạy 20_lab_target_server.py
 
 # Tạo socket TCP
 scanner = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
