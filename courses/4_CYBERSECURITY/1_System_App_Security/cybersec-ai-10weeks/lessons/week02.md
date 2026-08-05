@@ -49,7 +49,7 @@ Chúng ta sẽ trải qua 3 cấp độ để xây dựng một cỗ máy quét 
 ### Cấp độ 1: Scanner Cơ bản (Quét 1 Cổng)
 Mục tiêu: Dùng hàm `connect_ex()` thay vì `connect()`. Hàm này không làm văng lỗi (crash) khi cổng đóng, mà chỉ trả về mã lỗi.
 
-**`basic_scanner.py`**
+**`01_basic_scanner.py`**
 ```python
 import socket
 
@@ -80,7 +80,7 @@ scanner.close()
 ### Cấp độ 2: Vòng lặp Scanner (Quét Dải Cổng)
 Mục tiêu: Quét tự động từ cổng 1 đến 100 bằng vòng lặp `for`.
 
-**`loop_scanner.py`**
+**`02_loop_scanner.py`**
 ```python
 import socket
 import time
@@ -110,7 +110,7 @@ print(f"Hoàn tất quét trong {round(end_time - start_time, 2)} giây.")
 ### Cấp độ 3: Scanner Tốc độ cao (Multi-threading)
 Mục tiêu: Sử dụng thư viện `threading` để quét hàng ngàn cổng cực nhanh.
 
-**`fast_scanner.py`**
+**`03_fast_scanner.py`**
 ```python
 import socket
 import threading
@@ -163,14 +163,16 @@ print("="*40)
 
 Bộ bài tập ngắn đi kèm tuần này nằm ở [`week02_exercises.md`](week02_exercises.md), gồm 2 nhóm:
 
-- **Nhóm A — Một máy (Localhost)**: 3 bài `ex01…ex03` trong [`week02_code/`](week02_code/)
+- **Nhóm A — Một máy (Localhost)**: 3 bài `21…23_ex_*` trong [`week02_code/`](week02_code/)
   1. Checklist dịch vụ (~15 phút) — ôn Cấp độ 1 + 2
   2. Đấu tốc độ: vòng lặp vs đa luồng (~20 phút) — ôn Cấp độ 3
   3. Báo cáo kiểm toán mini (~20 phút) — Banner Grabbing + tư duy Blue Team
-- **Nhóm B — Hai máy cùng mạng LAN**: 3 bài `lan_ex01…lan_ex03` trong [`week02_code/`](week02_code/)
+- **Nhóm B — Hai máy cùng mạng LAN**: 3 bài `31…33_lan_*` trong [`week02_code/`](week02_code/)
   1. Bắt liên lạc (~20 phút) — hiểu `bind("0.0.0.0")` vs `bind("127.0.0.1")`
   2. Điểm danh thiết bị trong nhà (~25 phút) — host discovery đa luồng
   3. Song đấu tường lửa (~30 phút) — Red Team vs Blue Team, kiểm chứng bản vá
+
+> Hướng dẫn chạy trên 2 MacBook cùng Wi-Fi: [`huong_dan_lab_2_macbook.md`](huong_dan_lab_2_macbook.md)
 
 > [!WARNING]
 > Nhóm B chỉ được thực hiện giữa **hai máy của chính bạn** trên **mạng riêng ở nhà hoặc phòng lab**, và phải được chủ mạng đồng ý. Tuyệt đối không chạy ở Wi-Fi trường học, công ty, ký túc xá hay mạng công cộng.
@@ -214,7 +216,7 @@ Một quy trình quản trị an toàn bao gồm:
 4. Đánh giá mức độ rủi ro.
 5. In ra hướng dẫn (Windows Firewall, ufw, router, v.v.) để đóng cổng.
 
-### Mã Nguồn Công Cụ: `defensive_auditor.py`
+### Mã Nguồn Công Cụ: `12_defensive_auditor.py`
 Công cụ này được thiết kế để chỉ quét an toàn trên `127.0.0.1` (theo quy định của khóa học), liệt kê các dịch vụ đang chạy và tự động đưa ra các lời khuyên bảo mật. Bạn có thể xem mã nguồn tại thư mục `week02_code`.
 
 ### Hướng Dẫn Đóng Cổng (Remediation)
