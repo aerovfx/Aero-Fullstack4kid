@@ -1,10 +1,7 @@
 import socket
 
 # Khai báo mục tiêu an toàn (Luôn là localhost)
-#target_ip = "127.0.0.1"
-target_ip = "76.223.54.146"
-
-
+target_ip = "127.0.0.1"
 port_to_scan = 9999
 
 # Tạo socket TCP
