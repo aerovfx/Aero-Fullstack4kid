@@ -64,6 +64,8 @@ Học xong nhấn `Ctrl + C` ở Terminal 1 để đóng các cổng lab.
                      \___ Wi-Fi nhà bạn __/
 ```
 
+**Hướng dẫn chi tiết cho 2 MacBook cùng Wi-Fi** (lấy IP, tường lửa macOS, khắc phục sự cố): [`../huong_dan_lab_2_macbook.md`](../huong_dan_lab_2_macbook.md)
+
 **Cách chạy:**
 
 ```bash
@@ -96,6 +98,12 @@ sudo ufw delete deny 9001 && sudo ufw delete deny 9002        # Linux
 ```powershell
 Remove-NetFirewallRule -DisplayName "Block Lab 9001"          # Windows
 Remove-NetFirewallRule -DisplayName "Block Lab 9002"
+```
+
+```bash
+# macOS — gỡ luật đã thêm ở bài B3 và bật lại tường lửa
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $(which python3)
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 ```
 
 ## Khắc phục sự cố (nhóm B)
