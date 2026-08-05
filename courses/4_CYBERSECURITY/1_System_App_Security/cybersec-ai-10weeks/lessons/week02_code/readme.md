@@ -17,3 +17,14 @@ Week02 - Service Enumeration
 
 6. Buffer Overflow Demo
    - Mô phỏng khái niệm tràn bộ đệm.
+
+---
+
+## Bài tập tuần 2
+
+| Thư mục | Nội dung |
+| :--- | :--- |
+| `exercises/` | Nhóm A — 3 bài tập một máy, quét `127.0.0.1` |
+| `lan_exercises/` | Nhóm B — 3 bài tập hai máy trong cùng mạng LAN |
+
+Đề bài đầy đủ: [`../week02_exercises.md`](../week02_exercises.md)
