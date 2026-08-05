@@ -172,6 +172,8 @@ Bộ bài tập ngắn đi kèm tuần này nằm ở [`week02_exercises.md`](we
   2. Điểm danh thiết bị trong nhà (~25 phút) — host discovery đa luồng
   3. Song đấu tường lửa (~30 phút) — Red Team vs Blue Team, kiểm chứng bản vá
 
+> Hướng dẫn chạy trên 2 MacBook cùng Wi-Fi: [`huong_dan_lab_2_macbook.md`](huong_dan_lab_2_macbook.md)
+
 > [!WARNING]
 > Nhóm B chỉ được thực hiện giữa **hai máy của chính bạn** trên **mạng riêng ở nhà hoặc phòng lab**, và phải được chủ mạng đồng ý. Tuyệt đối không chạy ở Wi-Fi trường học, công ty, ký túc xá hay mạng công cộng.
 

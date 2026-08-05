@@ -135,6 +135,9 @@ KHUYẾN NGHỊ XỬ LÝ (Remediation):
 
 # NHÓM B — BÀI TẬP HAI MÁY TRONG CÙNG MẠNG LAN
 
+> [!TIP]
+> Dùng 2 MacBook? Xem hướng dẫn chi tiết từng bước (lấy IP, xử lý tường lửa macOS, AP Isolation, dọn dẹp sau buổi học): [`huong_dan_lab_2_macbook.md`](huong_dan_lab_2_macbook.md)
+
 ## Sơ đồ phòng lab
 
 ```text
@@ -257,11 +260,22 @@ New-NetFirewallRule -DisplayName "Block Lab 9002" -Direction Inbound `
     -Protocol TCP -LocalPort 9002 -Action Block
 ```
 
-**macOS:**
+**macOS:** tường lửa mặc định của macOS chặn theo **ứng dụng**, không theo cổng — nên không có lệnh gọn như `ufw deny 9001`. Có 2 cách:
+
+*Cách 1 (dễ) — chặn Python nhận kết nối đến, tức chặn cả 3 cổng cùng lúc:*
 ```bash
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
-sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp $(which python3)
 ```
+Kết quả bài B3 sẽ là "đóng được 3/3" thay vì 2/3 — vẫn đúng bài, chỉ khác con số. Ghi chú điều này vào báo cáo.
+
+*Cách 2 (nâng cao) — chặn đúng từng cổng bằng `pf`:*
+```bash
+echo "block in proto tcp from any to any port {9001, 9002}" | sudo tee /etc/pf.anchors/lab.week02
+sudo pfctl -f /etc/pf.anchors/lab.week02 -e
+```
+
+Chi tiết đầy đủ cho MacBook: [`huong_dan_lab_2_macbook.md`](huong_dan_lab_2_macbook.md)
 
 > [!IMPORTANT]
 > **Dọn dẹp bắt buộc sau khi học xong** (nếu không máy bạn sẽ giữ luật lạ mãi mãi):
@@ -271,6 +285,10 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
 > ```powershell
 > Remove-NetFirewallRule -DisplayName "Block Lab 9001"       # Windows
 > Remove-NetFirewallRule -DisplayName "Block Lab 9002"
+> ```
+> ```bash
+> sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp $(which python3)   # macOS cách 1
+> sudo pfctl -d && sudo rm /etc/pf.anchors/lab.week02                                  # macOS cách 2
 > ```
 > Và nhớ `Ctrl + C` để tắt `lan_target_server.py` trên Máy A.
 
