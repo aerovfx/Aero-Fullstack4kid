@@ -38,6 +38,7 @@ Chào mừng bạn đến với khoá học **An ninh mạng & Ứng dụng AI t
 
 | Tài liệu / Document | Mô tả / Description |
 |---------------------|---------------------|
+| [🎓 Lộ Trình CEH / CEH Alignment](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/lessons/CEH_alignment.md) | Bản đồ gắn 10 tuần vào 20 module & 5 giai đoạn CEH, từ điển thuật ngữ / Maps all 10 weeks to CEH modules and the 5 hacking phases |
 | [Lịch Trình Học / Schedule](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/schedule.md) | Phân bổ 20 buổi học chi tiết và yêu cầu đầu ra / Detail schedule for 20 sessions and deliverables |
 | [Thiết Bị Phòng Lab / Components Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/references/components.md) | Danh sách linh kiện lab thực hành (Wi-Fi Card, Pi...) / Hardware lab components shopping list |
 | [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersec-ai-10weeks/references/software.md) | Hướng dẫn cài đặt Kali Linux, VS Code, Ollama / Setup instructions for Kali, VS Code, Ollama |

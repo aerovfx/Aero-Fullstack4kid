@@ -29,6 +29,28 @@ Trong tuần học đầu tiên này, chúng ta sẽ đặt nền móng vững c
 - **Máy chủ (Server):** Tạo socket -> `bind` (gắn IP/Port) -> `listen` (nghe) -> `accept` (chấp nhận kết nối).
 - **Máy khách (Client):** Tạo socket -> `connect` (gọi điện tới Server).
 
+### 4. Nền Tảng Ethical Hacking / Introduction to Ethical Hacking (CEH Module 01)
+
+Trước khi viết dòng code tấn công đầu tiên, bạn phải hiểu **mình đang đứng ở đâu trong một cuộc tấn công** và **luật chơi**. Đây là kiến thức nền của CEH Module 01.
+
+**a) Tam giác CIA — thứ ta bảo vệ / kẻ địch muốn phá:**
+- **Confidentiality (Bí mật):** chỉ người được phép mới đọc được dữ liệu.
+- **Integrity (Toàn vẹn):** dữ liệu không bị sửa trái phép.
+- **Availability (Sẵn sàng):** hệ thống luôn phục vụ được.
+
+**b) Năm giai đoạn của một cuộc tấn công (5 Phases of Hacking):**
+
+```text
+1. Reconnaissance → 2. Scanning → 3. Gaining Access → 4. Maintaining Access → 5. Clearing Tracks
+   (Trinh sát)        (Quét)        (Chiếm quyền)       (Duy trì)               (Xoá dấu vết)
+```
+
+Việc lập trình Socket tuần này là **viên gạch đầu tiên** cho giai đoạn **Scanning** — muốn "gõ cửa" một cổng để xem nó mở hay đóng (Tuần 2), trước hết phải biết một chương trình kết nối mạng hoạt động thế nào.
+
+**c) Bạn là hacker loại nào?** Khoá học này đào tạo **White Hat (mũ trắng)** — chuyên gia bảo mật hành động *có phép*. Đối lập là Black Hat (tội phạm) và Grey Hat (lằn ranh, vẫn phạm luật). Ranh giới không nằm ở kỹ năng, mà nằm ở **sự cho phép (authorization)**.
+
+> Toàn bộ khung tư duy CEH được trình bày ở [`CEH_alignment.md`](CEH_alignment.md). Hãy đọc lướt tài liệu đó một lần trước khi vào Tuần 2.
+
 ---
 
 ## Cảnh Báo An Toàn & Đạo Đức / Safety Warnings and Ethical Notices
@@ -421,3 +443,48 @@ plt.show()
 | :--- | :--- | :--- | :--- | :--- |
 | **Tuân Thủ An Toàn** | Tuyệt đối ràng buộc socket vào `127.0.0.1`, xử lý ngoại lệ `try...except` và `logging` chuyên nghiệp. | Hardcode `127.0.0.1` nhưng thiếu logging vết sự cố. | Code chạy được trên Localhost nhưng gán IP `0.0.0.0`. | Không tuân thủ nguyên tắc an toàn Localhost. |
 | **Hoàn Thành Bài Tập Code** | Hoàn thành xuất sắc cả 4 bài (Chat 2 chiều, Secure Logging Server, Crypto Socket Chat & Colab TCP test). | Hoàn thành Bài 1.1 và Bài 1.2 đúng yêu cầu. | Code có lỗi trôi vòng lặp hoặc chỉ gửi được 1 tin nhắn rồi ngắt. | Không nộp mã nguồn thực thi. |
+
+---
+
+## 🎓 Góc Nhìn CEH / CEH Alignment
+
+> Mục này gắn kiến thức Tuần 1 vào khung chuẩn CEH. Xem bản đồ tổng ở [`CEH_alignment.md`](CEH_alignment.md).
+
+### Ánh xạ CEH (CEH Mapping)
+
+| Hạng mục | Nội dung |
+| :--- | :--- |
+| Module CEH | **M01** Introduction to Ethical Hacking · nền tảng cho **M03** Scanning Networks |
+| Giai đoạn tấn công | Đặt nền cho **Scanning** (giai đoạn 2/5) |
+| Vai trò | Cả Red (hiểu cách công cụ kết nối) lẫn Blue (viết server ghi log, chặn IP lạ) |
+
+### Methodology — Vì sao Socket là gốc của mọi công cụ mạng
+
+Mọi công cụ tấn công/phòng thủ mạng (Nmap, scanner, sniffer, C2, backdoor) đều dựng trên cùng bộ khối: `socket() → connect()/bind() → send()/recv()`. Hiểu chắc vòng đời này ở Tuần 1 thì các tuần sau chỉ là biến tấu:
+- `connect_ex()` để dò cổng → **Port Scanner (Tuần 2)**
+- `bind('0.0.0.0')` để mở dịch vụ ra LAN → **máy mục tiêu (Tuần 2 lab)**
+- gửi/nhận gói thô → **Scapy, sniffing (Tuần 6)**
+
+### Thuật ngữ CEH cần thuộc (Key Terminology)
+
+| Tiếng Việt | English | Trong Tuần 1 |
+| :--- | :--- | :--- |
+| Điểm cuối | Endpoint | Chính là socket |
+| Địa chỉ loopback | Loopback address | `127.0.0.1` — sandbox an toàn |
+| Bắt tay 3 bước | Three-way handshake | SYN → SYN-ACK → ACK của TCP |
+| Ủy quyền | Authorization | Ranh giới White/Black Hat |
+| Bề mặt tấn công | Attack Surface | Mỗi cổng mở là một điểm trên bề mặt |
+
+### Câu hỏi ôn thi kiểu CEH (Exam-Style Questions)
+
+**1.** Yếu tố nào của tam giác CIA bị vi phạm khi kẻ tấn công nghe lén và đọc được mật khẩu truyền dạng thô?
+- A. Integrity  B. Availability  C. **Confidentiality**  D. Non-repudiation
+
+**2.** Địa chỉ `127.0.0.1` được gọi là gì và vì sao an toàn để học?
+> *Đáp án:* Loopback address — dữ liệu không bao giờ rời khỏi máy bạn, nên không thể vô tình tấn công máy khác.
+
+**3.** Sắp xếp đúng thứ tự 5 giai đoạn tấn công của CEH.
+> *Đáp án:* Reconnaissance → Scanning → Gaining Access → Maintaining Access → Clearing Tracks.
+
+**4.** Điều gì phân biệt một White Hat với một Black Hat — kỹ năng hay sự cho phép?
+> *Đáp án:* Sự cho phép (authorization). Cùng một kỹ thuật, có phép là hợp pháp, không phép là phạm tội.
