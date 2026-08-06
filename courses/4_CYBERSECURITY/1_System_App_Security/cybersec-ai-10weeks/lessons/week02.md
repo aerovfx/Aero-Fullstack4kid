@@ -26,6 +26,26 @@ Trong tuần 2, chúng ta sẽ bước vào giai đoạn đầu tiên của mọ
     - Nếu cổng ĐÓNG: Máy đích phản hồi `RST` (Reset). Kết nối thất bại.
 - *Lưu ý:* Kỹ thuật này rất ồn ào và dễ bị Tường lửa (Firewall) hoặc hệ thống phát hiện xâm nhập (IDS) ghi lại log.
 
+#### 2b. Các kiểu quét cổng theo CEH & 6 cờ TCP (CEH Module 03)
+
+CEH phân loại nhiều kiểu quét, mỗi kiểu lợi dụng cách khác nhau mà TCP phản hồi **6 cờ (flags)**: `SYN`, `ACK`, `FIN`, `RST`, `PSH`, `URG`. Chúng ta code TCP Connect Scan, nhưng bạn cần biết cả họ để đọc đề thi và hiểu vì sao hacker thật hiếm khi dùng Connect Scan:
+
+| Kiểu quét | Gói gửi đi | Nếu cổng MỞ | Ồn ào? | Ghi chú |
+| :--- | :--- | :--- | :--- | :--- |
+| **TCP Connect** (`-sT`) | Bắt tay 3 bước đầy đủ | Hoàn tất handshake | Rất ồn | Ta code hôm nay; luôn bị log |
+| **SYN / Stealth** (`-sS`) | Chỉ `SYN` | Nhận `SYN-ACK` rồi gửi `RST` (không hoàn tất) | Ít ồn hơn | Kiểu "mặc định" của hacker (Nmap, Tuần 5) |
+| **FIN** (`-sF`) | Chỉ `FIN` | *Không* phản hồi | Lén | Né được firewall đơn giản |
+| **XMAS** (`-sX`) | `FIN+PSH+URG` | *Không* phản hồi | Lén | "Cây thông" vì bật nhiều cờ |
+| **NULL** (`-sN`) | Không cờ nào | *Không* phản hồi | Lén | Không hiệu quả với Windows |
+| **UDP** (`-sU`) | Gói UDP | Thường im lặng | Chậm | Cho DNS, SNMP... |
+
+**Ba trạng thái cổng (Port States) theo CEH — quan trọng cho Tuần 5:**
+- **Open (Mở):** có dịch vụ đang lắng nghe.
+- **Closed (Đóng):** không có dịch vụ, nhưng máy vẫn trả lời (`RST`).
+- **Filtered (Bị lọc):** firewall nuốt gói tin, không có phản hồi → ta không biết mở hay đóng.
+
+> Scanner tự viết của ta chỉ phân biệt được Open/Closed. Muốn thấy "Filtered" và dùng SYN scan, cần quyền root và gói tin thô — đó là lý do Tuần 5 chuyển sang Nmap.
+
 ### 3. Đa luồng (Multi-threading) là gì?
 - Nếu dùng một vòng lặp bình thường để quét 65535 cổng, và mỗi cổng mất 1 giây để chờ phản hồi (timeout), bạn sẽ mất hơn 18 tiếng!
 - **Đa luồng (Threading)** cho phép Python mở hàng chục, hàng trăm "công nhân" (threads) đi gõ cửa các cổng cùng một lúc, rút ngắn thời gian quét xuống chỉ còn vài phút hoặc vài giây.
@@ -384,3 +404,60 @@ Khi dùng VS Code (hoặc Cursor), nó sẽ tự động bật các Language Ser
 ```
 
 **Kết luận:** Không có dấu hiệu của mã độc hoặc dịch vụ bất thường. Những cổng mở ra mạng nội bộ đều thuộc dịch vụ hệ thống của Apple, còn toàn bộ dịch vụ lập trình (Database, Web server, Editor) đều được giới hạn ở `localhost`. Đây là một bức tranh bảo mật chuẩn mực!
+
+---
+
+## 🎓 Góc Nhìn CEH / CEH Alignment
+
+> Mục này gắn kiến thức Tuần 2 vào khung chuẩn CEH. Xem bản đồ tổng ở [`CEH_alignment.md`](CEH_alignment.md).
+
+### Ánh xạ CEH (CEH Mapping)
+
+| Hạng mục | Nội dung |
+| :--- | :--- |
+| Module CEH | **M03** Scanning Networks (trọng tâm) · mở đầu **M04** Enumeration (Banner Grabbing) |
+| Giai đoạn tấn công | **Scanning** (giai đoạn 2/5) — và Banner Grabbing bắc cầu sang giai đoạn nhận diện dịch vụ |
+| Vai trò | Red (port scanner) và Blue (`12_defensive_auditor.py`, kiểm kê bằng `lsof`) |
+
+### Methodology — Quy trình quét chuẩn CEH
+
+CEH dạy scanning theo trình tự có hệ thống, và các bài Tuần 2 đi đúng thứ tự này:
+
+```text
+1. Host Discovery      → máy còn sống không?        (lan_ex01: is_alive / "TCP ping")
+2. Port Scanning       → cổng nào mở?               (basic → loop → fast scanner)
+3. Service/Version     → dịch vụ gì đứng sau cổng?  (Banner Grabbing, bài về nhà)
+4. OS Fingerprinting   → hệ điều hành gì?           (giới thiệu, làm sâu ở Tuần 5 với Nmap)
+5. Vulnerability Map   → lỗ hổng nào?               (07_vulnerability_lookup — tra CVE)
+```
+
+Từ **Scanning** sang **Enumeration**: quét cho biết "cổng 22 mở", còn Banner Grabbing (Enumeration) cho biết "đó là OpenSSH 8.9" — chi tiết này mới tra được CVE để tấn công.
+
+### Thuật ngữ CEH cần thuộc (Key Terminology)
+
+| Tiếng Việt | English | Trong Tuần 2 |
+| :--- | :--- | :--- |
+| Trinh sát chủ động | Active Reconnaissance | Quét cổng có chạm mục tiêu |
+| Quét lén | Stealth / SYN Scan | Kiểu quét không hoàn tất handshake |
+| Trạng thái cổng | Port State | Open / Closed / Filtered |
+| Thu thập biểu ngữ | Banner Grabbing | Moi tên & phiên bản phần mềm |
+| Liệt kê | Enumeration | Bước sau Scanning, moi chi tiết dịch vụ |
+| Dấu vân tay HĐH | OS Fingerprinting | Đoán hệ điều hành qua đặc điểm gói tin |
+| Bề mặt tấn công | Attack Surface | Mỗi cổng mở làm bề mặt rộng thêm |
+
+### Câu hỏi ôn thi kiểu CEH (Exam-Style Questions)
+
+**1.** Kiểu quét nào hoàn tất trọn vẹn bắt tay 3 bước, nên đáng tin cậy nhất nhưng cũng dễ bị IDS ghi log nhất?
+- A. SYN Scan  B. **TCP Connect Scan**  C. FIN Scan  D. NULL Scan
+
+**2.** Một cổng trả về trạng thái **Filtered** nghĩa là gì?
+> *Đáp án:* Firewall đã chặn/nuốt gói tin dò, nên scanner không nhận được phản hồi và không xác định được cổng mở hay đóng.
+
+**3.** Trong họ 6 cờ TCP, XMAS Scan bật những cờ nào?
+> *Đáp án:* `FIN + PSH + URG` (nên gọi là "cây thông Noel" vì "sáng đèn" nhiều cờ).
+
+**4.** Banner Grabbing thuộc giai đoạn nào trong 5 giai đoạn tấn công, và vì sao nó quan trọng hơn việc chỉ biết cổng mở?
+> *Đáp án:* Thuộc bước Enumeration (nối tiếp Scanning). Biết *phiên bản* phần mềm mới tra được CVE cụ thể để chọn exploit — chỉ biết "cổng mở" thì chưa tấn công được.
+
+**5.** Vì sao hacker thật thường dùng SYN Scan (`-sS`) thay cho Connect Scan (`-sT`)?
+> *Đáp án:* SYN Scan không hoàn tất handshake (gửi `RST` sau khi nhận `SYN-ACK`), nên nhiều hệ thống không ghi lại thành một kết nối hoàn chỉnh → ít để lại dấu vết hơn.
