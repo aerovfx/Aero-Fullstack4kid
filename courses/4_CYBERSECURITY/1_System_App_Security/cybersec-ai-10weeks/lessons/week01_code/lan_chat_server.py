@@ -27,6 +27,7 @@ print("="*50)
 print(f"🌍 LAN CHAT SERVER ĐANG CHẠY!")
 print(f"👉 Hãy nói với máy tính thứ 2 nhập IP này vào Client: {lan_ip}")
 print(f"👉 Cổng (Port): 3667")
+print(f"👉 Cổng (Port): 6776")
 print("="*50)
 print("Đang chờ người thứ 2 kết nối...")
 
