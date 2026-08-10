@@ -21,3 +21,9 @@ platform/node_modules/
 platform/dist/
 platform/dist-ssr/
 platform/*.local
+
+# Nguyên liệu thô tải từ mạng (quá lớn, không nên đưa vào repo)
+courses/2_SOFTWARE_ENGINEERING/1_Web_Mobile/raw_materials/
+
+# PDF giáo trình CEH v13 bản scan (dung lượng rất lớn, build Pages không dùng)
+courses/*/*/*/CEHv13PDF/

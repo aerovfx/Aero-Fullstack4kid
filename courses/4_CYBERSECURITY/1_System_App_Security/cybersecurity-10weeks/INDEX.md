@@ -1,87 +1,91 @@
-# Khoá Học: Ethical Hacking & Pentesting Thực Chiến (CEH v12 & CompTIA Security+ Aligned)
+# Khoá Học: Ethical Hacking & Penetration Testing 20 Tuần (CEH v13 Official Curriculum)
 
-Chào mừng bạn đến với khoá học **Ethical Hacking & Pentesting Thực Chiến (10 Tuần)**. Chương trình đào tạo chuẩn STEM được thiết kế bám sát theo khung kỹ năng của chứng chỉ quốc tế **Certified Ethical Hacker (CEH v12)** và **CompTIA Security+**, kết hợp giữa lý thuyết an ninh mạng chuẩn mực và các bài lab thực hành phòng thủ an toàn trên môi trường máy ảo cách ly (Local Sandbox).
+Chào mừng bạn đến với khoá học **Ethical Hacking & Penetration Testing (20 Tuần)**. Chương trình được **viết lại hoàn toàn theo đúng giáo trình chính thức CEH v13** (`CEHv13PDF`): **mỗi tuần tương ứng đúng một Module trong sách**, kèm phần lý thuyết tóm tắt, bài tập thực hành minh hoạ và code cho từng tuần.
 
 ---
 
-## 🗺️ Bản Đồ Lộ Trình CEH v12 Aligned / Course Roadmap
+## 🎯 Nguyên Tắc Khóa Học
+
+1. **Bám sát 100% giáo trình CEH v13** — 20 tuần = 20 Module, đúng thứ tự chính thức.
+2. **Real Labs** — thực hành trên phòng lab ảo cách ly (Kali VM + `127.0.0.1` / Metasploitable / DVWA), tuyệt đối không đụng hệ thống thật.
+3. **Defensive-first mindset** — mỗi kỹ thuật tấn công đều kèm cách phòng thủ.
+4. **CEH Code of Ethics** — chỉ thực hành trong môi trường được phép.
+
+---
+
+## 🗺️ Bản Đồ Lộ Trình 20 Tuần / 20-Module Roadmap
 
 ```
-                                    ┌────────────────────────────────────────────────────────┐
-                                    │  PHẦN 1: TRINH SÁT, THĂM DÒ & BẢO MẬT HỆ THỐNG (W1-W5) │
-                                    │  PART 1: RECONNAISSANCE, SCANNING & SYSTEM SECURITY    │
-                                    └──────────────────────────┬─────────────────────────────┘
-                                                               │
-                                         Tuần 1: Footprinting, OSINT & Quy tắc Đạo đức CEH
-                                         Tuần 2: Quét Mạng & Kỹ thuật Nmap (Scanning Networks)
-                                         Tuần 3: System Security, C/C++ Pointers & Memory Layout
-                                         Tuần 4: Đa luồng, Buffer Overflow Defense & Malware Concept
-                                         Tuần 5: Network Sniffing, Wireshark & ARP Spoof Detection
-                                                               │
-                                                               ▼
-                                    ┌────────────────────────────────────────────────────────┐
-                                    │  PHẦN 2: BẢO MẬT WEB, MÃ HÓA & AI SOC OPERATIONS(W6-W10)│
-                                    │  PART 2: WEB SECURITY, CRYPTOGRAPHY & AI SOC OPERATOR  │
-                                    └──────────────────────────┬─────────────────────────────┘
-                                                               │
-                                         Tuần 6: Social Engineering & Phishing Email Analysis
-                                         Tuần 7: Web Application Security & OWASP Top 10 Audit
-                                         Tuần 8: Cryptography, Bcrypt Hashing & Wi-Fi Security
-                                         Tuần 9: AI Threat Hunting & SAST Code Review
-                                         Tuần 10: SOC Operations, Incident Response & Capstone Day
-                                                               │
-                                                               ▼
-                                    ┌────────────────────────────────────────────────────────┐
-                                    │             BẢO VỆ DỰ ÁN CUỐI KHOÁ / DEMO DAY          │
-                                    └────────────────────────────────────────────────────────┘
+                    ┌────────────────────────────────────────────────────────────┐
+                    │  GIAI ĐOẠN 1: INFORMATION SECURITY & TRINH SÁT (W1-W5)    │
+                    └────────────────────────────────────────────────────────────┘
+   W1  Module 01: Introduction to Ethical Hacking
+   W2  Module 02: Footprinting and Reconnaissance
+   W3  Module 03: Scanning Networks
+   W4  Module 04: Enumeration
+   W5  Module 05: Vulnerability Analysis
+                    ┌────────────────────────────────────────────────────────────┐
+                    │  GIAI ĐOẠN 2: SYSTEM & NETWORK ATTACKS (W6-W10)          │
+                    └────────────────────────────────────────────────────────────┘
+   W6  Module 06: System Hacking
+   W7  Module 07: Malware Threats
+   W8  Module 08: Sniffing
+   W9  Module 09: Social Engineering
+  W10  Module 10: Denial-of-Service
+                    ┌────────────────────────────────────────────────────────────┐
+                    │  GIAI ĐOẠN 3: NETWORK TRAFFIC & WEB HACKING (W11-W15)    │
+                    └────────────────────────────────────────────────────────────┘
+  W11  Module 11: Session Hijacking
+  W12  Module 12: Evading IDS, Firewalls, and Honeypots
+  W13  Module 13: Hacking Web Servers
+  W14  Module 14: Hacking Web Applications
+  W15  Module 15: SQL Injection
+                    ┌────────────────────────────────────────────────────────────┐
+                    │  GIAI ĐOẠN 4: EMERGING TECH & CRYPTO (W16-W20)           │
+                    └────────────────────────────────────────────────────────────┘
+  W16  Module 16: Hacking Wireless Networks
+  W17  Module 17: Hacking Mobile Platforms
+  W18  Module 18: IoT and OT Hacking
+  W19  Module 19: Cloud Computing
+  W20  Module 20: Cryptography
 ```
 
 ---
 
 ## 🗂️ Danh Mục Tài Liệu / Document Index
 
-| Tài liệu / Document | Mô tả / Description |
-|---------------------|---------------------|
-| [Lịch Trình Học / Schedule](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/schedule.md) | Phân bổ 20 buổi học chi tiết bám sát CEH v12 Modules và Checklist đầu ra |
-| [Thiết Bị Phòng Lab / Components Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/references/components.md) | Danh sách thiết bị phần cứng & công cụ phòng lab với giá VNĐ |
-| [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/references/software.md) | Setup Kali Linux, Metasploitable, Wireshark, VS Code, Python |
-| [An Toàn & Đạo Đức / Safety & Ethics](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/references/safety.md) | Quy định an toàn Pentesting, CEH Code of Ethics và Luật An ninh mạng |
-| [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/projects/final_project.md) | 3 Hướng đề tài tốt nghiệp Capstone và Rubric 100 điểm |
-| [Google Colab Notebooks](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10weeks/notebooks/cybersecurity_10weeks_colab.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/) Notebook thực hành trực tiếp trên trình duyệt / Mobile |
+| Tài Liệu | Mô Tả |
+|----------|-------|
+| [Lịch Trình 20 Tuần](schedule.md) | Bảng phân bổ tuần → Module CEH v13 → Lab → Bài tập |
+| [Bài Học Tuần 01-20](lessons/) | File `week01.md` → `week20.md`, mỗi file = 1 Module CEH v13 |
+| [Code Thực Hành](lessons/) | Thư mục `weekNN_code/` kèm mỗi tuần |
+| [Lab Manual CEH v13](CEHv13PDF/CEHv13%20-%20Lab%20Manual.pdf) | Lab chính thức của EC-Council |
+| [Giáo Trình 20 Module](CEHv13PDF/) | PDF source: `CEHv13 - Module NN - *.pdf` |
+| [An Toàn & Đạo Đức](references/safety.md) | CEH Code of Ethics & Luật An ninh mạng VN |
+| [Components / Lab BOM](references/components.md) | Thiết bị phần cứng phòng lab |
+| [Software Setup](references/software.md) | Cài đặt Kali, Python, Wireshark, công cụ |
 
 ---
 
-## 📦 Danh Mục Thiết Bị Phòng Lab (BOM) / Hardware Bill of Materials
+## 📊 Phân Bổ Thời Gian & Đánh Giá
 
-| Tên Thiết Bị / Component | Thông Số Kỹ Thuật / Specification | SL / Qty | Giá Ước Tính / Est Price | Nơi Mua Đề Xuất / Suggested Source |
-|--------------------------|-----------------------------------|----------|---------------------------|-------------------------------------|
-| USB Wi-Fi Monitor Card   | Chipset RT3070 hoặc AR9271 (Hỗ trợ Monitor Mode & Packet Injection) | 1 | 250,000 VNĐ | Shopee / Lazada |
-| Raspberry Pi 4 Model B   | RAM 4GB (Dùng làm máy chủ mục tiêu DVWA/Metasploitable giả lập) | 1 | 1,500,000 VNĐ | Raspberry Pi VN / Shopee |
-| USB Live Flash Drive 32GB| USB 3.0 High Speed (Chạy Kali Linux 2024 Persistent Live) | 1 | 120,000 VNĐ | Tiki / Phong Vũ |
+- **Lý thuyết CEH v13**: 30%
+- **Thực hành Lab**: 40%
+- **Lập trình công cụ bảo mật**: 30%
+
+### Tiêu Chí Đánh Giá (per Week)
+| Hạng Mục | Điểm |
+|----------|------|
+| Lab thực hành trong tuần | 40% |
+| Code công cụ / bài tập minh hoạ | 30% |
+| Rubric tuần (kiểm tra lý thuyết + case study) | 30% |
+
+### Đánh Giá Tổng Khóa
+- Điểm trung bình 20 tuần: 70%
+- Dự án Capstone cuối khóa: 30%
 
 ---
 
-## 🛠️ Công Nghệ & Phần Mềm Sử Dụng / Software Stack
-
-- **Hệ điều hành**: Kali Linux (VMware / VirtualBox) & Windows / macOS Host.
-- **Ngôn ngữ lập trình**: Python 3.10+ và C++ (GCC/G++ 11+).
-- **Công cụ CEH Standard**: Nmap, Wireshark, Scapy, Hashcat, Aircrack-ng, Burp Suite Community, OWASP ZAP.
-- **Mô hình AI Security**: Ollama (chạy local Llama 3) & APIs (Gemini/OpenAI).
-
----
-
-## 📊 Phân Bổ Thời Gian & Đánh Giá / Time Distribution & Grading
-
-- **Lý thuyết CEH/Security+**: 30%
-- **Thực hành Lab thực chiến**: 40%
-- **Lập trình công cụ tự động hóa bảo mật**: 30%
-
-### Tiêu Chí Đánh Giá / Assessment Rubric
-- **Bài tập & thực hành Lab tuần học**: 40%
-- **Mã nguồn công cụ cá nhân / GitHub repo**: 20%
-- **Dự án cuối khoá (Capstone Project)**: 40% (Bao gồm Báo cáo Pentest Report, Code và Demo Day).
-
-## Chuyên đề học tiếp
-
-- [Software Reverse Engineering & Secure Patching](../software-reverse-engineering-10weeks/INDEX.md): phân tích PE Windows, x64dbg, control-flow audit, secure patching và anti-tamper trong môi trường được ủy quyền.
-- [Cisco ASA Firewall Administration](../asa-firewall-10weeks/INDEX.md): vận hành và hardening firewall ASA.
+## 🔗 Liên Kết Chuyên Đề Liên Quan
+- [Cybersecurity & AI (10 tuần)](../cybersec-ai-10weeks/INDEX.md)
+- [Software Reverse Engineering (10 tuần)](../software-reverse-engineering-10weeks/INDEX.md)

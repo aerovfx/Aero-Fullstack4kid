@@ -480,3 +480,63 @@ matrix = nullptr;
 ```
 
 *(Cuối tài liệu thực sự / Actual end of document)*
+Tóm tắt chủ đề
+Trong những quá trình trước như FOOTPRINTING & SCANNING, ta đã hiểu được cách thu nhập thông tin từ bất kì tổ chức, trang web hoặc một mạng lưới nào đó. Chúng ta cũng đã thảo luận về một vài công cụ có thể giúp ích trong việc thu thập thông tin về mục tiêu cần tìm.
+
+Bây giờ chúng ta sẽ tiến lại gần mục tiêu để quan sát và thu thập các thông tin cụ thể. Những thông tin này rất nhạy cảm, như thông tin mạng lưới, tài nguyên mạng lưới, các đường dẫn, CNMP, DNS và các thông tin liên quan đến giao thức, người dùng hay thông tin của một nhóm nào đó, v..v… Các thông tin này là cần thiết để truy cập vào hệ thống.
+
+Khái niệm
+Enumeration (Điều Tra)
+
+Trong giai đoạn Điều Tra, kẻ xâm nhập khởi tạo các kết nối hoạt động với mục tiêu. Với kết nối hoạt động này, các truy vấn trực tiếp được tạo ra để nhận được nhiều thông tin hơn. Những thông tin này giúp xác định các điểm yếu của hệ thống. Khi kẻ tấn công phát hiện ra các điểm yếu, chúng có thể truy cập trái phép bằng cách sử dụng thông tin được thu thập này để chiếm đoạt tài sản.
+
+Thông tin bị điều tra trong giai đoạn này là:
+
+Thông tin định tuyến
+Thông tin SNMP
+Thông tin DNS
+Tên máy
+Thông tin người dùng
+Thông tin nhóm
+Ứng dụng và biểu ngữ
+Thông tin chia sẻ qua mạng
+Tài nguyên mạng
+Trong các giai đoạn trước, chúng ta không cần quá quan tâm đến bất kỳ vấn đề pháp lý nào. Nhưng sử dụng các công cụ cho giai đoạn điều tra có thể vượt qua ranh giới pháp lý và có thể bị quy tội thành đồng bọn của kẻ tấn công. Bạn cần phải được cho phép để thực hiện các hoạt động này.
+
+Kỹ thuật điều tra (Techniques for Enumeration)
+Sử dụng Email ID (Enumeration Using Email ID)
+
+Việc trích xuất thông tin bằng ID email có thể cung cấp thông tin hữu ích như tên người dùng, tên miền, v.v. Địa chỉ email chứa tên người dùng và tên miền trong đó.
+
+Sử dụng mật khẩu mặc định (Enumeration using Default Password)
+
+Một cách khác để điều tra là sử dụng mật khẩu mặc định. Mọi thiết bị và phần mềm đều có thông tin đăng nhập và cài đặt mặc định. Cài đặt và cấu hình mặc định này được khuyến nghị thay đổi ngay khi người dùng có sản phẩm.
+
+Một số (thật ra là hầu hết) người dùng tiếp tục sử dụng mật khẩu và cài đặt mặc định. Điều này dễ dàng cho kẻ tấn công truy cập trái phép bằng thông tin xác thực mặc định. Phát hiện cài đặt mặc định, cấu hình và mật khẩu của một dòng thiết bị không phải là vấn đề lớn.
+
+Sử dụng SNMP (Enumeration using SNMP)
+
+Việc điều tra bằng SNMP là một quá trình thu thập thông tin thông qua SNMP. Các kẻ tấn công sử dụng các chuỗi cộng đồng mặc định hoặc đoán chuỗi để trích xuất thông tin của một thiết bị. Giao thức SNMP được phát triển để cho phép quản trị viên quản lý thiết bị (máy chủ, bộ định tuyến, thiết bị chuyển mạch, máy trạm trên mạng IP).
+
+Nó cho phép quản trị viên mạng quản lý hiệu suất mạng của mạng tìm, khắc phục sự cố và giải quyết các vấn đề về mạng, thiết kế và lập kế hoạch phát triển mạng. SNMP là một giao thức giữa các tầng ứng dụng. Nó làm nhiệm vụ liên lạc giữa các nhà quản lý và các đại lý.
+
+Hệ thống SNMP bao gồm ba yếu tố:
+
+Trình quản lý SNMP (SNMP manager)
+Các tác nhân SNMP (nút được quản lý) (SNMP agents (managed node))
+Cơ sở thông tin quản lý (MIB) (Management Information Base (MIB))
+Tấn công dò mật khẩu trên thư mục hoạt động (Brute Force Attack on Active Directory)
+
+Active Directory (AD) cung cấp lệnh và kiểm soát tập trung của người dùng miền, máy tính và máy in mạng. Nó hạn chế quyền truy cập vào nguồn mạng chỉ cho người dùng và máy tính được xác định. AD là một mục tiêu lớn, một nguồn thông tin lớn cho kẻ tấn công.
+
+Tấn công Brute Force để khai thác, hoặc tạo truy vấn đến các dịch vụ LDAP được thực hiện để thu thập thông tin như tên người dùng, địa chỉ, thông tin xác thực, thông tin đặc quyền, v.v.
+
+Thông qua chuyển vùng DNS (Enumeration through DNS Zone Transfer)
+
+Điều tra qua quá trình chuyển vùng DNS bao gồm trích xuất thông tin như định vị máy chủ DNS, bản ghi DNS, các thông tin liên quan đến mạng có giá trị khác như tên máy chủ, địa chỉ IP, tên người dùng, v…v…
+
+Chuyển vùng là quá trình cập nhật các máy chủ DNS. Tệp vùng mang thông tin có giá trị được truy xuất bởi kẻ tấn công. UDP 53 được sử dụng cho các yêu cầu DNS từ các máy chủ DNS. TCP 53 được sử dụng để chuyển vùng DNS đảm bảo việc chuyển giao.
+
+Các dịch vụ và cổng mạng (Services and Ports to Enumerate):
+
+
