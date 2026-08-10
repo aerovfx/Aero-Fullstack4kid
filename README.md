@@ -2,6 +2,12 @@
 
 Kho giáo trình công nghệ theo lộ trình 10 tuần, gồm bài giảng, code minh họa, bài tập, đồ án và tư liệu tham khảo cho sáu nhóm ngành.
 
+## 🌐 Xem web trực tuyến
+
+Mở danh mục khóa học trên web (GitHub Pages):
+
+👉 **[https://aerovfx.github.io/Aero-Fullstack4kid/](https://aerovfx.github.io/Aero-Fullstack4kid/)**
+
 ## Điều hướng nhanh
 
 - [Danh mục toàn bộ khóa học](#danh-mục-khóa-học)
@@ -135,6 +141,10 @@ Aero-Fullstack4kid/
 ```
 
 ## Chạy nền tảng web
+
+Bản web tĩnh (danh mục toàn bộ khóa học) đã được deploy GitHub Pages: 👉 **[https://aerovfx.github.io/Aero-Fullstack4kid/](https://aerovfx.github.io/Aero-Fullstack4kid/)**
+
+Ngoài ra còn có nền tảng React/Vite (phát triển cục bộ):
 
 Yêu cầu Node.js và npm:
 
