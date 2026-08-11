@@ -1,6 +1,6 @@
 # Tuần 5: Vulnerability Analysis (CEH v13 Module 05)
 
-> Tương ứng: `CEHv13PDF/CEHv13 - Module 05 - Vulnerability Analysis.pdf`
+> Module CEH v13 tương ứng: **05 — Vulnerability Analysis**. Nội dung đã được chuẩn hóa sang Markdown.
 
 ## Mục Tiêu Tuần / Week Objectives
 

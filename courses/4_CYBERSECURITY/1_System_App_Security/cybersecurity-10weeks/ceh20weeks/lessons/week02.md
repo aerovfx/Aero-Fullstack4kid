@@ -1,6 +1,6 @@
 # Tuần 2: Footprinting and Reconnaissance (CEH v13 Module 02)
 
-> Tương ứng: `CEHv13PDF/CEHv13 - Module 02 - Footprinting and Reconnaissance.pdf`
+> Module CEH v13 tương ứng: **02 — Footprinting and Reconnaissance**. Nội dung đã được chuẩn hóa sang Markdown.
 
 ## Mục Tiêu Tuần / Week Objectives
 

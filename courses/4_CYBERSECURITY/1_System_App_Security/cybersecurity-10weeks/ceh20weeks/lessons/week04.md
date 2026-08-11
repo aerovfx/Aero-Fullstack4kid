@@ -1,6 +1,6 @@
 # Tuần 4: Enumeration (CEH v13 Module 04)
 
-> Tương ứng: `CEHv13PDF/CEHv13 - Module 04 - Enumeration.pdf`
+> Module CEH v13 tương ứng: **04 — Enumeration**. Nội dung đã được chuẩn hóa sang Markdown.
 
 ## Mục Tiêu Tuần / Week Objectives
 

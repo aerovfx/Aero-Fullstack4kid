@@ -1,6 +1,6 @@
 # Tuần 1: Introduction to Ethical Hacking (CEH v13 Module 01)
 
-> Tương ứng: `CEHv13PDF/CEHv13 - Module 01 - Introduction to Ethical Hacking.pdf`
+> Module CEH v13 tương ứng: **01 — Introduction to Ethical Hacking**. Nội dung đã được chuẩn hóa sang Markdown.
 
 ## Mục Tiêu Tuần / Week Objectives
 

@@ -12,7 +12,7 @@ course_path: "courses/4_CYBERSECURITY/1_System_App_Security/cybersecurity-10week
 
 ## Chương trình CEH v13 (20 tuần = 20 Module)
 
-Mỗi tuần khớp đúng một Module trong sách `CEHv13PDF/`, có lý thuyết, bài tập minh hoạ và code trong `ceh20weeks/`:
+Mỗi tuần khớp đúng một Module CEH v13, có lý thuyết Markdown, bài tập minh hoạ và code trong `ceh20weeks/`:
 
 | Tuần | Module CEH v13 | Chủ đề |
 |------|----------------|--------|
@@ -42,4 +42,4 @@ Mỗi tuần khớp đúng một Module trong sách `CEHv13PDF/`, có lý thuy�
 - **Giáo trình 20 tuần:** `INDEX.md` (đã cập nhật roadmap 20 module)
 - **Bài học tuần 01–20:** `ceh20weeks/lessons/week01.md` → `week20.md`
 - **Code mỗi tuần:** `ceh20weeks/CODE/weekNN_*.py`
-- **PDF giáo trình CEH v13 (20 files):** `CEHv13PDF/`
+- **Giáo trình Markdown CEH v13 (20 tuần):** `ceh20weeks/lessons/`
