@@ -1,6 +1,6 @@
 # Khoá Học: Ethical Hacking & Penetration Testing 20 Tuần (CEH v13 Official Curriculum)
 
-Chào mừng bạn đến với khoá học **Ethical Hacking & Penetration Testing (20 Tuần)**. Chương trình được **viết lại hoàn toàn theo đúng giáo trình chính thức CEH v13** (`CEHv13PDF`): **mỗi tuần tương ứng đúng một Module trong sách**, kèm phần lý thuyết tóm tắt, bài tập thực hành minh hoạ và code cho từng tuần.
+Chào mừng bạn đến với khoá học **Ethical Hacking & Penetration Testing (20 Tuần)**. Chương trình được tổ chức thành **20 tuần tương ứng 20 Module CEH v13**, ưu tiên tài liệu Markdown để dễ tìm kiếm, chỉnh sửa và quản lý bằng Git.
 
 ---
 
@@ -56,11 +56,9 @@ Chào mừng bạn đến với khoá học **Ethical Hacking & Penetration Test
 
 | Tài Liệu | Mô Tả |
 |----------|-------|
-| [Lịch Trình 20 Tuần](schedule.md) | Bảng phân bổ tuần → Module CEH v13 → Lab → Bài tập |
-| [Bài Học Tuần 01-20](lessons/) | File `week01.md` → `week20.md`, mỗi file = 1 Module CEH v13 |
-| [Code Thực Hành](lessons/) | Thư mục `weekNN_code/` kèm mỗi tuần |
-| [Lab Manual CEH v13](CEHv13PDF/CEHv13%20-%20Lab%20Manual.pdf) | Lab chính thức của EC-Council |
-| [Giáo Trình 20 Module](CEHv13PDF/) | PDF source: `CEHv13 - Module NN - *.pdf` |
+| [Giáo án tổng thể 20 tuần](ceh20weeks/GIAO_AN_20_TUAN.md) | Chuẩn đầu ra, tiến độ, lab và đánh giá |
+| [Bài học tuần 01-20](ceh20weeks/lessons/) | File `week01.md` → `week20.md`, mỗi file = 1 Module CEH v13 |
+| [Code thực hành](ceh20weeks/CODE/) | Script phòng thủ tương ứng từng tuần |
 | [An Toàn & Đạo Đức](references/safety.md) | CEH Code of Ethics & Luật An ninh mạng VN |
 | [Components / Lab BOM](references/components.md) | Thiết bị phần cứng phòng lab |
 | [Software Setup](references/software.md) | Cài đặt Kali, Python, Wireshark, công cụ |

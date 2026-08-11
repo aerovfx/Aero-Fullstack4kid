@@ -1,6 +1,6 @@
 # Tuần 6: System Hacking (CEH v13 Module 06)
 
-> Tương ứng: `CEHv13PDF/CEHv13 - Module 06 - System Hacking.pdf`
+> Module CEH v13 tương ứng: **06 — System Hacking**. Nội dung đã được chuẩn hóa sang Markdown.
 
 ## Mục Tiêu Tuần / Week Objectives
 

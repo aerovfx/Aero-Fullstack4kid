@@ -1,6 +1,6 @@
 # Tuần 3: Scanning Networks (CEH v13 Module 03)
 
-> Tương ứng: `CEHv13PDF/CEHv13 - Module 03 - Scanning Networks.pdf`
+> Module CEH v13 tương ứng: **03 — Scanning Networks**. Nội dung đã được chuẩn hóa sang Markdown.
 
 ## Mục Tiêu Tuần / Week Objectives
 
