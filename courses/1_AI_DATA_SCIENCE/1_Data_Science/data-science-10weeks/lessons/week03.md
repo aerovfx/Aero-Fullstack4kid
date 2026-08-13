@@ -484,3 +484,66 @@ C = np.dot(A, B)
 ### Bài lab cụ thể
 
 Dùng một mảng doanh thu 12 tháng để thực hiện cộng/trừ/nhân theo phần tử, lọc các tháng vượt mục tiêu và kết hợp nhiều điều kiện bằng `np.logical_and`, `np.logical_or`. Không dùng vòng lặp Python.
+
+## Nội dung bài học: phép toán vector hóa
+
+Vector hóa nghĩa là mô tả phép tính cho cả mảng. NumPy thực thi phép tính ở tầng mã tối ưu, vì vậy code ngắn, dễ đọc và thường nhanh hơn vòng lặp Python.
+
+### Số học theo phần tử
+
+```python
+import numpy as np
+
+revenue = np.array([120, 135, 128, 160, 172, 190])
+cost = np.array([80, 92, 90, 105, 110, 125])
+
+profit = revenue - cost
+tax = profit * 0.10
+profit_after_tax = profit - tax
+
+print("Lợi nhuận:", profit)
+print("Sau thuế:", profit_after_tax)
+print("Tăng trưởng doanh thu:", np.diff(revenue))
+```
+
+Các phép `+`, `-`, `*`, `/` giữa hai mảng cùng hình dạng được áp dụng cho từng vị trí tương ứng. Đây **không phải** là phép nhân ma trận.
+
+### So sánh và Boolean mask
+
+```python
+target = 150
+
+above_target = revenue > target
+print(above_target)
+print("Tháng đạt mục tiêu:", revenue[above_target])
+
+# Doanh thu trên mục tiêu đồng thời chi phí dưới 120
+efficient = np.logical_and(revenue > target, cost < 120)
+print("Tháng hiệu quả:", revenue[efficient])
+
+# Doanh thu thấp hoặc chi phí cao
+needs_review = np.logical_or(revenue < 130, cost > 120)
+print("Vị trí cần xem lại:", np.where(needs_review)[0])
+```
+
+### Broadcasting
+
+Broadcasting cho phép NumPy kết hợp các mảng có hình dạng tương thích. Ví dụ cộng điểm thưởng riêng cho từng môn vào tất cả học viên:
+
+```python
+scores = np.array([
+    [7, 8, 6],
+    [9, 7, 8],
+    [6, 8, 9],
+])
+bonus = np.array([0.5, 1.0, 0.0])
+
+adjusted_scores = scores + bonus
+print(adjusted_scores)
+```
+
+NumPy coi `bonus` có dạng `(1, 3)` và mở rộng nó theo số hàng. Nếu các chiều không tương thích, chương trình sẽ báo lỗi broadcasting.
+
+### Bài tập code
+
+Tạo mảng nhiệt độ 7 ngày. Dùng vector hóa để đổi từ độ C sang độ F, lọc ngày trên 35°C và thay mọi giá trị bất thường ngoài khoảng `[-10, 50]` bằng `np.nan`.

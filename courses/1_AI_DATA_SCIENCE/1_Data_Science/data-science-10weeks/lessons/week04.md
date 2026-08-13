@@ -485,3 +485,78 @@ filtered = data[data > data.mean()]
 1. So sánh phép nhân theo phần tử (`*`) với phép nhân ma trận (`@`).
 2. Sắp xếp ma trận theo hàng và theo cột với `np.sort(axis=...)`.
 3. Kết hợp slicing và boolean indexing để lấy các phần tử lớn hơn trung bình của ma trận.
+
+## Nội dung bài học: slicing, lọc và ma trận
+
+### Cắt lát mảng
+
+Cú pháp cơ bản là `array[start:stop:step]`. Với mảng hai chiều, phần trước dấu phẩy chọn hàng, phần sau chọn cột.
+
+```python
+import numpy as np
+
+matrix = np.array([
+    [12, 5,  8,  3],
+    [7,  14, 2,  9],
+    [6,  11, 15, 4],
+    [10, 1,  13, 16],
+])
+
+print("Hai hàng đầu:\n", matrix[:2, :])
+print("Cột thứ hai:\n", matrix[:, 1])
+print("Khối giữa 2x2:\n", matrix[1:3, 1:3])
+print("Cách một cột:\n", matrix[:, ::2])
+```
+
+> Một slice thường là **view** trỏ đến dữ liệu gốc. Nếu cần chỉnh sửa độc lập, dùng `matrix[1:3, 1:3].copy()`.
+
+### Lọc theo điều kiện
+
+```python
+mean_value = matrix.mean()
+larger_than_mean = matrix[matrix > mean_value]
+even_and_large = matrix[(matrix % 2 == 0) & (matrix >= 10)]
+
+print("Trung bình:", mean_value)
+print("Lớn hơn trung bình:", larger_than_mean)
+print("Số chẵn từ 10 trở lên:", even_and_large)
+```
+
+Khi kết hợp điều kiện trên mảng, dùng `&`, `|`, `~` và đặt từng điều kiện trong ngoặc. Không dùng trực tiếp `and`, `or`, `not` của Python.
+
+### Nhân ma trận
+
+```python
+matrix_a = np.array([[1, 2], [3, 4]])
+matrix_b = np.array([[5, 6], [7, 8]])
+
+element_wise = matrix_a * matrix_b
+matrix_product = matrix_a @ matrix_b
+same_result = np.dot(matrix_a, matrix_b)
+
+print("Nhân theo phần tử:\n", element_wise)
+print("Nhân ma trận:\n", matrix_product)
+print("np.dot giống @:", np.array_equal(matrix_product, same_result))
+```
+
+Để nhân `A @ B`, số cột của `A` phải bằng số hàng của `B`. Với `A(m, n)` và `B(n, p)`, kết quả có hình dạng `(m, p)`.
+
+### Sắp xếp theo hàng và cột
+
+```python
+print("Mỗi hàng tăng dần:\n", np.sort(matrix, axis=1))
+print("Mỗi cột tăng dần:\n", np.sort(matrix, axis=0))
+
+# Lấy chỉ số thay vì thay đổi dữ liệu
+order = np.argsort(matrix[:, 0])
+print("Ma trận xếp theo cột đầu:\n", matrix[order])
+```
+
+### Bài tập code tổng hợp
+
+Tạo ma trận điểm `5 × 4`, sau đó:
+
+1. lấy điểm của ba học viên đầu ở hai môn cuối;
+2. tìm mọi điểm lớn hơn trung bình toàn lớp;
+3. sắp xếp học viên theo điểm môn đầu;
+4. nhân ma trận điểm với vector trọng số môn học để tính điểm tổng kết.

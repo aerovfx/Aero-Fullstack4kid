@@ -489,3 +489,61 @@ Tuần này sử dụng trực tiếp hai notebook nhập môn. Hãy chạy lầ
 1. Tạo mảng 1 chiều gồm điểm của 10 học viên và tính tổng, trung bình, tích.
 2. Tạo ma trận 3×3 bằng `np.array`, sau đó nhân toàn bộ ma trận với 2 bằng broadcasting.
 3. Sinh một ma trận ngẫu nhiên 5×5, in `shape`, `dtype`, giá trị nhỏ nhất và lớn nhất.
+
+## Nội dung bài học: NumPy là gì và dùng để làm gì?
+
+**NumPy (Numerical Python)** là thư viện nền tảng để xử lý mảng nhiều chiều và tính toán số trong Python. Khác với `list`, một mảng NumPy thường chứa dữ liệu cùng kiểu, được lưu liên tục và cho phép thực hiện phép toán trên toàn bộ mảng mà không phải tự viết vòng lặp.
+
+NumPy được dùng trong:
+
+- khoa học dữ liệu: xử lý và phân tích khối dữ liệu số;
+- học máy: làm nền tảng cho scikit-learn, TensorFlow và nhiều thư viện khác;
+- tài chính: mô phỏng, tính lợi suất và phân tích chuỗi số;
+- khoa học tự nhiên: mô phỏng và phân tích kết quả thí nghiệm;
+- kỹ thuật: xử lý tín hiệu, hình ảnh và ma trận.
+
+### Tạo mảng 1D và 2D
+
+```python
+import numpy as np
+
+# Mảng một chiều từ list Python
+arr_1d = np.array([1, 2, 3, 4, 5])
+
+# Mảng hai chiều: 3 hàng, 3 cột
+arr_2d = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+])
+
+print(arr_1d)
+print(arr_2d)
+print("Kích thước:", arr_2d.shape)
+print("Số chiều:", arr_2d.ndim)
+print("Kiểu dữ liệu:", arr_2d.dtype)
+```
+
+### Sinh dữ liệu và tính thống kê nhanh
+
+```python
+import numpy as np
+
+rng = np.random.default_rng(seed=42)
+scores = rng.integers(0, 11, size=(5, 4))
+
+print(scores)
+print("Tổng:", np.sum(scores))
+print("Trung bình:", np.mean(scores))
+print("Nhỏ nhất:", np.min(scores))
+print("Lớn nhất:", np.max(scores))
+print("Trung bình từng học viên:", np.mean(scores, axis=1))
+```
+
+> `axis=0` tổng hợp theo từng cột; `axis=1` tổng hợp theo từng hàng. Hãy luôn kiểm tra `shape` trước khi chọn trục.
+
+### Kiểm tra nhanh
+
+1. `arr_2d.shape` trả về giá trị gì?
+2. Vì sao nên dùng `np.random.default_rng()` thay cho trạng thái ngẫu nhiên toàn cục?
+3. Hãy sửa code để tính trung bình của từng môn học thay vì từng học viên.
