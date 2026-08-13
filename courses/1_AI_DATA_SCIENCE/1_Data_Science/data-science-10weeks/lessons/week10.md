@@ -488,3 +488,32 @@ from sklearn.linear_model import LinearRegression
 ### Bài lab tích hợp cuối khóa
 
 Chọn một notebook SciPy, sửa thành một bài toán có dữ liệu đầu vào do học viên tự tạo, trực quan hóa kết quả và viết phần giải thích. Liên hệ bước tính toán khoa học này với quy trình chuẩn bị đặc trưng hoặc đánh giá mô hình học máy của tuần 10.
+
+## Nội dung bài học: SciPy từ dữ liệu đến nghiệm số
+
+SciPy xây dựng trên NumPy và cung cấp các thuật toán chuyên biệt cho tín hiệu, tối ưu hóa, tích phân, phương trình vi phân, thống kê và đại số tuyến tính.
+
+```python
+import numpy as np
+from scipy import integrate, optimize
+
+# Tích phân sin(x) từ 0 đến pi
+value, error = integrate.quad(np.sin, 0, np.pi)
+print(value, error)  # xấp xỉ 2.0 và sai số ước lượng
+
+# Tối ưu tổng bình phương với tổng các biến bằng 1
+def objective(x):
+    return np.sum(x**2)
+
+constraint = {"type": "eq", "fun": lambda x: np.sum(x) - 1}
+result = optimize.minimize(
+    objective,
+    x0=np.array([0.5, 0.5, 0.5]),
+    constraints=constraint,
+)
+print(result.success, result.x, result.fun)
+```
+
+Khi dùng thuật toán số, không chỉ báo cáo nghiệm: cần kiểm tra `success`, sai số, điều kiện biên và độ nhạy với giá trị khởi tạo.
+
+- [Code SciPy tổng hợp: tín hiệu, tối ưu, tích phân, ODE và thống kê]({{ site.baseurl }}/learn/data-science-10weeks/code/scipy_examples.py)

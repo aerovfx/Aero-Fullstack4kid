@@ -560,3 +560,5 @@ Tạo ma trận điểm `5 × 4`, sau đó:
 2. tìm mọi điểm lớn hơn trung bình toàn lớp;
 3. sắp xếp học viên theo điểm môn đầu;
 4. nhân ma trận điểm với vector trọng số môn học để tính điểm tổng kết.
+
+- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/numpy_examples.py)

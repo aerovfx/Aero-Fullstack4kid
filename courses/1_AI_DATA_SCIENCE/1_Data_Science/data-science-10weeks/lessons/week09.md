@@ -499,3 +499,33 @@ sns.heatmap(df.corr(), annot=True)
 ### Sản phẩm tuần
 
 Chọn một bài toán trong các notebook trên và tạo một dashboard tĩnh gồm tối thiểu 4 biểu đồ. Mỗi biểu đồ phải có câu hỏi phân tích, tiêu đề, đơn vị, chú giải và một nhận xét rút ra từ dữ liệu.
+
+## Nội dung bài học: chọn biểu đồ phù hợp
+
+- Line chart: xu hướng theo thời gian hoặc một trục liên tục.
+- Bar chart: so sánh các nhóm rời rạc.
+- Scatterplot: quan hệ giữa hai biến số.
+- Histogram/KDE: hình dạng phân phối của một biến.
+- Boxplot/violinplot: so sánh phân phối giữa nhiều nhóm.
+- Heatmap: xem nhanh cấu trúc tương quan.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
+
+rng = np.random.default_rng(42)
+frame = pd.DataFrame(rng.normal(size=(200, 4)), columns=list("ABCD"))
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+sns.histplot(frame["A"], kde=True, ax=axes[0])
+axes[0].set(title="Phân phối A", xlabel="Giá trị", ylabel="Tần suất")
+sns.heatmap(frame.corr(), annot=True, cmap="coolwarm", ax=axes[1])
+axes[1].set_title("Ma trận tương quan")
+fig.tight_layout()
+plt.show()
+```
+
+- [Code Matplotlib tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/code/matplotlib_examples.py)
+- [Code Seaborn tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/code/seaborn_examples.py)

@@ -482,3 +482,31 @@ Dùng các file [CSV]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch
 ### Bài lab cụ thể
 
 Chuẩn hóa tên cột, nối dữ liệu bằng `concat` hoặc `merge`, tạo một cột dẫn xuất bằng `apply`, sau đó xuất bảng cuối cùng ra Excel. Học viên phải ghi rõ khóa nối và cách xử lý bản ghi không khớp.
+
+## Nội dung bài học: biến đổi và hợp nhất
+
+```python
+import pandas as pd
+
+customers = pd.DataFrame({
+    "customer_id": [1, 2, 3],
+    "name": ["An", "Bình", "Chi"],
+})
+orders = pd.DataFrame({
+    "order_id": [101, 102, 103, 104],
+    "customer_id": [1, 1, 2, 4],
+    "amount": [250_000, 400_000, 175_000, 900_000],
+})
+
+# left giữ toàn bộ đơn hàng, kể cả khách chưa có trong bảng customers
+report = orders.merge(customers, on="customer_id", how="left", validate="many_to_one")
+report["name"] = report["name"].fillna("Chưa xác định")
+report["segment"] = report["amount"].apply(
+    lambda value: "High" if value >= 500_000 else "Standard"
+)
+print(report)
+```
+
+Tham số `validate="many_to_one"` giúp phát hiện khóa trùng ngoài dự kiến. Sau `merge`, luôn kiểm tra số dòng và các giá trị thiếu ở cột khóa/tên.
+
+- [Code pipeline Pandas hoàn chỉnh]({{ site.baseurl }}/learn/data-science-10weeks/code/pandas_io_pipeline.py)

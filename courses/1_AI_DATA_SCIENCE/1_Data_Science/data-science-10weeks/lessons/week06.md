@@ -484,3 +484,33 @@ Tiếp tục dùng [bộ dữ liệu Pandas mẫu]({{ site.baseurl }}/learn/data
 1. Dùng `loc` và `iloc` để lấy cùng một tập con, rồi giải thích khác biệt.
 2. Lọc dữ liệu bằng ít nhất hai điều kiện.
 3. Chọn một cột phân loại để `groupby`, tính `count`, `sum`, `mean` và xuất báo cáo thành [CSV mẫu đầu ra]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/output-data.csv).
+
+## Nội dung bài học: chọn, lọc và phân nhóm
+
+```python
+import pandas as pd
+
+people = pd.read_csv("raw_materials/ch04_Pandas/sample-data.csv")
+
+# Chọn theo nhãn và theo vị trí
+names_and_salary = people.loc[:, ["Name", "Salary"]]
+first_three_rows = people.iloc[:3, :]
+
+# Lọc bằng nhiều điều kiện
+experienced = people[(people["Age"] >= 30) & (people["Salary"] >= 80_000)]
+
+# Tạo nhóm tuổi rồi tổng hợp
+people["AgeGroup"] = pd.cut(
+    people["Age"], bins=[0, 29, 39, 120], labels=["20s", "30s", "40+"]
+)
+summary = people.groupby("AgeGroup", observed=True).agg(
+    People=("Name", "count"),
+    AverageSalary=("Salary", "mean"),
+    MaxSalary=("Salary", "max"),
+)
+print(summary)
+```
+
+`loc` làm việc với nhãn; `iloc` làm việc với vị trí số nguyên. Khi lọc nhiều điều kiện, đặt từng điều kiện trong ngoặc và kết hợp bằng `&` hoặc `|`.
+
+- [Code pipeline dùng chung tuần 5–8]({{ site.baseurl }}/learn/data-science-10weeks/code/pandas_io_pipeline.py)

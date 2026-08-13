@@ -50,6 +50,8 @@ groups.each do |group|
       FileUtils.cp_r(raw_materials, File.join(course_dir, "materials"))
       FileUtils.rm_rf(Dir.glob(File.join(course_dir, "materials", "**", ".ipynb_checkpoints")))
     end
+    code_samples = File.join(source_dir, "code")
+    FileUtils.cp_r(code_samples, File.join(course_dir, "code")) if Dir.exist?(code_samples)
 
     lesson_files = Dir.glob(File.join(source_dir, "lessons", "*.md")).sort
     lessons = lesson_files.map.with_index do |path, index|

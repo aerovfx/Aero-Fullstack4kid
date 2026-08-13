@@ -547,3 +547,5 @@ print("Trung bình từng học viên:", np.mean(scores, axis=1))
 1. `arr_2d.shape` trả về giá trị gì?
 2. Vì sao nên dùng `np.random.default_rng()` thay cho trạng thái ngẫu nhiên toàn cục?
 3. Hãy sửa code để tính trung bình của từng môn học thay vì từng học viên.
+
+- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/numpy_examples.py)

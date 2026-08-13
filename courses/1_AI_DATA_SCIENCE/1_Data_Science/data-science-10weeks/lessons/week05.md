@@ -485,3 +485,30 @@ print(df.info())
 ### Bài lab cụ thể
 
 Đọc cùng một tập dữ liệu từ bốn định dạng, kiểm tra `head()`, `info()`, `shape`, rồi xác nhận các cột và số bản ghi có nhất quán hay không. Xuất kết quả đã chuẩn hóa sang CSV, Excel và JSON.
+
+## Nội dung bài học: đọc và ghi dữ liệu với Pandas
+
+Pandas cung cấp `DataFrame` để biểu diễn dữ liệu dạng bảng. Một quy trình nhập dữ liệu tốt luôn kiểm tra kích thước, tên cột, kiểu dữ liệu và vài bản ghi đầu trước khi phân tích.
+
+```python
+from pathlib import Path
+import sqlite3
+import pandas as pd
+
+data_dir = Path("raw_materials/ch04_Pandas")
+csv_data = pd.read_csv(data_dir / "sample-data.csv")
+excel_data = pd.read_excel(data_dir / "sample-data.xlsx")
+json_data = pd.read_json(data_dir / "sample-data.json")
+
+with sqlite3.connect(data_dir / "sample-data.sql") as connection:
+    sql_data = pd.read_sql("SELECT * FROM sample_table", connection)
+
+for name, frame in {"csv": csv_data, "excel": excel_data,
+                    "json": json_data, "sqlite": sql_data}.items():
+    print(name, frame.shape, frame.columns.tolist())
+    print(frame.head(3))
+```
+
+Sau khi kiểm tra, có thể xuất dữ liệu bằng `to_csv`, `to_excel`, `to_json` hoặc `to_sql`. Không ghi đè file gốc; hãy dùng thư mục đầu ra riêng.
+
+- [Code đầy đủ: pandas_io_pipeline.py]({{ site.baseurl }}/learn/data-science-10weeks/code/pandas_io_pipeline.py)

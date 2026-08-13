@@ -547,3 +547,5 @@ NumPy coi `bonus` có dạng `(1, 3)` và mở rộng nó theo số hàng. Nếu
 ### Bài tập code
 
 Tạo mảng nhiệt độ 7 ngày. Dùng vector hóa để đổi từ độ C sang độ F, lọc ngày trên 35°C và thay mọi giá trị bất thường ngoài khoảng `[-10, 50]` bằng `np.nan`.
+
+- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/numpy_examples.py)

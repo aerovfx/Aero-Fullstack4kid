@@ -483,3 +483,36 @@ Sử dụng lại [sample-data.csv]({{ site.baseurl }}/learn/data-science-10week
 ### Bài lab cụ thể
 
 Lập báo cáo trước/sau làm sạch gồm: số ô thiếu, số dòng trùng, kiểu dữ liệu từng cột và các quy tắc xử lý. Lưu bảng sạch sang [JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/output-data.json) để dùng ở tuần 8.
+
+## Nội dung bài học: làm sạch có thể kiểm chứng
+
+```python
+import pandas as pd
+
+people = pd.read_csv("raw_materials/ch04_Pandas/sample-data.csv")
+before = {
+    "rows": len(people),
+    "duplicates": int(people.duplicated().sum()),
+    "missing": people.isna().sum().to_dict(),
+}
+
+cleaned = people.copy()
+cleaned.columns = cleaned.columns.str.strip().str.lower()
+cleaned = cleaned.drop_duplicates()
+cleaned["age"] = pd.to_numeric(cleaned["age"], errors="coerce")
+cleaned["salary"] = pd.to_numeric(cleaned["salary"], errors="coerce")
+cleaned["age"] = cleaned["age"].fillna(cleaned["age"].median())
+cleaned["salary"] = cleaned["salary"].fillna(cleaned["salary"].median())
+
+after = {
+    "rows": len(cleaned),
+    "duplicates": int(cleaned.duplicated().sum()),
+    "missing": cleaned.isna().sum().to_dict(),
+}
+print("Trước:", before)
+print("Sau:", after)
+```
+
+Mỗi quyết định điền khuyết phải có lý do. Median thường phù hợp hơn mean khi dữ liệu có ngoại lệ, nhưng không phải là quy tắc áp dụng cho mọi cột.
+
+- [Code làm sạch và xuất báo cáo]({{ site.baseurl }}/learn/data-science-10weeks/code/pandas_io_pipeline.py)
