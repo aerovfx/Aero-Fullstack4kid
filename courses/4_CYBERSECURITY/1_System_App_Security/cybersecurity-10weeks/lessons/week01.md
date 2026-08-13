@@ -224,3 +224,11 @@ Nén 2 file `crypto_client.py` và `crypto_server.py` kèm theo ảnh chụp mà
 | **1. Tuân thủ An toàn** | Hardcode `127.0.0.1`. Tuyệt đối không để hở IP ra LAN/Public. (30 điểm) | Dùng localhost nhưng code viết thiếu cẩn thận, dễ nhầm lẫn. (20 điểm) | Dùng IP `0.0.0.0`. (0 điểm, FAIL toàn phần). |
 | **2. Logic Mã Hoá** | Mã hoá và giải mã chính xác 2 chiều, xử lý tốt khoảng trắng (space). (40 điểm) | Mã hoá được nhưng thỉnh thoảng lỗi ký tự đặc biệt. (25 điểm) | Mã hoá sai nguyên lý hoặc không chạy được. (10 điểm) |
 | **3. Xử Lý Vòng Lặp** | Client và Server chat qua lại liên tục không bị kẹt (block). Thoát duyên dáng khi gõ EXIT. (30 điểm) | Có vòng lặp nhưng lỗi logic khiến ứng dụng bị treo giữa chừng. (15 điểm) | Chỉ gửi được 1 tin nhắn rồi ngắt kết nối. (0 điểm) |
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

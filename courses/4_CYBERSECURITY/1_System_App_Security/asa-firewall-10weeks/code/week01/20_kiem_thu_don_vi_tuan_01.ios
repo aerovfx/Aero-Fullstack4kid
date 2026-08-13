@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 01 · Bài 20: Kiểm thử đơn vị tuần 01
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W01-B20
+service timestamps log datetime msec
+end
+show running-config

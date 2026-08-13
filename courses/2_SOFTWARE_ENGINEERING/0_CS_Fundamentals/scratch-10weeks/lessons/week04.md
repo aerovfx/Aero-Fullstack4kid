@@ -23,3 +23,11 @@ Vòng `for` phù hợp khi biết trước số lần lặp. Biến tích lũy p
 ## Tự kiểm tra
 
 Ước lượng số vòng lặp mà thuật toán kiểm tra số nguyên tố thực hiện.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.

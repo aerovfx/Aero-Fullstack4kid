@@ -514,3 +514,11 @@ Sau khi kiểm tra, có thể xuất dữ liệu bằng `to_csv`, `to_excel`, `t
 ---
 
 *Kết thúc bài học tuần 5 / End of Week 5*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

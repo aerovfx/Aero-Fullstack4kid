@@ -551,3 +551,11 @@ Tạo mảng nhiệt độ 7 ngày. Dùng vector hóa để đổi từ độ C 
 ---
 
 *Kết thúc bài học tuần 3 / End of Week 3*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

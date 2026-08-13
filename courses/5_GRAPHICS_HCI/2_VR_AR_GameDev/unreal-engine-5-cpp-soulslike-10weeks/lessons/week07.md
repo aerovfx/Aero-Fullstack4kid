@@ -212,3 +212,11 @@ Tạo debug scenario liên tục attack, nhận damage, chết và restart để
 - [ ] UI không poll nặng mỗi frame.
 - [ ] Death event idempotent.
 - [ ] Test restart thành công.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

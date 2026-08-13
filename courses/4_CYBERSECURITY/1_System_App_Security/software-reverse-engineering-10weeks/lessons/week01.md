@@ -410,3 +410,11 @@ Tại sao phải giữ nguyên file gốc (Sample) ở chế độ Read-Only và
 * Chuẩn bị đầy đủ **bộ công cụ** (x64dbg, DIE, HxD, VM) trước khi bắt đầu phân tích.
 * Áp dụng nhất quán **Workflow 7 bước** giúp phân tích có hệ thống và tái lập được.
 * Luôn **ghi chú và chụp ảnh màn hình** để đảm bảo khả năng báo cáo và tái lập kết quả.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

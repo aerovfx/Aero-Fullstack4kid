@@ -538,5 +538,11 @@ Thông qua chuyển vùng DNS (Enumeration through DNS Zone Transfer)
 Chuyển vùng là quá trình cập nhật các máy chủ DNS. Tệp vùng mang thông tin có giá trị được truy xuất bởi kẻ tấn công. UDP 53 được sử dụng cho các yêu cầu DNS từ các máy chủ DNS. TCP 53 được sử dụng để chuyển vùng DNS đảm bảo việc chuyển giao.
 
 Các dịch vụ và cổng mạng (Services and Ports to Enumerate):
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
 
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

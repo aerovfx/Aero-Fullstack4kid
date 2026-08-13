@@ -480,3 +480,11 @@ Dưới đây là đoạn mã nguồn mẫu Rust hoàn chỉnh chạy được. 
 
 - [Mở `week09.rs`](../code/week09.rs)
 - Chạy: `cargo run --bin week09`
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.

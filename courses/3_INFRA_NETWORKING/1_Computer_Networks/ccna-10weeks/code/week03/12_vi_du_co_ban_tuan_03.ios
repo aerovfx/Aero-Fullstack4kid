@@ -1,0 +1,8 @@
+! ccna-10weeks · Tuần 03 · Bài 12: Ví dụ cơ bản tuần 03
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W03-B12
+service timestamps log datetime msec
+end
+show running-config

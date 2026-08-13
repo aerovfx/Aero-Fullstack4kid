@@ -410,3 +410,11 @@ sudo systemctl status ssh
 # Dừng dịch vụ để đóng cổng an toàn
 sudo systemctl stop apache2
 ```
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

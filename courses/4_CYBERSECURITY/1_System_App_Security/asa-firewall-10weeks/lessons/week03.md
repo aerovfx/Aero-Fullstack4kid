@@ -32,4 +32,11 @@ Quy trình gồm: xác minh quyền sở hữu, phê duyệt downtime, sao lưu 
 ## Bài tập
 
 Viết checklist offboarding quản trị viên và bảng bằng chứng audit cần lưu sau một lần password recovery.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

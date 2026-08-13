@@ -33,4 +33,11 @@ Cú pháp/checksum phụ thuộc phiên bản. Không coi “copy thành công�
 ## Bài tập
 
 Thực hiện backup và restore trên thiết bị lab, so sánh cấu hình trước/sau và lập biên bản bằng chứng không chứa secret.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

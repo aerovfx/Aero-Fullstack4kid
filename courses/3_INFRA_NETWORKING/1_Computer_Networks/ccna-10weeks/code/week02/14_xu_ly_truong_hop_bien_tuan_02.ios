@@ -1,0 +1,8 @@
+! ccna-10weeks · Tuần 02 · Bài 14: Xử lý trường hợp biên tuần 02
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W02-B14
+service timestamps log datetime msec
+end
+show running-config

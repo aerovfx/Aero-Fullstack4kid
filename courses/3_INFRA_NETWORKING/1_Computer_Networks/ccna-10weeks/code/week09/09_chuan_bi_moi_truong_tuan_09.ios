@@ -1,0 +1,8 @@
+! ccna-10weeks · Tuần 09 · Bài 09: Chuẩn bị môi trường tuần 09
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W09-B09
+service timestamps log datetime msec
+end
+show running-config

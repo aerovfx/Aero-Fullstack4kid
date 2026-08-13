@@ -484,3 +484,11 @@ FROM debian:bookworm-slim
 
 - [Mở `week10.rs`](../code/week10.rs)
 - Chạy: `cargo run --bin week10`
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

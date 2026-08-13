@@ -76,3 +76,11 @@ finally:
 ## Thử thách cuối buổi
 
 Viết chương trình webcam: nhấn `s` để lưu khung hình vào `output/`, nhấn `g` để chuyển qua lại giữa ảnh màu và ảnh xám, nhấn `q` để thoát. Tên ảnh không được trùng nhau.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

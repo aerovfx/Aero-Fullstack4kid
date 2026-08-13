@@ -446,3 +446,11 @@ if __name__ == '__main__':
 - [Ardupilot Companion Computers Documentation](https://ardupilot.org/dev/docs/companion-computers.html)
 - [ArUco marker detection in OpenCV](https://docs.opencv.org/master/d5/dae/tutorial_aruco_detection.html)
 - [PX4Flow Smart Camera Documentation](https://docs.px4.io/main/en/sensor/px4flow.html)
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

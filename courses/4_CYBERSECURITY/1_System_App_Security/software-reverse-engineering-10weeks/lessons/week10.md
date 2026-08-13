@@ -145,4 +145,11 @@ capstone/
 | Report, limitations và demo | 5 |
 
 Không đạt nếu target ngoài phạm vi, dùng phần mềm thương mại để crack, tạo serial/keygen hoặc nộp patched third-party binary.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

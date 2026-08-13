@@ -359,4 +359,11 @@ Phần dự án cuối khoá được đánh giá dựa trên 4 tiêu chí chín
 - **ROS:** Robot Operating System - Hệ điều hành (middleware) phổ biến cho robot và drone.
 - **Gazebo:** Trình mô phỏng 3D mạnh mẽ thường được dùng với ROS và SITL.
 - **QGroundControl:** Phần mềm điều khiển trạm mặt đất (Ground Control Station) phổ biến.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

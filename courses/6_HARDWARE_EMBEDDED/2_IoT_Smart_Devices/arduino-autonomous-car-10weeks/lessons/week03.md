@@ -393,3 +393,11 @@ Use the table below for teachers / TAs to grade students' practical work this we
 ---
 **Chúc các bạn một tuần học tập vui vẻ và không bị "va chạm"!**
 **Have a fun learning week and stay "collision-free"!**
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

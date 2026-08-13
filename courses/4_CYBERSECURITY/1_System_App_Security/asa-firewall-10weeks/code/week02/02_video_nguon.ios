@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 02 · Bài 02: Video nguồn
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W02-B02
+service timestamps log datetime msec
+end
+show running-config

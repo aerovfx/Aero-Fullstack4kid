@@ -61,3 +61,11 @@ for low in (30, 60, 90):
 ## Thử thách
 
 Xây dựng “máy quét tài liệu”: tìm biên, lấy contour lớn nhất có bốn góc, sau đó vẽ bốn góc lên ảnh gốc. Nâng cao: biến đổi phối cảnh để đưa tài liệu về hình chữ nhật nhìn từ trên xuống.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

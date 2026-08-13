@@ -204,3 +204,11 @@ Viết báo cáo đánh giá an toàn mật mã cho ứng dụng E2EE Messenger:
 ---
 
 *(Bản quyền khóa học: Aero-Fullstack4kid - Cryptography 10 Weeks)*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

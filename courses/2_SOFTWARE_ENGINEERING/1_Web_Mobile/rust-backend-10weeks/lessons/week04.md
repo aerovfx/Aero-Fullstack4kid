@@ -487,3 +487,11 @@ impl Serialize for User {
 
 - [Mở `week04.rs`](../code/week04.rs)
 - Chạy: `cargo run --bin week04`
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.

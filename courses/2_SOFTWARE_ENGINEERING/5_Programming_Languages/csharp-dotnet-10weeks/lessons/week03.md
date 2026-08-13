@@ -15,3 +15,11 @@
 ## Điểm cần nhớ
 
 Ưu tiên quyền sở hữu tài nguyên rõ ràng, kiểu dữ liệu diễn đạt đúng nghiệp vụ và lỗi có thông báo hữu ích. Không bỏ qua compiler warning.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

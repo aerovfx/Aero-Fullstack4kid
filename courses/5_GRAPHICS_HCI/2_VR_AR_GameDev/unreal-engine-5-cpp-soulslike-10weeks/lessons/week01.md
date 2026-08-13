@@ -214,3 +214,11 @@ Week01/
 - [ ] Có sơ đồ class.
 - [ ] Có README và test cases.
 - [ ] Tối thiểu ba commit có ý nghĩa.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

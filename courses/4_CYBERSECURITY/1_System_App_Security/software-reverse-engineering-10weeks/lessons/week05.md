@@ -190,3 +190,11 @@ Tại sao việc tìm kiếm chuỗi văn bản (String References) đôi khi th
 * Hiểu cơ chế hoạt động của ứng dụng Windows GUI và lời gọi Windows API.
 * Sử dụng thành thạo **Intermodular Calls** trong x64dbg để khoanh vùng vị trí gỡ lỗi.
 * Trace và định vị chính xác vị trí hàm kiểm tra dữ liệu đầu vào.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

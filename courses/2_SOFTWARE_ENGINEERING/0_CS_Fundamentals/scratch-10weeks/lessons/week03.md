@@ -23,3 +23,11 @@ Một chương trình đúng không chỉ tính đúng dữ liệu đẹp mà c�
 ## Tự kiểm tra
 
 Vẽ cây quyết định cho bài phân loại tam giác trước khi viết code.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

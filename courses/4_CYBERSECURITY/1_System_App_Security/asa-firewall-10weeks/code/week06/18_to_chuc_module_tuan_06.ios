@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 06 · Bài 18: Tổ chức module tuần 06
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W06-B18
+service timestamps log datetime msec
+end
+show running-config

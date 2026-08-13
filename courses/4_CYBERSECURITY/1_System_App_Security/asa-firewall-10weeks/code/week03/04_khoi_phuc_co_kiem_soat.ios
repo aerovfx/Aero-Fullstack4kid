@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 03 · Bài 04: Khôi phục có kiểm soát
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W03-B04
+service timestamps log datetime msec
+end
+show running-config

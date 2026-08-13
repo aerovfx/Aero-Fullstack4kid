@@ -29,4 +29,11 @@ impl ServerConfigBuilder {
 ## Lab
 
 Benchmark hai phiên bản text processing bằng Criterion, warm-up đủ, đo nhiều sample và ghi median/variance. Chạy Clippy performance lints, nhưng chỉ nhận tối ưu nếu test vẫn đúng và benchmark cải thiện có ý nghĩa.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

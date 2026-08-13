@@ -305,3 +305,11 @@ Pin LiPo (Lithium Polymer) cung cấp dòng xả lớn, rất mạnh mẽ, nhưn
 - Sạc pin bằng sạc chuyên dụng có chức năng Balance (Cân bằng) như B3 hoặc iMax B6. Tuyệt đối không dùng nguồn Adapter thông thường cắm trực tiếp vào pin.
 
 *Lưu ý: Mọi thao tác phần cứng trong các bài sau chỉ được tiến hành dưới sự giám sát của giảng viên, hãy tuân thủ nghiêm ngặt để đảm bảo an toàn cho thiết bị và bản thân!*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

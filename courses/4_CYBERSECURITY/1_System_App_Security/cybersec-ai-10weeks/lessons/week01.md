@@ -488,3 +488,14 @@ Mọi công cụ tấn công/phòng thủ mạng (Nmap, scanner, sniffer, C2, ba
 
 **4.** Điều gì phân biệt một White Hat với một Black Hat — kỹ năng hay sự cho phép?
 > *Đáp án:* Sự cho phép (authorization). Cùng một kỹ thuật, có phép là hợp pháp, không phép là phạm tội.
+## Code minh họa theo buổi
+
+- [Danh sách 20 code tuần 01](../code/week01/README.md) — học lần lượt từ `01_...` đến `20_...`.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

@@ -410,4 +410,11 @@ Các trình biên dịch hiện đại (GCC, Clang, MSVC) được tích hợp s
 | `strcat(dest, src)` | `strncat_s()` hoặc `operator+` | `strcat` gây tràn bộ đệm khi nối chuỗi dài. |
 | `gets(buffer)` | `fgets(buffer, size, stdin)` | `gets()` đã bị gỡ bỏ hoàn toàn khỏi chuẩn C11. |
 | `sprintf(buf, fmt, ...)` | `snprintf(buf, size, fmt, ...)` | `snprintf` giới hạn số ký tự tối đa được ghi. |
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.

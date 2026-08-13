@@ -1,0 +1,8 @@
+! ccna-10weeks · Tuần 04 · Bài 03: Câu Lệnh CLI Cần Nhớ
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W04-B03
+service timestamps log datetime msec
+end
+show running-config

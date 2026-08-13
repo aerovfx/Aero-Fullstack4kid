@@ -33,4 +33,11 @@ Viết text analyzer trả word count, longest word và frequency map. Không đ
 ## Lỗi cần giải thích
 
 Use-after-move, hai mutable borrow cùng lúc, reference sống lâu hơn owner và giữ borrow qua thời điểm cần mutate.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

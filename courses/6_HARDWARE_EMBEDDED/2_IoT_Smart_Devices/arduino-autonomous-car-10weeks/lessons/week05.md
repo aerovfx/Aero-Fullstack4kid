@@ -390,3 +390,11 @@ Sử dụng bảng dưới đây để chấm điểm Mini-project của học v
 
 ---
 *End of Week 5 Materials. Chuẩn bị cho Tuần 6: Tích hợp Cảm biến Siêu Âm và Lập Bản Đồ Tránh Vật Cản (Week 6: Ultrasonic Sensors and Obstacle Avoidance Mapping).*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

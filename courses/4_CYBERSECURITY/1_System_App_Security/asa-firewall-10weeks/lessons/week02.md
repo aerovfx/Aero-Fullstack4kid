@@ -38,4 +38,11 @@ Tên lệnh có thể khác theo phiên bản ASA. Dùng `?` và tài liệu đ�
 ## Bài tập
 
 Tạo cheat sheet 15 lệnh `show`, ghi rõ lệnh nào read-only và dữ liệu nào cần che trước khi chia sẻ log.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

@@ -28,4 +28,11 @@ fn top_even(values: &[i32]) -> Option<i32> {
 ## Lab
 
 Viết postfix evaluator hỗ trợ `+ - * /`, trả `Result`, phát hiện thiếu operand, token sai và chia cho zero. Không dùng `unwrap()` trong implementation.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.

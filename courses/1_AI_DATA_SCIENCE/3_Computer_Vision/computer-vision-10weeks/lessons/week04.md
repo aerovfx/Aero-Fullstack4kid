@@ -65,3 +65,11 @@ Chỉ dùng ảnh/webcam khi người tham gia đồng ý. Không lưu khuôn m�
 ## Thử thách
 
 Làm mờ vùng mặt bằng `cv2.GaussianBlur` thay vì vẽ khung. So sánh kết quả khi mặt nghiêng, đeo khẩu trang và ánh sáng yếu; ghi lại ba giới hạn của Haar Cascade.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.

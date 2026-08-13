@@ -38,4 +38,11 @@ Thiết kế firewall branch-office có outside, inside, DMZ và management. Yê
 ## Rubric 100 điểm
 
 Thiết kế/chính sách 25; cấu hình và hardening 25; kiểm chứng 20; backup/rollback 15; tài liệu, đạo đức và demo 15. Không đạt nếu thực hành ngoài phạm vi được ủy quyền hoặc để lộ bí mật thật.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

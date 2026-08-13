@@ -486,3 +486,11 @@ async fn main() {
 
 - [Mở `week06.rs`](../code/week06.rs)
 - Chạy: `cargo run --bin week06`
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

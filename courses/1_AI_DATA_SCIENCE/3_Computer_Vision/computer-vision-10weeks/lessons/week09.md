@@ -61,3 +61,11 @@ Pixel accuracy có thể cao dù bỏ sót vật thể nhỏ. Nên dùng IoU ho�
 ## Thử thách
 
 Tạo ứng dụng thay nền webcam. Cho phép nhấn phím để đổi giữa ba nền và hiển thị FPS. Nâng cao: so sánh baseline HSV với một mô hình segmentation pretrained trong điều kiện áo màu xanh.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.

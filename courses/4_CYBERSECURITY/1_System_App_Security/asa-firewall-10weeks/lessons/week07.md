@@ -34,4 +34,11 @@ Không cung cấp một chuỗi upgrade “dùng cho mọi máy”: boot command
 ## Bài tập
 
 Viết Method of Procedure gồm pre-check, change, validation và rollback cho một phiên bản giả định; nhóm khác thực hiện tabletop review trước khi lab.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

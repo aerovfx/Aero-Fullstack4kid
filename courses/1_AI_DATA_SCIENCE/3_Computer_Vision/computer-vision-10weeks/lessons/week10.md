@@ -81,3 +81,11 @@ Khóa phiên bản thư viện, thử trên máy khác, chuẩn bị video dự 
 ## Thử thách cuối khóa
 
 Hoàn thiện một đồ án theo nhóm 2–3 người. Nộp mã nguồn, README, dữ liệu mẫu hợp lệ, bảng kết quả đánh giá và video demo 2–4 phút. Mỗi thành viên phải giải thích được một quyết định kỹ thuật và một giới hạn của sản phẩm.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

@@ -11,3 +11,11 @@
 
 ## 4. Bài tập (Challenge)
 - Thực hiện một mini-project trong Figma (ví dụ: redesign màn hình Login).
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

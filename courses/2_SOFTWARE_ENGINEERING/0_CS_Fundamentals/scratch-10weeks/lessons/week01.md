@@ -23,3 +23,11 @@ Chạy [week01.pas]({{ site.baseurl }}/learn/scratch-10weeks/code/week01.pas), n
 ## Tự kiểm tra
 
 Phân biệt lỗi cú pháp, lỗi khi chạy và lỗi logic. Nộp code kèm ba bộ dữ liệu thử.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

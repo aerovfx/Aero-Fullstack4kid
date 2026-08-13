@@ -364,3 +364,11 @@ Khi dùng VS Code (hoặc Cursor), nó sẽ tự động bật các Language Ser
 ```
 
 **Kết luận:** Không có dấu hiệu của mã độc hoặc dịch vụ bất thường. Những cổng mở ra mạng nội bộ đều thuộc dịch vụ hệ thống của Apple, còn toàn bộ dịch vụ lập trình (Database, Web server, Editor) đều được giới hạn ở `localhost`. Đây là một bức tranh bảo mật chuẩn mực!
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

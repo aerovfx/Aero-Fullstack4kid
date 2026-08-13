@@ -34,4 +34,11 @@ Tên image là placeholder. Chỉ dùng image vendor đã phê duyệt và kiể
 ## Bài tập
 
 Lập bảng “CLI hay ASDM?” cho troubleshooting, bulk change, onboarding, audit và emergency recovery; nêu ưu/nhược điểm dựa trên khả năng kiểm soát thay đổi.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.

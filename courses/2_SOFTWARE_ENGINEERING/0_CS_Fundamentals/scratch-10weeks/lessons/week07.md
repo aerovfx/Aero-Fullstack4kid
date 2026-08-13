@@ -23,3 +23,11 @@ Chuỗi có thể được duyệt như mảng ký tự. Khi so sánh không ph�
 ## Tự kiểm tra
 
 Kiểm thử với chuỗi rỗng, một ký tự và chuỗi chỉ chứa khoảng trắng.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

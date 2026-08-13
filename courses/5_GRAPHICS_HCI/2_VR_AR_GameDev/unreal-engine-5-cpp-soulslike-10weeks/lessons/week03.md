@@ -160,3 +160,11 @@ Tạo Animation Blueprint Template hoặc linked layer để Greystone/Terra dù
 - [ ] Locomotion chạy cho cả hai nhân vật.
 - [ ] Không hard-code chỉ số chính.
 - [ ] Character Prototype được tag trong Git.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

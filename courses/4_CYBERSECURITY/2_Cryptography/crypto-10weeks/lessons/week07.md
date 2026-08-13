@@ -165,3 +165,11 @@ Mở Google Colab notebook và thực hiện mô phỏng luồng bắt tay TLS 1
 ---
 
 *(Bản quyền khóa học: Aero-Fullstack4kid - Cryptography 10 Weeks)*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

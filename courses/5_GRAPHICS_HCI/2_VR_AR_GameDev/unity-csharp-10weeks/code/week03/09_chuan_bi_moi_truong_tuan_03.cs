@@ -1,0 +1,9 @@
+// unity-csharp-10weeks · Tuần 03 · Bài 09: Chuẩn bị môi trường tuần 03.
+using System;
+using System.Linq;
+public static class Lesson0309 {
+    public static void Main() {
+        int[] values = { 9, 10, 11 };
+        Console.WriteLine("09 - Chuẩn bị môi trường tuần 03: " + values.Sum());
+    }
+}

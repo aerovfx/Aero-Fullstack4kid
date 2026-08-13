@@ -23,3 +23,11 @@
 ## Tự kiểm tra
 
 Nêu một dữ liệu khiến vòng lặp sai không thể kết thúc và cách phòng tránh.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

@@ -351,3 +351,11 @@ if __name__ == "__main__":
 - **ACK (Acknowledgment):** Xác nhận đã nhận dữ liệu hoặc gói SYN/FIN.
 - **FIN (Finish):** Yêu cầu đóng kết nối một cách êm đẹp.
 - **RST (Reset):** Ngắt kết nối ngay lập tức (thường do cổng đóng hoặc lỗi mạng).
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

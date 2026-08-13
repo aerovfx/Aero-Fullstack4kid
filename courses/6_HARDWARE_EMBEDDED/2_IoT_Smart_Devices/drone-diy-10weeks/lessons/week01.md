@@ -385,3 +385,11 @@ Phần này cung cấp các kiến thức mở rộng giúp học viên tìm hi�
 - Dòng 298 / Line 298: Kiến thức bổ sung.
 - Dòng 299 / Line 299: Kiến thức bổ sung.
 - Dòng 300 / Line 300: Kiến thức bổ sung.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

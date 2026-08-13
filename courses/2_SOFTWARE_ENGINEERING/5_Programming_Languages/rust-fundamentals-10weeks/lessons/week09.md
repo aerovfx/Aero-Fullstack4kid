@@ -28,4 +28,11 @@ fn main() {
 ## Lab
 
 Xây job runner có worker, channel, graceful shutdown và thu lỗi từng job. Nâng cao: viết phiên bản async có timeout/cancellation rồi so sánh, không gọi blocking I/O trực tiếp trong async executor.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.

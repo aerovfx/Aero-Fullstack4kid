@@ -1,0 +1,8 @@
+! ccna-10weeks · Tuần 04 · Bài 13: Kiểm tra dữ liệu tuần 04
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W04-B13
+service timestamps log datetime msec
+end
+show running-config

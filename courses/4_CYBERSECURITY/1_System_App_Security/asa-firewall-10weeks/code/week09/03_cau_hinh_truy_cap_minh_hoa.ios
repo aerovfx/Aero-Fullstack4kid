@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 09 · Bài 03: Cấu hình truy cập minh họa
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W09-B03
+service timestamps log datetime msec
+end
+show running-config

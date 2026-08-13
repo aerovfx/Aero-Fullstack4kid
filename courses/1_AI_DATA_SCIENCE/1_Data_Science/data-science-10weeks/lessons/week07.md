@@ -518,3 +518,11 @@ Mỗi quyết định điền khuyết phải có lý do. Median thường phù 
 ---
 
 *Kết thúc bài học tuần 7 / End of Week 7*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

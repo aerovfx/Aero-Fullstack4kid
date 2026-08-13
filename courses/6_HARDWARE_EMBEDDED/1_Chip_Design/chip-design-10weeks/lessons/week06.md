@@ -11,3 +11,11 @@
 
 ## 4. Bài tập (Challenge)
 - Giải một bài toán logic kỹ thuật số từ yêu cầu thực tế (ví dụ: Mạch điều khiển đèn giao thông).
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

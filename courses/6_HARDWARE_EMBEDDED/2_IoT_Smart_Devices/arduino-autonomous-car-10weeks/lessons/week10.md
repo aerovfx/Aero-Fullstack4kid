@@ -505,3 +505,11 @@ Dự án sẽ được chấm điểm theo thang điểm 100, dựa trên các t
 
 Chúc các bạn có một kỳ Demo Day thật thành công và tự hào về chiếc xe tự hành đầu tiên của mình!
 / Wishing you a very successful Demo Day, be proud of your first autonomous vehicle!
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

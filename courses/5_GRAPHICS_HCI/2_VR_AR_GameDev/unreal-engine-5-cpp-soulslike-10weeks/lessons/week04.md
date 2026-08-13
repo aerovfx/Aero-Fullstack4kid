@@ -168,3 +168,11 @@ Viết test map trong đó Player và AI dummy gọi cùng API `TryAttack()` t�
 - [ ] Spam không phá state.
 - [ ] Interrupted montage được xử lý.
 - [ ] Commit `week04-attack-architecture`.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.

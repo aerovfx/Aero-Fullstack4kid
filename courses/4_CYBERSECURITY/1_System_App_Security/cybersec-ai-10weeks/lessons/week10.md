@@ -445,3 +445,14 @@ Prepare a course summary report (3-5 pages long). Content should include:
 | **Week 7** | Cryptography & Password | Hashing (Bcrypt/Salt/Pepper), WPA2/WPA3 Wi-Fi Security Analysis. |
 | **Week 8-9** | AI OSINT & Code Audit | Prompt Engineering cho Threat Intel, Kiểm toán SAST, Log Parsing. |
 | **Week 10** | Capstone AI SOC Monitoring | Tự động hóa SOC với Machine Learning (Isolation Forest Anomaly Detection). |
+## Code minh họa theo buổi
+
+- [Danh sách 20 code tuần 10](../code/week10/README.md) — học lần lượt từ `01_...` đến `20_...`.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

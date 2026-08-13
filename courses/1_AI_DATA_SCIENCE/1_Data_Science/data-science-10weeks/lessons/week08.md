@@ -512,3 +512,11 @@ Tham số `validate="many_to_one"` giúp phát hiện khóa trùng ngoài dự k
 ---
 
 *Kết thúc bài học tuần 8 / End of Week 8*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

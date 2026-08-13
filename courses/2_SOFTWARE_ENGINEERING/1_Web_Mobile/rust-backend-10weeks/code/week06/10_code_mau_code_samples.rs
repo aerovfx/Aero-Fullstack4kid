@@ -1,0 +1,6 @@
+// rust-backend-10weeks · Tuần 06 · Bài 10: Code Mẫu / Code Samples.
+fn main() {
+    let values = [10, 11, 12];
+    let total: i32 = values.iter().sum();
+    println!("10 - Code Mẫu / Code Samples: {total}");
+}

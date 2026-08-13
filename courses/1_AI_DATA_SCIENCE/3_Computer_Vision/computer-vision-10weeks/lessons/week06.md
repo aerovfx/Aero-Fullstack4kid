@@ -73,3 +73,11 @@ Accuracy cao có thể che giấu lớp yếu. Confusion matrix cho biết cặp
 ## Thử thách
 
 In 20 ảnh dự đoán sai có độ tự tin cao nhất. Với mỗi ảnh, hiển thị nhãn thật, nhãn dự đoán và xác suất; mô tả ít nhất hai kiểu lỗi lặp lại.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

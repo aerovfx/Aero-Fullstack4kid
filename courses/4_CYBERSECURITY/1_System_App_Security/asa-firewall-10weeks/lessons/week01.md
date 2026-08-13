@@ -28,4 +28,11 @@ Không cấu hình thiết bị ở tuần này. Nhóm khác review xem rule có
 ## Hoàn thành khi
 
 Sơ đồ có trust boundary, bảng rule không dùng `any-any allow`, và mỗi ngoại lệ đều có chủ sở hữu cùng ngày rà soát.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 01](../code/week01/README.md), học lần lượt từ `01_...` đến `20_...`.

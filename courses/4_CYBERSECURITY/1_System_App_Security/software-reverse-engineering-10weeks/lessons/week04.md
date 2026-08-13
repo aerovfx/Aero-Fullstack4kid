@@ -405,3 +405,11 @@ Bạn đang trace một vòng lặp chạy 1000 lần và chỉ muốn dừng l�
 * Hiểu cơ chế **CALL/RET** và quản lý Return Address trên Stack.
 * Làm chủ **Conditional Breakpoint** và **Memory Breakpoint** nâng cao.
 * Đọc thành thạo **Call Stack** để truy vết nguồn gốc lời gọi hàm.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.

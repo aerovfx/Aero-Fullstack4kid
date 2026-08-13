@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 10 · Bài 14: Kiểm tra dữ liệu tuần 10
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W10-B14
+service timestamps log datetime msec
+end
+show running-config

@@ -671,3 +671,11 @@ Giáo viên và học sinh dùng bảng sau để đánh giá chất lượng ho
 | **Lập Trình Python (Python Programming)** | Copy paste code bị lỗi thụt lề (syntax). Không hiện được giao diện Matplotlib đồ họa. / Syntax errors, fails to plot GUI. | Chạy thành công file mã nguồn. Biết cách thay đổi tọa độ và quan sát quỹ đạo thay đổi. / Successfully runs and tweaks coordinates. | Tự thiết kế các chướng ngại vật mới khó hơn. Lập trình thành công tính năng Re-planning chặn đường xe. / Designs custom maze maps and successful Re-planning. |
 | **Lập Trình Arduino (Hardware Implementation)** | Xe không theo tuân thủ State Machine, chạy loạn vòng tròn hoặc đâm đầu vào tường không lùi. / Car spins aimlessly or crashes. | Xe vẽ được đường dích dắc sơ bộ. Tuy nhiên rẽ các góc thiếu chính xác làm hỏng toàn bộ lưới chạy. / Car runs rough zigzags but angles drift. | Tích hợp thành công la bàn (Compass IMU). Đọc được yaw/pitch/roll. Xe chạy dích dắc vuông vức hoàn hảo (sai số góc < 2 độ). / Perfect 90-degree turns using IMU. |
 | **Thảo Luận Kỹ Thuật (Technical Discussion)** | Trả lời cho có lệ, không sử dụng thuật ngữ robotics chuyên ngành. / Vague answers without robotics terms. | Trả lời đầy đủ nhưng còn mang tính lý thuyết sách giáo khoa. / Answers fully but mostly textbook theory. | Đưa ra ví dụ thực tế sắc bén. Phân tích rõ ràng hạn chế phần cứng liên quan tới vi điều khiển cấp thấp. / Provides sharp real-world examples and hardware limitation analysis. |
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.

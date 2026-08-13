@@ -376,3 +376,11 @@ def set_mode(vehicle, mode_name):
 
 ---
 **[End of Document - Tài Liệu Nội Bộ Khóa Học / Internal Course Material]**
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

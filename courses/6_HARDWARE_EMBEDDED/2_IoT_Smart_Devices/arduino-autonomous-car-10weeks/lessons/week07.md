@@ -562,3 +562,11 @@ if __name__ == "__main__":
 | **Field Testing** | Xe chạy được qua ít nhất 2 waypoints. | Xe hoàn thành toàn bộ hình vuông (4 waypoints). | Xe di chuyển cực kỳ trơn tru, không đi zigzag, PID chỉnh chuẩn. |
 | **Understanding** | Trả lời được 3/5 câu hỏi thảo luận. | Trả lời được 5/5 câu hỏi thảo luận đầy đủ. | Giải thích sâu về Sensor Fusion và hạn chế của GPS dân sự. |
 | **Homework Video** | Có nộp video xe chạy ngoài trời. | Video rõ nét, hiển thị terminal log cùng lúc. | Video có phân tích lỗi (nếu xe chạy chệch quỹ đạo) và cách sửa. |
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

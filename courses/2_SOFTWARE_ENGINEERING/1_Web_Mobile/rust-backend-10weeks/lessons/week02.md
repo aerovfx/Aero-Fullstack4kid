@@ -487,3 +487,11 @@ fn calculate_length(s: &String) -> usize {
 
 - [Mở `week02.rs`](../code/week02.rs)
 - Chạy: `cargo run --bin week02`
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

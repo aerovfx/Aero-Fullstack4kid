@@ -863,3 +863,11 @@ void stopMotors() {
 | **Trình bày Báo Cáo (Media Report/Video)** | 10% | Đệ trình Video báo cáo chuẩn nét cao. Học viên giải đáp lưu loát các luận điểm câu hỏi. Hình ảnh minh hoạ sinh động trực quan tại thực địa. | Nộp bài và Video theo đúng kỳ hạn. Nhưng nội dung video thiếu dẫn chứng thuyết phục và thiếu minh giải. | Trễ hạn báo cáo nghiêm trọng, không nộp đủ file, hoặc Video có chất lượng âm thanh / hình ảnh kém, mờ nhạt đến mức không nhận dạng được thao tác học viên. |
 
 *-- End of Week 6 Document --*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 05 · Bài 13: Ví dụ cơ bản tuần 05
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W05-B13
+service timestamps log datetime msec
+end
+show running-config

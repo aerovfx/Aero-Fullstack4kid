@@ -486,3 +486,11 @@ async fn create_user(Json(payload): Json<CreateUser>) -> impl IntoResponse {
 
 - [Mở `week07.rs`](../code/week07.rs)
 - Chạy: `cargo run --bin week07`
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

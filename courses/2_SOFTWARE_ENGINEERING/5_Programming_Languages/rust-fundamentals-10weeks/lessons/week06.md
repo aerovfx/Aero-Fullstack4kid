@@ -29,4 +29,11 @@ fn main() {
 ## Lab
 
 Triển khai singly linked list tối thiểu với `push`, `pop`, `peek`, iterator và test drop. Viết phần giải thích vì sao `VecDeque` thường phù hợp production hơn list tự viết.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

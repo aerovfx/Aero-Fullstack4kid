@@ -551,3 +551,11 @@ print("Trung bình từng học viên:", np.mean(scores, axis=1))
 ---
 
 *Kết thúc bài học tuần 2 / End of Week 2*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

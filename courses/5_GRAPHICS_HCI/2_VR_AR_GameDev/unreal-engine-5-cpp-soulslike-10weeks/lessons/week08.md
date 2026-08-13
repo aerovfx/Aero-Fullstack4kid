@@ -219,3 +219,11 @@ Tạo arena có cột che khuất, nhiều cao độ và hai enemy. Ghi lại h�
 - [ ] Patrol/Chase chuyển nhánh ổn định.
 - [ ] Target được clear an toàn.
 - [ ] Không tìm Player mỗi Tick.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

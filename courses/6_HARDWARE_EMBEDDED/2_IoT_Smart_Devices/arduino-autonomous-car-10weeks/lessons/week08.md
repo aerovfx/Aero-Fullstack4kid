@@ -640,3 +640,11 @@ Each weekly assignment and report is graded based on the following rubric to ens
 
 *Lưu ý từ Giảng Viên (Instructor's Note):* Hãy ưu tiên sự an toàn và cẩn thận trong việc sử dụng pin Li-Po. Luôn tắt nguồn khi tiến hành tinh chỉnh lại dây nối để tránh đoản mạch (short circuit) mạch L298N.
 *(Please prioritize safety with Li-Po batteries. Always turn off power when rewiring to prevent short circuits on the L298N driver.)*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

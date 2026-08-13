@@ -71,3 +71,11 @@ cv2.imwrite("output/green_only.jpg", green_only)
 ## Thử thách
 
 Tạo bộ đếm số điểm ảnh thuộc màu đã chọn và hiển thị phần trăm diện tích vật thể. Nâng cao: dùng trackbar để điều chỉnh sáu ngưỡng HSV theo thời gian thực.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

@@ -28,4 +28,11 @@ Chọn một bài toán: top products, autocomplete bằng trie hoặc LRU cache
 ## Lưu ý
 
 Không tự xây cấu trúc phức tạp trong production chỉ để “tối ưu”; ưu tiên crate/library đã review nếu đáp ứng yêu cầu.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

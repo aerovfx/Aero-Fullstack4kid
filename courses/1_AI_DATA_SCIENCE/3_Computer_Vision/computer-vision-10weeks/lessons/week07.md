@@ -70,3 +70,11 @@ Sau khi đổi `trainable`, phải compile lại. Learning rate nhỏ giúp khô
 ## Thử thách
 
 So sánh ba thí nghiệm cùng dữ liệu: CNN tự xây, MobileNetV2 đóng băng, MobileNetV2 fine-tune. Báo số tham số trainable, thời gian mỗi epoch, validation accuracy và nhận xét trade-off.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

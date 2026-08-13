@@ -12,3 +12,11 @@
 
 ## 4. Bài tập (Challenge)
 - Áp dụng thuật toán vừa học lên một tập dữ liệu thực tế mới.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

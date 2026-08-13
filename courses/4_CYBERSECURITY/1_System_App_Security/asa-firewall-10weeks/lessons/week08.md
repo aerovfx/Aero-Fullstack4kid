@@ -33,4 +33,11 @@ Chỉ trong mạng cô lập, dùng packet capture để quan sát credential/tr
 ## Kiểm chứng
 
 Thử SSH từ subnet được phép và bị cấm, xác minh timeout, logout, AAA log và khả năng truy cập console dự phòng.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

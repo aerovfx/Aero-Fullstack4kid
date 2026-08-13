@@ -466,3 +466,11 @@ Nhiệm vụ của bạn là phân tích đoạn văn bản tin tức bảo mậ
 | **Chi phí** | 🆓 Hoàn toàn miễn phí | 💳 Tính phí theo Token/Usage |
 | **Yêu cầu phần cứng** | 💻 Cần máy RAM >= 16GB / GPU | ☁️ Chỉ cần kết nối Internet nhẹ |
 | **Chất lượng phản hồi**| ⚡ Tốt cho tác vụ phân loại/JSON | 🧠 Cực kỳ thông minh & suy luận sâu |
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

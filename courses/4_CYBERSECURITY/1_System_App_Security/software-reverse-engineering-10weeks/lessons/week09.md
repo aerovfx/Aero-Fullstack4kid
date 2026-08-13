@@ -109,4 +109,11 @@ Không in secret thật vào báo cáo; dùng redaction và secret identifier.
 ## Bài tập và rubric
 
 Nộp comparison report, JSON outputs và CI hardening checklist. Chấm: PE interpretation 30, evidence cross-check 20, findings 20, CI controls 20, giới hạn/false positives 10.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 09](../code/week09/README.md), học lần lượt từ `01_...` đến `20_...`.

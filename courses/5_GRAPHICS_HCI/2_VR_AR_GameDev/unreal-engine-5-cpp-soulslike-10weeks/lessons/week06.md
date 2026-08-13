@@ -214,3 +214,11 @@ Quay video 60–90 giây thể hiện combo, strong attack, hit reaction, trail,
 - [ ] VFX/SFX đúng timing.
 - [ ] Terra dùng dữ liệu riêng.
 - [ ] Tag Git `combat-vertical-slice-v2`.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

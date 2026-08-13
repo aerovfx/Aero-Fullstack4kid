@@ -28,4 +28,11 @@ fn count_nonempty_lines(path: &Path) -> io::Result<usize> {
 ## Rubric
 
 Correctness/tests 30; ownership/API 20; error handling 15; concurrency/performance 15; documentation 10; security/limitations 10. Chạy fmt, Clippy và test trước khi demo.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

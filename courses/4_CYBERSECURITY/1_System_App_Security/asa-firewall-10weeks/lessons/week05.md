@@ -34,4 +34,11 @@ show version
 ## Bài tập
 
 Giáo viên đưa một change lỗi trong lab. Học viên phải phát hiện qua kiểm chứng, không lưu cấu hình lỗi và ghi rõ bước rollback.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

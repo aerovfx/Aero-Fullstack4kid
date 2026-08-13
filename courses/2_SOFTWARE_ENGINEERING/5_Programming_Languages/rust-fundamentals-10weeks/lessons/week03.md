@@ -33,4 +33,11 @@ impl Product {
 ## Lab
 
 Xây inventory lưu bằng `HashMap<String, Product>`, hỗ trợ add/remove/find. Test out-of-stock, missing product và quantity overflow/underflow.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

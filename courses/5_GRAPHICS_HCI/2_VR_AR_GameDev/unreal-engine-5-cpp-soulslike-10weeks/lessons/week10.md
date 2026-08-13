@@ -210,3 +210,11 @@ Trong PIE, `World->GetName()` có thể mang prefix; production nên lưu `FName
 - [ ] Build chạy ngoài Editor.
 - [ ] README, DESIGN, TESTING và video demo hoàn chỉnh.
 - [ ] Tag Git `echoes-of-terra-v1.0`.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 10](../code/week10/README.md), học lần lượt từ `01_...` đến `20_...`.

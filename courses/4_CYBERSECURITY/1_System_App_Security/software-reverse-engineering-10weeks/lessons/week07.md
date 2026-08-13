@@ -126,3 +126,11 @@ Mỗi nhóm nhận evidence của nhóm khác nhưng không nhận conclusion. H
 ## Bài tập và rubric
 
 Nộp analysis playbook, evidence index và một finding hoàn chỉnh. Chấm: reproducibility 30, evidence 25, reasoning 20, report 15, scope/safety 10.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

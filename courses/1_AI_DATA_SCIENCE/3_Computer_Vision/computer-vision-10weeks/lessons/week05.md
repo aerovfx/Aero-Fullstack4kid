@@ -61,3 +61,11 @@ Nếu training accuracy tăng nhưng validation accuracy đứng yên hoặc gi�
 ## Thử thách
 
 Thay `GlobalAveragePooling2D` bằng `Flatten`, so sánh số tham số trong `model.summary()`. Dự đoán mô hình nào dễ overfit hơn và giải thích bằng số liệu.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

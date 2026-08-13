@@ -43,4 +43,11 @@ packet-tracer input inside tcp 10.10.10.10 50000 198.51.100.10 443
 ## Bài tập
 
 Thêm DMZ với security level 50, cập nhật sơ đồ và giải thích vì sao security level không thay thế cho ACL tường minh.
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.

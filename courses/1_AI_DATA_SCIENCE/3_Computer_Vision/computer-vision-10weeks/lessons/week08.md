@@ -61,3 +61,11 @@ Mỗi ảnh cần file nhãn YOLO tương ứng: `class x_center y_center width 
 ## Thử thách
 
 Chạy cùng một video với `conf=0.25`, `0.5`, `0.75`; đo số detection và FPS. Giải thích ngưỡng nào phù hợp cho cảnh báo an toàn và ngưỡng nào phù hợp cho thống kê ít báo giả.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 08](../code/week08/README.md), học lần lượt từ `01_...` đến `20_...`.

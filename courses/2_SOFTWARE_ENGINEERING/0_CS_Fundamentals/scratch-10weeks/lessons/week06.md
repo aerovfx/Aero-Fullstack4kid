@@ -23,3 +23,11 @@ Mảng lưu nhiều giá trị cùng kiểu dưới một tên. Với mảng `1.
 ## Tự kiểm tra
 
 Thử `n=1`, mảng toàn số âm và mảng có nhiều phần tử bằng nhau.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 06](../code/week06/README.md), học lần lượt từ `01_...` đến `20_...`.

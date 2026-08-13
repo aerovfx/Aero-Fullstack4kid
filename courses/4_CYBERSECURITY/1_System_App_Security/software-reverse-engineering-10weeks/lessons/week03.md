@@ -440,3 +440,11 @@ Kỹ thuật "Reversing Jump" (đảo ngược lệnh nhảy) là gì và trong 
 * Hiểu cơ chế hoạt động của chuỗi `CMP → EFLAGS Update → Conditional Jump`.
 * Thực hành quan sát nhánh thực thi trong **x64dbg** thông qua màu sắc mũi tên Jump.
 * Có thể **vẽ Control Flow Graph** từ đoạn Assembly có nhánh điều kiện.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 03](../code/week03/README.md), học lần lượt từ `01_...` đến `20_...`.

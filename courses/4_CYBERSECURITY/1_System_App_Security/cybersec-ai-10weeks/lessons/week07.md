@@ -479,3 +479,14 @@ Dựa vào mã nguồn `secure_auth_manager.py`, hãy thực hiện các nâng c
 
 - **WPA2 (4-Way Handshake):** Dễ bị bắt gói tin Handshake và bẻ khóa từ điển ngoại tuyến (Offline Dictionary Attack).
 - **WPA3 (SAE - Simultaneous Authentication of Equals):** Sử dụng cơ chế trao đổi khóa Dragonfly. Mỗi lần thử mật khẩu yêu cầu tương tác trực tiếp với Access Point, vô hiệu hóa các công cụ bẻ khóa từ điển offline.
+## Code minh họa theo buổi
+
+- [Danh sách 20 code tuần 07](../code/week07/README.md) — học lần lượt từ `01_...` đến `20_...`.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

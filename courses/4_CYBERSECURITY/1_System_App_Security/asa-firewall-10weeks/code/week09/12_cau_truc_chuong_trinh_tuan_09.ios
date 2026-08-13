@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 09 · Bài 12: Cấu trúc chương trình tuần 09
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W09-B12
+service timestamps log datetime msec
+end
+show running-config

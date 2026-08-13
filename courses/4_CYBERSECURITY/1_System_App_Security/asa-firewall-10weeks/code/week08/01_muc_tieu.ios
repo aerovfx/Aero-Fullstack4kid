@@ -1,0 +1,8 @@
+! asa-firewall-10weeks · Tuần 08 · Bài 01: Mục tiêu
+! Cấu hình minh họa; thay LAB-* theo topology lớp học.
+enable
+configure terminal
+hostname LAB-W08-B01
+service timestamps log datetime msec
+end
+show running-config

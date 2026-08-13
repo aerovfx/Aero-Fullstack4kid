@@ -169,3 +169,11 @@ Greystone đánh Terra trong test arena; hiển thị debug damage log gồm att
 - [ ] `HitActors` reset mỗi attack.
 - [ ] Point Damage đi qua Health Component.
 - [ ] Vertical Slice v1 được quay video.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

@@ -443,4 +443,11 @@ Submit the `.py` file and a screen recording video of the SITL simulation run.
 *Tài liệu kết thúc tại đây.*
 *Chúc các bạn học viên hoàn thành tốt bài tập tuần này!*
 *Good luck to all students completing this week's assignments!*
+## 20 code minh họa của tuần
 
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 07](../code/week07/README.md), học lần lượt từ `01_...` đến `20_...`.

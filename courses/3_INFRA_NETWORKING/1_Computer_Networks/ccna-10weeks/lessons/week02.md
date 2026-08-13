@@ -21,3 +21,11 @@ Router(config)#
 
 ## 4. Bài Tập Về Nhà
 - Hoàn thành file `.pkt` và nộp lên hệ thống.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

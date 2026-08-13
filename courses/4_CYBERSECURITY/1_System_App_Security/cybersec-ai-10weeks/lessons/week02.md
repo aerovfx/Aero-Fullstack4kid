@@ -461,3 +461,14 @@ Từ **Scanning** sang **Enumeration**: quét cho biết "cổng 22 mở", còn 
 
 **5.** Vì sao hacker thật thường dùng SYN Scan (`-sS`) thay cho Connect Scan (`-sT`)?
 > *Đáp án:* SYN Scan không hoàn tất handshake (gửi `RST` sau khi nhận `SYN-ACK`), nên nhiều hệ thống không ghi lại thành một kết nối hoàn chỉnh → ít để lại dấu vết hơn.
+## Code minh họa theo buổi
+
+- [Danh sách 20 code tuần 02](../code/week02/README.md) — học lần lượt từ `01_...` đến `20_...`.
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

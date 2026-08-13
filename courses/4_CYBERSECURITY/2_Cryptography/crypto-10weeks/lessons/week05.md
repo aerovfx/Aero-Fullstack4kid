@@ -171,3 +171,11 @@ Mở Google Colab notebook và thực hiện:
 ---
 
 *(Bản quyền khóa học: Aero-Fullstack4kid - Cryptography 10 Weeks)*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 05](../code/week05/README.md), học lần lượt từ `01_...` đến `20_...`.

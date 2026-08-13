@@ -271,3 +271,11 @@ Vì sao lại có hai phiên bản executable là `x32dbg.exe` và `x64dbg.exe` 
 * Phân biệt rõ ràng mục đích và thời điểm áp dụng **Static Analysis** và **Dynamic Analysis**.
 * Sử dụng thành thạo **Detect It Easy (DIE)** để kiểm tra PE header, compiler và packer.
 * Hiểu cách thức hoạt động cơ bản của **x64dbg** và bộ thao tác phím tắt gỡ lỗi (F2, F7, F8, F9).
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 02](../code/week02/README.md), học lần lượt từ `01_...` đến `20_...`.

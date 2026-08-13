@@ -363,3 +363,11 @@ Kết hợp module GPS ở bài này và Module thẻ nhớ SD Card (Sử dụng
 ---
 *Chúc các bạn hoàn thành xuất sắc dự án Tuần 4! Mọi thắc mắc vui lòng đặt câu hỏi trên diễn đàn khóa học.*
 *Good luck with your Week 4 project! Post any questions on the course forum.*
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
+
+<!-- AUTO-GENERATED-WEEKLY-CODE -->
+## 20 code minh họa của tuần
+
+- [Mở mục lục code tuần 04](../code/week04/README.md), học lần lượt từ `01_...` đến `20_...`.
