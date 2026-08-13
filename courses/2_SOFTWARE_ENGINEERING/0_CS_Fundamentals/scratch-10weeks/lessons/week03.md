@@ -1,13 +1,25 @@
-# Tuần 3: Trang phục (Costumes) & Âm thanh
+# Tuần 3: Rẽ nhánh và kiểm tra dữ liệu
 
-## 1. Mục tiêu bài học
-- Thay đổi hình dáng nhân vật để tạo hoạt ảnh (Animation). Chèn nhạc nền và hiệu ứng âm thanh.
+## Mục tiêu
 
-## 2. Hướng dẫn thực hành (Hands-on)
-- Cung cấp hình ảnh kéo thả các khối lệnh.
+- Viết `if`, `if...else` và nhiều nhánh có thứ tự đúng.
+- Kết hợp điều kiện bằng `and`, `or`, `not`.
+- Xử lý dữ liệu không hợp lệ trước khi tính toán.
 
-## 3. Mã giả mô phỏng (Pseudo-code)
-- Mô tả logic của các khối lệnh.
+## Kiến thức trọng tâm
 
-## 4. Thử thách (Challenge)
-- Các bé tự thêm tính năng mới cho trò chơi.
+Một chương trình đúng không chỉ tính đúng dữ liệu đẹp mà còn phải phản hồi hợp lý với dữ liệu biên. Khi có nhiều điều kiện, kiểm tra trường hợp không hợp lệ và trường hợp đặc biệt trước trường hợp tổng quát.
+
+## Thực hành
+
+[week03.pas]({{ site.baseurl }}/learn/scratch-10weeks/code/week03.pas) kiểm tra ba cạnh và phân loại tam giác. Thử các bộ `(3,3,3)`, `(3,3,4)`, `(3,4,5)` và `(1,2,3)`.
+
+## Bài tập
+
+1. Tìm số lớn nhất trong bốn số.
+2. Giải phương trình bậc nhất, gồm cả trường hợp vô số hoặc vô nghiệm.
+3. Đổi số thứ trong tuần thành tên tiếng Việt.
+
+## Tự kiểm tra
+
+Vẽ cây quyết định cho bài phân loại tam giác trước khi viết code.

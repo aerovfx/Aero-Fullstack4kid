@@ -1,0 +1,13 @@
+! Tuan 7: Dial-peer
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname CME1
+dial-peer voice 200 voip
+ description Goi_noi_bo_2XXX
+ destination-pattern 2...
+ session protocol sipv2
+ session target ipv4:192.0.2.2
+ voice-class codec 10
+ no vad
+end
+write memory

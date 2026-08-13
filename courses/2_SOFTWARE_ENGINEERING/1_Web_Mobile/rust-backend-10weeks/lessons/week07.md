@@ -481,3 +481,8 @@ async fn create_user(Json(payload): Json<CreateUser>) -> impl IntoResponse {
 <!-- Detail notes for Định tuyến Router & Xử lý JSON - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 7 / End of Week 7
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week07.rs`](../code/week07.rs)
+- Chạy: `cargo run --bin week07`

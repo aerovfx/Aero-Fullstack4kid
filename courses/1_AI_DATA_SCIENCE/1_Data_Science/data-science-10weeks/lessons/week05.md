@@ -50,7 +50,7 @@ Thực hiện theo các bước chi tiết sau để hoàn thành sản phẩm:
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 import pandas as pd
 df = pd.read_csv('sales.csv')
 print(df.info())
@@ -475,12 +475,10 @@ print(df.info())
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Giới thiệu Pandas & DataFrames - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 5 / End of Week 5
-
 ## Học liệu thực hành: Pandas và nhiều định dạng dữ liệu
 
-- [Notebook — Đọc/ghi CSV, Excel, SQLite và JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/01_Pandas_exam.ipynb)
-- Dataset đầu vào: [CSV]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.csv) · [Excel]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.xlsx) · [JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.json) · [SQLite]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.sql)
+- [Notebook — Đọc/ghi CSV, Excel, SQLite và JSON]({{ site.baseurl }}/learn/data-science-10weeks/code/week05.py)
+- Dataset đầu vào: [CSV]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.csv) · [Excel]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.xlsx) · [JSON]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.json) · [SQLite]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.sql)
 
 ### Bài lab cụ thể
 
@@ -495,7 +493,7 @@ from pathlib import Path
 import sqlite3
 import pandas as pd
 
-data_dir = Path("raw_materials/ch04_Pandas")
+data_dir = Path("code/ch04_pandas")
 csv_data = pd.read_csv(data_dir / "sample-data.csv")
 excel_data = pd.read_excel(data_dir / "sample-data.xlsx")
 json_data = pd.read_json(data_dir / "sample-data.json")
@@ -511,4 +509,8 @@ for name, frame in {"csv": csv_data, "excel": excel_data,
 
 Sau khi kiểm tra, có thể xuất dữ liệu bằng `to_csv`, `to_excel`, `to_json` hoặc `to_sql`. Không ghi đè file gốc; hãy dùng thư mục đầu ra riêng.
 
-- [Code đầy đủ: pandas_io_pipeline.py]({{ site.baseurl }}/learn/data-science-10weeks/code/pandas_io_pipeline.py)
+- [Code đầy đủ: pandas_io_pipeline.py]({{ site.baseurl }}/learn/data-science-10weeks/code/week05.py)
+
+---
+
+*Kết thúc bài học tuần 5 / End of Week 5*

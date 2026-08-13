@@ -482,3 +482,8 @@ impl Serialize for User {
 <!-- Detail notes for Traits, Generics & Smart Pointers - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 4 / End of Week 4
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week04.rs`](../code/week04.rs)
+- Chạy: `cargo run --bin week04`

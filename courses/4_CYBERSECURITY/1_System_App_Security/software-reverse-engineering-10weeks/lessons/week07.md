@@ -1,5 +1,8 @@
 # Tuần 7: Quy trình phân tích tái lập và báo cáo finding
 
+> Dùng [mẫu vulnerability reporting](../references/reporting-and-writing.md)
+> thay cho địa chỉ liên hệ cá nhân hoặc thông tin nhận báo cáo hard-code.
+
 ## Nguồn bài học
 
 - **Summary of Software Cracking Workflow** được chuyển thành playbook reverse engineering phòng thủ có chain of custody, hypothesis và verification.
@@ -123,4 +126,3 @@ Mỗi nhóm nhận evidence của nhóm khác nhưng không nhận conclusion. H
 ## Bài tập và rubric
 
 Nộp analysis playbook, evidence index và một finding hoàn chỉnh. Chấm: reproducibility 30, evidence 25, reasoning 20, report 15, scope/safety 10.
-

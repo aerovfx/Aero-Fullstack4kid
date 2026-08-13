@@ -1,42 +1,14 @@
-# Lộ trình Cloud & DevOps 10 Tuần
+# Lộ trình Cloud Computing & DevOps
 
-## Tuần 1: Nhập môn DevOps & Cloud Computing
-- Khái niệm DevOps (CAMS), mô hình IaaS/PaaS/SaaS, so sánh AWS và GCP, làm quen Console, IAM, và Virtual Machines (EC2/Compute Engine).
-- [Chi tiết bài học](lessons/week01.md)
-
-## Tuần 2: Quản trị Linux Server & Bash Scripting
-- Kiến trúc Linux, quản lý Users/Groups, SSH keys, phân quyền (chmod/chown), viết Bash script tự động hoá cronjobs.
-- [Chi tiết bài học](lessons/week02.md)
-
-## Tuần 3: Infrastructure as Code (IaC) với Terraform
-- Cài đặt Terraform, viết cấu hình HCL (HashiCorp Configuration Language), quản lý State, triển khai cụm VPC và máy ảo lên AWS.
-- [Chi tiết bài học](lessons/week03.md)
-
-## Tuần 4: Version Control & CI/CD Pipelines
-- Git Branching Strategy, thiết lập CI/CD pipeline tự động build và test mã nguồn với GitHub Actions / GitLab CI.
-- [Chi tiết bài học](lessons/week04.md)
-
-## Tuần 5: Containerization với Docker
-- Kiến trúc Docker Engine, viết Dockerfile tối ưu (Multi-stage build), quản lý mạng ảo và volumes, Docker Compose.
-- [Chi tiết bài học](lessons/week05.md)
-
-## Tuần 6: Kiến trúc Microservices & API Gateway
-- Thiết kế Monolithic vs Microservices, giao tiếp liên dịch vụ (REST/gRPC/Message Broker), thiết lập Nginx API Gateway.
-- [Chi tiết bài học](lessons/week06.md)
-
-## Tuần 7: Điều phối Container với Kubernetes (K8s)
-- Kiến trúc Master-Node của K8s, viết YAML cấu hình Pod, ReplicaSet, Deployment, Service (ClusterIP/NodePort/LoadBalancer).
-- [Chi tiết bài học](lessons/week07.md)
-
-## Tuần 8: Triển khai K8s trên Cloud & Helm
-- Thiết lập cụm Amazon EKS / Google GKE, quản lý tài nguyên ứng dụng phức tạp bằng Helm Charts, Ingress Controller.
-- [Chi tiết bài học](lessons/week08.md)
-
-## Tuần 9: Hệ thống Monitoring & Observability
-- Giám sát số liệu (Metrics) với Prometheus, vẽ biểu đồ với Grafana, và quản lý log tập trung với ELK Stack (Elasticsearch, Logstash, Kibana).
-- [Chi tiết bài học](lessons/week09.md)
-
-## Tuần 10: High Availability & DevSecOps
-- Thiết kế kiến trúc hệ thống tính sẵn sàng cao, Auto Scaling, kết hợp bảo mật vào quy trình CI/CD (Trivy quét lỗ hổng container).
-- [Chi tiết bài học](lessons/week10.md)
-
+| Tuần | Chủ đề | Code | Bài tập | Sản phẩm |
+|---:|---|---|---|---|
+| 1 | Cloud, DevOps, IAM và chi phí | [week01](code/week01.sh) | [exercise](exercises/week01/README.md) | Cloud readiness checklist |
+| 2 | Linux server và Bash | [week02](code/week02.sh) | [exercise](exercises/week02/README.md) | Server audit script |
+| 3 | Terraform IaC | [week03](code/week03.sh) | [exercise](exercises/week03/README.md) | Terraform plan local |
+| 4 | Git và CI/CD | [week04](code/week04.sh) | [exercise](exercises/week04/README.md) | Quality gate |
+| 5 | Docker và Compose | [week05](code/week05.sh) | [exercise](exercises/week05/README.md) | Container web có healthcheck |
+| 6 | Microservices và gateway | [week06](code/week06.sh) | [exercise](exercises/week06/README.md) | Nginx API gateway |
+| 7 | Kubernetes workload | [week07](code/week07.sh) | [exercise](exercises/week07/README.md) | Deployment và Service |
+| 8 | Helm release | [week08](code/week08.sh) | [exercise](exercises/week08/README.md) | Helm chart |
+| 9 | Observability | [week09](code/week09.sh) | [exercise](exercises/week09/README.md) | Prometheus rule |
+| 10 | HA và DevSecOps | [week10](code/week10.sh) | [exercise](exercises/week10/README.md) | Security gate và runbook |

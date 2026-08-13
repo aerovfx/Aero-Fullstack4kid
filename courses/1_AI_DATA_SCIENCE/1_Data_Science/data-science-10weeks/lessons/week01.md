@@ -50,7 +50,7 @@ Tạo file Notebook đầu tiên xử lý dữ liệu ảo / Create a Jupyter no
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 import sys
 print(sys.version)
 ```
@@ -474,4 +474,6 @@ print(sys.version)
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Môi trường Phân tích Dữ liệu - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 1 / End of Week 1
+---
+
+*Kết thúc bài học tuần 1 / End of Week 1*

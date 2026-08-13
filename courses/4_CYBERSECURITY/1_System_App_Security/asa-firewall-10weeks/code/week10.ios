@@ -1,0 +1,10 @@
+! Tuần 10: DHCP và tổng hợp
+! Chỉ dùng trong lab ASA được ủy quyền; địa chỉ thuộc RFC 5737.
+configure terminal
+hostname ASA-LAB
+nameif inside
+! TODO theo bài học: bổ sung cấu hình DHCP và tổng hợp
+access-list LAB_IN extended permit icmp 192.0.2.0 255.255.255.0 198.51.100.0 255.255.255.0
+access-group LAB_IN in interface inside
+end
+write memory

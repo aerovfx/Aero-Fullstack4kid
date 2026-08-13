@@ -1,0 +1,7 @@
+! TODO tuan 5: Codec và băng thông
+! 1. Ve topology va lap bang dia chi.
+! 2. Dien cau hinh IOS tai day.
+! 3. Ghi lenh show/ping/traceroute hoac debug an toan dung de xac minh.
+configure terminal
+! TODO
+end

@@ -1,5 +1,7 @@
 # Giáo trình Cyber Security – Reverse Engineering
 
+> Tài liệu bổ sung: [ánh xạ nguồn và Rules of Engagement](../references/source-map.md).
+
 ## Tuần 1 – Bài 1 & 2
 
 # Tổng Quan Software Ethical Hacking, Đạo Đức & Môi Trường Lab Cô Lập

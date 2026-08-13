@@ -50,7 +50,7 @@ Dự đoán giá trị sản phẩm dựa trên các thông số đặc trưng /
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 # code block to train model
@@ -475,15 +475,13 @@ from sklearn.linear_model import LinearRegression
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Học máy Cơ bản với Scikit-Learn - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 10 / End of Week 10
-
 ## Học liệu mở rộng: SciPy cho bài toán khoa học
 
-- [01 — Lọc nhiễu tín hiệu bằng bộ lọc thông thấp]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/01_exam.ipynb)
-- [02 — Tối ưu hóa có ràng buộc]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/02_exam.ipynb)
-- [03 — Tích phân và xấp xỉ đạo hàm]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/03_exam.ipynb)
-- [04 — Giải phương trình vi phân]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/04_exam.ipynb)
-- [05 — Thống kê, tích phân, tối ưu và phân rã LU]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/05_exam.ipynb)
+- [01 — Lọc nhiễu tín hiệu bằng bộ lọc thông thấp]({{ site.baseurl }}/learn/data-science-10weeks/code/week10.py)
+- [02 — Tối ưu hóa có ràng buộc]({{ site.baseurl }}/learn/data-science-10weeks/code/week10.py)
+- [03 — Tích phân và xấp xỉ đạo hàm]({{ site.baseurl }}/learn/data-science-10weeks/code/week10.py)
+- [04 — Giải phương trình vi phân]({{ site.baseurl }}/learn/data-science-10weeks/code/week10.py)
+- [05 — Thống kê, tích phân, tối ưu và phân rã LU]({{ site.baseurl }}/learn/data-science-10weeks/code/week10.py)
 
 ### Bài lab tích hợp cuối khóa
 
@@ -516,4 +514,8 @@ print(result.success, result.x, result.fun)
 
 Khi dùng thuật toán số, không chỉ báo cáo nghiệm: cần kiểm tra `success`, sai số, điều kiện biên và độ nhạy với giá trị khởi tạo.
 
-- [Code SciPy tổng hợp: tín hiệu, tối ưu, tích phân, ODE và thống kê]({{ site.baseurl }}/learn/data-science-10weeks/code/scipy_examples.py)
+- [Code SciPy tổng hợp: tín hiệu, tối ưu, tích phân, ODE và thống kê]({{ site.baseurl }}/learn/data-science-10weeks/code/week10.py)
+
+---
+
+*Kết thúc bài học tuần 10 / End of Week 10*

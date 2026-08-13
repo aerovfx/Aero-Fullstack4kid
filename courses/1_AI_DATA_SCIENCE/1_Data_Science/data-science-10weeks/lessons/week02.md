@@ -50,7 +50,7 @@ Tạo mảng ma trận 3x3 và thực hiện truy xuất thuộc tính / Create 
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 import numpy as np
 arr = np.array([[1,2,3],[4,5,6],[7,8,9]])
 print(arr.shape)
@@ -475,14 +475,12 @@ print(arr.shape)
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Mảng NumPy Cơ bản - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 2 / End of Week 2
-
 ## Học liệu thực hành từ kho NumPy
 
 Tuần này sử dụng trực tiếp hai notebook nhập môn. Hãy chạy lần lượt từng cell, thay đổi dữ liệu đầu vào và ghi lại sự khác nhau giữa `list` Python với `ndarray`.
 
-- [Notebook 01 — Khởi tạo mảng và phép toán cơ bản]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch03_NumPy/01_Numpy.ipynb)
-- [Notebook 02 — Mảng, số ngẫu nhiên và hàm tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch03_NumPy/02_Numpy_Basic.ipynb)
+- [Notebook 01 — Khởi tạo mảng và phép toán cơ bản]({{ site.baseurl }}/learn/data-science-10weeks/code/week02.py)
+- [Notebook 02 — Mảng, số ngẫu nhiên và hàm tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/code/week02.py)
 
 ### Bài lab cụ thể
 
@@ -548,4 +546,8 @@ print("Trung bình từng học viên:", np.mean(scores, axis=1))
 2. Vì sao nên dùng `np.random.default_rng()` thay cho trạng thái ngẫu nhiên toàn cục?
 3. Hãy sửa code để tính trung bình của từng môn học thay vì từng học viên.
 
-- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/numpy_examples.py)
+- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/week02.py)
+
+---
+
+*Kết thúc bài học tuần 2 / End of Week 2*

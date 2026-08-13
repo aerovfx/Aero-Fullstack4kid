@@ -476,3 +476,8 @@ use sqlx::postgres::PgPoolOptions;
 <!-- Detail notes for Tích hợp Cơ sở dữ liệu SQLx - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 8 / End of Week 8
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week08.rs`](../code/week08.rs)
+- Chạy: `cargo run --bin week08`

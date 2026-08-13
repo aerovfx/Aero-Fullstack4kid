@@ -1,5 +1,8 @@
 # Tuần 6: Secure patching, regression và rollback
 
+> Secure patch phải tuân theo các nguyên tắc Clean Code và test được
+> nêu trong [hướng dẫn viết báo cáo](../references/reporting-and-writing.md).
+
 ## Nguồn bài học
 
 - **How to patch a Software Application** được tái cấu trúc thành quy trình vá phần mềm có kiểm soát. Ưu tiên source patch; binary patch chỉ dùng trên toy artifact thuộc khóa.
@@ -332,4 +335,3 @@ Khi nào nên dùng **Restore Original Bytes** trong x64dbg?
 * Thực hành thành thạo quy trình 6 bước Patch trong x64dbg.
 * Làm chủ các thao tác: **Assemble**, **Fill with NOPs**, **Restore Original Bytes**, **Copy to Executable**.
 * Ghi lại hash SHA-256 trước/sau Patch để đảm bảo Chain of Custody trong Lab.
-

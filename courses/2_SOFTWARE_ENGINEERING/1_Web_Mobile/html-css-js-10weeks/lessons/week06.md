@@ -1,4 +1,8 @@
 # Tuần 6: DOM Manipulation & Sự kiện Trình duyệt / DOM & Browser Events
+
+> Ôn tập JavaScript trước khi vào DOM: biến, kiểu dữ liệu, hàm, mảng và
+> vòng lặp trong [code tuần 6](../code/week06.js). Nội dung này được
+> chuẩn hóa từ nhóm bài JavaScript cũ trong `raw_materials`.
 ## Mục Tiêu / Objectives
 - Thao tác trên giao diện thông qua JavaScript
 - Nắm vững các chủ đề kỹ thuật cốt lõi trong tuần.

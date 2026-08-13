@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Code mẫu không dùng package ngoài; tắt audit mạng để build được offline. -->
+    <NuGetAudit>false</NuGetAudit>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Week Condition="'$(Week)' == ''">week01</Week>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(Week).cs" />
+  </ItemGroup>
+</Project>

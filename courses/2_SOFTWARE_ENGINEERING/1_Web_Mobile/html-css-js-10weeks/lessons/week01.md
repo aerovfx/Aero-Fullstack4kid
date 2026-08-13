@@ -1,4 +1,6 @@
 # Tuần 1: Cú pháp HTML5 & CSS3 Cơ bản / HTML5 & CSS3 Basics
+
+> Code tham khảo nhập từ kho cũ: [`code/imported/Html`](../code/imported/Html/).
 ## Mục Tiêu / Objectives
 - Hiểu cấu trúc HTML5 và Box Model CSS3
 - Nắm vững các chủ đề kỹ thuật cốt lõi trong tuần.

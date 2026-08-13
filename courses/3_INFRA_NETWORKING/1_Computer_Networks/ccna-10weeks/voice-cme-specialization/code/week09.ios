@@ -1,0 +1,15 @@
+! Tuan 9: POTS và E1
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname VG1
+controller E1 0/0/0
+ framing CRC4
+ linecode HDB3
+pri-group timeslots 1-10,16
+interface Serial0/0/0:15
+ no shutdown
+dial-peer voice 300 pots
+ destination-pattern 3...
+ direct-inward-dial
+end
+write memory

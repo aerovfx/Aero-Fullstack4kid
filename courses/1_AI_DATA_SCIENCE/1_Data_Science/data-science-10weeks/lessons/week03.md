@@ -50,7 +50,7 @@ Tính tích ma trận và thực hiện chuẩn hóa dữ liệu / Compute matri
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 A = np.random.rand(3,3)
 B = np.random.rand(3,3)
 C = np.dot(A, B)
@@ -475,11 +475,9 @@ C = np.dot(A, B)
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Phép toán số học Vector - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 3 / End of Week 3
-
 ## Học liệu thực hành: toán tử NumPy
 
-- [Notebook 03 — Toán tử số học, so sánh và logic]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch03_NumPy/03_Numpy_Operators.ipynb)
+- [Notebook 03 — Toán tử số học, so sánh và logic]({{ site.baseurl }}/learn/data-science-10weeks/code/week03.py)
 
 ### Bài lab cụ thể
 
@@ -548,4 +546,8 @@ NumPy coi `bonus` có dạng `(1, 3)` và mở rộng nó theo số hàng. Nếu
 
 Tạo mảng nhiệt độ 7 ngày. Dùng vector hóa để đổi từ độ C sang độ F, lọc ngày trên 35°C và thay mọi giá trị bất thường ngoài khoảng `[-10, 50]` bằng `np.nan`.
 
-- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/numpy_examples.py)
+- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/week03.py)
+
+---
+
+*Kết thúc bài học tuần 3 / End of Week 3*

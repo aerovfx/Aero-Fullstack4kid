@@ -1,13 +1,25 @@
-# Tuần 8: Bản sao (Clones)
+# Tuần 8: Thủ tục, hàm và tái sử dụng code
 
-## 1. Mục tiêu bài học
-- Sử dụng tính năng Clone để tạo ra hàng loạt quái vật, chướng ngại vật hoặc đạn bắn mà không cần nhân bản Sprite.
+## Mục tiêu
 
-## 2. Hướng dẫn thực hành (Hands-on)
-- Cung cấp hình ảnh kéo thả các khối lệnh.
+- Phân biệt `procedure` và `function`.
+- Hiểu tham số giá trị, tham số `var` và phạm vi biến.
+- Tách chương trình lớn thành các đơn vị nhỏ có thể kiểm thử.
 
-## 3. Mã giả mô phỏng (Pseudo-code)
-- Mô tả logic của các khối lệnh.
+## Kiến thức trọng tâm
 
-## 4. Thử thách (Challenge)
-- Các bé tự thêm tính năng mới cho trò chơi.
+Hàm trả về một giá trị; thủ tục thực hiện một hành động. Một hàm tốt chỉ giải quyết một nhiệm vụ, có tên rõ nghĩa và không phụ thuộc không cần thiết vào biến toàn cục.
+
+## Thực hành
+
+[week08.pas]({{ site.baseurl }}/learn/scratch-10weeks/code/week08.pas) đóng gói UCLN và Fibonacci thành hàm. Viết thêm `IsPrime(n)` rồi dùng để in các số nguyên tố nhỏ hơn 100.
+
+## Bài tập
+
+1. Viết hàm tính tổng chữ số.
+2. Viết thủ tục hoán đổi hai số bằng tham số `var`.
+3. Viết hàm đệ quy tính lũy thừa, sau đó so sánh với vòng lặp.
+
+## Tự kiểm tra
+
+Giải thích stack call và điều kiện cơ sở của đệ quy.

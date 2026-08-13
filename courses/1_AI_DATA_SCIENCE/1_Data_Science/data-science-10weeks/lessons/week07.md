@@ -50,7 +50,7 @@ Lọc và làm sạch dữ liệu khách hàng bị thiếu thông tin / Clean c
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 df_clean = df.drop_duplicates()
 df_clean['age'] = df_clean['age'].fillna(df_clean['age'].mean())
 ```
@@ -474,22 +474,20 @@ df_clean['age'] = df_clean['age'].fillna(df_clean['age'].mean())
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Làm sạch dữ liệu bẩn - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 7 / End of Week 7
-
 ## Học liệu thực hành: kiểm định chất lượng dữ liệu
 
-Sử dụng lại [sample-data.csv]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.csv) và tạo có chủ đích một số giá trị thiếu, trùng lặp, sai kiểu dữ liệu.
+Sử dụng lại [sample-data.csv]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.csv) và tạo có chủ đích một số giá trị thiếu, trùng lặp, sai kiểu dữ liệu.
 
 ### Bài lab cụ thể
 
-Lập báo cáo trước/sau làm sạch gồm: số ô thiếu, số dòng trùng, kiểu dữ liệu từng cột và các quy tắc xử lý. Lưu bảng sạch sang [JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/output-data.json) để dùng ở tuần 8.
+Lập báo cáo trước/sau làm sạch gồm: số ô thiếu, số dòng trùng, kiểu dữ liệu từng cột và các quy tắc xử lý. Lưu bảng sạch sang [JSON]({{ site.baseurl }}/learn/data-science-10weeks/code/data/output-data.json) để dùng ở tuần 8.
 
 ## Nội dung bài học: làm sạch có thể kiểm chứng
 
 ```python
 import pandas as pd
 
-people = pd.read_csv("raw_materials/ch04_Pandas/sample-data.csv")
+people = pd.read_csv("code/ch04_pandas/sample-data.csv")
 before = {
     "rows": len(people),
     "duplicates": int(people.duplicated().sum()),
@@ -515,4 +513,8 @@ print("Sau:", after)
 
 Mỗi quyết định điền khuyết phải có lý do. Median thường phù hợp hơn mean khi dữ liệu có ngoại lệ, nhưng không phải là quy tắc áp dụng cho mọi cột.
 
-- [Code làm sạch và xuất báo cáo]({{ site.baseurl }}/learn/data-science-10weeks/code/pandas_io_pipeline.py)
+- [Code làm sạch và xuất báo cáo]({{ site.baseurl }}/learn/data-science-10weeks/code/week07.py)
+
+---
+
+*Kết thúc bài học tuần 7 / End of Week 7*

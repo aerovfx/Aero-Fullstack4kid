@@ -1,13 +1,25 @@
-# Tuần 2: Vòng lặp & Sự kiện
+# Tuần 2: Kiểu dữ liệu, biểu thức và toán tử
 
-## 1. Mục tiêu bài học
-- Sử dụng lá cờ xanh (Green flag), khối lệnh lặp (Repeat / Forever). Làm nhân vật nhảy múa liên tục.
+## Mục tiêu
 
-## 2. Hướng dẫn thực hành (Hands-on)
-- Cung cấp hình ảnh kéo thả các khối lệnh.
+- Sử dụng `integer`, `longint`, `real`, `char`, `boolean` và `string`.
+- Phân biệt `/`, `div`, `mod`; biết thứ tự ưu tiên toán tử.
+- Chuyển một công thức toán học thành biểu thức Pascal.
 
-## 3. Mã giả mô phỏng (Pseudo-code)
-- Mô tả logic của các khối lệnh.
+## Kiến thức trọng tâm
 
-## 4. Thử thách (Challenge)
-- Các bé tự thêm tính năng mới cho trò chơi.
+Chọn kiểu dữ liệu theo miền giá trị và phép toán cần thực hiện. Phép chia `/` trả về số thực; `div` lấy thương nguyên và `mod` lấy phần dư. Dùng hằng số cho giá trị không thay đổi như π.
+
+## Thực hành
+
+[week02.pas]({{ site.baseurl }}/learn/scratch-10weeks/code/week02.pas) tính diện tích và chu vi hình tròn, đồng thời từ chối bán kính âm. Thử bán kính `0`, `2.5` và `-3`.
+
+## Bài tập
+
+1. Tính diện tích tam giác từ đáy và chiều cao.
+2. Đổi nhiệt độ Celsius sang Fahrenheit.
+3. Tách một số có ba chữ số thành hàng trăm, chục và đơn vị.
+
+## Tự kiểm tra
+
+Giải thích vì sao không nên dùng `integer` để lưu diện tích hình tròn.

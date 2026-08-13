@@ -479,3 +479,8 @@ FROM debian:bookworm-slim
 <!-- Detail notes for Integration Testing & Docker Deploy - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 10 / End of Week 10
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week10.rs`](../code/week10.rs)
+- Chạy: `cargo run --bin week10`

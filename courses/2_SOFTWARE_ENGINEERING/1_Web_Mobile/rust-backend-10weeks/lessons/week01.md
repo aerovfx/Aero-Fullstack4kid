@@ -480,3 +480,8 @@ fn main() {
 <!-- Detail notes for Cú pháp cơ bản, biến số & kiểu dữ liệu - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 1 / End of Week 1
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week01.rs`](../code/week01.rs)
+- Chạy: `cargo run --bin week01`

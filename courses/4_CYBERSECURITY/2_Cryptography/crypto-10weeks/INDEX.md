@@ -42,12 +42,12 @@ Chào mừng bạn đến với khoá học **Mật Mã Học Thực Chiến & B
 
 | Tài liệu / Document | Mô tả / Description |
 |---------------------|---------------------|
-| [Lịch Trình Học / Schedule](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/schedule.md) | Phân bổ 20 buổi học chi tiết và checklist sản phẩm đầu ra |
-| [Thiết Bị Phòng Lab / Components Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/references/components.md) | Danh sách thiết bị phần cứng (YubiKey, HSM Kit) & Công cụ với giá VNĐ |
-| [Hướng Dẫn Phần Mềm / Software Guide](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/references/software.md) | Setup OpenSSL, GnuPG, Python `cryptography`, PyCryptodome, C++ OpenSSL |
-| [An Toàn & Đạo Đức / Safety & Ethics](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/references/safety.md) | Quy tắc an toàn thông tin, bảo vệ khóa riêng tư (Private Key) |
-| [Dự Án Cuối Khoá / Final Projects](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/projects/final_project.md) | 3 Hướng đề tài tốt nghiệp Capstone và Rubric 100 điểm |
-| [Google Colab Notebooks](file:///Users/dangvietchung/Aero-Fullstack4kid/courses/4_CYBERSECURITY/2_Cryptography/crypto-10weeks/notebooks/crypto_10weeks_colab.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/) Notebook chạy thực hành trực tiếp trên trình duyệt / Mobile |
+| [Lịch Trình Học / Schedule](schedule.md) | Phân bổ 20 buổi học chi tiết và checklist sản phẩm đầu ra |
+| [Thiết Bị Phòng Lab / Components Guide](references/components.md) | Danh sách thiết bị phần cứng (YubiKey, HSM Kit) & Công cụ với giá VNĐ |
+| [Hướng Dẫn Phần Mềm / Software Guide](references/software.md) | Setup OpenSSL, GnuPG, Python `cryptography`, PyCryptodome, C++ OpenSSL |
+| [An Toàn & Đạo Đức / Safety & Ethics](references/safety.md) | Quy tắc an toàn thông tin, bảo vệ khóa riêng tư (Private Key) |
+| [Dự Án Cuối Khoá / Final Projects](projects/final_project.md) | 3 Hướng đề tài tốt nghiệp Capstone và Rubric 100 điểm |
+| [Google Colab Notebooks](notebooks/crypto_10weeks_colab.ipynb) | Notebook chạy thực hành trực tiếp trên trình duyệt / Mobile |
 
 ---
 

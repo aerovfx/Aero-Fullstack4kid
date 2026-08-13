@@ -1,13 +1,25 @@
-# Tuần 4: Câu lệnh điều kiện & Cảm biến
+# Tuần 4: Vòng lặp xác định
 
-## 1. Mục tiêu bài học
-- Sử dụng khối If-Else và Sensing (Chạm vào màu sắc, chạm vào nhân vật khác). Làm game mèo đuổi chuột.
+## Mục tiêu
 
-## 2. Hướng dẫn thực hành (Hands-on)
-- Cung cấp hình ảnh kéo thả các khối lệnh.
+- Dùng vòng `for...to` và `for...downto`.
+- Tích lũy tổng, đếm và lọc phần tử theo điều kiện.
+- Nhận biết phần việc lặp lại để tránh sao chép code.
 
-## 3. Mã giả mô phỏng (Pseudo-code)
-- Mô tả logic của các khối lệnh.
+## Kiến thức trọng tâm
 
-## 4. Thử thách (Challenge)
-- Các bé tự thêm tính năng mới cho trò chơi.
+Vòng `for` phù hợp khi biết trước số lần lặp. Biến tích lũy phải được khởi tạo trước vòng lặp. Luôn kiểm tra giá trị đầu, cuối và trường hợp không có phần tử thỏa mãn.
+
+## Thực hành
+
+[week04.pas]({{ site.baseurl }}/learn/scratch-10weeks/code/week04.pas) liệt kê và tính tổng số lẻ không vượt quá `n`. Sửa chương trình để tính tổng các bội của 3 hoặc 5.
+
+## Bài tập
+
+1. In bảng cửu chương của một số.
+2. Liệt kê các ước của `n`.
+3. Kiểm tra số nguyên tố bằng cách chỉ thử đến căn bậc hai của `n`.
+
+## Tự kiểm tra
+
+Ước lượng số vòng lặp mà thuật toán kiểm tra số nguyên tố thực hiện.

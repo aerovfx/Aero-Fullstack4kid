@@ -50,7 +50,7 @@ Tính tổng doanh số bán hàng theo từng khu vực dùng GroupBy / Group s
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 sales_by_region = df.groupby('region')['revenue'].sum()
 ```
 
@@ -473,24 +473,22 @@ sales_by_region = df.groupby('region')['revenue'].sum()
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Chọn & Phân nhóm Dữ liệu - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 6 / End of Week 6
-
 ## Học liệu thực hành: chọn và tổng hợp dữ liệu thật
 
-Tiếp tục dùng [bộ dữ liệu Pandas mẫu]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.csv) của tuần 5.
+Tiếp tục dùng [bộ dữ liệu Pandas mẫu]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.csv) của tuần 5.
 
 ### Bài lab cụ thể
 
 1. Dùng `loc` và `iloc` để lấy cùng một tập con, rồi giải thích khác biệt.
 2. Lọc dữ liệu bằng ít nhất hai điều kiện.
-3. Chọn một cột phân loại để `groupby`, tính `count`, `sum`, `mean` và xuất báo cáo thành [CSV mẫu đầu ra]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/output-data.csv).
+3. Chọn một cột phân loại để `groupby`, tính `count`, `sum`, `mean` và xuất báo cáo thành [CSV mẫu đầu ra]({{ site.baseurl }}/learn/data-science-10weeks/code/data/output-data.csv).
 
 ## Nội dung bài học: chọn, lọc và phân nhóm
 
 ```python
 import pandas as pd
 
-people = pd.read_csv("raw_materials/ch04_Pandas/sample-data.csv")
+people = pd.read_csv("code/ch04_pandas/sample-data.csv")
 
 # Chọn theo nhãn và theo vị trí
 names_and_salary = people.loc[:, ["Name", "Salary"]]
@@ -513,4 +511,8 @@ print(summary)
 
 `loc` làm việc với nhãn; `iloc` làm việc với vị trí số nguyên. Khi lọc nhiều điều kiện, đặt từng điều kiện trong ngoặc và kết hợp bằng `&` hoặc `|`.
 
-- [Code pipeline dùng chung tuần 5–8]({{ site.baseurl }}/learn/data-science-10weeks/code/pandas_io_pipeline.py)
+- [Code pipeline dùng chung tuần 5–8]({{ site.baseurl }}/learn/data-science-10weeks/code/week06.py)
+
+---
+
+*Kết thúc bài học tuần 6 / End of Week 6*

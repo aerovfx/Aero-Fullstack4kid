@@ -483,3 +483,8 @@ async fn main() {
 <!-- Detail notes for Tokio Runtime & Lập trình Bất đồng bộ - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 5 / End of Week 5
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week05.rs`](../code/week05.rs)
+- Chạy: `cargo run --bin week05`

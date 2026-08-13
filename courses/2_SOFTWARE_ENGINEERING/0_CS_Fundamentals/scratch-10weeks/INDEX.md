@@ -1,8 +1,15 @@
-# Nhập Môn Lập Trình: Scratch (Dành cho thiếu nhi)
+# CS Fundamentals với Pascal — 10 tuần
 
-Khoá học lập trình trực quan (Block-based) giúp các bé rèn luyện tư duy logic, sự kiện và vòng lặp qua việc tự tay thiết kế game và hoạt hình tương tác.
+Khóa học nhập môn khoa học máy tính qua Pascal, tập trung vào tư duy thuật toán, cấu trúc dữ liệu cơ bản, kiểm thử và giải bài toán có hệ thống.
 
-## Cấu trúc thư mục
-- \`schedule.md\`: Lộ trình chi tiết 10 tuần.
-- \`lessons/\`: Các bài giảng lý thuyết và bài tập thực hành.
-- \`projects/\`: Đồ án cuối khoá.
+## Cấu trúc
+
+- `schedule.md`: lộ trình và sản phẩm từng tuần.
+- `lessons/`: 10 bài học kèm bài tập và liên kết code.
+- `code/`: `week01.pas` đến `week10.pas`.
+- `Exersise/`: bài tập Pascal có nội dung được chọn lọc từ kho nguyên liệu.
+- `projects/`: yêu cầu đồ án tổng hợp.
+
+## Cách học
+
+Đọc lesson, tự dự đoán kết quả, chạy code mẫu, sửa bài theo thử thách và kiểm tra bằng ít nhất ba bộ dữ liệu. Không nộp code nếu chưa giải thích được thuật toán.

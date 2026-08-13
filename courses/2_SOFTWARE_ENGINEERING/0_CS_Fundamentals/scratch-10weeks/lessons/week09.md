@@ -1,13 +1,25 @@
-# Tuần 9: Game nhiều người chơi (Local Multiplayer)
+# Tuần 9: Tìm kiếm, sắp xếp và độ phức tạp
 
-## 1. Mục tiêu bài học
-- Sử dụng 2 bộ phím điều khiển (WASD và Phím mũi tên). Thiết kế game đối kháng hoặc đua xe 2 người chơi trên 1 máy tính.
+## Mục tiêu
 
-## 2. Hướng dẫn thực hành (Hands-on)
-- Cung cấp hình ảnh kéo thả các khối lệnh.
+- Cài đặt tìm kiếm tuyến tính và tìm kiếm nhị phân.
+- Hiểu bubble sort và lý do cần dữ liệu đã sắp xếp.
+- So sánh trực quan `O(n)`, `O(log n)` và `O(n²)`.
 
-## 3. Mã giả mô phỏng (Pseudo-code)
-- Mô tả logic của các khối lệnh.
+## Kiến thức trọng tâm
 
-## 4. Thử thách (Challenge)
-- Các bé tự thêm tính năng mới cho trò chơi.
+Tìm kiếm nhị phân liên tục loại bỏ một nửa miền tìm kiếm nhưng chỉ đúng khi mảng đã có thứ tự. Bubble sort dễ học nhưng không phù hợp dữ liệu lớn vì số phép so sánh tăng theo bình phương kích thước.
+
+## Thực hành
+
+[week09.pas]({{ site.baseurl }}/learn/scratch-10weeks/code/week09.pas) sắp xếp mảng rồi tìm số `7`. Thêm biến đếm số phép so sánh của cả sắp xếp và tìm kiếm.
+
+## Bài tập
+
+1. Viết tìm kiếm tuyến tính và so sánh số bước.
+2. Sắp xếp giảm dần mà không viết lại toàn bộ thuật toán.
+3. Tìm phần tử xuất hiện nhiều nhất trong mảng đã sắp xếp.
+
+## Tự kiểm tra
+
+Thử mục tiêu ở đầu, giữa, cuối và không tồn tại.

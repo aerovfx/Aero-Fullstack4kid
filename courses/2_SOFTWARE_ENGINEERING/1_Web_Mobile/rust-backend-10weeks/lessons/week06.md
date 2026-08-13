@@ -481,3 +481,8 @@ async fn main() {
 <!-- Detail notes for Khởi chạy Web Server bằng Axum - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 6 / End of Week 6
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week06.rs`](../code/week06.rs)
+- Chạy: `cargo run --bin week06`

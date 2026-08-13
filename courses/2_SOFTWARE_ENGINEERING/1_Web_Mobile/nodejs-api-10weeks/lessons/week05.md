@@ -1,4 +1,6 @@
 # Tuần 5: Thiết kế RESTful API Chuẩn hóa / RESTful API Design
+
+> Backend tham khảo: [`code/imported/mern-dashboard-server`](../code/imported/mern-dashboard-server/) và tài liệu framework tại [reference-framework.md](reference-framework.md).
 ## Mục Tiêu / Objectives
 - Xây dựng API RESTful chuẩn công nghiệp
 - Nắm vững các chủ đề kỹ thuật cốt lõi trong tuần.

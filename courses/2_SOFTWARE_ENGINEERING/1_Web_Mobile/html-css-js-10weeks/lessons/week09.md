@@ -1,4 +1,6 @@
 # Tuần 9: Giới thiệu React.js & React Hooks / Introduction to React.js
+
+> Dự án React tham khảo: [`code/imported/ReactJs`](../code/imported/ReactJs/). Hãy bắt đầu từ các dự án nhỏ trong `Study` trước khi đọc `Live_Project`.
 ## Mục Tiêu / Objectives
 - Tạo component và quản lý trạng thái trong React
 - Nắm vững các chủ đề kỹ thuật cốt lõi trong tuần.

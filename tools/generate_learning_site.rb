@@ -42,14 +42,6 @@ groups.each do |group|
     course_dir = File.join(OUTPUT, slug)
     FileUtils.mkdir_p(course_dir)
 
-    # Publish the original notebooks and datasets beside their assigned lessons.
-    # The Data Science source archive is intentionally kept in raw_materials;
-    # this copy makes those files downloadable from the learning interface.
-    raw_materials = File.join(File.dirname(source_dir), "raw_materials")
-    if Dir.exist?(raw_materials)
-      FileUtils.cp_r(raw_materials, File.join(course_dir, "materials"))
-      FileUtils.rm_rf(Dir.glob(File.join(course_dir, "materials", "**", ".ipynb_checkpoints")))
-    end
     code_samples = File.join(source_dir, "code")
     FileUtils.cp_r(code_samples, File.join(course_dir, "code")) if Dir.exist?(code_samples)
 

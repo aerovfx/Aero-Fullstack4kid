@@ -50,7 +50,7 @@ Ghép bảng Đơn hàng với Khách hàng và tạo cột phân loại khách 
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 merged_df = pd.merge(orders, customers, on='customer_id')
 ```
 
@@ -473,11 +473,9 @@ merged_df = pd.merge(orders, customers, on='customer_id')
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Ghép bảng & Biến đổi dữ liệu - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 8 / End of Week 8
-
 ## Học liệu thực hành: pipeline biến đổi dữ liệu
 
-Dùng các file [CSV]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.csv), [JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.json) và [Excel]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.xlsx) như ba nguồn độc lập.
+Dùng các file [CSV]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.csv), [JSON]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.json) và [Excel]({{ site.baseurl }}/learn/data-science-10weeks/code/data/sample-data.xlsx) như ba nguồn độc lập.
 
 ### Bài lab cụ thể
 
@@ -509,4 +507,8 @@ print(report)
 
 Tham số `validate="many_to_one"` giúp phát hiện khóa trùng ngoài dự kiến. Sau `merge`, luôn kiểm tra số dòng và các giá trị thiếu ở cột khóa/tên.
 
-- [Code pipeline Pandas hoàn chỉnh]({{ site.baseurl }}/learn/data-science-10weeks/code/pandas_io_pipeline.py)
+- [Code pipeline Pandas hoàn chỉnh]({{ site.baseurl }}/learn/data-science-10weeks/code/week08.py)
+
+---
+
+*Kết thúc bài học tuần 8 / End of Week 8*

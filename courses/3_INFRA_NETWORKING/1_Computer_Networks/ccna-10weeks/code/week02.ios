@@ -1,0 +1,17 @@
+! Tuan 2: VLAN, access và trunk
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname SW1
+vlan 10
+ name IT
+vlan 20
+ name HR
+interface GigabitEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+interface GigabitEthernet0/24
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20
+end
+write memory

@@ -50,7 +50,7 @@ Lọc các phần tử ma trận lớn hơn giá trị trung bình / Filter arra
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 data = np.random.randint(1, 100, 20)
 filtered = data[data > data.mean()]
 ```
@@ -474,11 +474,9 @@ filtered = data[data > data.mean()]
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Cắt lát & Lọc mảng nâng cao - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 4 / End of Week 4
-
 ## Học liệu thực hành: ma trận
 
-- [Notebook 04 — Nhân và sắp xếp ma trận]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch03_NumPy/04_Numpy_Matrix.ipynb)
+- [Notebook 04 — Nhân và sắp xếp ma trận]({{ site.baseurl }}/learn/data-science-10weeks/code/week04.py)
 
 ### Bài lab cụ thể
 
@@ -561,4 +559,8 @@ Tạo ma trận điểm `5 × 4`, sau đó:
 3. sắp xếp học viên theo điểm môn đầu;
 4. nhân ma trận điểm với vector trọng số môn học để tính điểm tổng kết.
 
-- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/numpy_examples.py)
+- [Code NumPy tổng hợp cho tuần 2–4]({{ site.baseurl }}/learn/data-science-10weeks/code/week04.py)
+
+---
+
+*Kết thúc bài học tuần 4 / End of Week 4*

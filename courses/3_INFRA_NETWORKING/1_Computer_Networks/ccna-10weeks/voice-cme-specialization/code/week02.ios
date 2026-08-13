@@ -1,0 +1,15 @@
+! Tuan 2: SCCP phone
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname CME1
+telephony-service
+ max-ephones 4
+ max-dn 8
+ ip source-address 192.0.2.1 port 2000
+ephone-dn 1
+ number 2001
+ephone 1
+ mac-address 0200.0000.0001
+ button 1:1
+end
+write memory

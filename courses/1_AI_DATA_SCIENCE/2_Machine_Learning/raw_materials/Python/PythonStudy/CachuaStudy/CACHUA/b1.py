@@ -1,6 +1,0 @@
-print("hello")
-print(1+1)
-print(1983/3728)
-print(2+2)
-print(2/6)
-print(5-5)

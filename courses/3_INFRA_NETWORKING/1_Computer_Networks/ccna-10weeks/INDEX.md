@@ -16,7 +16,13 @@ Chào mừng bạn đến với khoá học cấu hình và quản trị mạng 
 ## Cấu trúc thư mục
 - `schedule.md`: Lộ trình chi tiết 10 tuần.
 - `lessons/`: Bài giảng và lab thực hành từng tuần.
+- `code/week01.ios` đến `week10.ios`: Cấu hình mẫu có chú thích.
+- `exercises/week01/` đến `week10/`: Starter và tiêu chí kiểm thử cho học viên.
 - `projects/`: Đồ án cuối khoá.
+
+Quy trình mỗi tuần: đọc lesson, dựng topology riêng, tham khảo code mẫu,
+hoàn thiện exercise và lưu bằng chứng kiểm thử bằng các lệnh `show`.
+Không dán cấu hình vào thiết bị production.
 
 ## Chuyên đề học tiếp
 

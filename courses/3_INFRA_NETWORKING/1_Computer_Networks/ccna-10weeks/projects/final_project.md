@@ -12,6 +12,12 @@ Yêu cầu tích hợp tất cả các kiến thức đã học trong 10 tuần.
 5. **Security**: Cấu hình Port Security trên các cổng Switch. Áp dụng ACL chặn VLAN Guest truy cập Server nội bộ.
 
 ## Tiêu Chí Đánh Giá
-- PC từ các VLAN ping thành công ra Internet (Google DNS 8.8.8.8).
+- PC từ các VLAN ping thành công router ISP mô phỏng `203.0.113.1`.
 - PC từ chi nhánh ping thành công Server nội bộ tại HQ.
 - ACL hoạt động đúng mục tiêu.
+
+## An toàn lab
+
+Chỉ dùng dải địa chỉ tài liệu RFC 5737 hoặc mạng lab riêng. Không quét,
+debug lưu lượng hay áp dụng cấu hình lên hạ tầng production. Hồ sơ nộp
+phải có backup cấu hình, bảng kiểm thử và kế hoạch rollback.

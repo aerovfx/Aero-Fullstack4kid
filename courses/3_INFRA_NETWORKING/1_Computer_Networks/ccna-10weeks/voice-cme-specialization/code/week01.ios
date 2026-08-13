@@ -1,0 +1,11 @@
+! Tuan 1: Kiến trúc VoIP
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname CME1
+interface GigabitEthernet0/0
+ description Voice_Data_LAN
+ ip address 192.0.2.1 255.255.255.0
+ no shutdown
+! Signaling va RTP chi dung trong lab duoc uy quyen
+end
+write memory

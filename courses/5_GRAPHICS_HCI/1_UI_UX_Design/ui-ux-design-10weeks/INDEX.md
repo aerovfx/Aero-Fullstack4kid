@@ -1,8 +1,15 @@
-# Thiết kế Giao diện & Trải nghiệm Người dùng (UI/UX Design)
+# UI/UX Design — 10 tuần
 
-Học cách tư duy như một nhà thiết kế sản phẩm. Từ nghiên cứu hành vi con người đến việc sử dụng Figma tạo ra các nguyên mẫu tương tác (Interactive Prototypes) đẹp mắt và tiện dụng.
+Nghiên cứu người dùng, kiến trúc thông tin, visual design, design system, prototype và usability testing.
 
-## Cấu trúc thư mục
-- \`schedule.md\`: Lộ trình chi tiết 10 tuần.
-- \`lessons/\`: Lý thuyết tâm lý học người dùng và thực hành thiết kế Figma.
-- \`projects/\`: Đồ án cuối khoá thiết kế UI/UX hoàn chỉnh.
+## Cấu trúc
+
+- [Lịch học](schedule.md)
+- `lessons/week01.md` … `week10.md`: bài học và lab engine/design.
+- `code/week01.html` … `week10.html`: mẫu chạy độc lập.
+- `exercises/week01/` … `week10/`: starter và rubric học viên.
+- [Dự án cuối khóa](projects/final_project.md)
+
+## Quy trình học
+
+Đọc lesson, dự đoán kết quả code, chạy mẫu, hoàn thiện exercise rồi tích hợp vào prototype/project. Tách domain logic khỏi framework để kiểm thử nhanh. Không commit cache, binary build, asset có bản quyền hoặc credential dịch vụ.

@@ -21,7 +21,7 @@ Mở danh mục khóa học trên web (GitHub Pages):
 
 1. Chọn một khóa trong bảng bên dưới và mở `INDEX.md`.
 2. Mở `schedule.md` để xem thứ tự 10 tuần, sau đó học trong `lessons/`.
-3. Chạy code trong `code/`, `notebooks/` hoặc làm đồ án tại `projects/`; dùng `raw_materials/` để đọc thêm, không coi đó là giáo trình đã chuẩn hóa.
+3. Chạy code trong `code/`, làm bài tại `exercises/` và hoàn thiện đồ án trong `projects/`.
 
 ## Danh mục khóa học
 
@@ -33,7 +33,7 @@ Mở danh mục khóa học trên web (GitHub Pages):
 | Machine Learning | [Mở khóa](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/INDEX.md) | [10 tuần](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/schedule.md) | [Bài giảng](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/lessons/) · [Đồ án](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/machine-learning-10weeks/projects/) |
 | Computer Vision | [Mở khóa](courses/1_AI_DATA_SCIENCE/3_Computer_Vision/computer-vision-10weeks/INDEX.md) | [10 tuần](courses/1_AI_DATA_SCIENCE/3_Computer_Vision/computer-vision-10weeks/schedule.md) | [Bài giảng + code](courses/1_AI_DATA_SCIENCE/3_Computer_Vision/computer-vision-10weeks/lessons/) |
 
-Tư liệu bổ sung: [Data Science](courses/1_AI_DATA_SCIENCE/1_Data_Science/raw_materials/) · [Machine Learning/Python](courses/1_AI_DATA_SCIENCE/2_Machine_Learning/raw_materials/) · [Trang khoa](courses/1_AI_DATA_SCIENCE/readme.md)
+Trang khoa: [AI & Data Science](courses/1_AI_DATA_SCIENCE/readme.md)
 
 ### 2. Software Engineering
 
@@ -52,7 +52,7 @@ Tư liệu bổ sung: [Data Science](courses/1_AI_DATA_SCIENCE/1_Data_Science/ra
 | Web3 | Ethereum DApps | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/blockchain-dapps-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/blockchain-dapps-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/blockchain-dapps-10weeks/code/) |
 | Web3 | Rust + Solana | [Mở khóa](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/rust-web3-10weeks/INDEX.md) | [Bài giảng](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/rust-web3-10weeks/lessons/) · [Code](courses/2_SOFTWARE_ENGINEERING/4_Web3_Blockchain/rust-web3-10weeks/code/) |
 
-Điểm vào chung: [Danh mục ngôn ngữ](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/INDEX.md) · [Trang Software Engineering](courses/2_SOFTWARE_ENGINEERING/readme.md) · [Tư liệu tổng hợp](courses/2_SOFTWARE_ENGINEERING/raw_materials/)
+Điểm vào chung: [Danh mục ngôn ngữ](courses/2_SOFTWARE_ENGINEERING/5_Programming_Languages/INDEX.md) · [Trang Software Engineering](courses/2_SOFTWARE_ENGINEERING/readme.md)
 
 ### 3. Infrastructure & Networking
 
@@ -92,8 +92,6 @@ Tư liệu bổ sung: [Data Science](courses/1_AI_DATA_SCIENCE/1_Data_Science/ra
 | Raspberry Pi Pico STEM | [Mở khóa](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/pico-stem-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/pico-stem-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/pico-stem-10weeks/lessons/) |
 | DIY Drone | [Mở khóa](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/drone-diy-10weeks/INDEX.md) | [10 tuần](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/drone-diy-10weeks/schedule.md) | [Bài giảng](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/drone-diy-10weeks/lessons/) |
 
-Tư liệu phần cứng: [IoT raw materials](courses/6_HARDWARE_EMBEDDED/2_IoT_Smart_Devices/raw_materials/)
-
 ## Cách tìm tài liệu trong mỗi khóa
 
 | Tên | Vai trò | Nên mở khi |
@@ -105,7 +103,6 @@ Tư liệu phần cứng: [IoT raw materials](courses/6_HARDWARE_EMBEDDED/2_IoT_
 | `notebooks/` | Jupyter/Colab | Học dữ liệu, AI hoặc security analysis |
 | `projects/` | Đồ án và rubric | Làm sản phẩm cuối khóa |
 | `references/` | Phần mềm, thiết bị, an toàn | Chuẩn bị môi trường hoặc tra cứu |
-| `raw_materials/` | Tư liệu nguồn chưa chuẩn hóa | Đọc sâu hoặc truy xuất tài liệu cũ |
 
 Tìm nhanh bằng terminal:
 
@@ -135,7 +132,6 @@ rg --files courses -g '*.py' -g '*.rs' -g '*.cpp' -g '*.cs' -g '*.js' -g '*.ipyn
 Aero-Fullstack4kid/
 ├── courses/       # Giáo trình, bài giảng, code, dự án và tư liệu nguồn
 ├── platform/      # Ứng dụng React/Vite hiển thị giáo trình
-├── docs/          # Tài liệu vận hành và ghi chú chung
 ├── tools/         # Công cụ hỗ trợ xử lý học liệu
 └── README.md      # Bản đồ điều hướng hiện tại
 ```

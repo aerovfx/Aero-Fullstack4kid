@@ -1,19 +1,44 @@
-# Tuần 2: Quản trị Linux Server & Bash Scripting
+# Tuần 2: Linux server và Bash an toàn
 
-## 1. Lý Thuyết & Kiến Trúc
-- Kiến trúc Linux, quản lý Users/Groups, SSH keys, phân quyền (chmod/chown), viết Bash script tự động hoá cronjobs.
-- Các Best Practices (Thực hành tốt nhất) theo chuẩn công nghiệp.
+## Mục tiêu
 
-## 2. Lab Thực Hành (Hands-on Lab)
-- **Mục tiêu**: Xây dựng kịch bản tự động hoặc triển khai lên môi trường Cloud/Local.
-- **Yêu cầu**: 
-  1. Viết code cấu hình (YAML, HCL, Bash).
-  2. Thực thi lệnh triển khai (`terraform apply`, `docker build`, `kubectl apply`).
-  3. Kiểm tra tính ổn định của hệ thống.
+- Hiểu và giải thích được SSH, user/group, quyền file, process, disk và script idempotent.
+- Chạy code mẫu an toàn trên máy local trước khi áp dụng lên cloud.
+- Ghi lại bằng chứng kiểm tra và phân tích lỗi thay vì chỉ sao chép lệnh.
 
-## 3. Câu Lệnh & Cấu Hình Cần Nhớ
-- Các snippets mã nguồn quan trọng.
+## Kiến thức trọng tâm
 
-## 4. Đọc Thêm (References)
-- AWS/GCP Documentation.
-- Terraform / Kubernetes Official Docs.
+SSH, user/group, quyền file, process, disk và script idempotent. Mọi thao tác có thể tạo chi phí hoặc thay đổi hạ tầng phải đi qua bước review, dry-run/plan và nguyên tắc quyền tối thiểu. Không lưu secret trong Git.
+
+## Code mẫu
+
+- [Mở week02.sh](../code/week02.sh)
+- Chạy: `bash code/week02.sh`
+- Script mặc định ưu tiên kiểm tra hoặc sinh cấu hình; hãy đọc code trước khi cấp quyền cao hơn.
+
+## Thực hành từng bước
+
+1. Đọc chú thích và dự đoán đầu ra.
+2. Chạy script trong thư mục khóa học.
+3. Kiểm tra file được sinh trong `generated/week02` nếu có.
+4. Dùng công cụ validate/dry-run được gợi ý trong output.
+5. Ghi lại một lỗi, nguyên nhân và cách khắc phục.
+
+## Bài tập
+
+- [Bài tập tuần 2](../exercises/week02/README.md)
+
+## Lỗi phổ biến
+
+- Chạy lệnh sửa hạ tầng khi chưa xem plan/diff.
+- Hard-code credential, IP hoặc tên môi trường.
+- Bỏ qua exit code, healthcheck hay giới hạn tài nguyên.
+
+## Tự kiểm tra
+
+Giải thích code bằng lời, đưa ra ba tình huống kiểm thử và chỉ ra cách rollback nếu bước triển khai thất bại.
+
+## Tiêu chí hoàn thành
+
+Code/syntax hợp lệ, không có secret, có bằng chứng dry-run hoặc validate và hoàn thành cả thử thách cơ bản lẫn nâng cao.
+

@@ -1,4 +1,8 @@
 # Tuần 7: LocalStorage & JavaScript Bất đồng bộ / LocalStorage & Async JS
+
+> Ôn tập JavaScript hiện đại: class, object, spread, destructuring,
+> optional chaining và strict mode trong [code tuần 7](../code/week07.js).
+> Ví dụ đã gộp các bài rời rạc cũ thành một mô hình TaskStore dễ kiểm thử.
 ## Mục Tiêu / Objectives
 - Lưu trữ dữ liệu trình duyệt và hiểu Async/Await
 - Nắm vững các chủ đề kỹ thuật cốt lõi trong tuần.

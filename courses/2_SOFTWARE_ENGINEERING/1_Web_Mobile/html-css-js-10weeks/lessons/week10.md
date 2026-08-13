@@ -1,4 +1,6 @@
 # Tuần 10: React Forms & Đóng gói Deploy / React Forms & Deployment
+
+> Dùng các dự án hoàn chỉnh trong [`code/imported/ReactJs/Live_Project`](../code/imported/ReactJs/Live_Project/) để đọc cấu trúc component, form và cấu hình build/deploy.
 ## Mục Tiêu / Objectives
 - Quản lý form dữ liệu và deploy web lên Netlify
 - Nắm vững các chủ đề kỹ thuật cốt lõi trong tuần.

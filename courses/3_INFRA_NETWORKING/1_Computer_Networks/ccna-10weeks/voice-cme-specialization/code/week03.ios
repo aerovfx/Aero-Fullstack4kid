@@ -1,0 +1,15 @@
+! Tuan 3: Voice VLAN và CME
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname SW1
+vlan 10
+ name DATA
+vlan 20
+ name VOICE
+interface GigabitEthernet0/1
+ switchport access vlan 10
+ switchport voice vlan 20
+ spanning-tree portfast
+! DHCP option 150 tro ve CME trong mang lab
+end
+write memory

@@ -484,3 +484,8 @@ impl User {
 <!-- Detail notes for Cấu trúc dữ liệu Structs & Enums - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 3 / End of Week 3
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week03.rs`](../code/week03.rs)
+- Chạy: `cargo run --bin week03`

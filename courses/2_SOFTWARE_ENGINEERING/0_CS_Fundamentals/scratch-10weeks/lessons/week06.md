@@ -1,13 +1,25 @@
-# Tuần 6: Trọng lực & Vật lý cơ bản
+# Tuần 6: Mảng một chiều
 
-## 1. Mục tiêu bài học
-- Mô phỏng lực hút trái đất. Tạo game Flappy Bird đơn giản với cơ chế nhảy lên và tự động rơi xuống.
+## Mục tiêu
 
-## 2. Hướng dẫn thực hành (Hands-on)
-- Cung cấp hình ảnh kéo thả các khối lệnh.
+- Khai báo, nhập và duyệt mảng.
+- Tính tổng, trung bình, cực trị và số phần tử thỏa điều kiện.
+- Quản lý chỉ số để không truy cập ngoài phạm vi.
 
-## 3. Mã giả mô phỏng (Pseudo-code)
-- Mô tả logic của các khối lệnh.
+## Kiến thức trọng tâm
 
-## 4. Thử thách (Challenge)
-- Các bé tự thêm tính năng mới cho trò chơi.
+Mảng lưu nhiều giá trị cùng kiểu dưới một tên. Với mảng `1..n`, mọi vòng lặp truy cập dữ liệu phải nằm trong giới hạn đó. Giá trị cực trị ban đầu nên lấy từ phần tử đầu thay vì chọn một con số tùy ý.
+
+## Thực hành
+
+[week06.pas]({{ site.baseurl }}/learn/scratch-10weeks/code/week06.pas) tìm số lớn nhất và trung bình. Bổ sung vị trí của số nhỏ nhất và đếm số lớn hơn trung bình.
+
+## Bài tập
+
+1. Đảo ngược mảng tại chỗ.
+2. Xóa mọi phần tử bằng `x`.
+3. Tách số chẵn và số lẻ thành hai mảng.
+
+## Tự kiểm tra
+
+Thử `n=1`, mảng toàn số âm và mảng có nhiều phần tử bằng nhau.

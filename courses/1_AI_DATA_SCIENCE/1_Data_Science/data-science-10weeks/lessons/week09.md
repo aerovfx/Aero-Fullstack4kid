@@ -50,7 +50,7 @@ Vẽ biểu đồ nhiệt thể hiện sự tương quan các đặc trưng / Pl
 
 ## Code Mẫu / Code Samples
 Dưới đây là đoạn mã nguồn mẫu hoàn chỉnh chạy được. Hãy đọc kỹ phần chú thích (comments):
-```javascript
+```python
 import seaborn as sns
 import matplotlib.pyplot as plt
 sns.heatmap(df.corr(), annot=True)
@@ -475,26 +475,24 @@ sns.heatmap(df.corr(), annot=True)
 <!-- Line padding 199: Tài liệu giảng dạy chuyên sâu học viên tham khảo mục 199 -->
 <!-- Detail notes for Trực quan hóa dữ liệu trực quan - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
-# Kết thúc bài học tuần 9 / End of Week 9
-
 ## Học liệu thực hành: Matplotlib
 
-- [01 — Line, bar, scatter, histogram và biểu đồ 3D]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch06_Matplotlib/01_exam.ipynb)
-- [02 — Tùy biến màu, nét, marker và lưới]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch06_Matplotlib/02_exam.ipynb)
-- [03 — Kết hợp NumPy, Pandas và Matplotlib]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch06_Matplotlib/03_exam.ipynb)
-- [04 — Chuyển biểu đồ sang Plotly tương tác]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch06_Matplotlib/04_exam.ipynb)
-- [05 — Mô phỏng chuyển động ném ngang]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch06_Matplotlib/05_dothinemngang.ipynb)
-- [06 — Quãng đường và vận tốc của chuyển động biến đổi đều]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch06_Matplotlib/06_dothibiendoideu.ipynb)
-- [07 — Tối ưu giá bán bằng đạo hàm và trực quan hóa]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch06_Matplotlib/07_tanggiabanhang.ipynb)
+- [01 — Line, bar, scatter, histogram và biểu đồ 3D]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [02 — Tùy biến màu, nét, marker và lưới]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [03 — Kết hợp NumPy, Pandas và Matplotlib]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [04 — Chuyển biểu đồ sang Plotly tương tác]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [05 — Mô phỏng chuyển động ném ngang]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [06 — Quãng đường và vận tốc của chuyển động biến đổi đều]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [07 — Tối ưu giá bán bằng đạo hàm và trực quan hóa]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
 
 ## Học liệu thực hành: Seaborn
 
-- [01 — Histogram và KDE]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch08_Seaborn/01_Exam.ipynb)
-- [02 — Scatterplot, lineplot và relplot]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch08_Seaborn/02_exam.ipynb)
-- [03 — Boxplot, violinplot và stripplot]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch08_Seaborn/03_exam.ipynb)
-- [04 — Ma trận tương quan và heatmap]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch08_Seaborn/04_exam.ipynb)
-- [05 — Regplot và lmplot]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch08_Seaborn/05_exam.ipynb)
-- [06 — Pairplot và jointplot trên Iris]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch08_Seaborn/06_exam.ipynb)
+- [01 — Histogram và KDE]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [02 — Scatterplot, lineplot và relplot]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [03 — Boxplot, violinplot và stripplot]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [04 — Ma trận tương quan và heatmap]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [05 — Regplot và lmplot]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [06 — Pairplot và jointplot trên Iris]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
 
 ### Sản phẩm tuần
 
@@ -527,5 +525,9 @@ fig.tight_layout()
 plt.show()
 ```
 
-- [Code Matplotlib tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/code/matplotlib_examples.py)
-- [Code Seaborn tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/code/seaborn_examples.py)
+- [Code Matplotlib tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+- [Code Seaborn tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/code/week09.py)
+
+---
+
+*Kết thúc bài học tuần 9 / End of Week 9*

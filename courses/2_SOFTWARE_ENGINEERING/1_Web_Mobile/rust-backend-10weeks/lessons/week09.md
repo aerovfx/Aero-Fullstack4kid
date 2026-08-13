@@ -475,3 +475,8 @@ Dưới đây là đoạn mã nguồn mẫu Rust hoàn chỉnh chạy được. 
 <!-- Detail notes for JWT Authentication & Middleware - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 9 / End of Week 9
+
+## Code hoàn chỉnh của tuần
+
+- [Mở `week09.rs`](../code/week09.rs)
+- Chạy: `cargo run --bin week09`

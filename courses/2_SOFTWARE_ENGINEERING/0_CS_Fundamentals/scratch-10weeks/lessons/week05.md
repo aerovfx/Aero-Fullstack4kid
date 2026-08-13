@@ -1,13 +1,25 @@
-# Tuần 5: Biến số (Variables) - Điểm & Thời gian
+# Tuần 5: Vòng lặp không xác định và thuật toán số học
 
-## 1. Mục tiêu bài học
-- Khái niệm lưu trữ dữ liệu. Tạo biến Score (tăng điểm khi ăn táo) và Timer (đếm ngược thời gian).
+## Mục tiêu
 
-## 2. Hướng dẫn thực hành (Hands-on)
-- Cung cấp hình ảnh kéo thả các khối lệnh.
+- Dùng `while` và `repeat...until` khi chưa biết trước số lần lặp.
+- Hiểu thuật toán Euclid, giai thừa và Fibonacci.
+- Chứng minh điều kiện dừng của vòng lặp.
 
-## 3. Mã giả mô phỏng (Pseudo-code)
-- Mô tả logic của các khối lệnh.
+## Kiến thức trọng tâm
 
-## 4. Thử thách (Challenge)
-- Các bé tự thêm tính năng mới cho trò chơi.
+`while` kiểm tra điều kiện trước khi chạy; `repeat` luôn chạy thân ít nhất một lần. Mỗi vòng lặp phải làm trạng thái tiến gần điều kiện dừng để tránh lặp vô hạn.
+
+## Thực hành
+
+[week05.pas]({{ site.baseurl }}/learn/scratch-10weeks/code/week05.pas) tìm ước chung lớn nhất bằng thuật toán Euclid. Theo dõi giá trị `a`, `b` sau từng vòng với đầu vào `84 30`.
+
+## Bài tập
+
+1. Tính giai thừa và kiểm tra nguy cơ tràn số.
+2. Sinh `n` số Fibonacci đầu tiên.
+3. Nhập số cho đến khi gặp `0`, sau đó in tổng và giá trị lớn nhất.
+
+## Tự kiểm tra
+
+Nêu một dữ liệu khiến vòng lặp sai không thể kết thúc và cách phòng tránh.

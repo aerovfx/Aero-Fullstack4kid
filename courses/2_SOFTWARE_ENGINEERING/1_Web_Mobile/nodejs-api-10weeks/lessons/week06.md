@@ -1,4 +1,6 @@
 # Tuần 6: Cơ sở dữ liệu NoSQL & MongoDB / Databases & MongoDB
+
+> Học liệu database đã được phân loại tại [`code/imported/DATABASES`](../code/imported/DATABASES/).
 ## Mục Tiêu / Objectives
 - Hiểu cơ sở dữ liệu MongoDB và Mongoose ORM
 - Nắm vững các chủ đề kỹ thuật cốt lõi trong tuần.

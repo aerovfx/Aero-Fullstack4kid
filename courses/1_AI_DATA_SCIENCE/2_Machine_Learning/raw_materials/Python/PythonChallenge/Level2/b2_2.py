@@ -1,8 +1,0 @@
-a=input('nhap vao so thu nhat:')
-b=input('nhap vao so thu hai:')
-c=input('nhap vao so thu ba:')
-d=input('nhap vao so thu tu:')
-if ( int(a) >= int(b)) and ( int(a) >= int(c) ) and ( int(a) >= int(d) ):print('so lon nhat la:',a)
-if ( int(b)>=int(a) ) and ( int(b)>=int(c) ) and ( int(b) >= int(d) ): print('so lon nhat la:',b)
-if ( int(c) >= int(a)) and ( int(c) >= int(b) ) and ( int(c) >= int(d)): print('so lon nhat la:',c)
-if ( int(d) >= int(a) ) and ( int(d) >= int(b) ) and ( int(d) >= int(c) ): print('so lon nhat la:',d)

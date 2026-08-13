@@ -24,4 +24,10 @@ Học viên có thể thiết kế voice/data VLAN, đăng ký SCCP/SIP endpoint
 
 - [Lịch trình 10 tuần](schedule.md)
 - Bài học: `lessons/week01.md` đến `week10.md`.
+- Cấu hình mẫu: `code/week01.ios` đến `week10.ios`.
+- Lab học viên: `exercises/week01/` đến `week10/`.
+- [Dự án cuối khóa](projects/final_project.md).
 
+Quy trình mỗi tuần: đọc lesson, dựng topology lab, tham khảo code mẫu,
+hoàn thiện starter và lưu bằng chứng kiểm thử. Không dán cấu hình vào
+voice gateway, SIP trunk hoặc PSTN production.

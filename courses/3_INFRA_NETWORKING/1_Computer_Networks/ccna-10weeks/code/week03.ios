@@ -1,0 +1,13 @@
+! Tuan 3: STP và EtherChannel
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname SW1
+spanning-tree mode rapid-pvst
+spanning-tree vlan 10 root primary
+interface range GigabitEthernet0/23-24
+ channel-group 1 mode active
+interface Port-channel1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20
+end
+write memory

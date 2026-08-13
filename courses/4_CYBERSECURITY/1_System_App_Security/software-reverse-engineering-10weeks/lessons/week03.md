@@ -1,5 +1,8 @@
 # Giáo trình Cyber Security – Reverse Engineering
 
+> Khi mô tả FLAGS và control flow, áp dụng quy ước tại
+> [hướng dẫn viết báo cáo](../references/reporting-and-writing.md).
+
 ## Tuần 3 – Bài 3
 
 # Kiến Trúc Máy Tính, Thanh Ghi CPU, Bộ Nhớ & Assembly Cơ Bản

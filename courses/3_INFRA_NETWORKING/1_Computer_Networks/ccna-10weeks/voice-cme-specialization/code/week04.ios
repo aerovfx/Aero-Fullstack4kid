@@ -1,0 +1,15 @@
+! Tuan 4: SIP phone
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname CME1
+voice service voip
+ allow-connections sip to sip
+sip-ua
+ registrar ipv4:192.0.2.1 expires 3600
+voice register global
+ mode cme
+ source-address 192.0.2.1 port 5060
+ max-dn 8
+ max-pool 4
+end
+write memory

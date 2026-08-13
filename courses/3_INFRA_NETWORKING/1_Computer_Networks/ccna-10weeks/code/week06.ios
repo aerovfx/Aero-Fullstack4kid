@@ -1,0 +1,12 @@
+! Tuan 6: IPv4 và VLSM
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname R1
+interface GigabitEthernet0/0
+ description VLAN10_192.0.2.0_26
+ ip address 192.0.2.1 255.255.255.192
+interface GigabitEthernet0/1
+ description VLAN20_192.0.2.64_27
+ ip address 192.0.2.65 255.255.255.224
+end
+write memory

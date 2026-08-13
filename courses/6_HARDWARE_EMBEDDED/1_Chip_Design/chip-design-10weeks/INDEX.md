@@ -1,8 +1,13 @@
-# Thiết kế Vi mạch Kỹ thuật số & CPU (Chip Design)
+# Chip Design — 10 tuần
 
-Học cách máy tính thực sự hoạt động ở mức độ vật lý. Đi từ những cổng logic đơn giản bằng bóng bán dẫn cho đến việc sử dụng ngôn ngữ mô tả phần cứng (Verilog) để tự chế tạo một bộ vi xử lý.
+## Cấu trúc
 
-## Cấu trúc thư mục
-- \`schedule.md\`: Lộ trình chi tiết 10 tuần.
-- \`lessons/\`: Lý thuyết mạch điện kỹ thuật số và thực hành Logisim/Verilog.
-- \`projects/\`: Đồ án thiết kế vi xử lý.
+- [Lịch học](schedule.md)
+- `lessons/week01.md` … `week10.md`: lý thuyết và lab.
+- `code/week01.v` … `week10.v`: logic mẫu chạy offline.
+- `exercises/week01/` … `week10/`: starter và rubric học viên.
+- [Dự án cuối khóa](projects/final_project.md)
+
+## Quy trình an toàn
+
+Mô phỏng và test logic trước, review sơ đồ nguồn/pin, kiểm tra không tải, sau đó mới cấp nguồn có giới hạn dòng. Luôn có công tắc ngắt khẩn cấp; drone phải tháo cánh quạt khi thử trong bàn và chỉ bay tại khu vực được phép.

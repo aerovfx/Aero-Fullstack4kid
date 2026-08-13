@@ -1,0 +1,45 @@
+[package]
+name = "rust-backend-10weeks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.8"
+chrono = "0.4"
+jsonwebtoken = "9"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sqlx = { version = "0.8", features = ["runtime-tokio", "sqlite"] }
+tokio = { version = "1", features = ["full"] }
+tower = { version = "0.5", features = ["util"] }
+
+[[bin]]
+name = "week01"
+path = "code/week01.rs"
+[[bin]]
+name = "week02"
+path = "code/week02.rs"
+[[bin]]
+name = "week03"
+path = "code/week03.rs"
+[[bin]]
+name = "week04"
+path = "code/week04.rs"
+[[bin]]
+name = "week05"
+path = "code/week05.rs"
+[[bin]]
+name = "week06"
+path = "code/week06.rs"
+[[bin]]
+name = "week07"
+path = "code/week07.rs"
+[[bin]]
+name = "week08"
+path = "code/week08.rs"
+[[bin]]
+name = "week09"
+path = "code/week09.rs"
+[[bin]]
+name = "week10"
+path = "code/week10.rs"

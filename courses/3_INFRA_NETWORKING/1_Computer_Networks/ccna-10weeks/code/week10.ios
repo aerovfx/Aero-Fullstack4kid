@@ -1,0 +1,13 @@
+! Tuan 10: Quản trị và tự động hóa
+! Dia chi tai lieu RFC 5737/3849; thay theo topology lab rieng.
+configure terminal
+hostname R1
+service timestamps log datetime msec
+logging host 192.0.2.50
+snmp-server community LAB-READONLY ro
+archive
+ log config
+  logging enable
+  notify syslog
+end
+write memory
