@@ -1,68 +1,55 @@
 ---
 layout: default
-title: Danh mục khóa học
+title: Học viện công nghệ thực hành
 ---
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+<script defer src="{{ site.baseurl }}/assets/app.js"></script>
+
+<header class="site-header">
+  <a class="brand" href="{{ site.baseurl }}/">AERO<span>ACADEMY</span></a>
+  <a class="header-link" href="#courses">Khám phá khóa học ↓</a>
+</header>
 
 <section class="hero">
-  <h1>Fullstack4kid Academy</h1>
-  <p class="tagline">
-    Kho giáo trình công nghệ theo lộ trình theo tuần (10–20 tuần, bám sát giáo trình quốc tế: CEH v13, CCNA, GDCT…),
-    gồm bài giảng, code minh hoạ, bài tập minh hoạ, đồ án và tư liệu tham khảo cho <strong>6 nhóm ngành</strong>.
-  </p>
+  <p class="eyebrow">Học để tạo ra sản phẩm thật</p>
+  <h1>Từ dòng code đầu tiên<br>đến <em>tương lai bạn kiến tạo.</em></h1>
+  <p class="tagline">Lộ trình công nghệ bằng tiếng Việt, học theo từng tuần, thực hành bằng dự án. Toàn bộ bài giảng Markdown giờ đây có thể đọc trực tiếp trên web.</p>
+  <div class="hero-actions">
+    <a class="primary-button" href="#courses">Bắt đầu học miễn phí</a>
+    <span><strong>33+</strong> khóa học · <strong>6</strong> lĩnh vực</span>
+  </div>
 </section>
 
-<nav class="quick-nav">
-  <a href="#n1">AI &amp; Data Science</a>
-  <a href="#n2">Software Engineering</a>
-  <a href="#n3">Infra &amp; Networking</a>
-  <a href="#n4">Cybersecurity</a>
-  <a href="#n5">Graphics &amp; HCI</a>
-  <a href="#n6">Hardware &amp; Embedded</a>
-</nav>
+<section class="manifesto" aria-label="Phương pháp học">
+  <div><span>01</span><strong>HỌC</strong><p>Kiến thức được chia thành từng bài rõ ràng, dễ theo dõi.</p></div>
+  <div><span>02</span><strong>LÀM</strong><p>Code mẫu, bài tập và lab thực hành trong mỗi tuần.</p></div>
+  <div><span>03</span><strong>TẠO</strong><p>Hoàn thành đồ án để biến kiến thức thành năng lực.</p></div>
+</section>
 
-<p class="lead">
-  👉 Bấm vào từng khóa học để xem góc nhìn chi tiết và mở toàn bộ tài liệu
-  (<code>INDEX.md</code>, <code>schedule.md</code>, <code>lessons/</code>, <code>code/</code>, <code>projects/</code>)
-  trên GitHub.
-</p>
+<section class="catalog" id="courses">
+  <div class="catalog-heading">
+    <div><p class="eyebrow">Thư viện lộ trình</p><h2>Chọn hướng đi của bạn</h2></div>
+    <label class="search-box"><span>⌕</span><input type="search" data-course-search placeholder="Tìm JavaScript, AI, bảo mật..." aria-label="Tìm khóa học"></label>
+  </div>
 
-{% assign groups = site.data.courses %}
-{% for group in groups %}
-<section class="group" id="{{ group.id }}">
-  <h2><span class="num">{{ group.num }}</span> {{ group.name }}</h2>
-  <p class="group-desc">{{ group.description }}</p>
+  <div class="filter-row" aria-label="Lọc theo lĩnh vực">
+    <button data-filter="all" aria-pressed="true">Tất cả</button>
+    {% for group in site.data.courses %}<button data-filter="{{ group.id }}" aria-pressed="false">{{ group.name | remove_first: group.num | remove_first: '. ' }}</button>{% endfor %}
+  </div>
 
-  <table class="course-table">
-    <thead>
-      <tr><th>Khóa học</th><th>Lộ trình</th><th>Học liệu</th></tr>
-    </thead>
-    <tbody>
+  <div class="course-grid">
+    {% for group in site.data.courses %}
       {% for c in group.courses %}
-      <tr>
-        <td>
-          <a class="course-name" href="{{ site.baseurl }}{{ c.url }}">
-            {{ c.title }}
-          </a>
-          {% if c.path contains "cybersecurity-10weeks" %}
-            <span class="new-badge">NEW · CEH v13 20 tuần</span>
-          {% endif %}
-        </td>
-        <td>{{ c.weeks }}</td>
-        <td class="links">
-          {% if c.path %}
-            <a href="{{ site.github_repo }}/blob/{{ site.github_branch }}/{{ c.path }}/INDEX.md" target="_blank" rel="noopener">Giáo trình</a>
-            <a href="{{ site.github_repo }}/blob/{{ site.github_branch }}/{{ c.path }}/schedule.md" target="_blank" rel="noopener">Lịch</a>
-            <a href="{{ site.github_repo }}/tree/{{ site.github_branch }}/{{ c.path }}/projects" target="_blank" rel="noopener">Đồ án</a>
-          {% endif %}
-        </td>
-      </tr>
+      <article class="course-card" data-course-card data-group="{{ group.id }}">
+        <div class="card-top"><span>{{ group.num | prepend: '0' }}</span><small>{{ c.weeks }}</small></div>
+        <p>{{ group.name | remove_first: group.num | remove_first: '. ' }}</p>
+        <h3><a href="{{ site.baseurl }}{{ c.url }}/">{{ c.title }}</a></h3>
+        <div class="card-footer"><span>Giáo trình · Bài học · Đồ án</span><a aria-label="Mở khóa học {{ c.title }}" href="{{ site.baseurl }}{{ c.url }}/">↗</a></div>
+      </article>
       {% endfor %}
-    </tbody>
-  </table>
+    {% endfor %}
+  </div>
+  <p class="empty-state" data-empty hidden>Không tìm thấy khóa học phù hợp. Hãy thử một từ khóa khác.</p>
 </section>
-{% endfor %}
 
-<footer>
-  <p><a href="{{ site.github_repo }}" target="_blank" rel="noopener">Source repository ↗</a> · © {{ "now" | date: "%Y" }} {{ site.title }}</p>
-</footer>
+<footer class="site-footer"><a class="brand" href="{{ site.baseurl }}/">AERO<span>ACADEMY</span></a><p>Kiến thức mở. Tương lai rộng.</p><a href="{{ site.github_repo }}">Mã nguồn ↗</a></footer>

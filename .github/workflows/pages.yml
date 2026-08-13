@@ -24,6 +24,9 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Generate learning pages from Markdown
+        run: ruby tools/generate_learning_site.rb
+
       - name: Build Jekyll (from ./site)
         uses: actions/jekyll-build-pages@v1
         with:
