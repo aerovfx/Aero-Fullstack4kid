@@ -476,3 +476,11 @@ C = np.dot(A, B)
 <!-- Detail notes for Phép toán số học Vector - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 3 / End of Week 3
+
+## Học liệu thực hành: toán tử NumPy
+
+- [Notebook 03 — Toán tử số học, so sánh và logic]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch03_NumPy/03_Numpy_Operators.ipynb)
+
+### Bài lab cụ thể
+
+Dùng một mảng doanh thu 12 tháng để thực hiện cộng/trừ/nhân theo phần tử, lọc các tháng vượt mục tiêu và kết hợp nhiều điều kiện bằng `np.logical_and`, `np.logical_or`. Không dùng vòng lặp Python.

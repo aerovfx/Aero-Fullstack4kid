@@ -476,3 +476,15 @@ from sklearn.linear_model import LinearRegression
 <!-- Detail notes for Học máy Cơ bản với Scikit-Learn - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 10 / End of Week 10
+
+## Học liệu mở rộng: SciPy cho bài toán khoa học
+
+- [01 — Lọc nhiễu tín hiệu bằng bộ lọc thông thấp]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/01_exam.ipynb)
+- [02 — Tối ưu hóa có ràng buộc]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/02_exam.ipynb)
+- [03 — Tích phân và xấp xỉ đạo hàm]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/03_exam.ipynb)
+- [04 — Giải phương trình vi phân]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/04_exam.ipynb)
+- [05 — Thống kê, tích phân, tối ưu và phân rã LU]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch07_SciPy/05_exam.ipynb)
+
+### Bài lab tích hợp cuối khóa
+
+Chọn một notebook SciPy, sửa thành một bài toán có dữ liệu đầu vào do học viên tự tạo, trực quan hóa kết quả và viết phần giải thích. Liên hệ bước tính toán khoa học này với quy trình chuẩn bị đặc trưng hoặc đánh giá mô hình học máy của tuần 10.

@@ -476,3 +476,12 @@ print(df.info())
 <!-- Detail notes for Giới thiệu Pandas & DataFrames - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 5 / End of Week 5
+
+## Học liệu thực hành: Pandas và nhiều định dạng dữ liệu
+
+- [Notebook — Đọc/ghi CSV, Excel, SQLite và JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/01_Pandas_exam.ipynb)
+- Dataset đầu vào: [CSV]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.csv) · [Excel]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.xlsx) · [JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.json) · [SQLite]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.sql)
+
+### Bài lab cụ thể
+
+Đọc cùng một tập dữ liệu từ bốn định dạng, kiểm tra `head()`, `info()`, `shape`, rồi xác nhận các cột và số bản ghi có nhất quán hay không. Xuất kết quả đã chuẩn hóa sang CSV, Excel và JSON.

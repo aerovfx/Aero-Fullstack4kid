@@ -476,3 +476,16 @@ print(arr.shape)
 <!-- Detail notes for Mảng NumPy Cơ bản - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 2 / End of Week 2
+
+## Học liệu thực hành từ kho NumPy
+
+Tuần này sử dụng trực tiếp hai notebook nhập môn. Hãy chạy lần lượt từng cell, thay đổi dữ liệu đầu vào và ghi lại sự khác nhau giữa `list` Python với `ndarray`.
+
+- [Notebook 01 — Khởi tạo mảng và phép toán cơ bản]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch03_NumPy/01_Numpy.ipynb)
+- [Notebook 02 — Mảng, số ngẫu nhiên và hàm tổng hợp]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch03_NumPy/02_Numpy_Basic.ipynb)
+
+### Bài lab cụ thể
+
+1. Tạo mảng 1 chiều gồm điểm của 10 học viên và tính tổng, trung bình, tích.
+2. Tạo ma trận 3×3 bằng `np.array`, sau đó nhân toàn bộ ma trận với 2 bằng broadcasting.
+3. Sinh một ma trận ngẫu nhiên 5×5, in `shape`, `dtype`, giá trị nhỏ nhất và lớn nhất.

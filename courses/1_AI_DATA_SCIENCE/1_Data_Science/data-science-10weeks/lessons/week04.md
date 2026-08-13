@@ -475,3 +475,13 @@ filtered = data[data > data.mean()]
 <!-- Detail notes for Cắt lát & Lọc mảng nâng cao - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 4 / End of Week 4
+
+## Học liệu thực hành: ma trận
+
+- [Notebook 04 — Nhân và sắp xếp ma trận]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch03_NumPy/04_Numpy_Matrix.ipynb)
+
+### Bài lab cụ thể
+
+1. So sánh phép nhân theo phần tử (`*`) với phép nhân ma trận (`@`).
+2. Sắp xếp ma trận theo hàng và theo cột với `np.sort(axis=...)`.
+3. Kết hợp slicing và boolean indexing để lấy các phần tử lớn hơn trung bình của ma trận.

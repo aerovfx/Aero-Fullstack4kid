@@ -474,3 +474,13 @@ sales_by_region = df.groupby('region')['revenue'].sum()
 <!-- Detail notes for Chọn & Phân nhóm Dữ liệu - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 6 / End of Week 6
+
+## Học liệu thực hành: chọn và tổng hợp dữ liệu thật
+
+Tiếp tục dùng [bộ dữ liệu Pandas mẫu]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.csv) của tuần 5.
+
+### Bài lab cụ thể
+
+1. Dùng `loc` và `iloc` để lấy cùng một tập con, rồi giải thích khác biệt.
+2. Lọc dữ liệu bằng ít nhất hai điều kiện.
+3. Chọn một cột phân loại để `groupby`, tính `count`, `sum`, `mean` và xuất báo cáo thành [CSV mẫu đầu ra]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/output-data.csv).

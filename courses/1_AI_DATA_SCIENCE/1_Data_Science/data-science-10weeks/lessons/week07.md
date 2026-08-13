@@ -475,3 +475,11 @@ df_clean['age'] = df_clean['age'].fillna(df_clean['age'].mean())
 <!-- Detail notes for Làm sạch dữ liệu bẩn - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 7 / End of Week 7
+
+## Học liệu thực hành: kiểm định chất lượng dữ liệu
+
+Sử dụng lại [sample-data.csv]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.csv) và tạo có chủ đích một số giá trị thiếu, trùng lặp, sai kiểu dữ liệu.
+
+### Bài lab cụ thể
+
+Lập báo cáo trước/sau làm sạch gồm: số ô thiếu, số dòng trùng, kiểu dữ liệu từng cột và các quy tắc xử lý. Lưu bảng sạch sang [JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/output-data.json) để dùng ở tuần 8.

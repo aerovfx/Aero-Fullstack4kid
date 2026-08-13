@@ -474,3 +474,11 @@ merged_df = pd.merge(orders, customers, on='customer_id')
 <!-- Detail notes for Ghép bảng & Biến đổi dữ liệu - Section 199: Học viên đọc thêm tài liệu tham khảo, thực hiện tối ưu hóa cấu trúc dữ liệu, debug mã lỗi và chạy lại test cases cục bộ để đảm bảo kết quả tốt nhất. -->
 
 # Kết thúc bài học tuần 8 / End of Week 8
+
+## Học liệu thực hành: pipeline biến đổi dữ liệu
+
+Dùng các file [CSV]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.csv), [JSON]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.json) và [Excel]({{ site.baseurl }}/learn/data-science-10weeks/materials/ch04_Pandas/sample-data.xlsx) như ba nguồn độc lập.
+
+### Bài lab cụ thể
+
+Chuẩn hóa tên cột, nối dữ liệu bằng `concat` hoặc `merge`, tạo một cột dẫn xuất bằng `apply`, sau đó xuất bảng cuối cùng ra Excel. Học viên phải ghi rõ khóa nối và cách xử lý bản ghi không khớp.
