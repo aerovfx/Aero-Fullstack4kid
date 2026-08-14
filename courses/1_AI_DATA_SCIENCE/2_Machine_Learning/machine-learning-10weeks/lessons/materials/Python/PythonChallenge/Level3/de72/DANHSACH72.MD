@@ -1,1 +1,0 @@
-Tìm tổng của các phần tử lớn hơn giá trị trung bình của danh sách.

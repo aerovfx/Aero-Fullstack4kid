@@ -1,1 +1,0 @@
-Kiểm tra xâu con đặc biệt: Kiểm tra xem một xâu có chứa một xâu con đặc biệt, ví dụ như số nguyên, số thực hoặc địa chỉ email, hay không

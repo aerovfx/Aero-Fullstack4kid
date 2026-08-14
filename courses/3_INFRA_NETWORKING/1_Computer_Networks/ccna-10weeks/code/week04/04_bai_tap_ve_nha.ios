@@ -1,8 +1,0 @@
-! ccna-10weeks · Tuần 04 · Bài 04: Bài Tập Về Nhà
-! Cấu hình minh họa; thay LAB-* theo topology lớp học.
-enable
-configure terminal
-hostname LAB-W04-B04
-service timestamps log datetime msec
-end
-show running-config

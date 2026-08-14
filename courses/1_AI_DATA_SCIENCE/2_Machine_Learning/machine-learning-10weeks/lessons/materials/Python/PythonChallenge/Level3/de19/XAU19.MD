@@ -1,1 +1,0 @@
-Tách xâu thành các số: Tách một xâu chứa các số thành các số riêng lẻ và lưu chúng vào một danh sách.

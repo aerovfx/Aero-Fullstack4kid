@@ -1,1 +1,0 @@
-Nhập vào một số nguyên dương n. Hãy in ra số nguyên tố nhỏ nhất lớn hơn n. VD: Nhập n = 10. Kết quả in ra số 11.

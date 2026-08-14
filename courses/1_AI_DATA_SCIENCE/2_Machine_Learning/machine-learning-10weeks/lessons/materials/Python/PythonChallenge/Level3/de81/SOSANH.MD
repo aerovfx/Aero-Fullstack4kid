@@ -1,1 +1,0 @@
-Viết chương trình cho nhập hai số tự nhiên N và k. Hãy cho biết chữ số thứ k tính từ trái sang phải trong số N là chữ số nào? Nếu k lớn hơn độ dài của N hoặc k bằng 0 thì thông báo không tìm được.

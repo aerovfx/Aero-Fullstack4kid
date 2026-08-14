@@ -1,1 +1,0 @@
-Một số được gọi là số bậc thang nếu biểu diễn thập phân của nó có nhiều hơn một chữ số đồng thời theo chiều từ trái qua phải, chữ số đứng sau không nhỏ hơn chữ số đứng trước. Viết chương trình in ra các số bậc thang trong đoạn [n1, n2] với n1, n2 được nhập từ bàn phím.

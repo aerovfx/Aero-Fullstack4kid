@@ -1,1 +1,0 @@
-Viết chương tìm ước số chung lớn nhất của hai số nguyên a và b khác 0, với a, b được nhập từ bàn phím.

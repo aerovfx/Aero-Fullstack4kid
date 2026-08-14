@@ -1,1 +1,0 @@
-Giải mã xâu từ thuật toán Base64: Chuyển đổi một xâu mã hóa bằng Base64 thành xâu ban đầu.

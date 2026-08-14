@@ -1,4 +1,0 @@
-/** nodejs-api-10weeks · Tuần 08 · Bài 20: Cấu trúc chương trình tuần 08. */
-const records = [{ id: "demo-1", value: 20 }, { id: "demo-2", value: 30 }];
-const result = records.map((item) => ({ ...item, active: item.value >= 10 }));
-console.log("20 - Cấu trúc chương trình tuần 08", result);

@@ -1,3 +1,0 @@
-// TODO tuần 1: Chuỗi khối và EVM
-// Hãy cài đặt yêu cầu trong README.md và bỏ lỗi dưới đây.
-throw new Error("TODO: hoc vien tu hoan thien");

@@ -1,9 +1,0 @@
-"""pico-stem-10weeks · Tuần 08 · Bài 13.
-
-Chủ đề: 4: Giả Lập Thuật Toán Xe Né Vật Cản Trên Wokwi Online
-"""
-from collections import Counter
-records = ["basic", "practice", "basic", "review"]
-result = dict(Counter(records))
-assert result is not None
-print('13 - 4: Giả Lập Thuật Toán Xe Né Vật Cản Trên Wokwi Online:', result)

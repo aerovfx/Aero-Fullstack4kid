@@ -1,1 +1,0 @@
-Tách danh sách thành hai danh sách con, một danh sách chứa các phần tử âm và một danh sách chứa các phần tử dương.

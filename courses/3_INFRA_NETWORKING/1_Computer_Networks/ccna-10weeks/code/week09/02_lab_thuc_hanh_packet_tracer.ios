@@ -1,8 +1,0 @@
-! ccna-10weeks · Tuần 09 · Bài 02: Lab Thực Hành (Packet Tracer)
-! Cấu hình minh họa; thay LAB-* theo topology lớp học.
-enable
-configure terminal
-hostname LAB-W09-B02
-service timestamps log datetime msec
-end
-show running-config

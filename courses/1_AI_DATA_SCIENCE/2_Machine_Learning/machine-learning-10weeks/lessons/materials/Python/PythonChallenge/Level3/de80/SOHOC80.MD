@@ -1,1 +1,0 @@
-Bài toán: Tính bình phương của một số

@@ -1,9 +1,0 @@
-// cpp-modern-10weeks · Tuần 08 · Bài 12: Kiểm tra dữ liệu tuần 08.
-#include <array>
-#include <iostream>
-#include <string>
-int main() {
-    const std::array<int, 3> values{12, 13, 14};
-    int total = 0; for (const int value : values) total += value;
-    std::cout << "12 - Kiểm tra dữ liệu tuần 08: " << total << '\n';
-}

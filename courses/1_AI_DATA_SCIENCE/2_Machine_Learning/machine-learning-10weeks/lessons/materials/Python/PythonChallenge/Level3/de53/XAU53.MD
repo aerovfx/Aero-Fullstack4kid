@@ -1,1 +1,0 @@
-Mã hoá xâu bằng thuật toán Base64: Chuyển đổi một xâu thành một xâu mới chỉ chứa các ký tự trong bảng mã Base64.

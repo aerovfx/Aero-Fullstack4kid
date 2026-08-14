@@ -1,8 +1,0 @@
-! ccna-10weeks · Tuần 08 · Bài 10: Dữ liệu đầu vào tuần 08
-! Cấu hình minh họa; thay LAB-* theo topology lớp học.
-enable
-configure terminal
-hostname LAB-W08-B10
-service timestamps log datetime msec
-end
-show running-config

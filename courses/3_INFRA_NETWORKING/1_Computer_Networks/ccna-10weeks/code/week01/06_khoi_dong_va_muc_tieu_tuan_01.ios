@@ -1,8 +1,0 @@
-! ccna-10weeks · Tuần 01 · Bài 06: Khởi động và mục tiêu tuần 01
-! Cấu hình minh họa; thay LAB-* theo topology lớp học.
-enable
-configure terminal
-hostname LAB-W01-B06
-service timestamps log datetime msec
-end
-show running-config
